@@ -1,16 +1,8 @@
 import backtrader as bt
 
-# ✅ ここで初期設定を一か所にまとめる
-strategy_params = {
-    "initial_cash": 10000000,
-    "sell_price_multiplier": 1.02,
-    "buy_price_multiplier": 0.85,
-    "buy_ratio": 0.09,  # 資金の1%を買う
-}
-
 
 class BuyOnlyStrategy(bt.Strategy):
-    params = strategy_params  # ✅ 同じ辞書を使うので繰り返さない
+    params = (("initial_cash", 1000000),)  # デフォルトの初期費用を設定
 
     def __init__(self):
         self.buy_date = None  # 買った日の記憶用
@@ -25,13 +17,13 @@ class BuyOnlyStrategy(bt.Strategy):
         today = self.data.datetime.date(0)  # 今日の日付取得
         price = self.data.close[0]
         cash = self.broker.get_cash()  # 今の現金残高を取得
-        buy_amount = cash * self.p.buy_ratio  # 資金の1%分だけ買う
+        buy_amount = cash * 0.01  # 資金の1%分だけ買う
 
         buy_size = buy_amount / price  # 買うBTC量を計算
         buy_size = round(buy_size, 5)  # BTCは小数点切り捨て調整
 
         # 指値価格を現在価格の1%安に設定
-        limit_price = price * self.p.buy_price_multiplier
+        limit_price = price * 0.99
 
         if buy_size > 0:
             self.buy(size=buy_size, price=limit_price, exectype=bt.Order.Limit)
@@ -43,7 +35,7 @@ class BuyOnlyStrategy(bt.Strategy):
             sell_amount = self.broker.get_value() * 0.01  # 総資産の1%分を売る
             sell_size = round(sell_amount / price, 5)
 
-            limit_price_sell = sell_size * self.p.sell_price_multiplier
+            limit_price_sell = sell_size * 1.01
 
             # 持ちポジションより多く売らないように調整
             sell_size = min(sell_size, position_size)
@@ -71,8 +63,6 @@ class BuyOnlyStrategy(bt.Strategy):
 
 
 cerebro = bt.Cerebro()
-cerebro.broker.setcash(strategy_params["initial_cash"])
-cerebro.addstrategy(BuyOnlyStrategy, **strategy_params)
 
 data = bt.feeds.GenericCSVData(
     dataname="binance_btc.csv",
@@ -87,6 +77,7 @@ data = bt.feeds.GenericCSVData(
 )
 
 cerebro.adddata(data)
+cerebro.addstrategy(BuyOnlyStrategy)
 
 print(f"開始資金: {cerebro.broker.getvalue():.2f}")
 
