@@ -1,13 +1,5 @@
 import backtrader as bt
 
-# ✅ ここで初期設定を一か所にまとめる
-strategy_params = {
-    "initial_cash": 10000000,
-    "sell_price_multiplier": 1.02,
-    "buy_price_multiplier": 0.85,
-    "buy_ratio": 0.09,  # 資金の1%を買う
-}
-
 
 class BuyOnlyStrategy(bt.Strategy):
     params = strategy_params  # ✅ 同じ辞書を使うので繰り返さない
@@ -68,27 +60,3 @@ class BuyOnlyStrategy(bt.Strategy):
             f.write(f"最終資産額: {final_value}\n")
             f.write(f"最終利益: {final_profit}\n")
         print("結果をresult.txtに保存しました")
-
-
-cerebro = bt.Cerebro()
-cerebro.broker.setcash(strategy_params["initial_cash"])
-cerebro.addstrategy(BuyOnlyStrategy, **strategy_params)
-
-data = bt.feeds.GenericCSVData(
-    dataname="binance_btc.csv",
-    dtformat="%Y-%m-%d %H:%M:%S",
-    datetime=0,
-    open=1,
-    high=2,
-    low=3,
-    close=4,
-    volume=5,
-    openinterest=-1,
-)
-
-cerebro.adddata(data)
-
-print(f"開始資金: {cerebro.broker.getvalue():.2f}")
-
-cerebro.run()
-cerebro.plot()  # チャートを表示
