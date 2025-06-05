@@ -5,7 +5,8 @@ strategy_params = {
     "initial_cash": 10000000,
     "sell_price_multiplier": 1.02,
     "buy_price_multiplier": 0.85,
-    "buy_ratio": 0.09,  # 資金の1%を買う
+    "buy_ratio": 0.01,  # 資金の1%を買う
+    
 }
 
 
@@ -25,7 +26,7 @@ class BuyOnlyStrategy(bt.Strategy):
         today = self.data.datetime.date(0)  # 今日の日付取得
         price = self.data.close[0]
         cash = self.broker.get_cash()  # 今の現金残高を取得
-        buy_amount = cash * self.p.buy_ratio  # 資金の1%分だけ買う
+        buy_amount = cash * 0.01  # 資金の1%分だけ買う
 
         buy_size = buy_amount / price  # 買うBTC量を計算
         buy_size = round(buy_size, 5)  # BTCは小数点切り捨て調整
