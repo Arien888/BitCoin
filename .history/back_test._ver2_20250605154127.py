@@ -70,7 +70,6 @@ class BuyOnlyStrategy(bt.Strategy):
 
 cerebro = bt.Cerebro()
 cerebro.broker.setcash(strategy_params["initial_cash"])
-cerebro.addstrategy(BuyOnlyStrategy, **strategy_params)
 
 data = bt.feeds.GenericCSVData(
     dataname="binance_btc.csv",
@@ -85,6 +84,7 @@ data = bt.feeds.GenericCSVData(
 )
 
 cerebro.adddata(data)
+cerebro.addstrategy(BuyOnlyStrategy)
 
 print(f"開始資金: {cerebro.broker.getvalue():.2f}")
 
