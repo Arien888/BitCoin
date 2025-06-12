@@ -1,5 +1,4 @@
 # 除外するファイル
 *.csv
-*.xlsx
 *.yaml
 *.yml
