@@ -1,7 +1,7 @@
 import backtrader as bt
 import pandas as pd
+from calc_change_rate import calculate_avg_change_rate  # 外部ファイルからインポート
 from config import strategy_params
-import utils  # ユーティリティ関数をインポート
 
 
 class BuyOnlyStrategy(bt.Strategy):
@@ -13,16 +13,24 @@ class BuyOnlyStrategy(bt.Strategy):
     def start(self):
         self.starting_cash = self.p.initial_cash
 
-    def next(self):  # 1日ごとの処理
-        idx = len(self) - 1  # 現在のインデックス
-        data_len = len(self.data)  # データの長さ
+    def next(self): # 1日ごとの処理
+        idx = len(self) - 1 # 現在のインデックス
+        data_len = len(self.data) # データの長さ
 
-        if idx < 31 or idx > data_len - 1:  # 前後30日を除外
+        if idx < 31 or idx > data_len - 1: # 前後30日を除外
             return  # 前後30日を除外（1日ズレるので31必要）
 
-        avg_rate = utils.get_change_rates_low(self)  # 平均変化率計算
-        today = self.data.datetime.date(0)  # 今日の日付取得
-        price = self.data.close[0]  # 今日の終値取得
+        # 前日終値 → 翌日安値の変化率を30日分計算
+        change_rates = [] # 前日終値から翌日安値の変化率を格納するリスト
+        for i in range(30): # 30日分のループ
+            close_today = self.data.close[-i - 1] # 今日の終値
+            low_next = self.data.low[-i] # 翌日の安値
+            change = (low_next - close_today) / close_today # 変化率計算
+            change_rates.append(change) # リストに追加
+
+        avg_rate = sum(change_rates) / len(change_rates) # 平均変化率計算
+        today = self.data.datetime.date(0) # 今日の日付取得
+        price = self.data.close[0] # 今日の終値取得
 
         # 指値価格を計算
         limit_price = round(price * (1 + avg_rate), 2)
@@ -39,15 +47,12 @@ class BuyOnlyStrategy(bt.Strategy):
             )
 
         # 利確ロジック（元のまま）
-        position_size = self.position.size  # 現在のポジションサイズ
-        if position_size > 0:  # ポジションがある場合
-            price = self.data.close[0]  # 現在の価格
-            sell_amount = self.broker.get_value() * 0.01  # 利確額（資産の1%）
-            sell_size = round(min(sell_amount / price, position_size), 5)  # 利確サイズ
-
-            limit_price_sell = round(
-                price * (1 - utils.get_change_rates_high(self)), 2
-            )  # 利確指値価格
+        position_size = self.position.size # 現在のポジションサイズ
+        if position_size > 0: # ポジションがある場合
+            price = self.data.close[0] # 現在の価格
+            sell_amount = self.broker.get_value() * 0.01 # 利確額（資産の1%）
+            sell_size = round(min(sell_amount / price, position_size), 5) # 利確サイズ
+            limit_price_sell = price * self.p.sell_price_multiplier # 指値売り価格計算
 
             if sell_size > 0:
                 self.sell(

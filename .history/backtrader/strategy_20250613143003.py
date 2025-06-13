@@ -1,5 +1,6 @@
 import backtrader as bt
 import pandas as pd
+from calc_change_rate import calculate_avg_change_rate  # 外部ファイルからインポート
 from config import strategy_params
 import utils  # ユーティリティ関数をインポート
 
