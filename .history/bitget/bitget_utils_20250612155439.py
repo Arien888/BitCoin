@@ -6,9 +6,28 @@ import base64
 import yaml
 import csv
 
+# spot_keys = ["coin", "available", "limitAvailable", "frozen", "locked", "uTime"]
+
+# margin_keys = [
+#     "coin",
+#     "totalAmount",
+#     "available",
+#     "frozen",
+#     "borrow",
+#     "interest",
+#     "net",
+#     "coupon",
+#     "cTime",
+#     "uTime",
+# ]
+
+# earn_keys = ["coin", "amount"]
+
+
 def load_config(path="config.yaml"):
     with open(path, "r") as f:
         return yaml.safe_load(f)
+
 
 def get_assets(api_key, api_secret, api_passphrase, request_path):
     base_url = "https://api.bitget.com"
