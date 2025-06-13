@@ -5,36 +5,19 @@ import utils  # ユーティリティ関数をインポート
 
 
 class BuyOnlyStrategy(bt.Strategy):
-    params = strategy_params  # 設定をパラメータとして受け取る
+    params = strategy_params
 
     def __init__(self):
-        self.starting_cash = None  # 初期資産額を保存する変数
-        self.entry_value = None  # エントリー時の資産額を保存する変数
+        self.starting_cash = None
 
     def start(self):
-        self.starting_cash = self.p.initial_cash  # 初期資産額を保存
+        self.starting_cash = self.p.initial_cash
 
     def next(self):  # 1日ごとの処理
-
+        
         # レバレッジ設定
         price = self.data.close[0]  # 今日の終値取得
-        equity = self.broker.getvalue()  # 現在の資産額取得
-        max_position_value = (
-            equity * self.p.leverage
-        )  # レバレッジを考慮した最大ポジション額
-        max_size = max_position_value / price  # 購入可能なサイズ計算
-
-        # 強制ロスカット判定
-        if self.position:  # ポジションがある場合
-            if equity < self.entry_value * self.p.stop_loss_ratio:  # ストップロス判定
-                print(
-                    f"{self.data.datetime.date(0)} 強制ロスカット: 現在の資産額 {equity} < エントリー時の資産額 {self.entry_value * self.p.stop_loss_ratio}"
-                )
-                self.close()  # ポジションをクローズ
-                self.entry_value = None  # エントリー価格をリセット
-
-                return  # 次の処理へ
-
+        
         idx = len(self) - 1  # 現在のインデックス
         data_len = len(self.data)  # データの長さ
 
@@ -43,18 +26,18 @@ class BuyOnlyStrategy(bt.Strategy):
 
         avg_rate = utils.get_change_rates_low(self)  # 平均変化率計算
         today = self.data.datetime.date(0)  # 今日の日付取得
+        price = self.data.close[0]  # 今日の終値取得
 
         # 指値価格を計算
         limit_price = round(price * (1 + avg_rate), 2)
 
         # 資金の buy_ratio で購入サイズ計算
         cash = self.broker.get_cash()
-        buy_amount = max_position_value * self.p.buy_ratio  # 購入額計算
-        buy_size = round(buy_amount / limit_price, 5)  # 購入サイズ計算
+        buy_amount = cash * self.p.buy_ratio
+        buy_size = round(buy_amount / limit_price, 5)
 
         if buy_size > 0:
             self.buy(size=buy_size, price=limit_price, exectype=bt.Order.Limit)
-            self.entry_value = equity  # 建玉時の資産を記録
             print(
                 f"{today} 平均変化率: {avg_rate:.4%} → 指値買い {buy_size} BTC @ {limit_price}"
             )
@@ -63,7 +46,7 @@ class BuyOnlyStrategy(bt.Strategy):
         position_size = self.position.size  # 現在のポジションサイズ
         if position_size > 0:  # ポジションがある場合
             price = self.data.close[0]  # 現在の価格
-            sell_amount = max_position_value * self.p.sell_ratio  # 利確額計算
+            sell_amount = self.broker.get_value() * 0.01  # 利確額（資産の1%）
             sell_size = round(min(sell_amount / price, position_size), 5)  # 利確サイズ
 
             limit_price_sell = round(
@@ -76,16 +59,12 @@ class BuyOnlyStrategy(bt.Strategy):
                 )
                 print(f"{today} 指値売り {sell_size} BTC @ {limit_price_sell}")
 
-    def notify_order(self, order):  # 注文の状態を通知するメソッド
-        if order.status in [order.Completed]:  # 注文が完了した場合
+    def notify_order(self, order):
+        if order.status in [order.Completed]:
             print(
                 f"注文約定: {order.getordername()} {order.executed.price} {order.executed.size}"
             )
-        elif order.status in [
-            order.Canceled,
-            order.Margin,
-            order.Rejected,
-        ]:  # 注文がキャンセル、マージン不足、拒否された場合
+        elif order.status in [order.Canceled, order.Margin, order.Rejected]:
             print(f"注文キャンセル・拒否: {order.getordername()}")
 
     def stop(self):

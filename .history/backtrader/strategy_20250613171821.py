@@ -9,7 +9,6 @@ class BuyOnlyStrategy(bt.Strategy):
 
     def __init__(self):
         self.starting_cash = None  # 初期資産額を保存する変数
-        self.entry_value = None  # エントリー時の資産額を保存する変数
 
     def start(self):
         self.starting_cash = self.p.initial_cash  # 初期資産額を保存
@@ -25,14 +24,10 @@ class BuyOnlyStrategy(bt.Strategy):
         max_size = max_position_value / price  # 購入可能なサイズ計算
 
         # 強制ロスカット判定
-        if self.position:  # ポジションがある場合
-            if equity < self.entry_value * self.p.stop_loss_ratio:  # ストップロス判定
-                print(
-                    f"{self.data.datetime.date(0)} 強制ロスカット: 現在の資産額 {equity} < エントリー時の資産額 {self.entry_value * self.p.stop_loss_ratio}"
-                )
-                self.close()  # ポジションをクローズ
-                self.entry_value = None  # エントリー価格をリセット
-
+        if self.position:   # ポジションがある場合
+            if equity < self.starting_cash * self.p.stop_loss_ratio:  # ストップロス判定
+                self.close()    # ポジションをクローズ
+                self.starting_cash = None # エントリー価格をリセット
                 return  # 次の処理へ
 
         idx = len(self) - 1  # 現在のインデックス
@@ -54,7 +49,6 @@ class BuyOnlyStrategy(bt.Strategy):
 
         if buy_size > 0:
             self.buy(size=buy_size, price=limit_price, exectype=bt.Order.Limit)
-            self.entry_value = equity  # 建玉時の資産を記録
             print(
                 f"{today} 平均変化率: {avg_rate:.4%} → 指値買い {buy_size} BTC @ {limit_price}"
             )
