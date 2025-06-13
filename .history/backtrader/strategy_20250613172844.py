@@ -9,7 +9,7 @@ class BuyOnlyStrategy(bt.Strategy):
 
     def __init__(self):
         self.starting_cash = None  # 初期資産額を保存する変数
-        self.entry_value = None  # エントリー時の資産額を保存する変数
+        self.entry_value = None  # 初期資産額を保存する変数
 
     def start(self):
         self.starting_cash = self.p.initial_cash  # 初期資産額を保存
@@ -27,12 +27,8 @@ class BuyOnlyStrategy(bt.Strategy):
         # 強制ロスカット判定
         if self.position:  # ポジションがある場合
             if equity < self.entry_value * self.p.stop_loss_ratio:  # ストップロス判定
-                print(
-                    f"{self.data.datetime.date(0)} 強制ロスカット: 現在の資産額 {equity} < エントリー時の資産額 {self.entry_value * self.p.stop_loss_ratio}"
-                )
                 self.close()  # ポジションをクローズ
                 self.entry_value = None  # エントリー価格をリセット
-
                 return  # 次の処理へ
 
         idx = len(self) - 1  # 現在のインデックス

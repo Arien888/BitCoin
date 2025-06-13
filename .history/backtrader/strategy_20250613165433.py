@@ -5,14 +5,13 @@ import utils  # ユーティリティ関数をインポート
 
 
 class BuyOnlyStrategy(bt.Strategy):
-    params = strategy_params  # 設定をパラメータとして受け取る
+    params = strategy_params
 
     def __init__(self):
-        self.starting_cash = None  # 初期資産額を保存する変数
-        self.entry_value = None  # エントリー時の資産額を保存する変数
+        self.starting_cash = None
 
     def start(self):
-        self.starting_cash = self.p.initial_cash  # 初期資産額を保存
+        self.starting_cash = self.p.initial_cash
 
     def next(self):  # 1日ごとの処理
 
@@ -24,17 +23,6 @@ class BuyOnlyStrategy(bt.Strategy):
         )  # レバレッジを考慮した最大ポジション額
         max_size = max_position_value / price  # 購入可能なサイズ計算
 
-        # 強制ロスカット判定
-        if self.position:  # ポジションがある場合
-            if equity < self.entry_value * self.p.stop_loss_ratio:  # ストップロス判定
-                print(
-                    f"{self.data.datetime.date(0)} 強制ロスカット: 現在の資産額 {equity} < エントリー時の資産額 {self.entry_value * self.p.stop_loss_ratio}"
-                )
-                self.close()  # ポジションをクローズ
-                self.entry_value = None  # エントリー価格をリセット
-
-                return  # 次の処理へ
-
         idx = len(self) - 1  # 現在のインデックス
         data_len = len(self.data)  # データの長さ
 
@@ -43,6 +31,7 @@ class BuyOnlyStrategy(bt.Strategy):
 
         avg_rate = utils.get_change_rates_low(self)  # 平均変化率計算
         today = self.data.datetime.date(0)  # 今日の日付取得
+        price = self.data.close[0]  # 今日の終値取得
 
         # 指値価格を計算
         limit_price = round(price * (1 + avg_rate), 2)
@@ -54,7 +43,6 @@ class BuyOnlyStrategy(bt.Strategy):
 
         if buy_size > 0:
             self.buy(size=buy_size, price=limit_price, exectype=bt.Order.Limit)
-            self.entry_value = equity  # 建玉時の資産を記録
             print(
                 f"{today} 平均変化率: {avg_rate:.4%} → 指値買い {buy_size} BTC @ {limit_price}"
             )
