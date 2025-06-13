@@ -14,37 +14,36 @@ class BuyOnlyStrategy(bt.Strategy):
         self.starting_cash = self.p.initial_cash
 
     def next(self):
-        idx = len(self) - 1
-        data_len = len(self.data)
+        idx = len(self) - 1  # 現在のインデックス
+        data_len = len(self.data)  # 全体の長さ
 
-        if idx < 31 or idx > data_len - 1:
-            return  # 前後30日を除外（1日ズレるので31必要）
+        # 前後30日は検証しない
+        if idx < 30 or idx > data_len - 30:
+            return
 
-        # 前日終値 → 翌日安値の変化率を30日分計算
-        change_rates = []
-        for i in range(30):
-            close_today = self.data.close[-i - 1]
-            low_next = self.data.low[-i]
-            change = (low_next - close_today) / close_today
-            change_rates.append(change)
+        # 過去30日のデータを取得して DataFrame にする
+        closes = [self.data.close[-i] for i in range(29, -1, -1)]
+        lows = [self.data.low[-i] for i in range(29, -1, -1)]
+        dates = [self.data.datetime.date(-i) for i in range(29, -1, -1)]
 
-        avg_rate = sum(change_rates) / len(change_rates)
+        df = pd.DataFrame({"datetime": dates, "close": closes, "low": lows})
+
+        avg_rate = calculate_avg_change_rate(df)
         today = self.data.datetime.date(0)
-        price = self.data.close[0]
+        print(f"{today} 過去30日変化率平均: {avg_rate:.4%}")
 
-        # 指値価格を計算
-        limit_price = round(price * (1 + avg_rate), 2)
+        # 閾値より悪化していたら買い戦略を発動（例：-2%以下）
+        if avg_rate < -0.02:
+            price = self.data.close[0]
+            cash = self.broker.get_cash()
+            buy_amount = cash * self.p.buy_ratio
+            buy_size = round(buy_amount / price, 5)
 
-        # 資金の buy_ratio で購入サイズ計算
-        cash = self.broker.get_cash()
-        buy_amount = cash * self.p.buy_ratio
-        buy_size = round(buy_amount / limit_price, 5)
+            limit_price = price * self.p.buy_price_multiplier
 
-        if buy_size > 0:
-            self.buy(size=buy_size, price=limit_price, exectype=bt.Order.Limit)
-            print(
-                f"{today} 平均変化率: {avg_rate:.4%} → 指値買い {buy_size} BTC @ {limit_price}"
-            )
+            if buy_size > 0:
+                self.buy(size=buy_size, price=limit_price, exectype=bt.Order.Limit)
+                print(f"{today} 指値買い {buy_size} BTC @ {limit_price}")
 
         # 利確ロジック（元のまま）
         position_size = self.position.size
