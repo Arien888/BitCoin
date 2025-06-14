@@ -1,4 +1,11 @@
+import requests
+import time
+import hmac
+import hashlib
+import base64
 import json
+import yaml
+import csv
 
 
 from bitget_utils import load_config, get_assets, save_assets_to_csv_jp
@@ -9,6 +16,60 @@ from bitget_keys import (
     futures_keys,
     futures_position_keys,
 )
+
+
+# spot_keys = ["coin", "available", "limitAvailable", "frozen", "locked", "uTime"]
+# margin_keys = [
+#     "coin",
+#     "totalAmount",
+#     "available",
+#     "frozen",
+#     "borrow",
+#     "interest",
+#     "net",
+#     "coupon",
+#     "cTime",
+#     "uTime",
+# ]
+# earn_keys = ["coin", "amount"]
+# futures_keys = [
+#     "coin",  # 通貨名
+#     "equity",  # 資産価値（残高合計）
+#     "available",  # 利用可能残高
+#     "locked",  # 凍結資産
+#     "unrealizedPL",  # 未実現損益（pnl）
+#     "initialMargin",  # 必要初期証拠金
+#     "maintMargin",  # 必要維持証拠金
+#     "marginRatio",  # 証拠金率
+#     "marginBalance",  # 証拠金残高
+#     "maxWithdrawAmount",  # 最大出金可能額
+# ]
+# futures_position_keys = [
+#     "symbol",
+#     "holdSide",
+#     "available",
+#     "locked",
+#     "total",
+#     "leverage",
+#     "achievedProfits",
+#     "openPriceAvg",
+#     "marginMode",
+#     "posMode",
+#     "unrealizedPL",
+#     "liquidationPrice",
+#     "keepMarginRate",
+#     "markPrice",
+#     "marginRatio",
+#     "breakEvenPrice",
+#     "totalFee",
+#     "takeProfit",
+#     "stopLoss",
+#     "takeProfitId",
+#     "stopLossId",
+#     "deductedFee",
+#     "cTime",
+#     "uTime",
+# ]
 
 
 def main():
