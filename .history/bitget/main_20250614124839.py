@@ -26,7 +26,7 @@ margin_keys = [
 ]
 earn_keys = ["coin", "amount"]
 futures_keys = [
-    "coin",  # 通貨名
+    "coin",  # 通貨名（例：USDT, BTC）
     "equity",  # 資産価値（残高合計）
     "available",  # 利用可能残高
     "locked",  # 凍結資産
@@ -36,32 +36,6 @@ futures_keys = [
     "marginRatio",  # 証拠金率
     "marginBalance",  # 証拠金残高
     "maxWithdrawAmount",  # 最大出金可能額
-]
-futures_position_keys = [
-    "symbol",
-    "holdSide",
-    "available",
-    "locked",
-    "total",
-    "leverage",
-    "achievedProfits",
-    "openPriceAvg",
-    "marginMode",
-    "posMode",
-    "unrealizedPL",
-    "liquidationPrice",
-    "keepMarginRate",
-    "markPrice",
-    "marginRatio",
-    "breakEvenPrice",
-    "totalFee",
-    "takeProfit",
-    "stopLoss",
-    "takeProfitId",
-    "stopLossId",
-    "deductedFee",
-    "cTime",
-    "uTime",
 ]
 
 
@@ -85,17 +59,6 @@ def main():
                     product_type="USDT-FUTURES",
                 )
                 keys = futures_keys
-
-            elif asset_type == "futures_positions":
-                result = get_assets(
-                    api_key,
-                    api_secret,
-                    api_passphrase,
-                    path,
-                    product_type="USDT-FUTURES",
-                )
-                keys = futures_position_keys
-
             else:
                 result = get_assets(api_key, api_secret, api_passphrase, path)
                 if asset_type == "spot":
@@ -106,9 +69,6 @@ def main():
                     keys = earn_keys
                 else:
                     keys = []
-
-                # ここでレスポンス中身を確認
-            print(json.dumps(result, indent=2, ensure_ascii=False))  # 追加
 
             save_assets_to_csv_jp(f"{asset_type}_assets.csv", result, keys)
         except Exception as e:

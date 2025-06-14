@@ -6,27 +6,16 @@ import base64
 import yaml
 import csv
 
-
 def load_config(path="config.yaml"):
     with open(path, "r") as f:
         return yaml.safe_load(f)
 
-
-def get_assets(api_key, api_secret, api_passphrase, request_path, product_type=None):
+def get_assets(api_key, api_secret, api_passphrase, request_path):
     base_url = "https://api.bitget.com"
     method = "GET"
     timestamp = str(int(time.time() * 1000))
-    # クエリパラメータがある場合は request_path に追加し、署名対象文字列にも含める
-    if product_type:
-        query_string = f"?productType={product_type}"
-        full_path = request_path + query_string
-    else:
-        query_string = ""
-        full_path = request_path
-
     body = ""
-
-    prehash_string = timestamp + method + full_path + body
+    prehash_string = timestamp + method + request_path + body
 
     signature = hmac.new(
         api_secret.encode("utf-8"), prehash_string.encode("utf-8"), hashlib.sha256
@@ -42,7 +31,7 @@ def get_assets(api_key, api_secret, api_passphrase, request_path, product_type=N
         "locale": "en-US",
     }
 
-    url = base_url + full_path
+    url = base_url + request_path
     response = requests.get(url, headers=headers)
     response.raise_for_status()
     return response.json()

@@ -3,7 +3,7 @@ import pandas as pd
 from datetime import datetime
 
 
-def fetch_binance_ohlcv(symbol="ETHUSDT", interval="1d", limit=1000):
+def fetch_binance_ohlcv(symbol="BTCUSDT", interval="1d", limit=1000):
     url = "https://api.binance.com/api/v3/klines"
     params = {"symbol": symbol, "interval": interval, "limit": limit}
     res = requests.get(url, params=params)

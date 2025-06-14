@@ -26,42 +26,11 @@ margin_keys = [
 ]
 earn_keys = ["coin", "amount"]
 futures_keys = [
-    "coin",  # 通貨名
-    "equity",  # 資産価値（残高合計）
-    "available",  # 利用可能残高
-    "locked",  # 凍結資産
-    "unrealizedPL",  # 未実現損益（pnl）
-    "initialMargin",  # 必要初期証拠金
-    "maintMargin",  # 必要維持証拠金
-    "marginRatio",  # 証拠金率
-    "marginBalance",  # 証拠金残高
-    "maxWithdrawAmount",  # 最大出金可能額
-]
-futures_position_keys = [
-    "symbol",
-    "holdSide",
+    "coin",
+    "equity",
     "available",
     "locked",
-    "total",
-    "leverage",
-    "achievedProfits",
-    "openPriceAvg",
-    "marginMode",
-    "posMode",
-    "unrealizedPL",
-    "liquidationPrice",
-    "keepMarginRate",
-    "markPrice",
-    "marginRatio",
-    "breakEvenPrice",
-    "totalFee",
-    "takeProfit",
-    "stopLoss",
-    "takeProfitId",
-    "stopLossId",
-    "deductedFee",
-    "cTime",
-    "uTime",
+    "unrealizedPnl",  # Lとlの違いに注意
 ]
 
 
@@ -85,17 +54,6 @@ def main():
                     product_type="USDT-FUTURES",
                 )
                 keys = futures_keys
-
-            elif asset_type == "futures_positions":
-                result = get_assets(
-                    api_key,
-                    api_secret,
-                    api_passphrase,
-                    path,
-                    product_type="USDT-FUTURES",
-                )
-                keys = futures_position_keys
-
             else:
                 result = get_assets(api_key, api_secret, api_passphrase, path)
                 if asset_type == "spot":
@@ -107,12 +65,39 @@ def main():
                 else:
                     keys = []
 
-                # ここでレスポンス中身を確認
-            print(json.dumps(result, indent=2, ensure_ascii=False))  # 追加
-
             save_assets_to_csv_jp(f"{asset_type}_assets.csv", result, keys)
         except Exception as e:
             print(f"エラー発生（{asset_type}）: {e}")
+
+
+def get_assets(api_key, api_secret, api_passphrase, path, product_type=None):
+    base_url = "https://api.bitget.com"
+    url = base_url + path
+
+    timestamp = str(int(time.time() * 1000))
+    method = "GET"
+    request_path = path
+    if product_type:
+        request_path += f"?productType={product_type}"
+
+    message = timestamp + method + request_path
+    signature = hmac.new(
+        api_secret.encode(), message.encode(), hashlib.sha256
+    ).hexdigest()
+
+    headers = {
+        "ACCESS-KEY": api_key,
+        "ACCESS-SIGN": signature,
+        "ACCESS-PASSPHRASE": api_passphrase,
+        "ACCESS-TIMESTAMP": timestamp,
+        "Content-Type": "application/json",
+    }
+
+    params = {"productType": product_type} if product_type else None
+
+    response = requests.get(url, headers=headers, params=params)
+    response.raise_for_status()
+    return response.json()["data"]
 
 
 if __name__ == "__main__":

@@ -85,17 +85,6 @@ def main():
                     product_type="USDT-FUTURES",
                 )
                 keys = futures_keys
-
-            elif asset_type == "futures_positions":
-                result = get_assets(
-                    api_key,
-                    api_secret,
-                    api_passphrase,
-                    path,
-                    product_type="USDT-FUTURES",
-                )
-                keys = futures_position_keys
-
             else:
                 result = get_assets(api_key, api_secret, api_passphrase, path)
                 if asset_type == "spot":
