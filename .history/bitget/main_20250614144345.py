@@ -1,12 +1,7 @@
 import json
 
 
-from bitget_utils import (
-    load_config,
-    get_assets,
-    save_assets_to_csv_jp,
-    write_to_existing_excel,
-)
+from bitget_utils import load_config, get_assets, save_assets_to_csv_jp, write_to_existing_excel
 from bitget_keys import (
     spot_keys,
     margin_keys,
@@ -22,7 +17,6 @@ def main():
     api_secret = config["bitget"]["secret"]
     api_passphrase = config["bitget"]["passphrase"]
     urls = config["bitget"]["urls"]
-    excel_path = config["paths"]["asset_excel"]
 
     for asset_type, path in urls.items():
         print(f"取得中: {asset_type} 資産情報")
@@ -62,7 +56,7 @@ def main():
                 # ここでレスポンス中身を確認
             print(json.dumps(result, indent=2, ensure_ascii=False))  # 追加
 
-            write_to_existing_excel(excel_path, result, keys, sheet_name=asset_type)
+            write_to_existing_excel("assets.xlsx", result, keys, sheet_name="Assets")
 
         except Exception as e:
             print(f"エラー発生（{asset_type}）: {e}")

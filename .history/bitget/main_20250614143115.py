@@ -1,12 +1,7 @@
 import json
 
 
-from bitget_utils import (
-    load_config,
-    get_assets,
-    save_assets_to_csv_jp,
-    write_to_existing_excel,
-)
+from bitget_utils import load_config, get_assets, save_assets_to_csv_jp
 from bitget_keys import (
     spot_keys,
     margin_keys,
@@ -22,12 +17,11 @@ def main():
     api_secret = config["bitget"]["secret"]
     api_passphrase = config["bitget"]["passphrase"]
     urls = config["bitget"]["urls"]
-    excel_path = config["paths"]["asset_excel"]
 
     for asset_type, path in urls.items():
         print(f"取得中: {asset_type} 資産情報")
         try:
-            if asset_type == "bitget_futures":
+            if asset_type == "futures":
                 # 先物だけ productType パラメータを指定
                 result = get_assets(
                     api_key,
@@ -38,7 +32,7 @@ def main():
                 )
                 keys = futures_keys
 
-            elif asset_type == "bitget_futures_positions":
+            elif asset_type == "futures_positions":
                 result = get_assets(
                     api_key,
                     api_secret,
@@ -50,11 +44,11 @@ def main():
 
             else:
                 result = get_assets(api_key, api_secret, api_passphrase, path)
-                if asset_type == "bitget_spot":
+                if asset_type == "spot":
                     keys = spot_keys
-                elif asset_type == "bitget_margin":
+                elif asset_type == "margin":
                     keys = margin_keys
-                elif asset_type == "bitget_earn":
+                elif asset_type == "earn":
                     keys = earn_keys
                 else:
                     keys = []
@@ -62,7 +56,8 @@ def main():
                 # ここでレスポンス中身を確認
             print(json.dumps(result, indent=2, ensure_ascii=False))  # 追加
 
-            write_to_existing_excel(excel_path, result, keys, sheet_name=asset_type)
+            # ここで外部ファイルのCSV書き込みメソッドを呼び出す
+            save_assets_to_csv_jp(f"{asset_type}_assets.csv", result, keys)
 
         except Exception as e:
             print(f"エラー発生（{asset_type}）: {e}")

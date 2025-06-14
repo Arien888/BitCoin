@@ -69,36 +69,21 @@ def save_assets_to_csv_jp(filename, data, keys):
     print(f"{filename} にCSV出力しました")
 
 
-def write_to_existing_excel(filename, data, keys, sheet_name="Sheet1"):
-    """
-    既存のExcelファイルにdataを書き込む（上書きまたは追記）
-    - filename: Excelファイル名（既存ファイル）
-    - data: 辞書リストまたは dict の 'data' 部分。例: data["data"]
-    - keys: 書き込みたいキーのリスト（列ヘッダーにする）
-    - sheet_name: 書き込み先シート名（デフォルト"Sheet1"）
+def save_assets_to_csv_jp(filename, data, keys):
+    if data is None or not isinstance(data, dict):
+        print(f"{filename}: データが不正です")
+        return
 
-    既存ファイルの先頭にヘッダーを書き、続けてデータを書き込む（シートは上書きされる）
-    """
-    # ファイル読み込み
-    wb = load_workbook(filename)
-
-    # シート取得 or 新規作成
-    if sheet_name in wb.sheetnames:
-        ws = wb[sheet_name]
-        # 既存シートの内容をクリア（全データ削除）
-        ws.delete_rows(1, ws.max_row)
-    else:
-        ws = wb.create_sheet(sheet_name)
-
-    # ヘッダー書き込み
-    ws.append(keys)
-
-    # データ書き込み
     assets = data.get("data", [])
-    for asset in assets:
-        row = [asset.get(k, "") for k in keys]
-        ws.append(row)
+    if not assets:
+        print(f"{filename}: 資産データがありません")
+        return
 
-    # 保存
-    wb.save(filename)
-    print(f"{filename} に既存ファイル上書き保存しました")
+    with open(filename, mode="w", newline="", encoding="utf-8") as f:
+        writer = csv.writer(f)
+        writer.writerow(keys)
+        for asset in assets:
+            row = [asset.get(k, "") for k in keys]
+            writer.writerow(row)
+
+    print(f"{filename} にCSV出力しました")
