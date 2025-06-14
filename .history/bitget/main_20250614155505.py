@@ -62,7 +62,7 @@ def main():
                 # ここでレスポンス中身を確認
             print(json.dumps(result, indent=2, ensure_ascii=False))  # 追加
 
-            write_to_existing_excel(excel_path, result, keys, sheet_name=asset_type)
+            write_to_existing_excel("excel_path", result, keys, sheet_name=asset_type)
 
         except Exception as e:
             print(f"エラー発生（{asset_type}）: {e}")
