@@ -25,7 +25,7 @@ class BuyOnlyStrategy(bt.Strategy):
         max_size = max_position_value / price  # 購入可能なサイズ計算
 
         # 強制ロスカット判定
-        if utils.check_force_liquidation(self, equity):
+        if utils.check_force_liquidation(equity):
             return
 
         idx = len(self) - 1  # 現在のインデックス
@@ -88,3 +88,6 @@ class BuyOnlyStrategy(bt.Strategy):
             f.write(f"最終資産額: {final_value}\n")
             f.write(f"最終利益: {final_profit}\n")
         print("結果をresult.txtに保存しました")
+
+
+
