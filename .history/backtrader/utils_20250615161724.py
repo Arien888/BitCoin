@@ -62,14 +62,12 @@ def execute_sell_order(
 def execute_buy_order(
     strategy, price, avg_rate, max_position_value, equity, today
 ):  # 注文実行関数
-    limit_price = round(price * (1 + avg_rate), 2)  # 指値買い価格を計算
-    buy_amount = max_position_value * strategy.p.buy_ratio  # 資金のｘ%を買う
-    buy_size = round(buy_amount / limit_price, 5)  # 購入サイズを計算
+    limit_price = round(price * (1 + avg_rate), 2)
+    buy_amount = max_position_value * strategy.p.buy_ratio
+    buy_size = round(buy_amount / limit_price, 5)
 
     if buy_size > 0:
-        strategy.buy(
-            size=buy_size, price=limit_price, exectype=bt.Order.Limit
-        )  # 指値買い注文を発行
+        strategy.buy(size=buy_size, price=limit_price, exectype=bt.Order.Limit)
 
         # 既存ポジションがあればentry_valueを加重平均で更新（ナンピン対応）
         if strategy.position:  # 現在ポジションがある場合

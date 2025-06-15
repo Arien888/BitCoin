@@ -4,5 +4,5 @@ strategy_params = {
     "buy_ratio": 0.09,  # 資金のｘ%を買う
     "sell_ratio": 0.09,  # 資金のｘ%を売る
     "leverage": 10,  # レバレッジ倍率
-    "stop_loss_ratio": 0.9,  # ストップロスの割合
+    "stop_loss_ratio": 0.5,  # ストップロスの割合
 }

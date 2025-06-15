@@ -22,6 +22,7 @@ class BuyOnlyStrategy(bt.Strategy):
         )  # レバレッジ情報を計算
 
         if utils.check_force_liquidation(self, equity):  # 強制ロスカット判定
+            print("強制ロスカットが発生しました")
             return
 
         idx = len(self) - 1  # 現在のインデックス
