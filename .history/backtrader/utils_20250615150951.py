@@ -57,22 +57,17 @@ def execute_sell_order(
         print(f"{today} 指値売り {sell_size} BTC @ {limit_price_sell}")
 
 
-def execute_buy_order(strategy, price, avg_rate, max_position_value, equity, today):
+def execute_buy_order(
+    strategy, price, avg_rate, max_position_value
+):  # 購入ロジックを実行する関数
+    today = strategy.data.datetime.date(0)
     limit_price = round(price * (1 + avg_rate), 2)
     buy_amount = max_position_value * strategy.p.buy_ratio
     buy_size = round(buy_amount / limit_price, 5)
 
     if buy_size > 0:
         strategy.buy(size=buy_size, price=limit_price, exectype=bt.Order.Limit)
-        strategy.entry_value = equity
+        strategy.entry_value = strategy.broker.getvalue()
         print(
             f"{today} 平均変化率: {avg_rate:.4%} → 指値買い {buy_size} BTC @ {limit_price}"
         )
-
-
-def calculate_leverage_info(strategy):
-    price = strategy.data.close[0]
-    equity = strategy.broker.getvalue()
-    max_position_value = equity * strategy.p.leverage
-    max_size = max_position_value / price
-    return price, equity, max_position_value, max_size

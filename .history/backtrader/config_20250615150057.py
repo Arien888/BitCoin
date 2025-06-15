@@ -1,8 +1,10 @@
 # ✅ ここで初期設定を一か所にまとめる
 strategy_params = {
     "initial_cash": 1000,
+    "sell_price_multiplier": 1.02,
+    "buy_price_multiplier": 0.85,
     "buy_ratio": 0.09,  # 資金のｘ%を買う
     "sell_ratio": 0.09,  # 資金のｘ%を売る
-    "leverage": 3,  # レバレッジ倍率
+    "leverage": 10,  # レバレッジ倍率
     "stop_loss_ratio": 0.1,  # ストップロスの割合
 }
