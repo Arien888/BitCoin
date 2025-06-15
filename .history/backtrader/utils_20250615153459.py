@@ -57,32 +57,14 @@ def execute_sell_order(
         print(f"{today} 指値売り {sell_size} BTC @ {limit_price_sell}")
 
 
-def execute_buy_order(
-    strategy, price, avg_rate, max_position_value, equity, today
-):  # 注文実行関数
+def execute_buy_order(strategy, price, avg_rate, max_position_value, equity, today): # 注文実行関数
     limit_price = round(price * (1 + avg_rate), 2)
     buy_amount = max_position_value * strategy.p.buy_ratio
     buy_size = round(buy_amount / limit_price, 5)
 
     if buy_size > 0:
         strategy.buy(size=buy_size, price=limit_price, exectype=bt.Order.Limit)
-
-        # 既存ポジションがあればentry_valueを加重平均で更新（ナンピン対応）
-        if strategy.position:  # 現在ポジションがある場合
-            current_size = strategy.position.size  # 現在のポジションサイズ
-            current_entry_value = (
-                strategy.entry_value if strategy.entry_value is not None else equity
-            )  # 現在のエントリー時の資産額
-            total_size = current_size + buy_size  # 合計サイズ
-            weighted_entry_value = (
-                (current_entry_value * current_size) + (equity * buy_size)
-            ) / total_size  # 加重平均でエントリー時の資産額を更新
-            strategy.entry_value = (
-                weighted_entry_value  # 更新されたエントリー時の資産額を保存
-            )
-        else:
-            strategy.entry_value = equity  # ポジションがない場合は現在の資産額を保存
-
+        strategy.entry_value = equity
         print(
             f"{today} 平均変化率: {avg_rate:.4%} → 指値買い {buy_size} BTC @ {limit_price}"
         )
