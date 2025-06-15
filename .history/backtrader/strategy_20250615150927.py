@@ -17,9 +17,13 @@ class BuyOnlyStrategy(bt.Strategy):
 
     def next(self):  # 1日ごとの処理
 
-        price, equity, max_position_value, _ = utils.calculate_leverage_info(
-            self
-        )  # レバレッジ情報を計算
+        # レバレッジ設定
+        price = self.data.close[0]  # 今日の終値取得
+        equity = self.broker.getvalue()  # 現在の資産額取得
+        max_position_value = (
+            equity * self.p.leverage
+        )  # レバレッジを考慮した最大ポジション額
+        max_size = max_position_value / price  # 購入可能なサイズ計算
 
         # 強制ロスカット判定
         if utils.check_force_liquidation(self, equity):
@@ -34,11 +38,20 @@ class BuyOnlyStrategy(bt.Strategy):
         avg_rate = utils.get_change_rates_low(self)  # 平均変化率計算
         today = self.data.datetime.date(0)  # 今日の日付取得
 
-        # 買い注文実行
-        utils.execute_buy_order(
-            self, price, avg_rate, max_position_value, equity, today
-        )  # 注文実行
+        # 指値価格を計算
+        limit_price = round(price * (1 + avg_rate), 2)
 
+        # 資金の buy_ratio で購入サイズ計算
+        cash = self.broker.get_cash()
+        buy_amount = max_position_value * self.p.buy_ratio  # 購入額計算
+        buy_size = round(buy_amount / limit_price, 5)  # 購入サイズ計算
+
+        if buy_size > 0:
+            self.buy(size=buy_size, price=limit_price, exectype=bt.Order.Limit)
+            self.entry_value = equity  # 建玉時の資産を記録
+            print(
+                f"{today} 平均変化率: {avg_rate:.4%} → 指値買い {buy_size} BTC @ {limit_price}"
+            )
         # 利確ロジック
         if self.position:
             utils.execute_sell_order(self, price, max_position_value)

@@ -1,6 +1,3 @@
-import backtrader as bt
-
-
 def get_change_rates_low(self):
     """前日終値 → 翌日安値の変化率を30日分計算する関数"""
 
@@ -42,9 +39,7 @@ def check_force_liquidation(self, equity):  # 強制ロスカット判定関数
     return False
 
 
-def execute_sell_order(
-    strategy, price, max_position_value
-):  # 利確ロジックを実行する関数
+def execute_sell_order(strategy, price, max_position_value):
     today = strategy.data.datetime.date(0)
     position_size = strategy.position.size
     sell_amount = max_position_value * strategy.p.sell_ratio
@@ -55,24 +50,3 @@ def execute_sell_order(
     if sell_size > 0:
         strategy.sell(size=sell_size, price=limit_price_sell, exectype=bt.Order.Limit)
         print(f"{today} 指値売り {sell_size} BTC @ {limit_price_sell}")
-
-
-def execute_buy_order(strategy, price, avg_rate, max_position_value, equity, today):
-    limit_price = round(price * (1 + avg_rate), 2)
-    buy_amount = max_position_value * strategy.p.buy_ratio
-    buy_size = round(buy_amount / limit_price, 5)
-
-    if buy_size > 0:
-        strategy.buy(size=buy_size, price=limit_price, exectype=bt.Order.Limit)
-        strategy.entry_value = equity
-        print(
-            f"{today} 平均変化率: {avg_rate:.4%} → 指値買い {buy_size} BTC @ {limit_price}"
-        )
-
-
-def calculate_leverage_info(strategy):
-    price = strategy.data.close[0]
-    equity = strategy.broker.getvalue()
-    max_position_value = equity * strategy.p.leverage
-    max_size = max_position_value / price
-    return price, equity, max_position_value, max_size

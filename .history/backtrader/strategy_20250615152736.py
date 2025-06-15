@@ -17,9 +17,7 @@ class BuyOnlyStrategy(bt.Strategy):
 
     def next(self):  # 1日ごとの処理
 
-        price, equity, max_position_value, _ = utils.calculate_leverage_info(
-            self
-        )  # レバレッジ情報を計算
+        price, equity, max_position_value, _ = utils.calculate_leverage_info(self)
 
         # 強制ロスカット判定
         if utils.check_force_liquidation(self, equity):
@@ -34,7 +32,6 @@ class BuyOnlyStrategy(bt.Strategy):
         avg_rate = utils.get_change_rates_low(self)  # 平均変化率計算
         today = self.data.datetime.date(0)  # 今日の日付取得
 
-        # 買い注文実行
         utils.execute_buy_order(
             self, price, avg_rate, max_position_value, equity, today
         )  # 注文実行
