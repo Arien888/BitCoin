@@ -12,6 +12,9 @@ import os
 # 自分のファイル（main.py）があるディレクトリを取得
 BASE_DIR = os.path.dirname(os.path.abspath(__file__))
 
+# config.yaml のフルパスを作る
+config_path = os.path.join(BASE_DIR, "config.yaml")
+
 
 def load_config(path=os.path.join(BASE_DIR, "config.yaml")):
     with open(path, "r") as f:

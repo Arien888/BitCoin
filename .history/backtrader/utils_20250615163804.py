@@ -32,9 +32,6 @@ def get_change_rates_high(self):
 
 
 def check_force_liquidation(strategy, equity):  # 強制ロスカット判定関数
-    if strategy.entry_value is None:
-        return False  # ロスカット判定なし
-
     if (
         strategy.position and equity < strategy.entry_value * strategy.p.stop_loss_ratio
     ):  # ストップロスの割合を超えた場合
@@ -55,12 +52,11 @@ def execute_sell_order(
     sell_amount = max_position_value * strategy.p.sell_ratio
     sell_size = round(min(sell_amount / price, position_size), 5)
 
-    # limit_price_sell = round(price * (1 + get_change_rates_high(strategy)), 2)
-    limit_price_sell = round(price * (1 + 0.01), 2)
+    limit_price_sell = round(price * (1 - get_change_rates_high(strategy)), 2)
 
     print(
-        get_change_rates_high(strategy),
-        "get_change_rates_high(strategy)",
+        round(price * (1 - get_change_rates_high(strategy)), 2),
+        "round(price * (1 - get_change_rates_high(strategy)), 2)",
     )
 
     if sell_size > 0:
@@ -71,7 +67,7 @@ def execute_sell_order(
 def execute_buy_order(
     strategy, price, avg_rate, max_position_value, equity, today
 ):  # 注文実行関数
-    limit_price = round(price * (1 + avg_rate), 2)  # 指値買い価格を計算
+    limit_price = round(price * (1 - avg_rate), 2)  # 指値買い価格を計算
     buy_amount = max_position_value * strategy.p.buy_ratio  # 資金のｘ%を買う
     buy_size = round(buy_amount / limit_price, 5)  # 購入サイズを計算
 

@@ -28,13 +28,11 @@ def get_change_rates_high(self):
         change_rates.append(change)  # リストに追加
 
     avg_rate = sum(change_rates) / len(change_rates)  # 平均変化率計算
+    print(avg_rate, " high_next avg_rate")  # 平均変化率を出力
     return avg_rate
 
 
 def check_force_liquidation(strategy, equity):  # 強制ロスカット判定関数
-    if strategy.entry_value is None:
-        return False  # ロスカット判定なし
-
     if (
         strategy.position and equity < strategy.entry_value * strategy.p.stop_loss_ratio
     ):  # ストップロスの割合を超えた場合
@@ -55,12 +53,11 @@ def execute_sell_order(
     sell_amount = max_position_value * strategy.p.sell_ratio
     sell_size = round(min(sell_amount / price, position_size), 5)
 
-    # limit_price_sell = round(price * (1 + get_change_rates_high(strategy)), 2)
-    limit_price_sell = round(price * (1 + 0.01), 2)
+    limit_price_sell = round(price * (1 + get_change_rates_high(strategy)), 2)
 
     print(
-        get_change_rates_high(strategy),
-        "get_change_rates_high(strategy)",
+        round(price * (1 - get_change_rates_high(strategy)), 2),
+        "round(price * (1 - get_change_rates_high(strategy)), 2)",
     )
 
     if sell_size > 0:
