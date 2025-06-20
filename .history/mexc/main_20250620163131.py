@@ -13,7 +13,7 @@ config_path = os.path.join(BASE_DIR, "config.yaml")
 
 
 # config.yaml読み込み
-with open(config_path, "r") as f:
+with open("config.yaml", "r") as f:
     config = yaml.safe_load(f)
 
 api_key = config["mexc"]["apiKey"]

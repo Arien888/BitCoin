@@ -1,26 +1,13 @@
 import yaml
 import ccxt
 import pandas as pd
-from mexc_utils import save_positions_and_spot_to_excel  # ← 外部メソッドをインポート
-
-import os
-
-# 自分のファイル（main.py）があるディレクトリを取得
-BASE_DIR = os.path.dirname(os.path.abspath(__file__))
-
-# config.yaml のフルパスを作る
-config_path = os.path.join(BASE_DIR, "config.yaml")
-
 
 # config.yaml読み込み
-with open(config_path, "r") as f:
+with open("config.yaml", "r") as f:
     config = yaml.safe_load(f)
 
 api_key = config["mexc"]["apiKey"]
 secret = config["mexc"]["secret"]
-save_path = config["save_path"]
-excel_file = config["save_path"]
-save_path = config["paths"]["asset_excel"]
 # 先物用インスタンス（swap）
 exchange_swap = ccxt.mexc(
     {
@@ -51,11 +38,6 @@ try:
     spot_balances = balance["total"]
     filtered_spot = {k: v for k, v in spot_balances.items() if v and v > 0}
     df_spot = pd.DataFrame(list(filtered_spot.items()), columns=["通貨", "保有量"])
-
-    # Excelファイルに保存（外部メソッド呼び出し）
-    save_positions_and_spot_to_excel(df_positions, df_spot, save_path)
-
-    print(f"先物ポジションと現物保有残高を'{excel_file}'に保存しました。")
 
 except Exception as e:
     print("Error:", e)

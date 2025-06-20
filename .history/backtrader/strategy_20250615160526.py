@@ -22,6 +22,7 @@ class BuyOnlyStrategy(bt.Strategy):
         )  # レバレッジ情報を計算
 
         if utils.check_force_liquidation(self, equity):  # 強制ロスカット判定
+            print("強制ロスカットが発生しました")
             return
 
         idx = len(self) - 1  # 現在のインデックス
@@ -37,7 +38,6 @@ class BuyOnlyStrategy(bt.Strategy):
         utils.execute_buy_order(
             self, price, avg_rate, max_position_value, equity, today
         )  # 注文実行
-        print(avg_rate, "avg_rate")  # 平均変化率を出力
 
         # 利確ロジック
         if self.position:

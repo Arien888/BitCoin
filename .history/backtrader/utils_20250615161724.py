@@ -32,9 +32,6 @@ def get_change_rates_high(self):
 
 
 def check_force_liquidation(strategy, equity):  # 強制ロスカット判定関数
-    if strategy.entry_value is None:
-        return False  # ロスカット判定なし
-
     if (
         strategy.position and equity < strategy.entry_value * strategy.p.stop_loss_ratio
     ):  # ストップロスの割合を超えた場合
@@ -55,13 +52,7 @@ def execute_sell_order(
     sell_amount = max_position_value * strategy.p.sell_ratio
     sell_size = round(min(sell_amount / price, position_size), 5)
 
-    # limit_price_sell = round(price * (1 + get_change_rates_high(strategy)), 2)
-    limit_price_sell = round(price * (1 + 0.01), 2)
-
-    print(
-        get_change_rates_high(strategy),
-        "get_change_rates_high(strategy)",
-    )
+    limit_price_sell = round(price * (1 - get_change_rates_high(strategy)), 2)
 
     if sell_size > 0:
         strategy.sell(size=sell_size, price=limit_price_sell, exectype=bt.Order.Limit)
@@ -71,14 +62,12 @@ def execute_sell_order(
 def execute_buy_order(
     strategy, price, avg_rate, max_position_value, equity, today
 ):  # 注文実行関数
-    limit_price = round(price * (1 + avg_rate), 2)  # 指値買い価格を計算
-    buy_amount = max_position_value * strategy.p.buy_ratio  # 資金のｘ%を買う
-    buy_size = round(buy_amount / limit_price, 5)  # 購入サイズを計算
+    limit_price = round(price * (1 + avg_rate), 2)
+    buy_amount = max_position_value * strategy.p.buy_ratio
+    buy_size = round(buy_amount / limit_price, 5)
 
     if buy_size > 0:
-        strategy.buy(
-            size=buy_size, price=limit_price, exectype=bt.Order.Limit
-        )  # 指値買い注文を発行
+        strategy.buy(size=buy_size, price=limit_price, exectype=bt.Order.Limit)
 
         # 既存ポジションがあればentry_valueを加重平均で更新（ナンピン対応）
         if strategy.position:  # 現在ポジションがある場合
@@ -100,12 +89,6 @@ def execute_buy_order(
             f"{today} 平均変化率: {avg_rate:.4%} → 指値買い {buy_size} BTC @ {limit_price}"
         )
     print("equity", equity)
-    if strategy.position:
-        print(
-            f"position size: {strategy.position.size}, entry_value: {strategy.entry_value}"
-        )
-    else:
-        print("no position")
 
 
 def calculate_leverage_info(strategy):  # レバレッジ情報を計算する関数

@@ -37,7 +37,6 @@ class BuyOnlyStrategy(bt.Strategy):
         utils.execute_buy_order(
             self, price, avg_rate, max_position_value, equity, today
         )  # 注文実行
-        print(avg_rate, "avg_rate")  # 平均変化率を出力
 
         # 利確ロジック
         if self.position:

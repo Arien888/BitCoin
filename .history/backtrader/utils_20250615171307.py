@@ -55,8 +55,7 @@ def execute_sell_order(
     sell_amount = max_position_value * strategy.p.sell_ratio
     sell_size = round(min(sell_amount / price, position_size), 5)
 
-    # limit_price_sell = round(price * (1 + get_change_rates_high(strategy)), 2)
-    limit_price_sell = round(price * (1 + 0.01), 2)
+    limit_price_sell = round(price * (1 + get_change_rates_high(strategy)), 2)
 
     print(
         get_change_rates_high(strategy),

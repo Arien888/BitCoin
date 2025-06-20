@@ -3,17 +3,8 @@ import ccxt
 import pandas as pd
 from mexc_utils import save_positions_and_spot_to_excel  # ← 外部メソッドをインポート
 
-import os
-
-# 自分のファイル（main.py）があるディレクトリを取得
-BASE_DIR = os.path.dirname(os.path.abspath(__file__))
-
-# config.yaml のフルパスを作る
-config_path = os.path.join(BASE_DIR, "config.yaml")
-
-
 # config.yaml読み込み
-with open(config_path, "r") as f:
+with open("config.yaml", "r") as f:
     config = yaml.safe_load(f)
 
 api_key = config["mexc"]["apiKey"]

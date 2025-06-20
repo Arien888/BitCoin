@@ -5,17 +5,12 @@ from mexc_utils import save_positions_and_spot_to_excel  # ← 外部メソッ�
 
 import os
 
-# 自分のファイル（main.py）があるディレクトリを取得
 BASE_DIR = os.path.dirname(os.path.abspath(__file__))
-
-# config.yaml のフルパスを作る
 config_path = os.path.join(BASE_DIR, "config.yaml")
 
-
-# config.yaml読み込み
 with open(config_path, "r") as f:
-    config = yaml.safe_load(f)
-
+    # ここでファイル読み込み処理
+    
 api_key = config["mexc"]["apiKey"]
 secret = config["mexc"]["secret"]
 save_path = config["save_path"]
