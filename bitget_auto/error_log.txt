@@ -1,0 +1,29 @@
+'latin-1' codec can't encode characters in position 0-3: ordinal not in range(256)
+'latin-1' codec can't encode characters in position 0-3: ordinal not in range(256)
+'latin-1' codec can't encode characters in position 0-3: ordinal not in range(256)
+'latin-1' codec can't encode characters in position 0-3: ordinal not in range(256)
+'latin-1' codec can't encode characters in position 0-3: ordinal not in range(256)
+'latin-1' codec can't encode characters in position 0-3: ordinal not in range(256)
+'latin-1' codec can't encode characters in position 0-3: ordinal not in range(256)
+'latin-1' codec can't encode characters in position 0-3: ordinal not in range(256)
+'latin-1' codec can't encode characters in position 0-3: ordinal not in range(256)
+'latin-1' codec can't encode characters in position 0-3: ordinal not in range(256)
+'latin-1' codec can't encode characters in position 0-3: ordinal not in range(256)
+'latin-1' codec can't encode characters in position 0-3: ordinal not in range(256)
+'latin-1' codec can't encode characters in position 0-3: ordinal not in range(256)
+'latin-1' codec can't encode characters in position 0-3: ordinal not in range(256)
+'latin-1' codec can't encode characters in position 0-3: ordinal not in range(256)
+'latin-1' codec can't encode characters in position 0-3: ordinal not in range(256)
+400 Client Error: Bad Request for url: https://api.bitget.com/api/mix/v1/order/placeOrder
+400 Client Error: Bad Request for url: https://api.bitget.com/api/mix/v1/order/placeOrder
+400 Client Error: Bad Request for url: https://api.bitget.com/api/mix/v1/order/placeOrder
+400 Client Error: Bad Request for url: https://api.bitget.com/api/mix/v1/order/placeOrder
+400 Client Error: Bad Request for url: https://api.bitget.com/api/mix/v1/order/placeOrder
+400 Client Error: Bad Request for url: https://api.bitget.com/api/mix/v1/order/placeOrder
+400 Client Error: Bad Request for url: https://api.bitget.com/api/mix/v1/order/placeOrder
+400 Client Error: Bad Request for url: https://api.bitget.com/api/mix/v1/order/placeOrder
+400 Client Error: Bad Request for url: https://api.bitget.com/api/mix/v1/order/placeOrder
+400 Client Error: Bad Request for url: https://api.bitget.com/api/mix/v1/order/placeOrder
+400 Client Error: Bad Request for url: https://api.bitget.com/api/mix/v1/order/placeOrder
+400 Client Error: Bad Request for url: https://api.bitget.com/api/mix/v1/order/placeOrder
+400 Client Error: Bad Request for url: https://api.bitget.com/api/mix/v1/order/placeOrder
