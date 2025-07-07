@@ -1,0 +1,8 @@
+2025-07-08 04:54:36 - ('BTC_USDT', 'BUY', 990000, 0.001, 'LIMIT') → {'error': "HTTPSConnectionPool(host='contract.mexc.com', port=443): Read timed out. (read timeout=5)"}
+2025-07-08 04:59:58 - ('BTC_USDT', 'BUY', 990000, 0.001, 'LIMIT') → {'error': "HTTPSConnectionPool(host='contract.mexc.com', port=443): Read timed out. (read timeout=5)"}
+2025-07-08 05:10:23 - ('BTC_USDT', 'BUY', 990000, 0.001, 'LIMIT') → {'error': "HTTPSConnectionPool(host='contract.mexc.com', port=443): Read timed out. (read timeout=5)"}
+2025-07-08 05:11:29 - ('BTC_USDT', 'BUY', 990000, 0.001, 'LIMIT') → {'error': "HTTPSConnectionPool(host='contract.mexc.com', port=443): Read timed out. (read timeout=5)"}
+2025-07-08 05:12:12 - ('BTC_USDT', 'BUY', 990000, 0.001, 'LIMIT') → {'error': "HTTPSConnectionPool(host='contract.mexc.com', port=443): Read timed out. (read timeout=5)"}
+2025-07-08 05:14:16 - ('BTC_USDT', 'BUY', 990000, 0.001, 'LIMIT') → {'error': "HTTPSConnectionPool(host='contract.mexc.com', port=443): Read timed out. (read timeout=15)"}
+2025-07-08 05:15:10 - ('BTC_USDT', 'BUY', 990000, 0.001, 'LIMIT') → {'error': "HTTPSConnectionPool(host='contract.mexc.com', port=443): Read timed out. (read timeout=15)"}
+2025-07-08 05:20:02 - ('BTC_USDT', 'BUY', 990000, 0.001, 'LIMIT') → {'error': "HTTPSConnectionPool(host='contract.mexc.com', port=443): Read timed out. (read timeout=15)"}
