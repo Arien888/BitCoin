@@ -122,7 +122,8 @@ def main():
     print("[INFO] Excel注文データ一覧:")
 
     for order in orders:
-        print(order)
+        safe_order = tuple(str(x).encode("ascii", "ignore").decode() for x in order)
+        print(safe_order)
         place_order(*order)
 
 
