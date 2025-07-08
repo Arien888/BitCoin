@@ -117,12 +117,12 @@ def read_orders_from_excel(file_path):
 
 # --- メイン ---
 def main():
-    excel_path = config["excel"]["path"]
-    orders = read_orders_from_excel(excel_path)
-    print("[INFO] Excel注文データ一覧:")
+    orders = read_orders_from_excel("orders.xlsx")
+    print("[INFO] Excel注文データ一覧:".encode("ascii", "ignore").decode())
 
     for order in orders:
-        print(order)
+        safe_order = tuple(str(x).encode("ascii", "ignore").decode() for x in order)
+        print(safe_order)
         place_order(*order)
 
 
