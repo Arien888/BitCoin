@@ -3,7 +3,7 @@ from pathlib import Path
 from openpyxl import load_workbook, Workbook
 
 # ✅ YAMLの読み込み
-config_path = Path(__file__).resolve().parent.parent / "config.yaml"
+config_path = Path(__file__).resolve().parent / "config.yaml"
 with open(config_path, "r", encoding="utf-8") as f:
     config = yaml.safe_load(f)
 
@@ -12,12 +12,12 @@ order_cfg = config["order_export"]
 src_file = (config_path.parent / order_cfg["source_file"]).resolve()
 dst_file = (config_path.parent / order_cfg["output_file"]).resolve()
 
-# ✅ シート名の取得（sheet_name も許容）
+# ✅ シート名取得
 sheet_names = order_cfg.get("sheet_names") or [order_cfg.get("sheet_name")]
 if not sheet_names or None in sheet_names:
     raise KeyError("YAMLに 'sheet_name' または 'sheet_names' が正しく設定されていません。")
 
-# ✅ 値をコピーしつつ、文字列で書かれた数値を float に変換して書き込む関数
+# ✅ 値だけを数値型でエクスポートする関数
 def export_values_only(src_file, sheet_names, dst_file):
     print(f"📄 読み込み元: {src_file}")
     print(f"📤 出力先: {dst_file}")
@@ -43,7 +43,7 @@ def export_values_only(src_file, sheet_names, dst_file):
         for row in src_ws.iter_rows():
             for cell in row:
                 v = cell.value
-                # ✅ 文字列で表現された数値を float に変換
+                # ✅ 数値変換を試みる（文字列→float）
                 if isinstance(v, str):
                     try:
                         v = float(v)
