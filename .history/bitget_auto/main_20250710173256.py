@@ -34,9 +34,7 @@ def main():
 
     try:
         wb = app.books.open(excel_path)
-        place_orders(
-            client, wb, buy_sheet, sell_sheet, close_long_sheet, close_short_sheet
-        )
+        place_orders(client, wb, buy_sheet, sell_sheet)
 
     except Exception as e:
         print(f"[ERROR] 処理中に例外が発生しました: {e}")

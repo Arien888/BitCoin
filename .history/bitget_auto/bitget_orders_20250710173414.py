@@ -1,5 +1,5 @@
 import xlwings as xw
-from order_utils import is_valid_order, adjust_price, adjust_quantity, process_sheet
+from order_utils import is_valid_order, adjust_price, adjust_quantity
 
 
 def load_tick_sizes(wb, sheet_name="bitget_futures_products"):
@@ -64,14 +64,6 @@ def place_orders(
     close_long_sheet=None,
     close_short_sheet=None,
 ):
-    if buy_sheet in workbook.sheet_names:
-        process_sheet(client, workbook.sheets[buy_sheet], "buy")
-    if sell_sheet in workbook.sheet_names:
-        process_sheet(client, workbook.sheets[sell_sheet], "sell")
-    if close_long_sheet and close_long_sheet in workbook.sheet_names:
-        process_sheet(client, workbook.sheets[close_long_sheet], "close_long")
-    if close_short_sheet and close_short_sheet in workbook.sheet_names:
-        process_sheet(client, workbook.sheets[close_short_sheet], "close_short")
 
     print("[INFO] Buyシートから読み込み:")
     buy_orders = read_orders_from_sheet(wb, buy_sheet)
