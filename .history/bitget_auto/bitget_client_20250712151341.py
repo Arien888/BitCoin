@@ -48,8 +48,7 @@ class BitgetClient:
             "symbol": symbol_for_api,
             "productType": "usdt-futures" if self.is_testnet else "umcbl",
             # "productType": "susdt-futures" if self.is_testnet else "umcbl",
-            "marginMode": "crossed",# マージンモードクロスか分離
-            # "marginMode": "isolated",
+            "marginMode": "isolated",
             "marginCoin": "USDT" if self.is_testnet else "USDT",
             # "marginCoin": "SUSDT" if self.is_testnet else "USDT",
             "size": str(quantity),
@@ -59,11 +58,11 @@ class BitgetClient:
             "orderType": order_type.lower(),
             "force": "gtc",
             "clientOid": str(int(time.time() * 1000)),
-            # "reduceOnly": reduceOnly,
+            "reduceOnly": reduceOnly,
             "presetStopSurplusPrice": "",
             "presetStopLossPrice": "",
         }
-        print("[DEBUG] API送信パラメータ:", body_dict)
+
         body = json.dumps(body_dict)
         signature = self._generate_signature(timestamp, "POST", path, body)
 
@@ -77,6 +76,7 @@ class BitgetClient:
 
         if self.is_testnet:
             headers["paptrading"] = "1"
+print("[DEBUG] API送信パラメータ:", params)
 
         print(
             f"[INFO] 発注中: {symbol_for_api}, {side_simple}, {price}, {quantity}, {order_type}"

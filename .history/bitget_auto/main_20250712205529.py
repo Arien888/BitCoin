@@ -49,7 +49,6 @@ def main():
             close_long_sheet,
             close_short_sheet
         )
-        print("[INFO] 注文処理が完了しました。")
 
     except Exception as e:
         import traceback

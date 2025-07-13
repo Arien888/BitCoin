@@ -30,6 +30,7 @@ def adjust_quantity(quantity, volume_place):
 
 
 def process_sheet(client, sheet, default_side):
+    print(f"process_sheet[INFO] シート「{sheet.name}」を処理中...")
 
     # A2から始まるテーブル（ヘッダーは1行目）を自動拡張して読む
     for row in sheet.range("A2").expand("table").value:

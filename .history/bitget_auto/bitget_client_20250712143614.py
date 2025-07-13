@@ -5,11 +5,9 @@ import base64
 import json
 import requests
 from urllib.parse import urljoin
-from openpyxl import load_workbook
 
 
 class BitgetClient:
-
     def __init__(self, key, secret, passphrase, is_testnet=False):
         self.key = key
         self.secret = secret
@@ -35,12 +33,11 @@ class BitgetClient:
         timestamp = str(int(time.time() * 1000))
 
         symbol_for_api = self._convert_to_demo_symbol(symbol)
-        reduceOnly = False
+
         trade_side = "open"
         if side.lower() in ["close_long", "close_short"]:
             trade_side = "close"
             side_simple = "sell" if side.lower() == "close_short" else "buy"
-            reduceOnly = True
         else:
             side_simple = side.lower()
 
@@ -48,8 +45,7 @@ class BitgetClient:
             "symbol": symbol_for_api,
             "productType": "usdt-futures" if self.is_testnet else "umcbl",
             # "productType": "susdt-futures" if self.is_testnet else "umcbl",
-            "marginMode": "crossed",# マージンモードクロスか分離
-            # "marginMode": "isolated",
+            "marginMode": "isolated",
             "marginCoin": "USDT" if self.is_testnet else "USDT",
             # "marginCoin": "SUSDT" if self.is_testnet else "USDT",
             "size": str(quantity),
@@ -59,11 +55,12 @@ class BitgetClient:
             "orderType": order_type.lower(),
             "force": "gtc",
             "clientOid": str(int(time.time() * 1000)),
-            # "reduceOnly": reduceOnly,
+            # "reduceOnly": False,
+            if sheet_name == "close_long" or sheet.name == "close_short":
             "presetStopSurplusPrice": "",
             "presetStopLossPrice": "",
         }
-        print("[DEBUG] API送信パラメータ:", body_dict)
+
         body = json.dumps(body_dict)
         signature = self._generate_signature(timestamp, "POST", path, body)
 

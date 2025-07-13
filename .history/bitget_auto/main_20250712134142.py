@@ -5,7 +5,6 @@ import yaml
 import xlwings as xw
 from bitget_client import BitgetClient
 from order_processor import place_orders  # bitget_orders → order_processor に変更
-import time
 
 sys.stdout = io.TextIOWrapper(sys.stdout.buffer, encoding="utf-8")
 
@@ -39,8 +38,8 @@ def main():
 
     try:
         wb = app.books.open(excel_path)
-        print("[INFO] Excelファイルを開きました。")
 
+        # place_orders の引数が None になる可能性があるので、呼び出し先で対応しているか確認してください
         place_orders(
             client,
             wb,
@@ -49,7 +48,6 @@ def main():
             close_long_sheet,
             close_short_sheet
         )
-        print("[INFO] 注文処理が完了しました。")
 
     except Exception as e:
         import traceback

@@ -48,7 +48,6 @@ class BitgetClient:
             "symbol": symbol_for_api,
             "productType": "usdt-futures" if self.is_testnet else "umcbl",
             # "productType": "susdt-futures" if self.is_testnet else "umcbl",
-            "marginMode": "crossed",# マージンモードクロスか分離
             # "marginMode": "isolated",
             "marginCoin": "USDT" if self.is_testnet else "USDT",
             # "marginCoin": "SUSDT" if self.is_testnet else "USDT",
