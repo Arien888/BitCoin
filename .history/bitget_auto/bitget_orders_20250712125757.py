@@ -1,12 +1,12 @@
 import xlwings as xw
 from order_utils import is_valid_order, adjust_price, adjust_quantity, process_sheet
 
-
 def load_tick_sizes(wb, sheet_name="bitget_futures_products"):
     price_places = {}
     volume_places = {}
 
-    if sheet_name not in [s.name for s in wb.sheets]:
+    sheet_names = [s.name for s in wb.sheets]
+    if sheet_name not in sheet_names:
         print(f"[WARN] 対応表シートがありません: {sheet_name}")
         return price_places, volume_places
 
@@ -31,14 +31,16 @@ def load_tick_sizes(wb, sheet_name="bitget_futures_products"):
 
 
 def read_orders_from_sheet(wb, sheet_name):
-    if sheet_name not in [s.name for s in wb.sheets]:
+    sheet_names = [s.name for s in wb.sheets]
+    if sheet_name not in sheet_names:
         print(f"[ERROR] シートが存在しません: {sheet_name}")
         return []
 
     sheet = wb.sheets[sheet_name]
     orders = []
 
-    for row in range(2, sheet.api.UsedRange.Rows.Count + 1):
+    last_row = sheet.api.UsedRange.Rows.Count
+    for row in range(2, last_row + 1):
         symbol = sheet.range(f"A{row}").value
         side = sheet.range(f"B{row}").value
         price = sheet.range(f"C{row}").value
@@ -56,26 +58,13 @@ def read_orders_from_sheet(wb, sheet_name):
     return orders
 
 
-def place_orders(
-    client,
-    workbook,
-    buy_sheet,
-    sell_sheet,
-    close_long_sheet=None,
-    close_short_sheet=None,
-):
-    if buy_sheet in workbook.sheet_names:
-        process_sheet(client, workbook.sheets[buy_sheet], "buy")
-    if sell_sheet in workbook.sheet_names:
-        process_sheet(client, workbook.sheets[sell_sheet], "sell")
-    if close_long_sheet and close_long_sheet in workbook.sheet_names:
-        process_sheet(client, workbook.sheets[close_long_sheet], "close_long")
-    if close_short_sheet and close_short_sheet in workbook.sheet_names:
-        process_sheet(client, workbook.sheets[close_short_sheet], "close_short")
+def send_orders_for_sheet(client, wb, sheet_name, price_places, volume_places):
+    orders = read_orders_from_sheet(wb, sheet_name)
+    if not orders:
+        print(f"[WARN] {sheet_name} シートが空または存在しません。注文はスキップします。")
+        return
 
-    print("[INFO] Buyシートから読み込み:")
-    buy_orders = read_orders_from_sheet(wb, buy_sheet)
-    for order in buy_orders:
+    for order in orders:
         symbol, side, price, quantity, order_type = order
 
         price = adjust_price(price, price_places.get(symbol))
@@ -84,24 +73,28 @@ def place_orders(
         if price is None or not is_valid_order(price, quantity):
             continue
 
-        print(f"[INFO] 発注中: {symbol}, {side}, {price}, {quantity}, {order_type}")
-        client.place_order(symbol, side, price, quantity, order_type)
-
-    print("[INFO] Sellシートから読み込み:")
-    sell_orders = read_orders_from_sheet(wb, sell_sheet)
-    if not sell_orders:
-        print(
-            f"[WARN] {sell_sheet} シートが空または存在しません。売り注文はスキップします。"
-        )
-    else:
-        for order in sell_orders:
-            symbol, side, price, quantity, order_type = order
-
-            price = adjust_price(price, price_places.get(symbol))
-            quantity = adjust_quantity(quantity, volume_places.get(symbol))
-
-            if price is None or not is_valid_order(price, quantity):
-                continue
-
+        try:
             print(f"[INFO] 発注中: {symbol}, {side}, {price}, {quantity}, {order_type}")
             client.place_order(symbol, side, price, quantity, order_type)
+        except Exception as e:
+            print(f"[ERROR] 発注失敗: {symbol}, エラー: {e}")
+
+
+def place_orders(client, wb, buy_sheet, sell_sheet, close_long_sheet=None, close_short_sheet=None):
+    sheet_names = [s.name for s in wb.sheets]
+
+    price_places, volume_places = load_tick_sizes(wb)
+
+    # シート処理
+    if buy_sheet in sheet_names:
+        process_sheet(client, wb.sheets[buy_sheet], "buy")
+        send_orders_for_sheet(client, wb, buy_sheet, price_places, volume_places)
+    if sell_sheet in sheet_names:
+        process_sheet(client, wb.sheets[sell_sheet], "sell")
+        send_orders_for_sheet(client, wb, sell_sheet, price_places, volume_places)
+    if close_long_sheet and close_long_sheet in sheet_names:
+        process_sheet(client, wb.sheets[close_long_sheet], "close_long")
+        send_orders_for_sheet(client, wb, close_long_sheet, price_places, volume_places)
+    if close_short_sheet and close_short_sheet in sheet_names:
+        process_sheet(client, wb.sheets[close_short_sheet], "close_short")
+        send_orders_for_sheet(client, wb, close_short_sheet, price_places, volume_places)

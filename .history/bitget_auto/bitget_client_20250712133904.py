@@ -5,11 +5,9 @@ import base64
 import json
 import requests
 from urllib.parse import urljoin
-from openpyxl import load_workbook
 
 
 class BitgetClient:
-
     def __init__(self, key, secret, passphrase, is_testnet=False):
         self.key = key
         self.secret = secret
@@ -22,48 +20,28 @@ class BitgetClient:
         mac = hmac.new(self.secret.encode(), message.encode(), hashlib.sha256)
         return base64.b64encode(mac.digest()).decode()
 
-    def _convert_to_demo_symbol(self, symbol: str) -> str:
-        if self.is_testnet:
-            if symbol.endswith("_UMCBL"):
-                base = symbol[:-6]
-                return "S" + base.upper()
-        return symbol
-
     def place_order(self, symbol, side, price, quantity, order_type):
         path = "/api/v2/mix/order/place-order"
         url = urljoin(self.base_url, path)
         timestamp = str(int(time.time() * 1000))
 
-        symbol_for_api = self._convert_to_demo_symbol(symbol)
-        reduceOnly = False
-        trade_side = "open"
-        if side.lower() in ["close_long", "close_short"]:
-            trade_side = "close"
-            side_simple = "sell" if side.lower() == "close_short" else "buy"
-            reduceOnly = True
-        else:
-            side_simple = side.lower()
-
         body_dict = {
-            "symbol": symbol_for_api,
-            "productType": "usdt-futures" if self.is_testnet else "umcbl",
-            # "productType": "susdt-futures" if self.is_testnet else "umcbl",
-            "marginMode": "crossed",# マージンモードクロスか分離
-            # "marginMode": "isolated",
-            "marginCoin": "USDT" if self.is_testnet else "USDT",
-            # "marginCoin": "SUSDT" if self.is_testnet else "USDT",
+            "symbol": symbol,                   # 例: SBTCSUSDT
+            "productType": "susdt-futures",     # デモ用
+            "marginMode": "isolated",
+            "marginCoin": "SUSDT",              # デモコイン
             "size": str(quantity),
             "price": str(price),
-            "side": side_simple,
-            "tradeSide": trade_side,
-            "orderType": order_type.lower(),
-            "force": "gtc",
+            "side": side,                       # "buy" or "sell"
+            "tradeSide": "open",                # "open" or "close"
+            "orderType": order_type,            # "limit" or "market"
+            "force": "gtc",                     # 有効期間 (GTC)
             "clientOid": str(int(time.time() * 1000)),
-            # "reduceOnly": reduceOnly,
+            "reduceOnly": "NO",
             "presetStopSurplusPrice": "",
-            "presetStopLossPrice": "",
+            "presetStopLossPrice": ""
         }
-        print("[DEBUG] API送信パラメータ:", body_dict)
+
         body = json.dumps(body_dict)
         signature = self._generate_signature(timestamp, "POST", path, body)
 
@@ -76,11 +54,9 @@ class BitgetClient:
         }
 
         if self.is_testnet:
-            headers["paptrading"] = "1"
+            headers["paptrading"] = "1"  # デモ取引用フラグ
 
-        print(
-            f"[INFO] 発注中: {symbol_for_api}, {side_simple}, {price}, {quantity}, {order_type}"
-        )
+        print(f"[INFO] 発注中: {symbol}, {side}, {price}, {quantity}, {order_type}")
 
         try:
             res = requests.post(url, headers=headers, data=body, timeout=15)

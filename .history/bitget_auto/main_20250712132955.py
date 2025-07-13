@@ -5,7 +5,6 @@ import yaml
 import xlwings as xw
 from bitget_client import BitgetClient
 from order_processor import place_orders  # bitget_orders → order_processor に変更
-import time
 
 sys.stdout = io.TextIOWrapper(sys.stdout.buffer, encoding="utf-8")
 
@@ -39,8 +38,6 @@ def main():
 
     try:
         wb = app.books.open(excel_path)
-        print("[INFO] Excelファイルを開きました。")
-
         place_orders(
             client,
             wb,
@@ -49,16 +46,11 @@ def main():
             close_long_sheet,
             close_short_sheet
         )
-        print("[INFO] 注文処理が完了しました。")
 
     except Exception as e:
         import traceback
         print(f"[ERROR] 処理中に例外が発生しました: {e}")
-        tb = traceback.format_exc()
-        print(tb)
-        # ログファイルに詳細を保存
-        with open("error_log.txt", "a", encoding="utf-8") as f:
-            f.write(f"[{time.strftime('%Y-%m-%d %H:%M:%S')}] エラー:\n{str(e)}\n{tb}\n")
+        print(traceback.format_exc())
 
     finally:
         if wb:

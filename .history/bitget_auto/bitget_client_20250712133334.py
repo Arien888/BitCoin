@@ -5,65 +5,52 @@ import base64
 import json
 import requests
 from urllib.parse import urljoin
-from openpyxl import load_workbook
 
 
 class BitgetClient:
-
     def __init__(self, key, secret, passphrase, is_testnet=False):
         self.key = key
         self.secret = secret
         self.passphrase = passphrase
         self.is_testnet = is_testnet
-        self.base_url = "https://api.bitget.com"
+        self.base_url = "https://api.bitget.com/api/swap/v3"  # 本番・テスト共通
 
     def _generate_signature(self, timestamp, method, request_path, body):
-        message = f"{timestamp}{method.upper()}{request_path}{body}"
+        message = f"{timestamp}{method}{request_path}{body}"
         mac = hmac.new(self.secret.encode(), message.encode(), hashlib.sha256)
         return base64.b64encode(mac.digest()).decode()
 
-    def _convert_to_demo_symbol(self, symbol: str) -> str:
-        if self.is_testnet:
-            if symbol.endswith("_UMCBL"):
-                base = symbol[:-6]
-                return "S" + base.upper()
-        return symbol
-
     def place_order(self, symbol, side, price, quantity, order_type):
-        path = "/api/v2/mix/order/place-order"
+        side_map = {
+            "buy": "open_long",
+            "sell": "open_short",
+            "close_buy": "close_long",
+            "close_sell": "close_short",
+        }
+
+        side = side_map.get(side.lower(), side)
+        path = "/api/mix/v1/order/placeOrder"
         url = urljoin(self.base_url, path)
         timestamp = str(int(time.time() * 1000))
 
-        symbol_for_api = self._convert_to_demo_symbol(symbol)
-        reduceOnly = False
-        trade_side = "open"
-        if side.lower() in ["close_long", "close_short"]:
-            trade_side = "close"
-            side_simple = "sell" if side.lower() == "close_short" else "buy"
-            reduceOnly = True
-        else:
-            side_simple = side.lower()
+        is_close = side in ["close_long", "close_short"]
 
         body_dict = {
-            "symbol": symbol_for_api,
-            "productType": "usdt-futures" if self.is_testnet else "umcbl",
-            # "productType": "susdt-futures" if self.is_testnet else "umcbl",
-            "marginMode": "crossed",# マージンモードクロスか分離
-            # "marginMode": "isolated",
-            "marginCoin": "USDT" if self.is_testnet else "USDT",
-            # "marginCoin": "SUSDT" if self.is_testnet else "USDT",
+            "marginCoin": "USDT",
+            "productType": "UMCBL",
+            "symbol": symbol,
+            "side": side.upper(),
+            "orderType": order_type.upper(),
+            "price": str(price) if order_type.lower() == "limit" else "",
             "size": str(quantity),
-            "price": str(price),
-            "side": side_simple,
-            "tradeSide": trade_side,
-            "orderType": order_type.lower(),
-            "force": "gtc",
-            "clientOid": str(int(time.time() * 1000)),
-            # "reduceOnly": reduceOnly,
-            "presetStopSurplusPrice": "",
-            "presetStopLossPrice": "",
+            "timeInForce": "GTC",
+            "reduceOnly": is_close,
+            "closeOrder": is_close,
+            "positionId": 0,
+            "visibleSize": "0",
+            "externalOid": "",
         }
-        print("[DEBUG] API送信パラメータ:", body_dict)
+
         body = json.dumps(body_dict)
         signature = self._generate_signature(timestamp, "POST", path, body)
 
@@ -76,11 +63,9 @@ class BitgetClient:
         }
 
         if self.is_testnet:
-            headers["paptrading"] = "1"
+            headers["paptrading"] = "1"  # デモ環境用ヘッダー
 
-        print(
-            f"[INFO] 発注中: {symbol_for_api}, {side_simple}, {price}, {quantity}, {order_type}"
-        )
+        print(f"[INFO] 発注中: {symbol}, {side}, {price}, {quantity}, {order_type}")
 
         try:
             res = requests.post(url, headers=headers, data=body, timeout=15)

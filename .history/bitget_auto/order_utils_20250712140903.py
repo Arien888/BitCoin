@@ -30,6 +30,7 @@ def adjust_quantity(quantity, volume_place):
 
 
 def process_sheet(client, sheet, default_side):
+    print(f"[INFO] シート「{sheet.name}」を処理中...")
 
     # A2から始まるテーブル（ヘッダーは1行目）を自動拡張して読む
     for row in sheet.range("A2").expand("table").value:
@@ -39,13 +40,7 @@ def process_sheet(client, sheet, default_side):
         symbol = row[0]
         side = row[1] or default_side
         price = row[2]
-        quantity = row[3]
-
-        try:
-            quantity = float(quantity)
-        except (ValueError, TypeError):
-            print(f"[WARN] quantityが数値ではないためスキップします: {quantity}")
-            continue
+        quantity = row[3].value
         order_type = row[4] if len(row) > 4 else "limit"
 
         if not symbol or not side or not price or not quantity:
@@ -55,6 +50,8 @@ def process_sheet(client, sheet, default_side):
         if quantity <= 0:
             print(f"[WARN] quantityが0以下のためスキップします: {quantity}")
             continue
+
+        print(f"[INFO] 発注中: {symbol}, {side}, {price}, {quantity}, {order_type}")
         try:
             client.place_order(symbol, side, price, quantity, order_type)
         except Exception as e:
