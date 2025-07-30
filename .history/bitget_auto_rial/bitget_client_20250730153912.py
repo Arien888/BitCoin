@@ -29,46 +29,24 @@ class BitgetClient:
                 return "S" + base.upper()
         return symbol
 
-    def cancel_all_orders(self, symbol: str, margin_coin: str):
-        # 複数のパス候補を順番に試す（本番では自動化はせず手動でテスト推奨）
-        candidate_paths = [
-            "/api/mix/v1/order/cancel-all-orders",
-            "/api/mix/usdt/v1/order/cancel-all-orders",
-            "/api/mix/umc/v1/order/cancel-all-orders",
-        ]
+    def cancel_all_orders(
+        self, symbol: str, margin_coin: str, product_type: str = "USDT-FUTURES"
+    ):
+        path = "/api/mix/v1/order/cancel-all-orders"
+        url = self.base_url + path
+        body_dict = {
+            "symbol": symbol,
+            "marginCoin": "USDT",
+            "productType": "USDT-FUTURES",
+        }
 
-        for path in candidate_paths:
-            try:
-                url = self.base_url + path
-                body_dict = {
-                    "symbol": symbol,
-                    "marginCoin": margin_coin,
-                    "productType": "UMCBL",  # or "umcbl", "USDT_FUTURES"などもテスト
-                }
-                body = json.dumps(body_dict)
-                timestamp = str(int(time.time() * 1000))
-                signature = self._generate_signature(timestamp, "POST", path, body)
-                headers = {
-                    "Content-Type": "application/json",
-                    "ACCESS-KEY": self.key,
-                    "ACCESS-SIGN": signature,
-                    "ACCESS-TIMESTAMP": timestamp,
-                    "ACCESS-PASSPHRASE": self.passphrase,
-                }
-                print("[DEBUG] URL:", url)
-                print("[DEBUG] Headers:", headers)
-                print("[DEBUG] Body:", body)
-                response = requests.post(url, headers=headers, data=body)
-                print("[DEBUG] Response status:", response.status_code)
-                print("[DEBUG] Response body:", response.text)
-                response.raise_for_status()
-                return response.json()
-            except requests.exceptions.HTTPError as e:
-                print(f"[WARN] Path {path} gave HTTP error: {e}")
-            except Exception as e:
-                print(f"[WARN] Path {path} gave Exception: {e}")
-
-        raise Exception("All candidate API paths failed")
+        body = json.dumps(body_dict)
+        print("[DEBUG] cancel_all_orders body:", body)
+        headers = self._make_headers("POST", path, body)
+        response = requests.post(url, headers=headers, data=body)
+        print("[DEBUG] cancel_all_orders response:", response.text)
+        response.raise_for_status()
+        return response.json()
 
     def _make_headers(self, method: str, request_path: str, body: str):
         timestamp = str(int(time.time() * 1000))

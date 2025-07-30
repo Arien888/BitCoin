@@ -20,8 +20,7 @@ with open(os.path.join(BASE_DIR, "..", "config.yaml"), "r", encoding="utf-8") as
     config = yaml.safe_load(f)
 
 # Excel 関連設定
-excel_rel_path = config["excel"]["path"]
-excel_path = os.path.join(BASE_DIR, "..", excel_rel_path)
+excel_path = config["excel"]["path"]
 buy_sheet = config["excel"]["sheets"]["buy"]
 sell_sheet = config["excel"]["sheets"]["sell"]
 close_long_sheet = config["excel"]["sheets"].get("close_long")
