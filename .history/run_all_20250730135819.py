@@ -18,6 +18,6 @@ p4 = subprocess.Popen(['python', 'export_value_excel/main.py'])
 
 p4.wait()
 
-p5 = subprocess.Popen(['python', 'bitget_auto_rial/main.py'])
+p5 = subprocess.Popen(['python', 'export_value_excel/main.py'])
 
 p5.wait()

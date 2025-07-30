@@ -1,0 +1,18 @@
+[2025-07-30 15:13:19] エラー:
+No such file: '../order_crypto.xlsx'
+Traceback (most recent call last):
+  File "C:\Users\koichi\Documents\MyDocuments\My_work\My_Programing_work\BitCoin\bitget_auto_rial\main.py", line 41, in main
+    wb = app.books.open(excel_path)
+  File "C:\Users\koichi\AppData\Local\Programs\Python\Python310\lib\site-packages\xlwings\main.py", line 5174, in open
+    raise FileNotFoundError("No such file: '%s'" % fullname)
+FileNotFoundError: No such file: '../order_crypto.xlsx'
+
+[2025-07-30 15:15:09] エラー:
+No such file: '../order_crypto.xlsx'
+Traceback (most recent call last):
+  File "C:\Users\koichi\Documents\MyDocuments\My_work\My_Programing_work\BitCoin\bitget_auto_rial\main.py", line 41, in main
+    wb = app.books.open(excel_path)
+  File "C:\Users\koichi\AppData\Local\Programs\Python\Python310\lib\site-packages\xlwings\main.py", line 5174, in open
+    raise FileNotFoundError("No such file: '%s'" % fullname)
+FileNotFoundError: No such file: '../order_crypto.xlsx'
+

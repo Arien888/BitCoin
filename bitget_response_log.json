@@ -1,0 +1,140 @@
+{
+  "code": "00000",
+  "msg": "success",
+  "requestTime": 1753856609745,
+  "data": {
+    "clientOid": "1753856610561",
+    "orderId": "1334336821710143489"
+  }
+}
+
+{
+  "code": "00000",
+  "msg": "success",
+  "requestTime": 1753856609855,
+  "data": {
+    "clientOid": "1753856610697",
+    "orderId": "1334336822142156803"
+  }
+}
+
+{
+  "code": "00000",
+  "msg": "success",
+  "requestTime": 1753856609968,
+  "data": {
+    "clientOid": "1753856610811",
+    "orderId": "1334336822616113157"
+  }
+}
+
+{
+  "code": "00000",
+  "msg": "success",
+  "requestTime": 1753856610076,
+  "data": {
+    "clientOid": "1753856610913",
+    "orderId": "1334336823073292289"
+  }
+}
+
+{
+  "code": "00000",
+  "msg": "success",
+  "requestTime": 1753856610192,
+  "data": {
+    "clientOid": "1753856611024",
+    "orderId": "1334336823559831553"
+  }
+}
+
+{
+  "code": "00000",
+  "msg": "success",
+  "requestTime": 1753856610285,
+  "data": {
+    "clientOid": "1753856611145",
+    "orderId": "1334336823954096129"
+  }
+}
+
+{
+  "code": "00000",
+  "msg": "success",
+  "requestTime": 1753856610413,
+  "data": {
+    "clientOid": "1753856611239",
+    "orderId": "1334336824486772910"
+  }
+}
+
+{
+  "code": "00000",
+  "msg": "success",
+  "requestTime": 1753857799265,
+  "data": {
+    "clientOid": "1753857800075",
+    "orderId": "1334341810901860353"
+  }
+}
+
+{
+  "code": "00000",
+  "msg": "success",
+  "requestTime": 1753857799387,
+  "data": {
+    "clientOid": "1753857800202",
+    "orderId": "1334341811400982529"
+  }
+}
+
+{
+  "code": "00000",
+  "msg": "success",
+  "requestTime": 1753857799482,
+  "data": {
+    "clientOid": "1753857800324",
+    "orderId": "1334341811803635713"
+  }
+}
+
+{
+  "code": "00000",
+  "msg": "success",
+  "requestTime": 1753857799607,
+  "data": {
+    "clientOid": "1753857800431",
+    "orderId": "1334341812323729409"
+  }
+}
+
+{
+  "code": "00000",
+  "msg": "success",
+  "requestTime": 1753857799714,
+  "data": {
+    "clientOid": "1753857800544",
+    "orderId": "1334341812772519939"
+  }
+}
+
+{
+  "code": "00000",
+  "msg": "success",
+  "requestTime": 1753857799813,
+  "data": {
+    "clientOid": "1753857800649",
+    "orderId": "1334341813191950337"
+  }
+}
+
+{
+  "code": "00000",
+  "msg": "success",
+  "requestTime": 1753857799952,
+  "data": {
+    "clientOid": "1753857800750",
+    "orderId": "1334341813770764289"
+  }
+}
+

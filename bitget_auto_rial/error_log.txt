@@ -1254,3 +1254,166 @@ UnboundLocalError: local variable 'sheet_name' referenced before assignment
 400 Client Error: Bad Request for url: https://api.bitget.com/api/v2/mix/order/place-order
 400 Client Error: Bad Request for url: https://api.bitget.com/api/v2/mix/order/place-order
 400 Client Error: Bad Request for url: https://api.bitget.com/api/v2/mix/order/place-order
+[2025-07-30 14:02:56] エラー:
+'BitgetClient' object has no attribute 'cancel_all_orders'
+Traceback (most recent call last):
+  File "C:\Users\koichi\Documents\MyDocuments\My_work\My_Programing_work\BitCoin\bitget_auto_rial\futuer_all_cancel.py", line 32, in cancel_all_orders_for_symbols
+    res = client.cancel_all_orders(symbol=symbol, margin_coin="USDT")
+AttributeError: 'BitgetClient' object has no attribute 'cancel_all_orders'
+
+[2025-07-30 14:03:48] エラー:
+'BitgetClient' object has no attribute 'cancel_all_orders'
+Traceback (most recent call last):
+  File "C:\Users\koichi\Documents\MyDocuments\My_work\My_Programing_work\BitCoin\bitget_auto_rial\futuer_all_cancel.py", line 32, in cancel_all_orders_for_symbols
+    res = client.cancel_all_orders(symbol=symbol, margin_coin="USDT")
+AttributeError: 'BitgetClient' object has no attribute 'cancel_all_orders'
+
+[2025-07-30 14:04:45] エラー:
+'BitgetClient' object has no attribute 'cancel_all_orders'
+Traceback (most recent call last):
+  File "C:\Users\koichi\Documents\MyDocuments\My_work\My_Programing_work\BitCoin\bitget_auto_rial\futuer_all_cancel.py", line 32, in cancel_all_orders_for_symbols
+    res = client.cancel_all_orders(symbol=symbol, margin_coin="USDT")
+AttributeError: 'BitgetClient' object has no attribute 'cancel_all_orders'
+
+[2025-07-30 14:54:57] エラー:
+'BitgetClient' object has no attribute 'cancel_all_orders'
+Traceback (most recent call last):
+  File "C:\Users\koichi\Documents\MyDocuments\My_work\My_Programing_work\BitCoin\bitget_auto_rial\futuer_all_cancel.py", line 32, in cancel_all_orders_for_symbols
+    res = client.cancel_all_orders(symbol=symbol, margin_coin="USDT")
+AttributeError: 'BitgetClient' object has no attribute 'cancel_all_orders'
+
+[2025-07-30 14:59:11] エラー:
+'BitgetClient' object has no attribute '_make_headers'
+Traceback (most recent call last):
+  File "C:\Users\koichi\Documents\MyDocuments\My_work\My_Programing_work\BitCoin\bitget_auto_rial\futuer_all_cancel.py", line 32, in cancel_all_orders_for_symbols
+    res = client.cancel_all_orders(symbol=symbol, margin_coin="USDT")
+  File "C:\Users\koichi\Documents\MyDocuments\My_work\My_Programing_work\BitCoin\bitget_auto_rial\bitget_client.py", line 37, in cancel_all_orders
+    headers = self._make_headers("POST", path, body)
+AttributeError: 'BitgetClient' object has no attribute '_make_headers'
+
+[2025-07-30 15:20:52] エラー:
+No such file: 'order_crypto.xlsx'
+Traceback (most recent call last):
+  File "C:\Users\koichi\Documents\MyDocuments\My_work\My_Programing_work\BitCoin\bitget_auto_rial\main.py", line 41, in main
+    wb = app.books.open(excel_path)
+  File "C:\Users\koichi\AppData\Local\Programs\Python\Python310\lib\site-packages\xlwings\main.py", line 5174, in open
+    raise FileNotFoundError("No such file: '%s'" % fullname)
+FileNotFoundError: No such file: 'order_crypto.xlsx'
+
+[2025-07-30 15:23:57] エラー:
+'BitgetClient' object has no attribute '_make_headers'
+Traceback (most recent call last):
+  File "C:\Users\koichi\Documents\MyDocuments\My_work\My_Programing_work\BitCoin\bitget_auto_rial\futuer_all_cancel.py", line 32, in cancel_all_orders_for_symbols
+    res = client.cancel_all_orders(symbol=symbol, margin_coin="USDT")
+  File "C:\Users\koichi\Documents\MyDocuments\My_work\My_Programing_work\BitCoin\bitget_auto_rial\bitget_client.py", line 37, in cancel_all_orders
+    headers = self._make_headers("POST", path, body)
+AttributeError: 'BitgetClient' object has no attribute '_make_headers'
+
+[2025-07-30 15:33:45] エラー:
+'BitgetClient' object has no attribute '_make_headers'
+Traceback (most recent call last):
+  File "C:\Users\koichi\Documents\MyDocuments\My_work\My_Programing_work\BitCoin\bitget_auto_rial\futuer_all_cancel.py", line 34, in cancel_all_orders_for_symbols
+    res = client.cancel_all_orders(symbol=symbol, margin_coin="USDT")
+  File "C:\Users\koichi\Documents\MyDocuments\My_work\My_Programing_work\BitCoin\bitget_auto_rial\bitget_client.py", line 37, in cancel_all_orders
+    headers = self._make_headers("POST", path, body)
+AttributeError: 'BitgetClient' object has no attribute '_make_headers'
+
+[2025-07-30 15:35:12] エラー:
+400 Client Error: Bad Request for url: https://api.bitget.com/api/mix/v1/order/cancel-all-orders
+Traceback (most recent call last):
+  File "C:\Users\koichi\Documents\MyDocuments\My_work\My_Programing_work\BitCoin\bitget_auto_rial\futuer_all_cancel.py", line 34, in cancel_all_orders_for_symbols
+    res = client.cancel_all_orders(symbol=symbol, margin_coin="USDT")
+  File "C:\Users\koichi\Documents\MyDocuments\My_work\My_Programing_work\BitCoin\bitget_auto_rial\bitget_client.py", line 39, in cancel_all_orders
+    response.raise_for_status()
+  File "C:\Users\koichi\AppData\Local\Programs\Python\Python310\lib\site-packages\requests\models.py", line 1024, in raise_for_status
+    raise HTTPError(http_error_msg, response=self)
+requests.exceptions.HTTPError: 400 Client Error: Bad Request for url: https://api.bitget.com/api/mix/v1/order/cancel-all-orders
+
+[2025-07-30 15:36:22] エラー:
+400 Client Error: Bad Request for url: https://api.bitget.com/api/mix/v1/order/cancel-all-orders
+Traceback (most recent call last):
+  File "C:\Users\koichi\Documents\MyDocuments\My_work\My_Programing_work\BitCoin\bitget_auto_rial\futuer_all_cancel.py", line 34, in cancel_all_orders_for_symbols
+    res = client.cancel_all_orders(symbol=symbol, margin_coin="USDT")
+  File "C:\Users\koichi\Documents\MyDocuments\My_work\My_Programing_work\BitCoin\bitget_auto_rial\bitget_client.py", line 41, in cancel_all_orders
+    response.raise_for_status()
+  File "C:\Users\koichi\AppData\Local\Programs\Python\Python310\lib\site-packages\requests\models.py", line 1024, in raise_for_status
+    raise HTTPError(http_error_msg, response=self)
+requests.exceptions.HTTPError: 400 Client Error: Bad Request for url: https://api.bitget.com/api/mix/v1/order/cancel-all-orders
+
+[2025-07-30 15:37:04] エラー:
+400 Client Error: Bad Request for url: https://api.bitget.com/api/mix/v1/order/cancel-all-orders
+Traceback (most recent call last):
+  File "C:\Users\koichi\Documents\MyDocuments\My_work\My_Programing_work\BitCoin\bitget_auto_rial\futuer_all_cancel.py", line 34, in cancel_all_orders_for_symbols
+    res = client.cancel_all_orders(symbol=symbol, margin_coin="USDT")
+  File "C:\Users\koichi\Documents\MyDocuments\My_work\My_Programing_work\BitCoin\bitget_auto_rial\bitget_client.py", line 47, in cancel_all_orders
+    response.raise_for_status()
+  File "C:\Users\koichi\AppData\Local\Programs\Python\Python310\lib\site-packages\requests\models.py", line 1024, in raise_for_status
+    raise HTTPError(http_error_msg, response=self)
+requests.exceptions.HTTPError: 400 Client Error: Bad Request for url: https://api.bitget.com/api/mix/v1/order/cancel-all-orders
+
+[2025-07-30 15:37:56] エラー:
+400 Client Error: Bad Request for url: https://api.bitget.com/api/mix/v1/order/cancel-all-orders
+Traceback (most recent call last):
+  File "C:\Users\koichi\Documents\MyDocuments\My_work\My_Programing_work\BitCoin\bitget_auto_rial\futuer_all_cancel.py", line 34, in cancel_all_orders_for_symbols
+    res = client.cancel_all_orders(symbol=symbol, margin_coin="USDT")
+  File "C:\Users\koichi\Documents\MyDocuments\My_work\My_Programing_work\BitCoin\bitget_auto_rial\bitget_client.py", line 48, in cancel_all_orders
+    response.raise_for_status()
+  File "C:\Users\koichi\AppData\Local\Programs\Python\Python310\lib\site-packages\requests\models.py", line 1024, in raise_for_status
+    raise HTTPError(http_error_msg, response=self)
+requests.exceptions.HTTPError: 400 Client Error: Bad Request for url: https://api.bitget.com/api/mix/v1/order/cancel-all-orders
+
+[2025-07-30 15:39:25] エラー:
+400 Client Error: Bad Request for url: https://api.bitget.com/api/mix/v1/order/cancel-all-orders
+Traceback (most recent call last):
+  File "C:\Users\koichi\Documents\MyDocuments\My_work\My_Programing_work\BitCoin\bitget_auto_rial\futuer_all_cancel.py", line 34, in cancel_all_orders_for_symbols
+    res = client.cancel_all_orders(symbol=symbol, margin_coin="USDT")
+  File "C:\Users\koichi\Documents\MyDocuments\My_work\My_Programing_work\BitCoin\bitget_auto_rial\bitget_client.py", line 48, in cancel_all_orders
+    response.raise_for_status()
+  File "C:\Users\koichi\AppData\Local\Programs\Python\Python310\lib\site-packages\requests\models.py", line 1024, in raise_for_status
+    raise HTTPError(http_error_msg, response=self)
+requests.exceptions.HTTPError: 400 Client Error: Bad Request for url: https://api.bitget.com/api/mix/v1/order/cancel-all-orders
+
+[2025-07-30 15:39:31] エラー:
+400 Client Error: Bad Request for url: https://api.bitget.com/api/mix/v1/order/cancel-all-orders
+Traceback (most recent call last):
+  File "C:\Users\koichi\Documents\MyDocuments\My_work\My_Programing_work\BitCoin\bitget_auto_rial\futuer_all_cancel.py", line 34, in cancel_all_orders_for_symbols
+    res = client.cancel_all_orders(symbol=symbol, margin_coin="USDT")
+  File "C:\Users\koichi\Documents\MyDocuments\My_work\My_Programing_work\BitCoin\bitget_auto_rial\bitget_client.py", line 48, in cancel_all_orders
+    response.raise_for_status()
+  File "C:\Users\koichi\AppData\Local\Programs\Python\Python310\lib\site-packages\requests\models.py", line 1024, in raise_for_status
+    raise HTTPError(http_error_msg, response=self)
+requests.exceptions.HTTPError: 400 Client Error: Bad Request for url: https://api.bitget.com/api/mix/v1/order/cancel-all-orders
+
+[2025-07-30 15:40:53] エラー:
+400 Client Error: Bad Request for url: https://api.bitget.com/api/mix/v1/order/cancel-all-orders
+Traceback (most recent call last):
+  File "C:\Users\koichi\Documents\MyDocuments\My_work\My_Programing_work\BitCoin\bitget_auto_rial\futuer_all_cancel.py", line 34, in cancel_all_orders_for_symbols
+    res = client.cancel_all_orders(symbol=symbol, margin_coin="USDT")
+  File "C:\Users\koichi\Documents\MyDocuments\My_work\My_Programing_work\BitCoin\bitget_auto_rial\bitget_client.py", line 52, in cancel_all_orders
+    response.raise_for_status()
+  File "C:\Users\koichi\AppData\Local\Programs\Python\Python310\lib\site-packages\requests\models.py", line 1024, in raise_for_status
+    raise HTTPError(http_error_msg, response=self)
+requests.exceptions.HTTPError: 400 Client Error: Bad Request for url: https://api.bitget.com/api/mix/v1/order/cancel-all-orders
+
+[2025-07-30 15:42:13] エラー:
+404 Client Error: Not Found for url: https://api.bitget.com/api/mix/v1/order/cancel-all
+Traceback (most recent call last):
+  File "C:\Users\koichi\Documents\MyDocuments\My_work\My_Programing_work\BitCoin\bitget_auto_rial\futuer_all_cancel.py", line 34, in cancel_all_orders_for_symbols
+    res = client.cancel_all_orders(symbol=symbol, margin_coin="USDT")
+  File "C:\Users\koichi\Documents\MyDocuments\My_work\My_Programing_work\BitCoin\bitget_auto_rial\bitget_client.py", line 56, in cancel_all_orders
+    response.raise_for_status()
+  File "C:\Users\koichi\AppData\Local\Programs\Python\Python310\lib\site-packages\requests\models.py", line 1024, in raise_for_status
+    raise HTTPError(http_error_msg, response=self)
+requests.exceptions.HTTPError: 404 Client Error: Not Found for url: https://api.bitget.com/api/mix/v1/order/cancel-all
+
+[2025-07-30 15:44:07] エラー:
+404 Client Error: Not Found for url: https://api.bitget.com/api/mix/usdt/v1/order/cancel-all
+Traceback (most recent call last):
+  File "C:\Users\koichi\Documents\MyDocuments\My_work\My_Programing_work\BitCoin\bitget_auto_rial\futuer_all_cancel.py", line 34, in cancel_all_orders_for_symbols
+    res = client.cancel_all_orders(symbol=symbol, margin_coin="USDT")
+  File "C:\Users\koichi\Documents\MyDocuments\My_work\My_Programing_work\BitCoin\bitget_auto_rial\bitget_client.py", line 58, in cancel_all_orders
+    response.raise_for_status()
+  File "C:\Users\koichi\AppData\Local\Programs\Python\Python310\lib\site-packages\requests\models.py", line 1024, in raise_for_status
+    raise HTTPError(http_error_msg, response=self)
+requests.exceptions.HTTPError: 404 Client Error: Not Found for url: https://api.bitget.com/api/mix/usdt/v1/order/cancel-all
+

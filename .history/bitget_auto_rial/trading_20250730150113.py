@@ -1,0 +1,85 @@
+import json
+import time
+import requests
+from urllib.parse import urljoin
+from .auth import AuthHelper
+
+
+class BitgetClient:
+    def __init__(self, key, secret, passphrase, is_testnet=False):
+        self.key = key
+        self.secret = secret
+        self.passphrase = passphrase
+        self.is_testnet = is_testnet
+        self.base_url = "https://api.bitget.com"
+        self.auth = AuthHelper(key, secret, passphrase, is_testnet)
+
+    def _convert_to_demo_symbol(self, symbol: str) -> str:
+        if self.is_testnet and symbol.endswith("_UMCBL"):
+            base = symbol[:-6]
+            return "S" + base.upper()
+        return symbol
+
+    def cancel_all_orders(self, symbol: str, margin_coin: str):
+        path = "/api/mix/v1/order/cancel-all-orders"
+        url = self.base_url + path
+        body_dict = {"symbol": symbol, "marginCoin": margin_coin}
+        body = json.dumps(body_dict)
+        headers = self.auth.make_headers("POST", path, body)
+        response = requests.post(url, headers=headers, data=body)
+        response.raise_for_status()
+        return response.json()
+
+    def place_order(self, symbol, side, price, quantity, order_type):
+        path = "/api/v2/mix/order/place-order"
+        url = urljoin(self.base_url, path)
+        timestamp = str(int(time.time() * 1000))
+
+        symbol_for_api = self._convert_to_demo_symbol(symbol)
+        reduceOnly = False
+        trade_side = "open"
+        if side.lower() in ["close_long", "close_short"]:
+            trade_side = "close"
+            side_simple = "sell" if side.lower() == "close_short" else "buy"
+            reduceOnly = True
+        else:
+            side_simple = side.lower()
+
+        body_dict = {
+            "symbol": symbol_for_api,
+            "productType": "USDT-FUTURES",
+            "marginMode": "crossed",
+            "marginCoin": "USDT",
+            "size": str(quantity),
+            "price": str(price),
+            "side": side_simple,
+            "tradeSide": trade_side,
+            "orderType": order_type.lower(),
+            "force": "gtc",
+            "clientOid": str(int(time.time() * 1000)),
+            "presetStopSurplusPrice": "",
+            "presetStopLossPrice": "",
+        }
+
+        print("[DEBUG] API送信パラメータ:", body_dict)
+        body = json.dumps(body_dict)
+        headers = self.auth.make_headers("POST", path, body)
+
+        print(f"[INFO] 発注中: {symbol_for_api}, {side_simple}, {price}, {quantity}, {order_type}")
+
+        try:
+            res = requests.post(url, headers=headers, data=body, timeout=15)
+            print("[DEBUG] ステータスコード:", res.status_code)
+            print("[DEBUG] レスポンステキスト:", res.text)
+            res.raise_for_status()
+            data = res.json()
+
+            with open("bitget_response_log.json", "a", encoding="utf-8") as f:
+                f.write(json.dumps(data, indent=2, ensure_ascii=False) + "\n\n")
+
+            return data
+
+        except Exception as e:
+            with open("error_log.txt", "a", encoding="utf-8") as f:
+                f.write(str(e) + "\n")
+            return None
