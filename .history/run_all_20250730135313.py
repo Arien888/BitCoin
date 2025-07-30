@@ -10,9 +10,9 @@ p2 = subprocess.Popen(['python', 'bitget/main.py'])
 p1.wait()
 p2.wait()
 
-# p3 = subprocess.Popen(['python', 'update_excel/main.py'])
+p3 = subprocess.Popen(['python', 'update_excel/main.py'])
 
-# p3.wait()
+p3.wait()
 
 p4 = subprocess.Popen(['python', 'export_value_excel/main.py'])
 

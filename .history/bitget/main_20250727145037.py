@@ -41,7 +41,7 @@ def main():
 
                 # 先物の総評価額を取得
                 account_info = get_futures_eccout_equity(
-                    api_key, api_secret, api_passphrase, path="bitget_futures_equity"
+                    api_key, api_secret, api_passphrase, path="futures_equity"
                 )
                 print(
                     f"先物総評価額: {account_info.get('data', {}).get('equity', '取得失敗')}"

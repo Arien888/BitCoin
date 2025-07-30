@@ -2,15 +2,13 @@ import xlwings as xw
 from order_utils import is_valid_order, adjust_price, adjust_quantity
 import os
 
-base_dir = os.path.dirname(os.path.abspath(__file__))
-
 
 def load_tick_sizes():
     # def load_tick_sizes(wb, sheet_name="bitget_futures_products"):
     price_places = {}
     volume_places = {}
 
-    file_path = os.path.join(base_dir, "a.xlsx")
+    file_path = r"C:\Users\koichi\Documents\MyDocuments\My_work\My_Programing_work\BitCoin\bitget_auto\a.xlsx"
 
     wb = xw.Book(file_path)
 
