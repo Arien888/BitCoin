@@ -7238,3 +7238,73 @@
   }
 }
 
+{
+  "code": "00000",
+  "msg": "success",
+  "requestTime": 1753858133131,
+  "data": {
+    "clientOid": "1753858133875",
+    "orderId": "1334343211233165313"
+  }
+}
+
+{
+  "code": "00000",
+  "msg": "success",
+  "requestTime": 1753858133248,
+  "data": {
+    "clientOid": "1753858134056",
+    "orderId": "1334343211723898881"
+  }
+}
+
+{
+  "code": "00000",
+  "msg": "success",
+  "requestTime": 1753858133340,
+  "data": {
+    "clientOid": "1753858134185",
+    "orderId": "1334343212105580545"
+  }
+}
+
+{
+  "code": "00000",
+  "msg": "success",
+  "requestTime": 1753858133482,
+  "data": {
+    "clientOid": "1753858134283",
+    "orderId": "1334343212701171714"
+  }
+}
+
+{
+  "code": "00000",
+  "msg": "success",
+  "requestTime": 1753858133615,
+  "data": {
+    "clientOid": "1753858134441",
+    "orderId": "1334343213259014145"
+  }
+}
+
+{
+  "code": "00000",
+  "msg": "success",
+  "requestTime": 1753858133764,
+  "data": {
+    "clientOid": "1753858134553",
+    "orderId": "1334343213879771141"
+  }
+}
+
+{
+  "code": "00000",
+  "msg": "success",
+  "requestTime": 1753858133879,
+  "data": {
+    "clientOid": "1753858134701",
+    "orderId": "1334343214370504705"
+  }
+}
+
