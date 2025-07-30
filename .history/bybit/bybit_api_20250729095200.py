@@ -25,37 +25,32 @@ def generate_signature(
 
 
 import time
-import base64
+import hmac
+import hashlib
 import requests
-from Crypto.Signature import PKCS1_v1_5
-from Crypto.Hash import SHA256
-from Crypto.PublicKey import RSA
 
 
-def rsa_sign(private_key_path: str, message: str) -> str:
-    """RSA署名を生成"""
-    with open(private_key_path, "r") as f:
-        private_key = RSA.import_key(f.read())
-    signer = PKCS1_v1_5.new(private_key)
-    digest = SHA256.new(message.encode("utf-8"))
-    signature = signer.sign(digest)
-    return base64.b64encode(signature).decode()
+def generate_signature(api_secret, payload):
+    return hmac.new(
+        api_secret.encode("utf-8"), payload.encode("utf-8"), hashlib.sha256
+    ).hexdigest()
 
-
-def get_bybit_spot_assets(api_key: str, private_key_path: str, base_url="https://api.bybit.com"):
+def get_bybit_spot_assets(api_key, api_secret, base_url="https://api.bybit.com"):
     endpoint = "/v5/account/wallet-balance"
-    method = "GET"
-    recv_window = "5000"
-    timestamp = str(int(time.time() * 1000))
+    url = base_url + endpoint
 
+    method = "GET"
+    timestamp = str(int(time.time() * 1000))
+    recv_window = "5000"
     params = {"accountType": "SPOT"}
+
+    # ❗❗ "?" を含めずに query_string を生成
     query_string = "&".join(f"{k}={v}" for k, v in sorted(params.items()))
 
-    url = base_url + endpoint + "?" + query_string
+    # ✅ payload（署名対象文字列）を先に作成
+    payload = f"{timestamp}{api_key}{recv_window}{method}{endpoint}{query_string}"
 
-    # 署名対象文字列の生成
-    message = f"{timestamp}{api_key}{recv_window}{method}{endpoint}{query_string}"
-
+    # 🔍 デバッグ出力
     print("=== DEBUG START ===")
     print(f"timestamp     : {timestamp}")
     print(f"api_key       : {api_key}")
@@ -63,20 +58,20 @@ def get_bybit_spot_assets(api_key: str, private_key_path: str, base_url="https:/
     print(f"method        : {method}")
     print(f"endpoint      : {endpoint}")
     print(f"query_string  : {query_string}")
-    print(f"署名対象文字列: {message}")
+    print(f"署名対象文字列: {payload}")
 
-    signature = rsa_sign(private_key_path, message)
-    print(f"生成された署名 : {signature}")
+    # ✅ 署名を生成
+    sign = hmac.new(api_secret.encode("utf-8"), payload.encode("utf-8"), hashlib.sha256).hexdigest()
+    print(f"生成された署名 : {sign}")
     print("===================")
 
     headers = {
         "X-BAPI-API-KEY": api_key,
-        "X-BAPI-SIGN": signature,
+        "X-BAPI-SIGN": sign,
         "X-BAPI-TIMESTAMP": timestamp,
         "X-BAPI-RECV-WINDOW": recv_window,
-        "Content-Type": "application/json",
     }
 
-    response = requests.get(url, headers=headers)
+    response = requests.get(url, headers=headers, params=params)
     response.raise_for_status()
     return response.json()

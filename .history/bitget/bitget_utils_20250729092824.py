@@ -6,6 +6,12 @@ import base64
 import yaml
 import csv
 from openpyxl import load_workbook
+import time
+import hmac
+import hashlib
+import base64
+import requests
+
 
 import os
 
@@ -45,12 +51,11 @@ def get_futures_eccout_equity(
     response.raise_for_status()
     return response.json()
 
-
 def get_assets(api_key, api_secret, api_passphrase, request_path, product_type=None):
     base_url = "https://api.bitget.com"
     method = "GET"
     timestamp = str(int(time.time() * 1000))
-    # クエリパラメータがある場合は request_path に追加し、署名対象文字列にも含める
+
     if product_type:
         query_string = f"?productType={product_type}"
         full_path = request_path + query_string
@@ -65,6 +70,7 @@ def get_assets(api_key, api_secret, api_passphrase, request_path, product_type=N
     signature = hmac.new(
         api_secret.encode("utf-8"), prehash_string.encode("utf-8"), hashlib.sha256
     ).digest()
+
     signature_base64 = base64.b64encode(signature).decode()
 
     headers = {
@@ -73,10 +79,10 @@ def get_assets(api_key, api_secret, api_passphrase, request_path, product_type=N
         "ACCESS-TIMESTAMP": timestamp,
         "ACCESS-PASSPHRASE": api_passphrase,
         "Content-Type": "application/json",
-        "locale": "en-US",
     }
 
     url = base_url + full_path
+
     response = requests.get(url, headers=headers)
     response.raise_for_status()
     return response.json()

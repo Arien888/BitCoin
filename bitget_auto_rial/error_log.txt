@@ -1,0 +1,1256 @@
+'latin-1' codec can't encode characters in position 0-3: ordinal not in range(256)
+'latin-1' codec can't encode characters in position 0-3: ordinal not in range(256)
+'latin-1' codec can't encode characters in position 0-3: ordinal not in range(256)
+'latin-1' codec can't encode characters in position 0-3: ordinal not in range(256)
+'latin-1' codec can't encode characters in position 0-3: ordinal not in range(256)
+'latin-1' codec can't encode characters in position 0-3: ordinal not in range(256)
+'latin-1' codec can't encode characters in position 0-3: ordinal not in range(256)
+'latin-1' codec can't encode characters in position 0-3: ordinal not in range(256)
+'latin-1' codec can't encode characters in position 0-3: ordinal not in range(256)
+'latin-1' codec can't encode characters in position 0-3: ordinal not in range(256)
+'latin-1' codec can't encode characters in position 0-3: ordinal not in range(256)
+'latin-1' codec can't encode characters in position 0-3: ordinal not in range(256)
+'latin-1' codec can't encode characters in position 0-3: ordinal not in range(256)
+'latin-1' codec can't encode characters in position 0-3: ordinal not in range(256)
+'latin-1' codec can't encode characters in position 0-3: ordinal not in range(256)
+'latin-1' codec can't encode characters in position 0-3: ordinal not in range(256)
+400 Client Error: Bad Request for url: https://api.bitget.com/api/mix/v1/order/placeOrder
+400 Client Error: Bad Request for url: https://api.bitget.com/api/mix/v1/order/placeOrder
+400 Client Error: Bad Request for url: https://api.bitget.com/api/mix/v1/order/placeOrder
+400 Client Error: Bad Request for url: https://api.bitget.com/api/mix/v1/order/placeOrder
+400 Client Error: Bad Request for url: https://api.bitget.com/api/mix/v1/order/placeOrder
+400 Client Error: Bad Request for url: https://api.bitget.com/api/mix/v1/order/placeOrder
+400 Client Error: Bad Request for url: https://api.bitget.com/api/mix/v1/order/placeOrder
+400 Client Error: Bad Request for url: https://api.bitget.com/api/mix/v1/order/placeOrder
+400 Client Error: Bad Request for url: https://api.bitget.com/api/mix/v1/order/placeOrder
+400 Client Error: Bad Request for url: https://api.bitget.com/api/mix/v1/order/placeOrder
+400 Client Error: Bad Request for url: https://api.bitget.com/api/mix/v1/order/placeOrder
+400 Client Error: Bad Request for url: https://api.bitget.com/api/mix/v1/order/placeOrder
+400 Client Error: Bad Request for url: https://api.bitget.com/api/mix/v1/order/placeOrder
+400 Client Error: Bad Request for url: https://api.bitget.com/api/mix/v1/order/placeOrder
+400 Client Error: Bad Request for url: https://api.bitget.com/api/mix/v1/order/placeOrder
+400 Client Error: Bad Request for url: https://api.bitget.com/api/mix/v1/order/placeOrder
+400 Client Error: Bad Request for url: https://api.bitget.com/api/mix/v1/order/placeOrder
+400 Client Error: Bad Request for url: https://api.bitget.com/api/mix/v1/order/placeOrder
+400 Client Error: Bad Request for url: https://api.bitget.com/api/mix/v1/order/placeOrder
+400 Client Error: Bad Request for url: https://api.bitget.com/api/mix/v1/order/placeOrder
+400 Client Error: Bad Request for url: https://api.bitget.com/api/mix/v1/order/placeOrder
+400 Client Error: Bad Request for url: https://api.bitget.com/api/mix/v1/order/placeOrder
+400 Client Error: Bad Request for url: https://api.bitget.com/api/mix/v1/order/placeOrder
+400 Client Error: Bad Request for url: https://api.bitget.com/api/mix/v1/order/placeOrder
+400 Client Error: Bad Request for url: https://api.bitget.com/api/mix/v1/order/placeOrder
+400 Client Error: Bad Request for url: https://api.bitget.com/api/mix/v1/order/placeOrder
+400 Client Error: Bad Request for url: https://api.bitget.com/api/mix/v1/order/placeOrder
+400 Client Error: Bad Request for url: https://api.bitget.com/api/mix/v1/order/placeOrder
+400 Client Error: Bad Request for url: https://api.bitget.com/api/mix/v1/order/placeOrder
+400 Client Error: Bad Request for url: https://api.bitget.com/api/mix/v1/order/placeOrder
+400 Client Error: Bad Request for url: https://api.bitget.com/api/mix/v1/order/placeOrder
+400 Client Error: Bad Request for url: https://api.bitget.com/api/mix/v1/order/placeOrder
+400 Client Error: Bad Request for url: https://api.bitget.com/api/mix/v1/order/placeOrder
+400 Client Error: Bad Request for url: https://api.bitget.com/api/mix/v1/order/placeOrder
+400 Client Error: Bad Request for url: https://api.bitget.com/api/mix/v1/order/placeOrder
+400 Client Error: Bad Request for url: https://api.bitget.com/api/mix/v1/order/placeOrder
+400 Client Error: Bad Request for url: https://api.bitget.com/api/mix/v1/order/placeOrder
+400 Client Error: Bad Request for url: https://api.bitget.com/api/mix/v1/order/placeOrder
+400 Client Error: Bad Request for url: https://api.bitget.com/api/mix/v1/order/placeOrder
+400 Client Error: Bad Request for url: https://api.bitget.com/api/mix/v1/order/placeOrder
+400 Client Error: Bad Request for url: https://api.bitget.com/api/mix/v1/order/placeOrder
+400 Client Error: Bad Request for url: https://api.bitget.com/api/mix/v1/order/placeOrder
+400 Client Error: Bad Request for url: https://api.bitget.com/api/mix/v1/order/placeOrder
+400 Client Error: Bad Request for url: https://api.bitget.com/api/mix/v1/order/placeOrder
+400 Client Error: Bad Request for url: https://api.bitget.com/api/mix/v1/order/placeOrder
+400 Client Error: Bad Request for url: https://api.bitget.com/api/mix/v1/order/placeOrder
+400 Client Error: Bad Request for url: https://api.bitget.com/api/mix/v1/order/placeOrder
+400 Client Error: Bad Request for url: https://api.bitget.com/api/mix/v1/order/placeOrder
+400 Client Error: Bad Request for url: https://api.bitget.com/api/mix/v1/order/placeOrder
+400 Client Error: Bad Request for url: https://api.bitget.com/api/mix/v1/order/placeOrder
+400 Client Error: Bad Request for url: https://api.bitget.com/api/mix/v1/order/placeOrder
+400 Client Error: Bad Request for url: https://api.bitget.com/api/mix/v1/order/placeOrder
+400 Client Error: Bad Request for url: https://api.bitget.com/api/mix/v1/order/placeOrder
+400 Client Error: Bad Request for url: https://api.bitget.com/api/mix/v1/order/placeOrder
+400 Client Error: Bad Request for url: https://api.bitget.com/api/mix/v1/order/placeOrder
+400 Client Error: Bad Request for url: https://api.bitget.com/api/mix/v1/order/placeOrder
+400 Client Error: Bad Request for url: https://api.bitget.com/api/mix/v1/order/placeOrder
+400 Client Error: Bad Request for url: https://api.bitget.com/api/mix/v1/order/placeOrder
+400 Client Error: Bad Request for url: https://api.bitget.com/api/mix/v1/order/placeOrder
+400 Client Error: Bad Request for url: https://api.bitget.com/api/mix/v1/order/placeOrder
+400 Client Error: Bad Request for url: https://api.bitget.com/api/mix/v1/order/placeOrder
+400 Client Error: Bad Request for url: https://api.bitget.com/api/mix/v1/order/placeOrder
+400 Client Error: Bad Request for url: https://api.bitget.com/api/mix/v1/order/placeOrder
+400 Client Error: Bad Request for url: https://api.bitget.com/api/mix/v1/order/placeOrder
+400 Client Error: Bad Request for url: https://api.bitget.com/api/mix/v1/order/placeOrder
+400 Client Error: Bad Request for url: https://api.bitget.com/api/mix/v1/order/placeOrder
+400 Client Error: Bad Request for url: https://api.bitget.com/api/mix/v1/order/placeOrder
+400 Client Error: Bad Request for url: https://api.bitget.com/api/mix/v1/order/placeOrder
+400 Client Error: Bad Request for url: https://api.bitget.com/api/mix/v1/order/placeOrder
+400 Client Error: Bad Request for url: https://api.bitget.com/api/mix/v1/order/placeOrder
+400 Client Error: Bad Request for url: https://api.bitget.com/api/mix/v1/order/placeOrder
+400 Client Error: Bad Request for url: https://api.bitget.com/api/mix/v1/order/placeOrder
+400 Client Error: Bad Request for url: https://api.bitget.com/api/mix/v1/order/placeOrder
+400 Client Error: Bad Request for url: https://api.bitget.com/api/mix/v1/order/placeOrder
+400 Client Error: Bad Request for url: https://api.bitget.com/api/mix/v1/order/placeOrder
+400 Client Error: Bad Request for url: https://api.bitget.com/api/mix/v1/order/placeOrder
+400 Client Error: Bad Request for url: https://api.bitget.com/api/mix/v1/order/placeOrder
+400 Client Error: Bad Request for url: https://api.bitget.com/api/mix/v1/order/placeOrder
+400 Client Error: Bad Request for url: https://api.bitget.com/api/mix/v1/order/placeOrder
+400 Client Error: Bad Request for url: https://api.bitget.com/api/mix/v1/order/placeOrder
+400 Client Error: Bad Request for url: https://api.bitget.com/api/mix/v1/order/placeOrder
+400 Client Error: Bad Request for url: https://api.bitget.com/api/mix/v1/order/placeOrder
+400 Client Error: Bad Request for url: https://api.bitget.com/api/mix/v1/order/placeOrder
+400 Client Error: Bad Request for url: https://api.bitget.com/api/mix/v1/order/placeOrder
+400 Client Error: Bad Request for url: https://api.bitget.com/api/mix/v1/order/placeOrder
+400 Client Error: Bad Request for url: https://api.bitget.com/api/mix/v1/order/placeOrder
+400 Client Error: Bad Request for url: https://api.bitget.com/api/mix/v1/order/placeOrder
+400 Client Error: Bad Request for url: https://api.bitget.com/api/mix/v1/order/placeOrder
+400 Client Error: Bad Request for url: https://api.bitget.com/api/mix/v1/order/placeOrder
+400 Client Error: Bad Request for url: https://api.bitget.com/api/mix/v1/order/placeOrder
+400 Client Error: Bad Request for url: https://api.bitget.com/api/mix/v1/order/placeOrder
+400 Client Error: Bad Request for url: https://api.bitget.com/api/mix/v1/order/placeOrder
+400 Client Error: Bad Request for url: https://api.bitget.com/api/mix/v1/order/placeOrder
+400 Client Error: Bad Request for url: https://api.bitget.com/api/mix/v1/order/placeOrder
+400 Client Error: Bad Request for url: https://api.bitget.com/api/mix/v1/order/placeOrder
+400 Client Error: Bad Request for url: https://api.bitget.com/api/mix/v1/order/placeOrder
+400 Client Error: Bad Request for url: https://api.bitget.com/api/mix/v1/order/placeOrder
+400 Client Error: Bad Request for url: https://api.bitget.com/api/mix/v1/order/placeOrder
+400 Client Error: Bad Request for url: https://api.bitget.com/api/mix/v1/order/placeOrder
+400 Client Error: Bad Request for url: https://api.bitget.com/api/mix/v1/order/placeOrder
+400 Client Error: Bad Request for url: https://api.bitget.com/api/mix/v1/order/placeOrder
+400 Client Error: Bad Request for url: https://api.bitget.com/api/mix/v1/order/placeOrder
+400 Client Error: Bad Request for url: https://api.bitget.com/api/mix/v1/order/placeOrder
+400 Client Error: Bad Request for url: https://api.bitget.com/api/mix/v1/order/placeOrder
+400 Client Error: Bad Request for url: https://api.bitget.com/api/mix/v1/order/placeOrder
+400 Client Error: Bad Request for url: https://api.bitget.com/api/mix/v1/order/placeOrder
+400 Client Error: Bad Request for url: https://api.bitget.com/api/mix/v1/order/placeOrder
+400 Client Error: Bad Request for url: https://api.bitget.com/api/mix/v1/order/placeOrder
+400 Client Error: Bad Request for url: https://api.bitget.com/api/mix/v1/order/placeOrder
+400 Client Error: Bad Request for url: https://api.bitget.com/api/mix/v1/order/placeOrder
+400 Client Error: Bad Request for url: https://api.bitget.com/api/mix/v1/order/placeOrder
+400 Client Error: Bad Request for url: https://api.bitget.com/api/mix/v1/order/placeOrder
+400 Client Error: Bad Request for url: https://api.bitget.com/api/mix/v1/order/placeOrder
+400 Client Error: Bad Request for url: https://api.bitget.com/api/mix/v1/order/placeOrder
+400 Client Error: Bad Request for url: https://api.bitget.com/api/mix/v1/order/placeOrder
+400 Client Error: Bad Request for url: https://api.bitget.com/api/mix/v1/order/placeOrder
+400 Client Error: Bad Request for url: https://api.bitget.com/api/mix/v1/order/placeOrder
+400 Client Error: Bad Request for url: https://api.bitget.com/api/mix/v1/order/placeOrder
+400 Client Error: Bad Request for url: https://api.bitget.com/api/mix/v1/order/placeOrder
+400 Client Error: Bad Request for url: https://api.bitget.com/api/mix/v1/order/placeOrder
+400 Client Error: Bad Request for url: https://api.bitget.com/api/mix/v1/order/placeOrder
+400 Client Error: Bad Request for url: https://api.bitget.com/api/mix/v1/order/placeOrder
+400 Client Error: Bad Request for url: https://api.bitget.com/api/mix/v1/order/placeOrder
+400 Client Error: Bad Request for url: https://api.bitget.com/api/mix/v1/order/placeOrder
+400 Client Error: Bad Request for url: https://api.bitget.com/api/mix/v1/order/placeOrder
+400 Client Error: Bad Request for url: https://api.bitget.com/api/mix/v1/order/placeOrder
+400 Client Error: Bad Request for url: https://api.bitget.com/api/mix/v1/order/placeOrder
+400 Client Error: Bad Request for url: https://api.bitget.com/api/mix/v1/order/placeOrder
+400 Client Error: Bad Request for url: https://api.bitget.com/api/mix/v1/order/placeOrder
+400 Client Error: Bad Request for url: https://api.bitget.com/api/mix/v1/order/placeOrder
+400 Client Error: Bad Request for url: https://api.bitget.com/api/mix/v1/order/placeOrder
+400 Client Error: Bad Request for url: https://api.bitget.com/api/mix/v1/order/placeOrder
+400 Client Error: Bad Request for url: https://api.bitget.com/api/mix/v1/order/placeOrder
+400 Client Error: Bad Request for url: https://api.bitget.com/api/mix/v1/order/placeOrder
+400 Client Error: Bad Request for url: https://api.bitget.com/api/mix/v1/order/placeOrder
+400 Client Error: Bad Request for url: https://api.bitget.com/api/mix/v1/order/placeOrder
+400 Client Error: Bad Request for url: https://api.bitget.com/api/mix/v1/order/placeOrder
+400 Client Error: Bad Request for url: https://api.bitget.com/api/mix/v1/order/placeOrder
+400 Client Error: Bad Request for url: https://api.bitget.com/api/mix/v1/order/placeOrder
+400 Client Error: Bad Request for url: https://api.bitget.com/api/mix/v1/order/placeOrder
+400 Client Error: Bad Request for url: https://api.bitget.com/api/mix/v1/order/placeOrder
+400 Client Error: Bad Request for url: https://api.bitget.com/api/mix/v1/order/placeOrder
+400 Client Error: Bad Request for url: https://api.bitget.com/api/mix/v1/order/placeOrder
+400 Client Error: Bad Request for url: https://api.bitget.com/api/mix/v1/order/placeOrder
+400 Client Error: Bad Request for url: https://api.bitget.com/api/mix/v1/order/placeOrder
+400 Client Error: Bad Request for url: https://api.bitget.com/api/mix/v1/order/placeOrder
+400 Client Error: Bad Request for url: https://api.bitget.com/api/mix/v1/order/placeOrder
+400 Client Error: Bad Request for url: https://api.bitget.com/api/mix/v1/order/placeOrder
+400 Client Error: Bad Request for url: https://api.bitget.com/api/mix/v1/order/placeOrder
+400 Client Error: Bad Request for url: https://api.bitget.com/api/mix/v1/order/placeOrder
+400 Client Error: Bad Request for url: https://api.bitget.com/api/mix/v1/order/placeOrder
+400 Client Error: Bad Request for url: https://api.bitget.com/api/mix/v1/order/placeOrder
+400 Client Error: Bad Request for url: https://api.bitget.com/api/mix/v1/order/placeOrder
+400 Client Error: Bad Request for url: https://api.bitget.com/api/mix/v1/order/placeOrder
+400 Client Error: Bad Request for url: https://api.bitget.com/api/mix/v1/order/placeOrder
+400 Client Error: Bad Request for url: https://api.bitget.com/api/mix/v1/order/placeOrder
+400 Client Error: Bad Request for url: https://api.bitget.com/api/mix/v1/order/placeOrder
+400 Client Error: Bad Request for url: https://api.bitget.com/api/mix/v1/order/placeOrder
+400 Client Error: Bad Request for url: https://api.bitget.com/api/mix/v1/order/placeOrder
+400 Client Error: Bad Request for url: https://api.bitget.com/api/mix/v1/order/placeOrder
+400 Client Error: Bad Request for url: https://api.bitget.com/api/mix/v1/order/placeOrder
+400 Client Error: Bad Request for url: https://api.bitget.com/api/mix/v1/order/placeOrder
+400 Client Error: Bad Request for url: https://api.bitget.com/api/mix/v1/order/placeOrder
+400 Client Error: Bad Request for url: https://api.bitget.com/api/mix/v1/order/placeOrder
+400 Client Error: Bad Request for url: https://api.bitget.com/api/mix/v1/order/placeOrder
+400 Client Error: Bad Request for url: https://api.bitget.com/api/mix/v1/order/placeOrder
+400 Client Error: Bad Request for url: https://api.bitget.com/api/mix/v1/order/placeOrder
+400 Client Error: Bad Request for url: https://api.bitget.com/api/mix/v1/order/placeOrder
+400 Client Error: Bad Request for url: https://api.bitget.com/api/mix/v1/order/placeOrder
+400 Client Error: Bad Request for url: https://api.bitget.com/api/mix/v1/order/placeOrder
+400 Client Error: Bad Request for url: https://api.bitget.com/api/mix/v1/order/placeOrder
+400 Client Error: Bad Request for url: https://api.bitget.com/api/mix/v1/order/placeOrder
+400 Client Error: Bad Request for url: https://api.bitget.com/api/mix/v1/order/placeOrder
+400 Client Error: Bad Request for url: https://api.bitget.com/api/mix/v1/order/placeOrder
+400 Client Error: Bad Request for url: https://api.bitget.com/api/mix/v1/order/placeOrder
+400 Client Error: Bad Request for url: https://api.bitget.com/api/mix/v1/order/placeOrder
+400 Client Error: Bad Request for url: https://api.bitget.com/api/mix/v1/order/placeOrder
+400 Client Error: Bad Request for url: https://api.bitget.com/api/mix/v1/order/placeOrder
+400 Client Error: Bad Request for url: https://api.bitget.com/api/mix/v1/order/placeOrder
+400 Client Error: Bad Request for url: https://api.bitget.com/api/mix/v1/order/placeOrder
+400 Client Error: Bad Request for url: https://api.bitget.com/api/mix/v1/order/placeOrder
+400 Client Error: Bad Request for url: https://api.bitget.com/api/mix/v1/order/placeOrder
+400 Client Error: Bad Request for url: https://api.bitget.com/api/mix/v1/order/placeOrder
+400 Client Error: Bad Request for url: https://api.bitget.com/api/mix/v1/order/placeOrder
+400 Client Error: Bad Request for url: https://api.bitget.com/api/mix/v1/order/placeOrder
+400 Client Error: Bad Request for url: https://api.bitget.com/api/mix/v1/order/placeOrder
+400 Client Error: Bad Request for url: https://api.bitget.com/api/mix/v1/order/placeOrder
+400 Client Error: Bad Request for url: https://api.bitget.com/api/mix/v1/order/placeOrder
+400 Client Error: Bad Request for url: https://api.bitget.com/api/mix/v1/order/placeOrder
+400 Client Error: Bad Request for url: https://api.bitget.com/api/mix/v1/order/placeOrder
+400 Client Error: Bad Request for url: https://api.bitget.com/api/mix/v1/order/placeOrder
+400 Client Error: Bad Request for url: https://api.bitget.com/api/mix/v1/order/placeOrder
+400 Client Error: Bad Request for url: https://api.bitget.com/api/mix/v1/order/placeOrder
+400 Client Error: Bad Request for url: https://api.bitget.com/api/mix/v1/order/placeOrder
+400 Client Error: Bad Request for url: https://api.bitget.com/api/mix/v1/order/placeOrder
+400 Client Error: Bad Request for url: https://api.bitget.com/api/mix/v1/order/placeOrder
+400 Client Error: Bad Request for url: https://api.bitget.com/api/mix/v1/order/placeOrder
+400 Client Error: Bad Request for url: https://api.bitget.com/api/mix/v1/order/placeOrder
+400 Client Error: Bad Request for url: https://api.bitget.com/api/mix/v1/order/placeOrder
+400 Client Error: Bad Request for url: https://api.bitget.com/api/mix/v1/order/placeOrder
+400 Client Error: Bad Request for url: https://api.bitget.com/api/mix/v1/order/placeOrder
+400 Client Error: Bad Request for url: https://api.bitget.com/api/mix/v1/order/placeOrder
+400 Client Error: Bad Request for url: https://api.bitget.com/api/mix/v1/order/placeOrder
+400 Client Error: Bad Request for url: https://api.bitget.com/api/mix/v1/order/placeOrder
+400 Client Error: Bad Request for url: https://api.bitget.com/api/mix/v1/order/placeOrder
+400 Client Error: Bad Request for url: https://api.bitget.com/api/mix/v1/order/placeOrder
+400 Client Error: Bad Request for url: https://api.bitget.com/api/mix/v1/order/placeOrder
+400 Client Error: Bad Request for url: https://api.bitget.com/api/mix/v1/order/placeOrder
+400 Client Error: Bad Request for url: https://api.bitget.com/api/mix/v1/order/placeOrder
+400 Client Error: Bad Request for url: https://api.bitget.com/api/mix/v1/order/placeOrder
+400 Client Error: Bad Request for url: https://api.bitget.com/api/mix/v1/order/placeOrder
+400 Client Error: Bad Request for url: https://api.bitget.com/api/mix/v1/order/placeOrder
+400 Client Error: Bad Request for url: https://api.bitget.com/api/mix/v1/order/placeOrder
+400 Client Error: Bad Request for url: https://api.bitget.com/api/mix/v1/order/placeOrder
+400 Client Error: Bad Request for url: https://api.bitget.com/api/mix/v1/order/placeOrder
+400 Client Error: Bad Request for url: https://api.bitget.com/api/mix/v1/order/placeOrder
+400 Client Error: Bad Request for url: https://api.bitget.com/api/mix/v1/order/placeOrder
+400 Client Error: Bad Request for url: https://api.bitget.com/api/mix/v1/order/placeOrder
+400 Client Error: Bad Request for url: https://api.bitget.com/api/mix/v1/order/placeOrder
+400 Client Error: Bad Request for url: https://api.bitget.com/api/mix/v1/order/placeOrder
+400 Client Error: Bad Request for url: https://api.bitget.com/api/mix/v1/order/placeOrder
+400 Client Error: Bad Request for url: https://api.bitget.com/api/mix/v1/order/placeOrder
+400 Client Error: Bad Request for url: https://api.bitget.com/api/mix/v1/order/placeOrder
+400 Client Error: Bad Request for url: https://api.bitget.com/api/mix/v1/order/placeOrder
+400 Client Error: Bad Request for url: https://api.bitget.com/api/mix/v1/order/placeOrder
+400 Client Error: Bad Request for url: https://api.bitget.com/api/mix/v1/order/placeOrder
+400 Client Error: Bad Request for url: https://api.bitget.com/api/mix/v1/order/placeOrder
+400 Client Error: Bad Request for url: https://api.bitget.com/api/mix/v1/order/placeOrder
+400 Client Error: Bad Request for url: https://api.bitget.com/api/mix/v1/order/placeOrder
+400 Client Error: Bad Request for url: https://api.bitget.com/api/mix/v1/order/placeOrder
+400 Client Error: Bad Request for url: https://api.bitget.com/api/mix/v1/order/placeOrder
+400 Client Error: Bad Request for url: https://api.bitget.com/api/mix/v1/order/placeOrder
+400 Client Error: Bad Request for url: https://api.bitget.com/api/mix/v1/order/placeOrder
+400 Client Error: Bad Request for url: https://api.bitget.com/api/mix/v1/order/placeOrder
+400 Client Error: Bad Request for url: https://api.bitget.com/api/mix/v1/order/placeOrder
+400 Client Error: Bad Request for url: https://api.bitget.com/api/mix/v1/order/placeOrder
+400 Client Error: Bad Request for url: https://api.bitget.com/api/mix/v1/order/placeOrder
+400 Client Error: Bad Request for url: https://api.bitget.com/api/mix/v1/order/placeOrder
+400 Client Error: Bad Request for url: https://api.bitget.com/api/mix/v1/order/placeOrder
+400 Client Error: Bad Request for url: https://api.bitget.com/api/mix/v1/order/placeOrder
+400 Client Error: Bad Request for url: https://api.bitget.com/api/mix/v1/order/placeOrder
+400 Client Error: Bad Request for url: https://api.bitget.com/api/mix/v1/order/placeOrder
+400 Client Error: Bad Request for url: https://api.bitget.com/api/mix/v1/order/placeOrder
+400 Client Error: Bad Request for url: https://api.bitget.com/api/mix/v1/order/placeOrder
+400 Client Error: Bad Request for url: https://api.bitget.com/api/mix/v1/order/placeOrder
+400 Client Error: Bad Request for url: https://api.bitget.com/api/mix/v1/order/placeOrder
+400 Client Error: Bad Request for url: https://api.bitget.com/api/mix/v1/order/placeOrder
+400 Client Error: Bad Request for url: https://api.bitget.com/api/mix/v1/order/placeOrder
+400 Client Error: Bad Request for url: https://api.bitget.com/api/mix/v1/order/placeOrder
+400 Client Error: Bad Request for url: https://api.bitget.com/api/mix/v1/order/placeOrder
+400 Client Error: Bad Request for url: https://api.bitget.com/api/mix/v1/order/placeOrder
+400 Client Error: Bad Request for url: https://api.bitget.com/api/mix/v1/order/placeOrder
+400 Client Error: Bad Request for url: https://api.bitget.com/api/mix/v1/order/placeOrder
+400 Client Error: Bad Request for url: https://api.bitget.com/api/mix/v1/order/placeOrder
+400 Client Error: Bad Request for url: https://api.bitget.com/api/mix/v1/order/placeOrder
+400 Client Error: Bad Request for url: https://api.bitget.com/api/mix/v1/order/placeOrder
+400 Client Error: Bad Request for url: https://api.bitget.com/api/mix/v1/order/placeOrder
+400 Client Error: Bad Request for url: https://api.bitget.com/api/mix/v1/order/placeOrder
+400 Client Error: Bad Request for url: https://api.bitget.com/api/mix/v1/order/placeOrder
+400 Client Error: Bad Request for url: https://api.bitget.com/api/mix/v1/order/placeOrder
+400 Client Error: Bad Request for url: https://api.bitget.com/api/mix/v1/order/placeOrder
+400 Client Error: Bad Request for url: https://api.bitget.com/api/mix/v1/order/placeOrder
+400 Client Error: Bad Request for url: https://api.bitget.com/api/mix/v1/order/placeOrder
+400 Client Error: Bad Request for url: https://api.bitget.com/api/mix/v1/order/placeOrder
+400 Client Error: Bad Request for url: https://api.bitget.com/api/mix/v1/order/placeOrder
+400 Client Error: Bad Request for url: https://api.bitget.com/api/mix/v1/order/placeOrder
+400 Client Error: Bad Request for url: https://api.bitget.com/api/mix/v1/order/placeOrder
+400 Client Error: Bad Request for url: https://api.bitget.com/api/mix/v1/order/placeOrder
+400 Client Error: Bad Request for url: https://api.bitget.com/api/mix/v1/order/placeOrder
+400 Client Error: Bad Request for url: https://api.bitget.com/api/mix/v1/order/placeOrder
+400 Client Error: Bad Request for url: https://api.bitget.com/api/mix/v1/order/placeOrder
+400 Client Error: Bad Request for url: https://api.bitget.com/api/mix/v1/order/placeOrder
+400 Client Error: Bad Request for url: https://api.bitget.com/api/mix/v1/order/placeOrder
+HTTPSConnectionPool(host='testnet.bitget.com', port=443): Max retries exceeded with url: /api/mix/v1/order/placeOrder (Caused by NewConnectionError('<urllib3.connection.HTTPSConnection object at 0x000002892C46ACB0>: Failed to establish a new connection: [Errno 11001] getaddrinfo failed'))
+HTTPSConnectionPool(host='testnet.bitget.com', port=443): Max retries exceeded with url: /api/mix/v1/order/placeOrder (Caused by NewConnectionError('<urllib3.connection.HTTPSConnection object at 0x000002892C46ADA0>: Failed to establish a new connection: [Errno 11001] getaddrinfo failed'))
+HTTPSConnectionPool(host='testnet.bitget.com', port=443): Max retries exceeded with url: /api/mix/v1/order/placeOrder (Caused by NewConnectionError('<urllib3.connection.HTTPSConnection object at 0x000002892C46A320>: Failed to establish a new connection: [Errno 11001] getaddrinfo failed'))
+HTTPSConnectionPool(host='testnet.bitget.com', port=443): Max retries exceeded with url: /api/mix/v1/order/placeOrder (Caused by NewConnectionError('<urllib3.connection.HTTPSConnection object at 0x000002892C46AAA0>: Failed to establish a new connection: [Errno 11001] getaddrinfo failed'))
+HTTPSConnectionPool(host='testnet.bitget.com', port=443): Max retries exceeded with url: /api/mix/v1/order/placeOrder (Caused by NewConnectionError('<urllib3.connection.HTTPSConnection object at 0x000002892C46AF20>: Failed to establish a new connection: [Errno 11001] getaddrinfo failed'))
+HTTPSConnectionPool(host='testnet.bitget.com', port=443): Max retries exceeded with url: /api/mix/v1/order/placeOrder (Caused by NewConnectionError('<urllib3.connection.HTTPSConnection object at 0x000002892C469F60>: Failed to establish a new connection: [Errno 11001] getaddrinfo failed'))
+HTTPSConnectionPool(host='testnet.bitget.com', port=443): Max retries exceeded with url: /api/mix/v1/order/placeOrder (Caused by NewConnectionError('<urllib3.connection.HTTPSConnection object at 0x000002892C46A7D0>: Failed to establish a new connection: [Errno 11001] getaddrinfo failed'))
+HTTPSConnectionPool(host='testnet.bitget.com', port=443): Max retries exceeded with url: /api/mix/v1/order/placeOrder (Caused by NewConnectionError('<urllib3.connection.HTTPSConnection object at 0x000002892C469F30>: Failed to establish a new connection: [Errno 11001] getaddrinfo failed'))
+HTTPSConnectionPool(host='testnet.bitget.com', port=443): Max retries exceeded with url: /api/mix/v1/order/placeOrder (Caused by NewConnectionError('<urllib3.connection.HTTPSConnection object at 0x000002892C46AEC0>: Failed to establish a new connection: [Errno 11001] getaddrinfo failed'))
+HTTPSConnectionPool(host='testnet.bitget.com', port=443): Max retries exceeded with url: /api/mix/v1/order/placeOrder (Caused by NewConnectionError('<urllib3.connection.HTTPSConnection object at 0x000002892C46AB30>: Failed to establish a new connection: [Errno 11001] getaddrinfo failed'))
+HTTPSConnectionPool(host='testnet.bitget.com', port=443): Max retries exceeded with url: /api/mix/v1/order/placeOrder (Caused by NewConnectionError('<urllib3.connection.HTTPSConnection object at 0x000002892C46A800>: Failed to establish a new connection: [Errno 11001] getaddrinfo failed'))
+HTTPSConnectionPool(host='testnet.bitget.com', port=443): Max retries exceeded with url: /api/mix/v1/order/placeOrder (Caused by NewConnectionError('<urllib3.connection.HTTPSConnection object at 0x000002892C46AB30>: Failed to establish a new connection: [Errno 11001] getaddrinfo failed'))
+HTTPSConnectionPool(host='testnet.bitget.com', port=443): Max retries exceeded with url: /api/mix/v1/order/placeOrder (Caused by NewConnectionError('<urllib3.connection.HTTPSConnection object at 0x000002892C46A410>: Failed to establish a new connection: [Errno 11001] getaddrinfo failed'))
+HTTPSConnectionPool(host='testnet.bitget.com', port=443): Max retries exceeded with url: /api/mix/v1/order/placeOrder (Caused by NewConnectionError('<urllib3.connection.HTTPSConnection object at 0x000002892C46B3D0>: Failed to establish a new connection: [Errno 11001] getaddrinfo failed'))
+HTTPSConnectionPool(host='testnet.bitget.com', port=443): Max retries exceeded with url: /api/mix/v1/order/placeOrder (Caused by NewConnectionError('<urllib3.connection.HTTPSConnection object at 0x000002892C46A7D0>: Failed to establish a new connection: [Errno 11001] getaddrinfo failed'))
+HTTPSConnectionPool(host='testnet.bitget.com', port=443): Max retries exceeded with url: /api/mix/v1/order/placeOrder (Caused by NewConnectionError('<urllib3.connection.HTTPSConnection object at 0x000002892C46AA70>: Failed to establish a new connection: [Errno 11001] getaddrinfo failed'))
+HTTPSConnectionPool(host='testnet.bitget.com', port=443): Max retries exceeded with url: /api/mix/v1/order/placeOrder (Caused by NewConnectionError('<urllib3.connection.HTTPSConnection object at 0x000002892C46AFB0>: Failed to establish a new connection: [Errno 11001] getaddrinfo failed'))
+HTTPSConnectionPool(host='testnet.bitget.com', port=443): Max retries exceeded with url: /api/mix/v1/order/placeOrder (Caused by NewConnectionError('<urllib3.connection.HTTPSConnection object at 0x000002892C46A470>: Failed to establish a new connection: [Errno 11001] getaddrinfo failed'))
+HTTPSConnectionPool(host='testnet.bitget.com', port=443): Max retries exceeded with url: /api/mix/v1/order/placeOrder (Caused by NewConnectionError('<urllib3.connection.HTTPSConnection object at 0x000002892C46A4D0>: Failed to establish a new connection: [Errno 11001] getaddrinfo failed'))
+HTTPSConnectionPool(host='testnet.bitget.com', port=443): Max retries exceeded with url: /api/mix/v1/order/placeOrder (Caused by NewConnectionError('<urllib3.connection.HTTPSConnection object at 0x000002892C46ADD0>: Failed to establish a new connection: [Errno 11001] getaddrinfo failed'))
+HTTPSConnectionPool(host='testnet.bitget.com', port=443): Max retries exceeded with url: /api/mix/v1/order/placeOrder (Caused by NewConnectionError('<urllib3.connection.HTTPSConnection object at 0x000002892C46A620>: Failed to establish a new connection: [Errno 11001] getaddrinfo failed'))
+HTTPSConnectionPool(host='testnet.bitget.com', port=443): Max retries exceeded with url: /api/mix/v1/order/placeOrder (Caused by NewConnectionError('<urllib3.connection.HTTPSConnection object at 0x000002892C46A890>: Failed to establish a new connection: [Errno 11001] getaddrinfo failed'))
+HTTPSConnectionPool(host='testnet.bitget.com', port=443): Max retries exceeded with url: /api/mix/v1/order/placeOrder (Caused by NewConnectionError('<urllib3.connection.HTTPSConnection object at 0x000002892C46B3D0>: Failed to establish a new connection: [Errno 11001] getaddrinfo failed'))
+HTTPSConnectionPool(host='testnet.bitget.com', port=443): Max retries exceeded with url: /api/mix/v1/order/placeOrder (Caused by NewConnectionError('<urllib3.connection.HTTPSConnection object at 0x000002892C469F30>: Failed to establish a new connection: [Errno 11001] getaddrinfo failed'))
+HTTPSConnectionPool(host='testnet.bitget.com', port=443): Max retries exceeded with url: /api/mix/v1/order/placeOrder (Caused by NewConnectionError('<urllib3.connection.HTTPSConnection object at 0x000002892C46AB00>: Failed to establish a new connection: [Errno 11001] getaddrinfo failed'))
+HTTPSConnectionPool(host='testnet.bitget.com', port=443): Max retries exceeded with url: /api/mix/v1/order/placeOrder (Caused by NewConnectionError('<urllib3.connection.HTTPSConnection object at 0x000002892C46A800>: Failed to establish a new connection: [Errno 11001] getaddrinfo failed'))
+HTTPSConnectionPool(host='testnet.bitget.com', port=443): Max retries exceeded with url: /api/mix/v1/order/placeOrder (Caused by NewConnectionError('<urllib3.connection.HTTPSConnection object at 0x000002892C46A890>: Failed to establish a new connection: [Errno 11001] getaddrinfo failed'))
+HTTPSConnectionPool(host='testnet.bitget.com', port=443): Max retries exceeded with url: /api/mix/v1/order/placeOrder (Caused by NewConnectionError('<urllib3.connection.HTTPSConnection object at 0x000002892C46A590>: Failed to establish a new connection: [Errno 11001] getaddrinfo failed'))
+HTTPSConnectionPool(host='testnet.bitget.com', port=443): Max retries exceeded with url: /api/mix/v1/order/placeOrder (Caused by NewConnectionError('<urllib3.connection.HTTPSConnection object at 0x000002892C46AF20>: Failed to establish a new connection: [Errno 11001] getaddrinfo failed'))
+HTTPSConnectionPool(host='testnet.bitget.com', port=443): Max retries exceeded with url: /api/mix/v1/order/placeOrder (Caused by NewConnectionError('<urllib3.connection.HTTPSConnection object at 0x000002892C46B190>: Failed to establish a new connection: [Errno 11001] getaddrinfo failed'))
+HTTPSConnectionPool(host='testnet.bitget.com', port=443): Max retries exceeded with url: /api/mix/v1/order/placeOrder (Caused by NewConnectionError('<urllib3.connection.HTTPSConnection object at 0x000002892C46AE00>: Failed to establish a new connection: [Errno 11001] getaddrinfo failed'))
+HTTPSConnectionPool(host='testnet.bitget.com', port=443): Max retries exceeded with url: /api/mix/v1/order/placeOrder (Caused by NewConnectionError('<urllib3.connection.HTTPSConnection object at 0x000002892C46B4F0>: Failed to establish a new connection: [Errno 11001] getaddrinfo failed'))
+HTTPSConnectionPool(host='testnet.bitget.com', port=443): Max retries exceeded with url: /api/mix/v1/order/placeOrder (Caused by NewConnectionError('<urllib3.connection.HTTPSConnection object at 0x000002892C46AC80>: Failed to establish a new connection: [Errno 11001] getaddrinfo failed'))
+HTTPSConnectionPool(host='testnet.bitget.com', port=443): Max retries exceeded with url: /api/mix/v1/order/placeOrder (Caused by NewConnectionError('<urllib3.connection.HTTPSConnection object at 0x000002892C46AB00>: Failed to establish a new connection: [Errno 11001] getaddrinfo failed'))
+HTTPSConnectionPool(host='testnet.bitget.com', port=443): Max retries exceeded with url: /api/mix/v1/order/placeOrder (Caused by NewConnectionError('<urllib3.connection.HTTPSConnection object at 0x000002892C46A620>: Failed to establish a new connection: [Errno 11001] getaddrinfo failed'))
+HTTPSConnectionPool(host='testnet.bitget.com', port=443): Max retries exceeded with url: /api/mix/v1/order/placeOrder (Caused by NewConnectionError('<urllib3.connection.HTTPSConnection object at 0x000002892C46AAD0>: Failed to establish a new connection: [Errno 11001] getaddrinfo failed'))
+HTTPSConnectionPool(host='testnet.bitget.com', port=443): Max retries exceeded with url: /api/mix/v1/order/placeOrder (Caused by NewConnectionError('<urllib3.connection.HTTPSConnection object at 0x000002892C46A620>: Failed to establish a new connection: [Errno 11001] getaddrinfo failed'))
+HTTPSConnectionPool(host='testnet.bitget.com', port=443): Max retries exceeded with url: /api/mix/v1/order/placeOrder (Caused by NewConnectionError('<urllib3.connection.HTTPSConnection object at 0x000002892C46AFB0>: Failed to establish a new connection: [Errno 11001] getaddrinfo failed'))
+HTTPSConnectionPool(host='testnet.bitget.com', port=443): Max retries exceeded with url: /api/mix/v1/order/placeOrder (Caused by NewConnectionError('<urllib3.connection.HTTPSConnection object at 0x000002892C46A0B0>: Failed to establish a new connection: [Errno 11001] getaddrinfo failed'))
+HTTPSConnectionPool(host='testnet.bitget.com', port=443): Max retries exceeded with url: /api/mix/v1/order/placeOrder (Caused by NewConnectionError('<urllib3.connection.HTTPSConnection object at 0x000002892C46A590>: Failed to establish a new connection: [Errno 11001] getaddrinfo failed'))
+HTTPSConnectionPool(host='testnet.bitget.com', port=443): Max retries exceeded with url: /api/mix/v1/order/placeOrder (Caused by NewConnectionError('<urllib3.connection.HTTPSConnection object at 0x0000023F9AB9AC50>: Failed to establish a new connection: [Errno 11001] getaddrinfo failed'))
+HTTPSConnectionPool(host='testnet.bitget.com', port=443): Max retries exceeded with url: /api/mix/v1/order/placeOrder (Caused by NewConnectionError('<urllib3.connection.HTTPSConnection object at 0x0000023F9AB9AD40>: Failed to establish a new connection: [Errno 11001] getaddrinfo failed'))
+HTTPSConnectionPool(host='testnet.bitget.com', port=443): Max retries exceeded with url: /api/mix/v1/order/placeOrder (Caused by NewConnectionError('<urllib3.connection.HTTPSConnection object at 0x0000023F9AB9A2C0>: Failed to establish a new connection: [Errno 11001] getaddrinfo failed'))
+HTTPSConnectionPool(host='testnet.bitget.com', port=443): Max retries exceeded with url: /api/mix/v1/order/placeOrder (Caused by NewConnectionError('<urllib3.connection.HTTPSConnection object at 0x0000023F9AB9AA40>: Failed to establish a new connection: [Errno 11001] getaddrinfo failed'))
+HTTPSConnectionPool(host='testnet.bitget.com', port=443): Max retries exceeded with url: /api/mix/v1/order/placeOrder (Caused by NewConnectionError('<urllib3.connection.HTTPSConnection object at 0x0000023F9AB9AEC0>: Failed to establish a new connection: [Errno 11001] getaddrinfo failed'))
+HTTPSConnectionPool(host='testnet.bitget.com', port=443): Max retries exceeded with url: /api/mix/v1/order/placeOrder (Caused by NewConnectionError('<urllib3.connection.HTTPSConnection object at 0x0000023F9AB99F00>: Failed to establish a new connection: [Errno 11001] getaddrinfo failed'))
+HTTPSConnectionPool(host='testnet.bitget.com', port=443): Max retries exceeded with url: /api/mix/v1/order/placeOrder (Caused by NewConnectionError('<urllib3.connection.HTTPSConnection object at 0x0000023F9AB9A770>: Failed to establish a new connection: [Errno 11001] getaddrinfo failed'))
+HTTPSConnectionPool(host='testnet.bitget.com', port=443): Max retries exceeded with url: /api/mix/v1/order/placeOrder (Caused by NewConnectionError('<urllib3.connection.HTTPSConnection object at 0x0000023F9AB99ED0>: Failed to establish a new connection: [Errno 11001] getaddrinfo failed'))
+HTTPSConnectionPool(host='testnet.bitget.com', port=443): Max retries exceeded with url: /api/mix/v1/order/placeOrder (Caused by NewConnectionError('<urllib3.connection.HTTPSConnection object at 0x0000023F9AB9AE60>: Failed to establish a new connection: [Errno 11001] getaddrinfo failed'))
+HTTPSConnectionPool(host='testnet.bitget.com', port=443): Max retries exceeded with url: /api/mix/v1/order/placeOrder (Caused by NewConnectionError('<urllib3.connection.HTTPSConnection object at 0x0000023F9AB9AAD0>: Failed to establish a new connection: [Errno 11001] getaddrinfo failed'))
+HTTPSConnectionPool(host='testnet.bitget.com', port=443): Max retries exceeded with url: /api/mix/v1/order/placeOrder (Caused by NewConnectionError('<urllib3.connection.HTTPSConnection object at 0x0000023F9AB9A7A0>: Failed to establish a new connection: [Errno 11001] getaddrinfo failed'))
+HTTPSConnectionPool(host='testnet.bitget.com', port=443): Max retries exceeded with url: /api/mix/v1/order/placeOrder (Caused by NewConnectionError('<urllib3.connection.HTTPSConnection object at 0x0000023F9AB9AAD0>: Failed to establish a new connection: [Errno 11001] getaddrinfo failed'))
+HTTPSConnectionPool(host='testnet.bitget.com', port=443): Max retries exceeded with url: /api/mix/v1/order/placeOrder (Caused by NewConnectionError('<urllib3.connection.HTTPSConnection object at 0x0000023F9AB9A3B0>: Failed to establish a new connection: [Errno 11001] getaddrinfo failed'))
+HTTPSConnectionPool(host='testnet.bitget.com', port=443): Max retries exceeded with url: /api/mix/v1/order/placeOrder (Caused by NewConnectionError('<urllib3.connection.HTTPSConnection object at 0x0000023F9AB9B370>: Failed to establish a new connection: [Errno 11001] getaddrinfo failed'))
+HTTPSConnectionPool(host='testnet.bitget.com', port=443): Max retries exceeded with url: /api/mix/v1/order/placeOrder (Caused by NewConnectionError('<urllib3.connection.HTTPSConnection object at 0x0000023F9AB9A770>: Failed to establish a new connection: [Errno 11001] getaddrinfo failed'))
+HTTPSConnectionPool(host='testnet.bitget.com', port=443): Max retries exceeded with url: /api/mix/v1/order/placeOrder (Caused by NewConnectionError('<urllib3.connection.HTTPSConnection object at 0x0000023F9AB9AA10>: Failed to establish a new connection: [Errno 11001] getaddrinfo failed'))
+HTTPSConnectionPool(host='testnet.bitget.com', port=443): Max retries exceeded with url: /api/mix/v1/order/placeOrder (Caused by NewConnectionError('<urllib3.connection.HTTPSConnection object at 0x0000023F9AB9AF50>: Failed to establish a new connection: [Errno 11001] getaddrinfo failed'))
+HTTPSConnectionPool(host='testnet.bitget.com', port=443): Max retries exceeded with url: /api/mix/v1/order/placeOrder (Caused by NewConnectionError('<urllib3.connection.HTTPSConnection object at 0x0000023F9AB9A410>: Failed to establish a new connection: [Errno 11001] getaddrinfo failed'))
+HTTPSConnectionPool(host='testnet.bitget.com', port=443): Max retries exceeded with url: /api/mix/v1/order/placeOrder (Caused by NewConnectionError('<urllib3.connection.HTTPSConnection object at 0x0000023F9AB9A470>: Failed to establish a new connection: [Errno 11001] getaddrinfo failed'))
+HTTPSConnectionPool(host='testnet.bitget.com', port=443): Max retries exceeded with url: /api/mix/v1/order/placeOrder (Caused by NewConnectionError('<urllib3.connection.HTTPSConnection object at 0x0000023F9AB9AD70>: Failed to establish a new connection: [Errno 11001] getaddrinfo failed'))
+HTTPSConnectionPool(host='testnet.bitget.com', port=443): Max retries exceeded with url: /api/mix/v1/order/placeOrder (Caused by NewConnectionError('<urllib3.connection.HTTPSConnection object at 0x0000023F9AB9A5C0>: Failed to establish a new connection: [Errno 11001] getaddrinfo failed'))
+HTTPSConnectionPool(host='testnet.bitget.com', port=443): Max retries exceeded with url: /api/mix/v1/order/placeOrder (Caused by NewConnectionError('<urllib3.connection.HTTPSConnection object at 0x0000023F9AB9A830>: Failed to establish a new connection: [Errno 11001] getaddrinfo failed'))
+HTTPSConnectionPool(host='testnet.bitget.com', port=443): Max retries exceeded with url: /api/mix/v1/order/placeOrder (Caused by NewConnectionError('<urllib3.connection.HTTPSConnection object at 0x0000023F9AB9B370>: Failed to establish a new connection: [Errno 11001] getaddrinfo failed'))
+HTTPSConnectionPool(host='testnet.bitget.com', port=443): Max retries exceeded with url: /api/mix/v1/order/placeOrder (Caused by NewConnectionError('<urllib3.connection.HTTPSConnection object at 0x0000023F9AB99ED0>: Failed to establish a new connection: [Errno 11001] getaddrinfo failed'))
+HTTPSConnectionPool(host='testnet.bitget.com', port=443): Max retries exceeded with url: /api/mix/v1/order/placeOrder (Caused by NewConnectionError('<urllib3.connection.HTTPSConnection object at 0x0000023F9AB9AAA0>: Failed to establish a new connection: [Errno 11001] getaddrinfo failed'))
+HTTPSConnectionPool(host='testnet.bitget.com', port=443): Max retries exceeded with url: /api/mix/v1/order/placeOrder (Caused by NewConnectionError('<urllib3.connection.HTTPSConnection object at 0x0000023F9AB9A7A0>: Failed to establish a new connection: [Errno 11001] getaddrinfo failed'))
+HTTPSConnectionPool(host='testnet.bitget.com', port=443): Max retries exceeded with url: /api/mix/v1/order/placeOrder (Caused by NewConnectionError('<urllib3.connection.HTTPSConnection object at 0x0000023F9AB9A830>: Failed to establish a new connection: [Errno 11001] getaddrinfo failed'))
+HTTPSConnectionPool(host='testnet.bitget.com', port=443): Max retries exceeded with url: /api/mix/v1/order/placeOrder (Caused by NewConnectionError('<urllib3.connection.HTTPSConnection object at 0x0000023F9AB9A530>: Failed to establish a new connection: [Errno 11001] getaddrinfo failed'))
+HTTPSConnectionPool(host='testnet.bitget.com', port=443): Max retries exceeded with url: /api/mix/v1/order/placeOrder (Caused by NewConnectionError('<urllib3.connection.HTTPSConnection object at 0x0000023F9AB9AEC0>: Failed to establish a new connection: [Errno 11001] getaddrinfo failed'))
+HTTPSConnectionPool(host='testnet.bitget.com', port=443): Max retries exceeded with url: /api/mix/v1/order/placeOrder (Caused by NewConnectionError('<urllib3.connection.HTTPSConnection object at 0x0000023F9AB9B130>: Failed to establish a new connection: [Errno 11001] getaddrinfo failed'))
+HTTPSConnectionPool(host='testnet.bitget.com', port=443): Max retries exceeded with url: /api/mix/v1/order/placeOrder (Caused by NewConnectionError('<urllib3.connection.HTTPSConnection object at 0x0000023F9AB9ADA0>: Failed to establish a new connection: [Errno 11001] getaddrinfo failed'))
+HTTPSConnectionPool(host='testnet.bitget.com', port=443): Max retries exceeded with url: /api/mix/v1/order/placeOrder (Caused by NewConnectionError('<urllib3.connection.HTTPSConnection object at 0x0000023F9AB9B490>: Failed to establish a new connection: [Errno 11001] getaddrinfo failed'))
+HTTPSConnectionPool(host='testnet.bitget.com', port=443): Max retries exceeded with url: /api/mix/v1/order/placeOrder (Caused by NewConnectionError('<urllib3.connection.HTTPSConnection object at 0x0000023F9AB9AC20>: Failed to establish a new connection: [Errno 11001] getaddrinfo failed'))
+HTTPSConnectionPool(host='testnet.bitget.com', port=443): Max retries exceeded with url: /api/mix/v1/order/placeOrder (Caused by NewConnectionError('<urllib3.connection.HTTPSConnection object at 0x0000023F9AB9AAA0>: Failed to establish a new connection: [Errno 11001] getaddrinfo failed'))
+HTTPSConnectionPool(host='testnet.bitget.com', port=443): Max retries exceeded with url: /api/mix/v1/order/placeOrder (Caused by NewConnectionError('<urllib3.connection.HTTPSConnection object at 0x0000023F9AB9A5C0>: Failed to establish a new connection: [Errno 11001] getaddrinfo failed'))
+HTTPSConnectionPool(host='testnet.bitget.com', port=443): Max retries exceeded with url: /api/mix/v1/order/placeOrder (Caused by NewConnectionError('<urllib3.connection.HTTPSConnection object at 0x0000023F9AB9AA70>: Failed to establish a new connection: [Errno 11001] getaddrinfo failed'))
+HTTPSConnectionPool(host='testnet.bitget.com', port=443): Max retries exceeded with url: /api/mix/v1/order/placeOrder (Caused by NewConnectionError('<urllib3.connection.HTTPSConnection object at 0x0000023F9AB9A5C0>: Failed to establish a new connection: [Errno 11001] getaddrinfo failed'))
+HTTPSConnectionPool(host='testnet.bitget.com', port=443): Max retries exceeded with url: /api/mix/v1/order/placeOrder (Caused by NewConnectionError('<urllib3.connection.HTTPSConnection object at 0x0000023F9AB9AF50>: Failed to establish a new connection: [Errno 11001] getaddrinfo failed'))
+HTTPSConnectionPool(host='testnet.bitget.com', port=443): Max retries exceeded with url: /api/mix/v1/order/placeOrder (Caused by NewConnectionError('<urllib3.connection.HTTPSConnection object at 0x0000023F9AB9A050>: Failed to establish a new connection: [Errno 11001] getaddrinfo failed'))
+HTTPSConnectionPool(host='testnet.bitget.com', port=443): Max retries exceeded with url: /api/mix/v1/order/placeOrder (Caused by NewConnectionError('<urllib3.connection.HTTPSConnection object at 0x0000023F9AB9A530>: Failed to establish a new connection: [Errno 11001] getaddrinfo failed'))
+400 Client Error: Bad Request for url: https://api.bitget.com/api/mix/v1/order/placeOrder
+400 Client Error: Bad Request for url: https://api.bitget.com/api/mix/v1/order/placeOrder
+400 Client Error: Bad Request for url: https://api.bitget.com/api/mix/v1/order/placeOrder
+400 Client Error: Bad Request for url: https://api.bitget.com/api/mix/v1/order/placeOrder
+400 Client Error: Bad Request for url: https://api.bitget.com/api/mix/v1/order/placeOrder
+400 Client Error: Bad Request for url: https://api.bitget.com/api/mix/v1/order/placeOrder
+400 Client Error: Bad Request for url: https://api.bitget.com/api/mix/v1/order/placeOrder
+400 Client Error: Bad Request for url: https://api.bitget.com/api/mix/v1/order/placeOrder
+400 Client Error: Bad Request for url: https://api.bitget.com/api/mix/v1/order/placeOrder
+400 Client Error: Bad Request for url: https://api.bitget.com/api/mix/v1/order/placeOrder
+400 Client Error: Bad Request for url: https://api.bitget.com/api/mix/v1/order/placeOrder
+400 Client Error: Bad Request for url: https://api.bitget.com/api/mix/v1/order/placeOrder
+400 Client Error: Bad Request for url: https://api.bitget.com/api/mix/v1/order/placeOrder
+400 Client Error: Bad Request for url: https://api.bitget.com/api/mix/v1/order/placeOrder
+400 Client Error: Bad Request for url: https://api.bitget.com/api/mix/v1/order/placeOrder
+400 Client Error: Bad Request for url: https://api.bitget.com/api/mix/v1/order/placeOrder
+400 Client Error: Bad Request for url: https://api.bitget.com/api/mix/v1/order/placeOrder
+400 Client Error: Bad Request for url: https://api.bitget.com/api/mix/v1/order/placeOrder
+400 Client Error: Bad Request for url: https://api.bitget.com/api/mix/v1/order/placeOrder
+400 Client Error: Bad Request for url: https://api.bitget.com/api/mix/v1/order/placeOrder
+400 Client Error: Bad Request for url: https://api.bitget.com/api/mix/v1/order/placeOrder
+400 Client Error: Bad Request for url: https://api.bitget.com/api/mix/v1/order/placeOrder
+400 Client Error: Bad Request for url: https://api.bitget.com/api/mix/v1/order/placeOrder
+400 Client Error: Bad Request for url: https://api.bitget.com/api/mix/v1/order/placeOrder
+400 Client Error: Bad Request for url: https://api.bitget.com/api/mix/v1/order/placeOrder
+400 Client Error: Bad Request for url: https://api.bitget.com/api/mix/v1/order/placeOrder
+400 Client Error: Bad Request for url: https://api.bitget.com/api/mix/v1/order/placeOrder
+400 Client Error: Bad Request for url: https://api.bitget.com/api/mix/v1/order/placeOrder
+400 Client Error: Bad Request for url: https://api.bitget.com/api/mix/v1/order/placeOrder
+400 Client Error: Bad Request for url: https://api.bitget.com/api/mix/v1/order/placeOrder
+400 Client Error: Bad Request for url: https://api.bitget.com/api/mix/v1/order/placeOrder
+400 Client Error: Bad Request for url: https://api.bitget.com/api/mix/v1/order/placeOrder
+400 Client Error: Bad Request for url: https://api.bitget.com/api/mix/v1/order/placeOrder
+400 Client Error: Bad Request for url: https://api.bitget.com/api/mix/v1/order/placeOrder
+400 Client Error: Bad Request for url: https://api.bitget.com/api/mix/v1/order/placeOrder
+400 Client Error: Bad Request for url: https://api.bitget.com/api/mix/v1/order/placeOrder
+400 Client Error: Bad Request for url: https://api.bitget.com/api/mix/v1/order/placeOrder
+400 Client Error: Bad Request for url: https://api.bitget.com/api/mix/v1/order/placeOrder
+400 Client Error: Bad Request for url: https://api.bitget.com/api/mix/v1/order/placeOrder
+400 Client Error: Bad Request for url: https://api.bitget.com/api/mix/v1/order/placeOrder
+400 Client Error: Bad Request for url: https://api.bitget.com/api/mix/v1/order/placeOrder
+400 Client Error: Bad Request for url: https://api.bitget.com/api/mix/v1/order/placeOrder
+400 Client Error: Bad Request for url: https://api.bitget.com/api/mix/v1/order/placeOrder
+400 Client Error: Bad Request for url: https://api.bitget.com/api/mix/v1/order/placeOrder
+400 Client Error: Bad Request for url: https://api.bitget.com/api/mix/v1/order/placeOrder
+400 Client Error: Bad Request for url: https://api.bitget.com/api/mix/v1/order/placeOrder
+400 Client Error: Bad Request for url: https://api.bitget.com/api/mix/v1/order/placeOrder
+400 Client Error: Bad Request for url: https://api.bitget.com/api/mix/v1/order/placeOrder
+400 Client Error: Bad Request for url: https://api.bitget.com/api/mix/v1/order/placeOrder
+400 Client Error: Bad Request for url: https://api.bitget.com/api/mix/v1/order/placeOrder
+400 Client Error: Bad Request for url: https://api.bitget.com/api/mix/v1/order/placeOrder
+400 Client Error: Bad Request for url: https://api.bitget.com/api/mix/v1/order/placeOrder
+400 Client Error: Bad Request for url: https://api.bitget.com/api/mix/v1/order/placeOrder
+400 Client Error: Bad Request for url: https://api.bitget.com/api/mix/v1/order/placeOrder
+400 Client Error: Bad Request for url: https://api.bitget.com/api/mix/v1/order/placeOrder
+400 Client Error: Bad Request for url: https://api.bitget.com/api/mix/v1/order/placeOrder
+400 Client Error: Bad Request for url: https://api.bitget.com/api/mix/v1/order/placeOrder
+400 Client Error: Bad Request for url: https://api.bitget.com/api/mix/v1/order/placeOrder
+400 Client Error: Bad Request for url: https://api.bitget.com/api/mix/v1/order/placeOrder
+400 Client Error: Bad Request for url: https://api.bitget.com/api/mix/v1/order/placeOrder
+400 Client Error: Bad Request for url: https://api.bitget.com/api/mix/v1/order/placeOrder
+400 Client Error: Bad Request for url: https://api.bitget.com/api/mix/v1/order/placeOrder
+400 Client Error: Bad Request for url: https://api.bitget.com/api/mix/v1/order/placeOrder
+400 Client Error: Bad Request for url: https://api.bitget.com/api/mix/v1/order/placeOrder
+400 Client Error: Bad Request for url: https://api.bitget.com/api/mix/v1/order/placeOrder
+400 Client Error: Bad Request for url: https://api.bitget.com/api/mix/v1/order/placeOrder
+400 Client Error: Bad Request for url: https://api.bitget.com/api/mix/v1/order/placeOrder
+400 Client Error: Bad Request for url: https://api.bitget.com/api/mix/v1/order/placeOrder
+400 Client Error: Bad Request for url: https://api.bitget.com/api/mix/v1/order/placeOrder
+400 Client Error: Bad Request for url: https://api.bitget.com/api/mix/v1/order/placeOrder
+400 Client Error: Bad Request for url: https://api.bitget.com/api/mix/v1/order/placeOrder
+400 Client Error: Bad Request for url: https://api.bitget.com/api/mix/v1/order/placeOrder
+400 Client Error: Bad Request for url: https://api.bitget.com/api/mix/v1/order/placeOrder
+400 Client Error: Bad Request for url: https://api.bitget.com/api/mix/v1/order/placeOrder
+400 Client Error: Bad Request for url: https://api.bitget.com/api/mix/v1/order/placeOrder
+400 Client Error: Bad Request for url: https://api.bitget.com/api/mix/v1/order/placeOrder
+400 Client Error: Bad Request for url: https://api.bitget.com/api/mix/v1/order/placeOrder
+400 Client Error: Bad Request for url: https://api.bitget.com/api/mix/v1/order/placeOrder
+400 Client Error: Bad Request for url: https://api.bitget.com/api/mix/v1/order/placeOrder
+400 Client Error: Bad Request for url: https://api.bitget.com/api/mix/v1/order/placeOrder
+400 Client Error: Bad Request for url: https://api.bitget.com/api/mix/v1/order/placeOrder
+400 Client Error: Bad Request for url: https://api.bitget.com/api/mix/v1/order/placeOrder
+400 Client Error: Bad Request for url: https://api.bitget.com/api/mix/v1/order/placeOrder
+400 Client Error: Bad Request for url: https://api.bitget.com/api/mix/v1/order/placeOrder
+400 Client Error: Bad Request for url: https://api.bitget.com/api/mix/v1/order/placeOrder
+400 Client Error: Bad Request for url: https://api.bitget.com/api/mix/v1/order/placeOrder
+400 Client Error: Bad Request for url: https://api.bitget.com/api/mix/v1/order/placeOrder
+400 Client Error: Bad Request for url: https://api.bitget.com/api/mix/v1/order/placeOrder
+400 Client Error: Bad Request for url: https://api.bitget.com/api/mix/v1/order/placeOrder
+400 Client Error: Bad Request for url: https://api.bitget.com/api/mix/v1/order/placeOrder
+400 Client Error: Bad Request for url: https://api.bitget.com/api/mix/v1/order/placeOrder
+400 Client Error: Bad Request for url: https://api.bitget.com/api/mix/v1/order/placeOrder
+400 Client Error: Bad Request for url: https://api.bitget.com/api/mix/v1/order/placeOrder
+400 Client Error: Bad Request for url: https://api.bitget.com/api/mix/v1/order/placeOrder
+400 Client Error: Bad Request for url: https://api.bitget.com/api/mix/v1/order/placeOrder
+400 Client Error: Bad Request for url: https://api.bitget.com/api/mix/v1/order/placeOrder
+400 Client Error: Bad Request for url: https://api.bitget.com/api/mix/v1/order/placeOrder
+400 Client Error: Bad Request for url: https://api.bitget.com/api/mix/v1/order/placeOrder
+400 Client Error: Bad Request for url: https://api.bitget.com/api/mix/v1/order/placeOrder
+400 Client Error: Bad Request for url: https://api.bitget.com/api/mix/v1/order/placeOrder
+400 Client Error: Bad Request for url: https://api.bitget.com/api/mix/v1/order/placeOrder
+400 Client Error: Bad Request for url: https://api.bitget.com/api/mix/v1/order/placeOrder
+400 Client Error: Bad Request for url: https://api.bitget.com/api/mix/v1/order/placeOrder
+400 Client Error: Bad Request for url: https://api.bitget.com/api/mix/v1/order/placeOrder
+400 Client Error: Bad Request for url: https://api.bitget.com/api/mix/v1/order/placeOrder
+400 Client Error: Bad Request for url: https://api.bitget.com/api/mix/v1/order/placeOrder
+400 Client Error: Bad Request for url: https://api.bitget.com/api/mix/v1/order/placeOrder
+400 Client Error: Bad Request for url: https://api.bitget.com/api/mix/v1/order/placeOrder
+400 Client Error: Bad Request for url: https://api.bitget.com/api/mix/v1/order/placeOrder
+400 Client Error: Bad Request for url: https://api.bitget.com/api/mix/v1/order/placeOrder
+400 Client Error: Bad Request for url: https://api.bitget.com/api/mix/v1/order/placeOrder
+400 Client Error: Bad Request for url: https://api.bitget.com/api/mix/v1/order/placeOrder
+400 Client Error: Bad Request for url: https://api.bitget.com/api/mix/v1/order/placeOrder
+400 Client Error: Bad Request for url: https://api.bitget.com/api/mix/v1/order/placeOrder
+400 Client Error: Bad Request for url: https://api.bitget.com/api/mix/v1/order/placeOrder
+400 Client Error: Bad Request for url: https://api.bitget.com/api/mix/v1/order/placeOrder
+400 Client Error: Bad Request for url: https://api.bitget.com/api/mix/v1/order/placeOrder
+400 Client Error: Bad Request for url: https://api.bitget.com/api/mix/v1/order/placeOrder
+400 Client Error: Bad Request for url: https://api.bitget.com/api/mix/v1/order/placeOrder
+400 Client Error: Bad Request for url: https://api.bitget.com/api/mix/v1/order/placeOrder
+400 Client Error: Bad Request for url: https://api.bitget.com/api/v2/mix/order/place-order
+400 Client Error: Bad Request for url: https://api.bitget.com/api/v2/mix/order/place-order
+400 Client Error: Bad Request for url: https://api.bitget.com/api/v2/mix/order/place-order
+400 Client Error: Bad Request for url: https://api.bitget.com/api/v2/mix/order/place-order
+400 Client Error: Bad Request for url: https://api.bitget.com/api/v2/mix/order/place-order
+400 Client Error: Bad Request for url: https://api.bitget.com/api/v2/mix/order/place-order
+400 Client Error: Bad Request for url: https://api.bitget.com/api/v2/mix/order/place-order
+400 Client Error: Bad Request for url: https://api.bitget.com/api/v2/mix/order/place-order
+400 Client Error: Bad Request for url: https://api.bitget.com/api/v2/mix/order/place-order
+400 Client Error: Bad Request for url: https://api.bitget.com/api/v2/mix/order/place-order
+400 Client Error: Bad Request for url: https://api.bitget.com/api/v2/mix/order/place-order
+400 Client Error: Bad Request for url: https://api.bitget.com/api/v2/mix/order/place-order
+400 Client Error: Bad Request for url: https://api.bitget.com/api/v2/mix/order/place-order
+400 Client Error: Bad Request for url: https://api.bitget.com/api/v2/mix/order/place-order
+400 Client Error: Bad Request for url: https://api.bitget.com/api/v2/mix/order/place-order
+400 Client Error: Bad Request for url: https://api.bitget.com/api/v2/mix/order/place-order
+400 Client Error: Bad Request for url: https://api.bitget.com/api/v2/mix/order/place-order
+400 Client Error: Bad Request for url: https://api.bitget.com/api/v2/mix/order/place-order
+400 Client Error: Bad Request for url: https://api.bitget.com/api/v2/mix/order/place-order
+400 Client Error: Bad Request for url: https://api.bitget.com/api/v2/mix/order/place-order
+400 Client Error: Bad Request for url: https://api.bitget.com/api/v2/mix/order/place-order
+400 Client Error: Bad Request for url: https://api.bitget.com/api/v2/mix/order/place-order
+400 Client Error: Bad Request for url: https://api.bitget.com/api/v2/mix/order/place-order
+400 Client Error: Bad Request for url: https://api.bitget.com/api/v2/mix/order/place-order
+400 Client Error: Bad Request for url: https://api.bitget.com/api/v2/mix/order/place-order
+400 Client Error: Bad Request for url: https://api.bitget.com/api/v2/mix/order/place-order
+400 Client Error: Bad Request for url: https://api.bitget.com/api/v2/mix/order/place-order
+400 Client Error: Bad Request for url: https://api.bitget.com/api/v2/mix/order/place-order
+400 Client Error: Bad Request for url: https://api.bitget.com/api/v2/mix/order/place-order
+400 Client Error: Bad Request for url: https://api.bitget.com/api/v2/mix/order/place-order
+400 Client Error: Bad Request for url: https://api.bitget.com/api/v2/mix/order/place-order
+400 Client Error: Bad Request for url: https://api.bitget.com/api/v2/mix/order/place-order
+400 Client Error: Bad Request for url: https://api.bitget.com/api/v2/mix/order/place-order
+400 Client Error: Bad Request for url: https://api.bitget.com/api/v2/mix/order/place-order
+400 Client Error: Bad Request for url: https://api.bitget.com/api/v2/mix/order/place-order
+400 Client Error: Bad Request for url: https://api.bitget.com/api/v2/mix/order/place-order
+400 Client Error: Bad Request for url: https://api.bitget.com/api/v2/mix/order/place-order
+400 Client Error: Bad Request for url: https://api.bitget.com/api/v2/mix/order/place-order
+400 Client Error: Bad Request for url: https://api.bitget.com/api/v2/mix/order/place-order
+400 Client Error: Bad Request for url: https://api.bitget.com/api/v2/mix/order/place-order
+400 Client Error: Bad Request for url: https://api.bitget.com/api/v2/mix/order/place-order
+400 Client Error: Bad Request for url: https://api.bitget.com/api/v2/mix/order/place-order
+400 Client Error: Bad Request for url: https://api.bitget.com/api/v2/mix/order/place-order
+400 Client Error: Bad Request for url: https://api.bitget.com/api/v2/mix/order/place-order
+400 Client Error: Bad Request for url: https://api.bitget.com/api/v2/mix/order/place-order
+400 Client Error: Bad Request for url: https://api.bitget.com/api/v2/mix/order/place-order
+400 Client Error: Bad Request for url: https://api.bitget.com/api/v2/mix/order/place-order
+400 Client Error: Bad Request for url: https://api.bitget.com/api/v2/mix/order/place-order
+400 Client Error: Bad Request for url: https://api.bitget.com/api/v2/mix/order/place-order
+400 Client Error: Bad Request for url: https://api.bitget.com/api/v2/mix/order/place-order
+400 Client Error: Bad Request for url: https://api.bitget.com/api/v2/mix/order/place-order
+400 Client Error: Bad Request for url: https://api.bitget.com/api/v2/mix/order/place-order
+400 Client Error: Bad Request for url: https://api.bitget.com/api/v2/mix/order/place-order
+400 Client Error: Bad Request for url: https://api.bitget.com/api/v2/mix/order/place-order
+400 Client Error: Bad Request for url: https://api.bitget.com/api/v2/mix/order/place-order
+400 Client Error: Bad Request for url: https://api.bitget.com/api/v2/mix/order/place-order
+400 Client Error: Bad Request for url: https://api.bitget.com/api/v2/mix/order/place-order
+400 Client Error: Bad Request for url: https://api.bitget.com/api/v2/mix/order/place-order
+400 Client Error: Bad Request for url: https://api.bitget.com/api/v2/mix/order/place-order
+400 Client Error: Bad Request for url: https://api.bitget.com/api/v2/mix/order/place-order
+400 Client Error: Bad Request for url: https://api.bitget.com/api/v2/mix/order/place-order
+400 Client Error: Bad Request for url: https://api.bitget.com/api/v2/mix/order/place-order
+400 Client Error: Bad Request for url: https://api.bitget.com/api/v2/mix/order/place-order
+400 Client Error: Bad Request for url: https://api.bitget.com/api/v2/mix/order/place-order
+400 Client Error: Bad Request for url: https://api.bitget.com/api/v2/mix/order/place-order
+400 Client Error: Bad Request for url: https://api.bitget.com/api/v2/mix/order/place-order
+400 Client Error: Bad Request for url: https://api.bitget.com/api/v2/mix/order/place-order
+400 Client Error: Bad Request for url: https://api.bitget.com/api/v2/mix/order/place-order
+400 Client Error: Bad Request for url: https://api.bitget.com/api/v2/mix/order/place-order
+400 Client Error: Bad Request for url: https://api.bitget.com/api/v2/mix/order/place-order
+400 Client Error: Bad Request for url: https://api.bitget.com/api/v2/mix/order/place-order
+400 Client Error: Bad Request for url: https://api.bitget.com/api/v2/mix/order/place-order
+400 Client Error: Bad Request for url: https://api.bitget.com/api/v2/mix/order/place-order
+400 Client Error: Bad Request for url: https://api.bitget.com/api/v2/mix/order/place-order
+400 Client Error: Bad Request for url: https://api.bitget.com/api/v2/mix/order/place-order
+400 Client Error: Bad Request for url: https://api.bitget.com/api/v2/mix/order/place-order
+400 Client Error: Bad Request for url: https://api.bitget.com/api/v2/mix/order/place-order
+400 Client Error: Bad Request for url: https://api.bitget.com/api/v2/mix/order/place-order
+400 Client Error: Bad Request for url: https://api.bitget.com/api/v2/mix/order/place-order
+400 Client Error: Bad Request for url: https://api.bitget.com/api/v2/mix/order/place-order
+400 Client Error: Bad Request for url: https://api.bitget.com/api/v2/mix/order/place-order
+400 Client Error: Bad Request for url: https://api.bitget.com/api/v2/mix/order/place-order
+400 Client Error: Bad Request for url: https://api.bitget.com/api/v2/mix/order/place-order
+400 Client Error: Bad Request for url: https://api.bitget.com/api/v2/mix/order/place-order
+400 Client Error: Bad Request for url: https://api.bitget.com/api/v2/mix/order/place-order
+400 Client Error: Bad Request for url: https://api.bitget.com/api/v2/mix/order/place-order
+400 Client Error: Bad Request for url: https://api.bitget.com/api/v2/mix/order/place-order
+400 Client Error: Bad Request for url: https://api.bitget.com/api/v2/mix/order/place-order
+400 Client Error: Bad Request for url: https://api.bitget.com/api/v2/mix/order/place-order
+400 Client Error: Bad Request for url: https://api.bitget.com/api/v2/mix/order/place-order
+400 Client Error: Bad Request for url: https://api.bitget.com/api/v2/mix/order/place-order
+400 Client Error: Bad Request for url: https://api.bitget.com/api/v2/mix/order/place-order
+400 Client Error: Bad Request for url: https://api.bitget.com/api/v2/mix/order/place-order
+400 Client Error: Bad Request for url: https://api.bitget.com/api/v2/mix/order/place-order
+400 Client Error: Bad Request for url: https://api.bitget.com/api/v2/mix/order/place-order
+400 Client Error: Bad Request for url: https://api.bitget.com/api/v2/mix/order/place-order
+400 Client Error: Bad Request for url: https://api.bitget.com/api/v2/mix/order/place-order
+400 Client Error: Bad Request for url: https://api.bitget.com/api/v2/mix/order/place-order
+400 Client Error: Bad Request for url: https://api.bitget.com/api/v2/mix/order/place-order
+400 Client Error: Bad Request for url: https://api.bitget.com/api/v2/mix/order/place-order
+400 Client Error: Bad Request for url: https://api.bitget.com/api/v2/mix/order/place-order
+400 Client Error: Bad Request for url: https://api.bitget.com/api/v2/mix/order/place-order
+400 Client Error: Bad Request for url: https://api.bitget.com/api/v2/mix/order/place-order
+400 Client Error: Bad Request for url: https://api.bitget.com/api/v2/mix/order/place-order
+400 Client Error: Bad Request for url: https://api.bitget.com/api/v2/mix/order/place-order
+400 Client Error: Bad Request for url: https://api.bitget.com/api/v2/mix/order/place-order
+400 Client Error: Bad Request for url: https://api.bitget.com/api/v2/mix/order/place-order
+400 Client Error: Bad Request for url: https://api.bitget.com/api/v2/mix/order/place-order
+400 Client Error: Bad Request for url: https://api.bitget.com/api/v2/mix/order/place-order
+400 Client Error: Bad Request for url: https://api.bitget.com/api/v2/mix/order/place-order
+400 Client Error: Bad Request for url: https://api.bitget.com/api/v2/mix/order/place-order
+400 Client Error: Bad Request for url: https://api.bitget.com/api/v2/mix/order/place-order
+400 Client Error: Bad Request for url: https://api.bitget.com/api/v2/mix/order/place-order
+400 Client Error: Bad Request for url: https://api.bitget.com/api/v2/mix/order/place-order
+400 Client Error: Bad Request for url: https://api.bitget.com/api/v2/mix/order/place-order
+400 Client Error: Bad Request for url: https://api.bitget.com/api/v2/mix/order/place-order
+400 Client Error: Bad Request for url: https://api.bitget.com/api/v2/mix/order/place-order
+400 Client Error: Bad Request for url: https://api.bitget.com/api/v2/mix/order/place-order
+400 Client Error: Bad Request for url: https://api.bitget.com/api/v2/mix/order/place-order
+400 Client Error: Bad Request for url: https://api.bitget.com/api/v2/mix/order/place-order
+400 Client Error: Bad Request for url: https://api.bitget.com/api/v2/mix/order/place-order
+400 Client Error: Bad Request for url: https://api.bitget.com/api/v2/mix/order/place-order
+400 Client Error: Bad Request for url: https://api.bitget.com/api/v2/mix/order/place-order
+400 Client Error: Bad Request for url: https://api.bitget.com/api/v2/mix/order/place-order
+400 Client Error: Bad Request for url: https://api.bitget.com/api/v2/mix/order/place-order
+400 Client Error: Bad Request for url: https://api.bitget.com/api/v2/mix/order/place-order
+400 Client Error: Bad Request for url: https://api.bitget.com/api/v2/mix/order/place-order
+400 Client Error: Bad Request for url: https://api.bitget.com/api/v2/mix/order/place-order
+400 Client Error: Bad Request for url: https://api.bitget.com/api/v2/mix/order/place-order
+400 Client Error: Bad Request for url: https://api.bitget.com/api/v2/mix/order/place-order
+400 Client Error: Bad Request for url: https://api.bitget.com/api/v2/mix/order/place-order
+400 Client Error: Bad Request for url: https://api.bitget.com/api/v2/mix/order/place-order
+400 Client Error: Bad Request for url: https://api.bitget.com/api/v2/mix/order/place-order
+400 Client Error: Bad Request for url: https://api.bitget.com/api/v2/mix/order/place-order
+400 Client Error: Bad Request for url: https://api.bitget.com/api/v2/mix/order/place-order
+400 Client Error: Bad Request for url: https://api.bitget.com/api/v2/mix/order/place-order
+400 Client Error: Bad Request for url: https://api.bitget.com/api/v2/mix/order/place-order
+400 Client Error: Bad Request for url: https://api.bitget.com/api/v2/mix/order/place-order
+400 Client Error: Bad Request for url: https://api.bitget.com/api/v2/mix/order/place-order
+400 Client Error: Bad Request for url: https://api.bitget.com/api/v2/mix/order/place-order
+400 Client Error: Bad Request for url: https://api.bitget.com/api/v2/mix/order/place-order
+400 Client Error: Bad Request for url: https://api.bitget.com/api/v2/mix/order/place-order
+400 Client Error: Bad Request for url: https://api.bitget.com/api/v2/mix/order/place-order
+400 Client Error: Bad Request for url: https://api.bitget.com/api/v2/mix/order/place-order
+400 Client Error: Bad Request for url: https://api.bitget.com/api/v2/mix/order/place-order
+400 Client Error: Bad Request for url: https://api.bitget.com/api/v2/mix/order/place-order
+400 Client Error: Bad Request for url: https://api.bitget.com/api/v2/mix/order/place-order
+400 Client Error: Bad Request for url: https://api.bitget.com/api/v2/mix/order/place-order
+400 Client Error: Bad Request for url: https://api.bitget.com/api/v2/mix/order/place-order
+400 Client Error: Bad Request for url: https://api.bitget.com/api/v2/mix/order/place-order
+400 Client Error: Bad Request for url: https://api.bitget.com/api/v2/mix/order/place-order
+400 Client Error: Bad Request for url: https://api.bitget.com/api/v2/mix/order/place-order
+400 Client Error: Bad Request for url: https://api.bitget.com/api/v2/mix/order/place-order
+400 Client Error: Bad Request for url: https://api.bitget.com/api/v2/mix/order/place-order
+400 Client Error: Bad Request for url: https://api.bitget.com/api/v2/mix/order/place-order
+400 Client Error: Bad Request for url: https://api.bitget.com/api/v2/mix/order/place-order
+400 Client Error: Bad Request for url: https://api.bitget.com/api/v2/mix/order/place-order
+400 Client Error: Bad Request for url: https://api.bitget.com/api/v2/mix/order/place-order
+400 Client Error: Bad Request for url: https://api.bitget.com/api/v2/mix/order/place-order
+400 Client Error: Bad Request for url: https://api.bitget.com/api/v2/mix/order/place-order
+[2025-07-12 14:02:38] エラー:
+'<=' not supported between instances of 'str' and 'int'
+Traceback (most recent call last):
+  File "C:\Users\koichi\Documents\MyDocuments\My_work\My_Programing_work\BitCoin\bitget_auto\main.py", line 44, in main
+    place_orders(
+  File "C:\Users\koichi\Documents\MyDocuments\My_work\My_Programing_work\BitCoin\bitget_auto\order_processor.py", line 32, in place_orders
+    process_sheet(client, wb.sheets[buy_sheet], "buy")
+  File "C:\Users\koichi\Documents\MyDocuments\My_work\My_Programing_work\BitCoin\bitget_auto\order_utils.py", line 50, in process_sheet
+    if quantity <= 0:
+TypeError: '<=' not supported between instances of 'str' and 'int'
+
+[2025-07-12 14:09:09] エラー:
+'str' object has no attribute 'value'
+Traceback (most recent call last):
+  File "C:\Users\koichi\Documents\MyDocuments\My_work\My_Programing_work\BitCoin\bitget_auto\main.py", line 44, in main
+    place_orders(
+  File "C:\Users\koichi\Documents\MyDocuments\My_work\My_Programing_work\BitCoin\bitget_auto\order_processor.py", line 32, in place_orders
+    process_sheet(client, wb.sheets[buy_sheet], "buy")
+  File "C:\Users\koichi\Documents\MyDocuments\My_work\My_Programing_work\BitCoin\bitget_auto\order_utils.py", line 43, in process_sheet
+    quantity = row[3].value
+AttributeError: 'str' object has no attribute 'value'
+
+[2025-07-12 14:10:46] エラー:
+object of type 'float' has no len()
+Traceback (most recent call last):
+  File "C:\Users\koichi\Documents\MyDocuments\My_work\My_Programing_work\BitCoin\bitget_auto\main.py", line 44, in main
+    place_orders(
+  File "C:\Users\koichi\Documents\MyDocuments\My_work\My_Programing_work\BitCoin\bitget_auto\order_processor.py", line 32, in place_orders
+    process_sheet(client, wb.sheets[buy_sheet], "buy")
+  File "C:\Users\koichi\Documents\MyDocuments\My_work\My_Programing_work\BitCoin\bitget_auto\order_utils.py", line 37, in process_sheet
+    if not row or len(row) < 4:
+TypeError: object of type 'float' has no len()
+
+400 Client Error: Bad Request for url: https://api.bitget.com/api/v2/mix/order/place-order
+400 Client Error: Bad Request for url: https://api.bitget.com/api/v2/mix/order/place-order
+400 Client Error: Bad Request for url: https://api.bitget.com/api/v2/mix/order/place-order
+400 Client Error: Bad Request for url: https://api.bitget.com/api/v2/mix/order/place-order
+400 Client Error: Bad Request for url: https://api.bitget.com/api/v2/mix/order/place-order
+400 Client Error: Bad Request for url: https://api.bitget.com/api/v2/mix/order/place-order
+400 Client Error: Bad Request for url: https://api.bitget.com/api/v2/mix/order/place-order
+400 Client Error: Bad Request for url: https://api.bitget.com/api/v2/mix/order/place-order
+400 Client Error: Bad Request for url: https://api.bitget.com/api/v2/mix/order/place-order
+400 Client Error: Bad Request for url: https://api.bitget.com/api/v2/mix/order/place-order
+400 Client Error: Bad Request for url: https://api.bitget.com/api/v2/mix/order/place-order
+400 Client Error: Bad Request for url: https://api.bitget.com/api/v2/mix/order/place-order
+400 Client Error: Bad Request for url: https://api.bitget.com/api/v2/mix/order/place-order
+400 Client Error: Bad Request for url: https://api.bitget.com/api/v2/mix/order/place-order
+400 Client Error: Bad Request for url: https://api.bitget.com/api/v2/mix/order/place-order
+400 Client Error: Bad Request for url: https://api.bitget.com/api/v2/mix/order/place-order
+400 Client Error: Bad Request for url: https://api.bitget.com/api/v2/mix/order/place-order
+400 Client Error: Bad Request for url: https://api.bitget.com/api/v2/mix/order/place-order
+400 Client Error: Bad Request for url: https://api.bitget.com/api/v2/mix/order/place-order
+400 Client Error: Bad Request for url: https://api.bitget.com/api/v2/mix/order/place-order
+400 Client Error: Bad Request for url: https://api.bitget.com/api/v2/mix/order/place-order
+400 Client Error: Bad Request for url: https://api.bitget.com/api/v2/mix/order/place-order
+400 Client Error: Bad Request for url: https://api.bitget.com/api/v2/mix/order/place-order
+400 Client Error: Bad Request for url: https://api.bitget.com/api/v2/mix/order/place-order
+400 Client Error: Bad Request for url: https://api.bitget.com/api/v2/mix/order/place-order
+400 Client Error: Bad Request for url: https://api.bitget.com/api/v2/mix/order/place-order
+400 Client Error: Bad Request for url: https://api.bitget.com/api/v2/mix/order/place-order
+400 Client Error: Bad Request for url: https://api.bitget.com/api/v2/mix/order/place-order
+400 Client Error: Bad Request for url: https://api.bitget.com/api/v2/mix/order/place-order
+400 Client Error: Bad Request for url: https://api.bitget.com/api/v2/mix/order/place-order
+400 Client Error: Bad Request for url: https://api.bitget.com/api/v2/mix/order/place-order
+400 Client Error: Bad Request for url: https://api.bitget.com/api/v2/mix/order/place-order
+400 Client Error: Bad Request for url: https://api.bitget.com/api/v2/mix/order/place-order
+400 Client Error: Bad Request for url: https://api.bitget.com/api/v2/mix/order/place-order
+400 Client Error: Bad Request for url: https://api.bitget.com/api/v2/mix/order/place-order
+400 Client Error: Bad Request for url: https://api.bitget.com/api/v2/mix/order/place-order
+400 Client Error: Bad Request for url: https://api.bitget.com/api/v2/mix/order/place-order
+400 Client Error: Bad Request for url: https://api.bitget.com/api/v2/mix/order/place-order
+400 Client Error: Bad Request for url: https://api.bitget.com/api/v2/mix/order/place-order
+400 Client Error: Bad Request for url: https://api.bitget.com/api/v2/mix/order/place-order
+400 Client Error: Bad Request for url: https://api.bitget.com/api/v2/mix/order/place-order
+400 Client Error: Bad Request for url: https://api.bitget.com/api/v2/mix/order/place-order
+400 Client Error: Bad Request for url: https://api.bitget.com/api/v2/mix/order/place-order
+400 Client Error: Bad Request for url: https://api.bitget.com/api/v2/mix/order/place-order
+400 Client Error: Bad Request for url: https://api.bitget.com/api/v2/mix/order/place-order
+400 Client Error: Bad Request for url: https://api.bitget.com/api/v2/mix/order/place-order
+400 Client Error: Bad Request for url: https://api.bitget.com/api/v2/mix/order/place-order
+400 Client Error: Bad Request for url: https://api.bitget.com/api/v2/mix/order/place-order
+400 Client Error: Bad Request for url: https://api.bitget.com/api/v2/mix/order/place-order
+400 Client Error: Bad Request for url: https://api.bitget.com/api/v2/mix/order/place-order
+400 Client Error: Bad Request for url: https://api.bitget.com/api/v2/mix/order/place-order
+400 Client Error: Bad Request for url: https://api.bitget.com/api/v2/mix/order/place-order
+400 Client Error: Bad Request for url: https://api.bitget.com/api/v2/mix/order/place-order
+400 Client Error: Bad Request for url: https://api.bitget.com/api/v2/mix/order/place-order
+400 Client Error: Bad Request for url: https://api.bitget.com/api/v2/mix/order/place-order
+400 Client Error: Bad Request for url: https://api.bitget.com/api/v2/mix/order/place-order
+400 Client Error: Bad Request for url: https://api.bitget.com/api/v2/mix/order/place-order
+400 Client Error: Bad Request for url: https://api.bitget.com/api/v2/mix/order/place-order
+400 Client Error: Bad Request for url: https://api.bitget.com/api/v2/mix/order/place-order
+400 Client Error: Bad Request for url: https://api.bitget.com/api/v2/mix/order/place-order
+400 Client Error: Bad Request for url: https://api.bitget.com/api/v2/mix/order/place-order
+400 Client Error: Bad Request for url: https://api.bitget.com/api/v2/mix/order/place-order
+400 Client Error: Bad Request for url: https://api.bitget.com/api/v2/mix/order/place-order
+400 Client Error: Bad Request for url: https://api.bitget.com/api/v2/mix/order/place-order
+400 Client Error: Bad Request for url: https://api.bitget.com/api/v2/mix/order/place-order
+400 Client Error: Bad Request for url: https://api.bitget.com/api/v2/mix/order/place-order
+400 Client Error: Bad Request for url: https://api.bitget.com/api/v2/mix/order/place-order
+400 Client Error: Bad Request for url: https://api.bitget.com/api/v2/mix/order/place-order
+400 Client Error: Bad Request for url: https://api.bitget.com/api/v2/mix/order/place-order
+400 Client Error: Bad Request for url: https://api.bitget.com/api/v2/mix/order/place-order
+400 Client Error: Bad Request for url: https://api.bitget.com/api/v2/mix/order/place-order
+400 Client Error: Bad Request for url: https://api.bitget.com/api/v2/mix/order/place-order
+400 Client Error: Bad Request for url: https://api.bitget.com/api/v2/mix/order/place-order
+400 Client Error: Bad Request for url: https://api.bitget.com/api/v2/mix/order/place-order
+400 Client Error: Bad Request for url: https://api.bitget.com/api/v2/mix/order/place-order
+400 Client Error: Bad Request for url: https://api.bitget.com/api/v2/mix/order/place-order
+400 Client Error: Bad Request for url: https://api.bitget.com/api/v2/mix/order/place-order
+400 Client Error: Bad Request for url: https://api.bitget.com/api/v2/mix/order/place-order
+400 Client Error: Bad Request for url: https://api.bitget.com/api/v2/mix/order/place-order
+400 Client Error: Bad Request for url: https://api.bitget.com/api/v2/mix/order/place-order
+400 Client Error: Bad Request for url: https://api.bitget.com/api/v2/mix/order/place-order
+400 Client Error: Bad Request for url: https://api.bitget.com/api/v2/mix/order/place-order
+400 Client Error: Bad Request for url: https://api.bitget.com/api/v2/mix/order/place-order
+400 Client Error: Bad Request for url: https://api.bitget.com/api/v2/mix/order/place-order
+400 Client Error: Bad Request for url: https://api.bitget.com/api/v2/mix/order/place-order
+400 Client Error: Bad Request for url: https://api.bitget.com/api/v2/mix/order/place-order
+400 Client Error: Bad Request for url: https://api.bitget.com/api/v2/mix/order/place-order
+400 Client Error: Bad Request for url: https://api.bitget.com/api/v2/mix/order/place-order
+400 Client Error: Bad Request for url: https://api.bitget.com/api/v2/mix/order/place-order
+400 Client Error: Bad Request for url: https://api.bitget.com/api/v2/mix/order/place-order
+400 Client Error: Bad Request for url: https://api.bitget.com/api/v2/mix/order/place-order
+400 Client Error: Bad Request for url: https://api.bitget.com/api/v2/mix/order/place-order
+400 Client Error: Bad Request for url: https://api.bitget.com/api/v2/mix/order/place-order
+400 Client Error: Bad Request for url: https://api.bitget.com/api/v2/mix/order/place-order
+400 Client Error: Bad Request for url: https://api.bitget.com/api/v2/mix/order/place-order
+400 Client Error: Bad Request for url: https://api.bitget.com/api/v2/mix/order/place-order
+400 Client Error: Bad Request for url: https://api.bitget.com/api/v2/mix/order/place-order
+400 Client Error: Bad Request for url: https://api.bitget.com/api/v2/mix/order/place-order
+400 Client Error: Bad Request for url: https://api.bitget.com/api/v2/mix/order/place-order
+400 Client Error: Bad Request for url: https://api.bitget.com/api/v2/mix/order/place-order
+400 Client Error: Bad Request for url: https://api.bitget.com/api/v2/mix/order/place-order
+400 Client Error: Bad Request for url: https://api.bitget.com/api/v2/mix/order/place-order
+400 Client Error: Bad Request for url: https://api.bitget.com/api/v2/mix/order/place-order
+400 Client Error: Bad Request for url: https://api.bitget.com/api/v2/mix/order/place-order
+400 Client Error: Bad Request for url: https://api.bitget.com/api/v2/mix/order/place-order
+400 Client Error: Bad Request for url: https://api.bitget.com/api/v2/mix/order/place-order
+400 Client Error: Bad Request for url: https://api.bitget.com/api/v2/mix/order/place-order
+400 Client Error: Bad Request for url: https://api.bitget.com/api/v2/mix/order/place-order
+400 Client Error: Bad Request for url: https://api.bitget.com/api/v2/mix/order/place-order
+400 Client Error: Bad Request for url: https://api.bitget.com/api/v2/mix/order/place-order
+400 Client Error: Bad Request for url: https://api.bitget.com/api/v2/mix/order/place-order
+400 Client Error: Bad Request for url: https://api.bitget.com/api/v2/mix/order/place-order
+400 Client Error: Bad Request for url: https://api.bitget.com/api/v2/mix/order/place-order
+400 Client Error: Bad Request for url: https://api.bitget.com/api/v2/mix/order/place-order
+400 Client Error: Bad Request for url: https://api.bitget.com/api/v2/mix/order/place-order
+400 Client Error: Bad Request for url: https://api.bitget.com/api/v2/mix/order/place-order
+400 Client Error: Bad Request for url: https://api.bitget.com/api/v2/mix/order/place-order
+400 Client Error: Bad Request for url: https://api.bitget.com/api/v2/mix/order/place-order
+400 Client Error: Bad Request for url: https://api.bitget.com/api/v2/mix/order/place-order
+400 Client Error: Bad Request for url: https://api.bitget.com/api/v2/mix/order/place-order
+400 Client Error: Bad Request for url: https://api.bitget.com/api/v2/mix/order/place-order
+400 Client Error: Bad Request for url: https://api.bitget.com/api/v2/mix/order/place-order
+400 Client Error: Bad Request for url: https://api.bitget.com/api/v2/mix/order/place-order
+400 Client Error: Bad Request for url: https://api.bitget.com/api/v2/mix/order/place-order
+400 Client Error: Bad Request for url: https://api.bitget.com/api/v2/mix/order/place-order
+400 Client Error: Bad Request for url: https://api.bitget.com/api/v2/mix/order/place-order
+400 Client Error: Bad Request for url: https://api.bitget.com/api/v2/mix/order/place-order
+400 Client Error: Bad Request for url: https://api.bitget.com/api/v2/mix/order/place-order
+400 Client Error: Bad Request for url: https://api.bitget.com/api/v2/mix/order/place-order
+400 Client Error: Bad Request for url: https://api.bitget.com/api/v2/mix/order/place-order
+400 Client Error: Bad Request for url: https://api.bitget.com/api/v2/mix/order/place-order
+400 Client Error: Bad Request for url: https://api.bitget.com/api/v2/mix/order/place-order
+400 Client Error: Bad Request for url: https://api.bitget.com/api/v2/mix/order/place-order
+400 Client Error: Bad Request for url: https://api.bitget.com/api/v2/mix/order/place-order
+400 Client Error: Bad Request for url: https://api.bitget.com/api/v2/mix/order/place-order
+400 Client Error: Bad Request for url: https://api.bitget.com/api/v2/mix/order/place-order
+400 Client Error: Bad Request for url: https://api.bitget.com/api/v2/mix/order/place-order
+400 Client Error: Bad Request for url: https://api.bitget.com/api/v2/mix/order/place-order
+400 Client Error: Bad Request for url: https://api.bitget.com/api/v2/mix/order/place-order
+400 Client Error: Bad Request for url: https://api.bitget.com/api/v2/mix/order/place-order
+400 Client Error: Bad Request for url: https://api.bitget.com/api/v2/mix/order/place-order
+400 Client Error: Bad Request for url: https://api.bitget.com/api/v2/mix/order/place-order
+400 Client Error: Bad Request for url: https://api.bitget.com/api/v2/mix/order/place-order
+400 Client Error: Bad Request for url: https://api.bitget.com/api/v2/mix/order/place-order
+400 Client Error: Bad Request for url: https://api.bitget.com/api/v2/mix/order/place-order
+400 Client Error: Bad Request for url: https://api.bitget.com/api/v2/mix/order/place-order
+400 Client Error: Bad Request for url: https://api.bitget.com/api/v2/mix/order/place-order
+400 Client Error: Bad Request for url: https://api.bitget.com/api/v2/mix/order/place-order
+400 Client Error: Bad Request for url: https://api.bitget.com/api/v2/mix/order/place-order
+400 Client Error: Bad Request for url: https://api.bitget.com/api/v2/mix/order/place-order
+400 Client Error: Bad Request for url: https://api.bitget.com/api/v2/mix/order/place-order
+400 Client Error: Bad Request for url: https://api.bitget.com/api/v2/mix/order/place-order
+400 Client Error: Bad Request for url: https://api.bitget.com/api/v2/mix/order/place-order
+400 Client Error: Bad Request for url: https://api.bitget.com/api/v2/mix/order/place-order
+400 Client Error: Bad Request for url: https://api.bitget.com/api/v2/mix/order/place-order
+400 Client Error: Bad Request for url: https://api.bitget.com/api/v2/mix/order/place-order
+400 Client Error: Bad Request for url: https://api.bitget.com/api/v2/mix/order/place-order
+400 Client Error: Bad Request for url: https://api.bitget.com/api/v2/mix/order/place-order
+400 Client Error: Bad Request for url: https://api.bitget.com/api/v2/mix/order/place-order
+400 Client Error: Bad Request for url: https://api.bitget.com/api/v2/mix/order/place-order
+400 Client Error: Bad Request for url: https://api.bitget.com/api/v2/mix/order/place-order
+400 Client Error: Bad Request for url: https://api.bitget.com/api/v2/mix/order/place-order
+400 Client Error: Bad Request for url: https://api.bitget.com/api/v2/mix/order/place-order
+400 Client Error: Bad Request for url: https://api.bitget.com/api/v2/mix/order/place-order
+400 Client Error: Bad Request for url: https://api.bitget.com/api/v2/mix/order/place-order
+400 Client Error: Bad Request for url: https://api.bitget.com/api/v2/mix/order/place-order
+400 Client Error: Bad Request for url: https://api.bitget.com/api/v2/mix/order/place-order
+400 Client Error: Bad Request for url: https://api.bitget.com/api/v2/mix/order/place-order
+400 Client Error: Bad Request for url: https://api.bitget.com/api/v2/mix/order/place-order
+400 Client Error: Bad Request for url: https://api.bitget.com/api/v2/mix/order/place-order
+400 Client Error: Bad Request for url: https://api.bitget.com/api/v2/mix/order/place-order
+400 Client Error: Bad Request for url: https://api.bitget.com/api/v2/mix/order/place-order
+400 Client Error: Bad Request for url: https://api.bitget.com/api/v2/mix/order/place-order
+400 Client Error: Bad Request for url: https://api.bitget.com/api/v2/mix/order/place-order
+400 Client Error: Bad Request for url: https://api.bitget.com/api/v2/mix/order/place-order
+400 Client Error: Bad Request for url: https://api.bitget.com/api/v2/mix/order/place-order
+400 Client Error: Bad Request for url: https://api.bitget.com/api/v2/mix/order/place-order
+400 Client Error: Bad Request for url: https://api.bitget.com/api/v2/mix/order/place-order
+400 Client Error: Bad Request for url: https://api.bitget.com/api/v2/mix/order/place-order
+400 Client Error: Bad Request for url: https://api.bitget.com/api/v2/mix/order/place-order
+400 Client Error: Bad Request for url: https://api.bitget.com/api/v2/mix/order/place-order
+400 Client Error: Bad Request for url: https://api.bitget.com/api/v2/mix/order/place-order
+400 Client Error: Bad Request for url: https://api.bitget.com/api/v2/mix/order/place-order
+400 Client Error: Bad Request for url: https://api.bitget.com/api/v2/mix/order/place-order
+400 Client Error: Bad Request for url: https://api.bitget.com/api/v2/mix/order/place-order
+400 Client Error: Bad Request for url: https://api.bitget.com/api/v2/mix/order/place-order
+400 Client Error: Bad Request for url: https://api.bitget.com/api/v2/mix/order/place-order
+400 Client Error: Bad Request for url: https://api.bitget.com/api/v2/mix/order/place-order
+400 Client Error: Bad Request for url: https://api.bitget.com/api/v2/mix/order/place-order
+400 Client Error: Bad Request for url: https://api.bitget.com/api/v2/mix/order/place-order
+400 Client Error: Bad Request for url: https://api.bitget.com/api/v2/mix/order/place-order
+400 Client Error: Bad Request for url: https://api.bitget.com/api/v2/mix/order/place-order
+400 Client Error: Bad Request for url: https://api.bitget.com/api/v2/mix/order/place-order
+400 Client Error: Bad Request for url: https://api.bitget.com/api/v2/mix/order/place-order
+400 Client Error: Bad Request for url: https://api.bitget.com/api/v2/mix/order/place-order
+400 Client Error: Bad Request for url: https://api.bitget.com/api/v2/mix/order/place-order
+400 Client Error: Bad Request for url: https://api.bitget.com/api/v2/mix/order/place-order
+400 Client Error: Bad Request for url: https://api.bitget.com/api/v2/mix/order/place-order
+400 Client Error: Bad Request for url: https://api.bitget.com/api/v2/mix/order/place-order
+400 Client Error: Bad Request for url: https://api.bitget.com/api/v2/mix/order/place-order
+400 Client Error: Bad Request for url: https://api.bitget.com/api/v2/mix/order/place-order
+400 Client Error: Bad Request for url: https://api.bitget.com/api/v2/mix/order/place-order
+400 Client Error: Bad Request for url: https://api.bitget.com/api/v2/mix/order/place-order
+400 Client Error: Bad Request for url: https://api.bitget.com/api/v2/mix/order/place-order
+400 Client Error: Bad Request for url: https://api.bitget.com/api/v2/mix/order/place-order
+400 Client Error: Bad Request for url: https://api.bitget.com/api/v2/mix/order/place-order
+400 Client Error: Bad Request for url: https://api.bitget.com/api/v2/mix/order/place-order
+400 Client Error: Bad Request for url: https://api.bitget.com/api/v2/mix/order/place-order
+400 Client Error: Bad Request for url: https://api.bitget.com/api/v2/mix/order/place-order
+400 Client Error: Bad Request for url: https://api.bitget.com/api/v2/mix/order/place-order
+400 Client Error: Bad Request for url: https://api.bitget.com/api/v2/mix/order/place-order
+400 Client Error: Bad Request for url: https://api.bitget.com/api/v2/mix/order/place-order
+400 Client Error: Bad Request for url: https://api.bitget.com/api/v2/mix/order/place-order
+400 Client Error: Bad Request for url: https://api.bitget.com/api/v2/mix/order/place-order
+400 Client Error: Bad Request for url: https://api.bitget.com/api/v2/mix/order/place-order
+400 Client Error: Bad Request for url: https://api.bitget.com/api/v2/mix/order/place-order
+400 Client Error: Bad Request for url: https://api.bitget.com/api/v2/mix/order/place-order
+400 Client Error: Bad Request for url: https://api.bitget.com/api/v2/mix/order/place-order
+400 Client Error: Bad Request for url: https://api.bitget.com/api/v2/mix/order/place-order
+400 Client Error: Bad Request for url: https://api.bitget.com/api/v2/mix/order/place-order
+400 Client Error: Bad Request for url: https://api.bitget.com/api/v2/mix/order/place-order
+400 Client Error: Bad Request for url: https://api.bitget.com/api/v2/mix/order/place-order
+400 Client Error: Bad Request for url: https://api.bitget.com/api/v2/mix/order/place-order
+400 Client Error: Bad Request for url: https://api.bitget.com/api/v2/mix/order/place-order
+400 Client Error: Bad Request for url: https://api.bitget.com/api/v2/mix/order/place-order
+400 Client Error: Bad Request for url: https://api.bitget.com/api/v2/mix/order/place-order
+400 Client Error: Bad Request for url: https://api.bitget.com/api/v2/mix/order/place-order
+400 Client Error: Bad Request for url: https://api.bitget.com/api/v2/mix/order/place-order
+400 Client Error: Bad Request for url: https://api.bitget.com/api/v2/mix/order/place-order
+400 Client Error: Bad Request for url: https://api.bitget.com/api/v2/mix/order/place-order
+400 Client Error: Bad Request for url: https://api.bitget.com/api/v2/mix/order/place-order
+400 Client Error: Bad Request for url: https://api.bitget.com/api/v2/mix/order/place-order
+400 Client Error: Bad Request for url: https://api.bitget.com/api/v2/mix/order/place-order
+400 Client Error: Bad Request for url: https://api.bitget.com/api/v2/mix/order/place-order
+400 Client Error: Bad Request for url: https://api.bitget.com/api/v2/mix/order/place-order
+400 Client Error: Bad Request for url: https://api.bitget.com/api/v2/mix/order/place-order
+400 Client Error: Bad Request for url: https://api.bitget.com/api/v2/mix/order/place-order
+400 Client Error: Bad Request for url: https://api.bitget.com/api/v2/mix/order/place-order
+400 Client Error: Bad Request for url: https://api.bitget.com/api/v2/mix/order/place-order
+400 Client Error: Bad Request for url: https://api.bitget.com/api/v2/mix/order/place-order
+400 Client Error: Bad Request for url: https://api.bitget.com/api/v2/mix/order/place-order
+400 Client Error: Bad Request for url: https://api.bitget.com/api/v2/mix/order/place-order
+400 Client Error: Bad Request for url: https://api.bitget.com/api/v2/mix/order/place-order
+400 Client Error: Bad Request for url: https://api.bitget.com/api/v2/mix/order/place-order
+400 Client Error: Bad Request for url: https://api.bitget.com/api/v2/mix/order/place-order
+400 Client Error: Bad Request for url: https://api.bitget.com/api/v2/mix/order/place-order
+400 Client Error: Bad Request for url: https://api.bitget.com/api/v2/mix/order/place-order
+400 Client Error: Bad Request for url: https://api.bitget.com/api/v2/mix/order/place-order
+400 Client Error: Bad Request for url: https://api.bitget.com/api/v2/mix/order/place-order
+400 Client Error: Bad Request for url: https://api.bitget.com/api/v2/mix/order/place-order
+400 Client Error: Bad Request for url: https://api.bitget.com/api/v2/mix/order/place-order
+400 Client Error: Bad Request for url: https://api.bitget.com/api/v2/mix/order/place-order
+400 Client Error: Bad Request for url: https://api.bitget.com/api/v2/mix/order/place-order
+400 Client Error: Bad Request for url: https://api.bitget.com/api/v2/mix/order/place-order
+[2025-07-12 17:10:51] エラー:
+load_tick_sizes() missing 1 required positional argument: 'wb'
+Traceback (most recent call last):
+  File "C:\Users\koichi\Documents\MyDocuments\My_work\My_Programing_work\BitCoin\bitget_auto\main.py", line 44, in main
+    place_orders(
+  File "C:\Users\koichi\Documents\MyDocuments\My_work\My_Programing_work\BitCoin\bitget_auto\order_processor.py", line 34, in place_orders
+    price_places, volume_places = load_tick_sizes()
+TypeError: load_tick_sizes() missing 1 required positional argument: 'wb'
+
+[2025-07-12 17:14:02] エラー:
+local variable 'sheet_name' referenced before assignment
+Traceback (most recent call last):
+  File "C:\Users\koichi\Documents\MyDocuments\My_work\My_Programing_work\BitCoin\bitget_auto\main.py", line 44, in main
+    place_orders(
+  File "C:\Users\koichi\Documents\MyDocuments\My_work\My_Programing_work\BitCoin\bitget_auto\order_processor.py", line 34, in place_orders
+    price_places, volume_places = load_tick_sizes()
+  File "C:\Users\koichi\Documents\MyDocuments\My_work\My_Programing_work\BitCoin\bitget_auto\order_reader.py", line 16, in load_tick_sizes
+    if sheet_name is None:
+UnboundLocalError: local variable 'sheet_name' referenced before assignment
+
+[2025-07-12 17:15:54] エラー:
+local variable 'sheet_name' referenced before assignment
+Traceback (most recent call last):
+  File "C:\Users\koichi\Documents\MyDocuments\My_work\My_Programing_work\BitCoin\bitget_auto\main.py", line 44, in main
+    place_orders(
+  File "C:\Users\koichi\Documents\MyDocuments\My_work\My_Programing_work\BitCoin\bitget_auto\order_processor.py", line 34, in place_orders
+    price_places, volume_places = load_tick_sizes()
+  File "C:\Users\koichi\Documents\MyDocuments\My_work\My_Programing_work\BitCoin\bitget_auto\order_reader.py", line 16, in load_tick_sizes
+    if sheet_name is None:
+UnboundLocalError: local variable 'sheet_name' referenced before assignment
+
+400 Client Error: Bad Request for url: https://api.bitget.com/api/v2/mix/order/place-order
+400 Client Error: Bad Request for url: https://api.bitget.com/api/v2/mix/order/place-order
+400 Client Error: Bad Request for url: https://api.bitget.com/api/v2/mix/order/place-order
+400 Client Error: Bad Request for url: https://api.bitget.com/api/v2/mix/order/place-order
+400 Client Error: Bad Request for url: https://api.bitget.com/api/v2/mix/order/place-order
+400 Client Error: Bad Request for url: https://api.bitget.com/api/v2/mix/order/place-order
+400 Client Error: Bad Request for url: https://api.bitget.com/api/v2/mix/order/place-order
+400 Client Error: Bad Request for url: https://api.bitget.com/api/v2/mix/order/place-order
+400 Client Error: Bad Request for url: https://api.bitget.com/api/v2/mix/order/place-order
+400 Client Error: Bad Request for url: https://api.bitget.com/api/v2/mix/order/place-order
+400 Client Error: Bad Request for url: https://api.bitget.com/api/v2/mix/order/place-order
+400 Client Error: Bad Request for url: https://api.bitget.com/api/v2/mix/order/place-order
+400 Client Error: Bad Request for url: https://api.bitget.com/api/v2/mix/order/place-order
+400 Client Error: Bad Request for url: https://api.bitget.com/api/v2/mix/order/place-order
+400 Client Error: Bad Request for url: https://api.bitget.com/api/v2/mix/order/place-order
+400 Client Error: Bad Request for url: https://api.bitget.com/api/v2/mix/order/place-order
+400 Client Error: Bad Request for url: https://api.bitget.com/api/v2/mix/order/place-order
+400 Client Error: Bad Request for url: https://api.bitget.com/api/v2/mix/order/place-order
+400 Client Error: Bad Request for url: https://api.bitget.com/api/v2/mix/order/place-order
+400 Client Error: Bad Request for url: https://api.bitget.com/api/v2/mix/order/place-order
+400 Client Error: Bad Request for url: https://api.bitget.com/api/v2/mix/order/place-order
+400 Client Error: Bad Request for url: https://api.bitget.com/api/v2/mix/order/place-order
+400 Client Error: Bad Request for url: https://api.bitget.com/api/v2/mix/order/place-order
+400 Client Error: Bad Request for url: https://api.bitget.com/api/v2/mix/order/place-order
+400 Client Error: Bad Request for url: https://api.bitget.com/api/v2/mix/order/place-order
+400 Client Error: Bad Request for url: https://api.bitget.com/api/v2/mix/order/place-order
+400 Client Error: Bad Request for url: https://api.bitget.com/api/v2/mix/order/place-order
+400 Client Error: Bad Request for url: https://api.bitget.com/api/v2/mix/order/place-order
+400 Client Error: Bad Request for url: https://api.bitget.com/api/v2/mix/order/place-order
+400 Client Error: Bad Request for url: https://api.bitget.com/api/v2/mix/order/place-order
+400 Client Error: Bad Request for url: https://api.bitget.com/api/v2/mix/order/place-order
+400 Client Error: Bad Request for url: https://api.bitget.com/api/v2/mix/order/place-order
+400 Client Error: Bad Request for url: https://api.bitget.com/api/v2/mix/order/place-order
+400 Client Error: Bad Request for url: https://api.bitget.com/api/v2/mix/order/place-order
+400 Client Error: Bad Request for url: https://api.bitget.com/api/v2/mix/order/place-order
+400 Client Error: Bad Request for url: https://api.bitget.com/api/v2/mix/order/place-order
+400 Client Error: Bad Request for url: https://api.bitget.com/api/v2/mix/order/place-order
+400 Client Error: Bad Request for url: https://api.bitget.com/api/v2/mix/order/place-order
+400 Client Error: Bad Request for url: https://api.bitget.com/api/v2/mix/order/place-order
+400 Client Error: Bad Request for url: https://api.bitget.com/api/v2/mix/order/place-order
+400 Client Error: Bad Request for url: https://api.bitget.com/api/v2/mix/order/place-order
+400 Client Error: Bad Request for url: https://api.bitget.com/api/v2/mix/order/place-order
+400 Client Error: Bad Request for url: https://api.bitget.com/api/v2/mix/order/place-order
+400 Client Error: Bad Request for url: https://api.bitget.com/api/v2/mix/order/place-order
+400 Client Error: Bad Request for url: https://api.bitget.com/api/v2/mix/order/place-order
+400 Client Error: Bad Request for url: https://api.bitget.com/api/v2/mix/order/place-order
+400 Client Error: Bad Request for url: https://api.bitget.com/api/v2/mix/order/place-order
+400 Client Error: Bad Request for url: https://api.bitget.com/api/v2/mix/order/place-order
+400 Client Error: Bad Request for url: https://api.bitget.com/api/v2/mix/order/place-order
+400 Client Error: Bad Request for url: https://api.bitget.com/api/v2/mix/order/place-order
+400 Client Error: Bad Request for url: https://api.bitget.com/api/v2/mix/order/place-order
+400 Client Error: Bad Request for url: https://api.bitget.com/api/v2/mix/order/place-order
+400 Client Error: Bad Request for url: https://api.bitget.com/api/v2/mix/order/place-order
+400 Client Error: Bad Request for url: https://api.bitget.com/api/v2/mix/order/place-order
+400 Client Error: Bad Request for url: https://api.bitget.com/api/v2/mix/order/place-order
+400 Client Error: Bad Request for url: https://api.bitget.com/api/v2/mix/order/place-order
+400 Client Error: Bad Request for url: https://api.bitget.com/api/v2/mix/order/place-order
+400 Client Error: Bad Request for url: https://api.bitget.com/api/v2/mix/order/place-order
+400 Client Error: Bad Request for url: https://api.bitget.com/api/v2/mix/order/place-order
+400 Client Error: Bad Request for url: https://api.bitget.com/api/v2/mix/order/place-order
+400 Client Error: Bad Request for url: https://api.bitget.com/api/v2/mix/order/place-order
+400 Client Error: Bad Request for url: https://api.bitget.com/api/v2/mix/order/place-order
+400 Client Error: Bad Request for url: https://api.bitget.com/api/v2/mix/order/place-order
+400 Client Error: Bad Request for url: https://api.bitget.com/api/v2/mix/order/place-order
+400 Client Error: Bad Request for url: https://api.bitget.com/api/v2/mix/order/place-order
+400 Client Error: Bad Request for url: https://api.bitget.com/api/v2/mix/order/place-order
+400 Client Error: Bad Request for url: https://api.bitget.com/api/v2/mix/order/place-order
+400 Client Error: Bad Request for url: https://api.bitget.com/api/v2/mix/order/place-order
+400 Client Error: Bad Request for url: https://api.bitget.com/api/v2/mix/order/place-order
+400 Client Error: Bad Request for url: https://api.bitget.com/api/v2/mix/order/place-order
+400 Client Error: Bad Request for url: https://api.bitget.com/api/v2/mix/order/place-order
+400 Client Error: Bad Request for url: https://api.bitget.com/api/v2/mix/order/place-order
+400 Client Error: Bad Request for url: https://api.bitget.com/api/v2/mix/order/place-order
+400 Client Error: Bad Request for url: https://api.bitget.com/api/v2/mix/order/place-order
+400 Client Error: Bad Request for url: https://api.bitget.com/api/v2/mix/order/place-order
+400 Client Error: Bad Request for url: https://api.bitget.com/api/v2/mix/order/place-order
+400 Client Error: Bad Request for url: https://api.bitget.com/api/v2/mix/order/place-order
+400 Client Error: Bad Request for url: https://api.bitget.com/api/v2/mix/order/place-order
+400 Client Error: Bad Request for url: https://api.bitget.com/api/v2/mix/order/place-order
+400 Client Error: Bad Request for url: https://api.bitget.com/api/v2/mix/order/place-order
+400 Client Error: Bad Request for url: https://api.bitget.com/api/v2/mix/order/place-order
+400 Client Error: Bad Request for url: https://api.bitget.com/api/v2/mix/order/place-order
+400 Client Error: Bad Request for url: https://api.bitget.com/api/v2/mix/order/place-order
+400 Client Error: Bad Request for url: https://api.bitget.com/api/v2/mix/order/place-order
+400 Client Error: Bad Request for url: https://api.bitget.com/api/v2/mix/order/place-order
+400 Client Error: Bad Request for url: https://api.bitget.com/api/v2/mix/order/place-order
+400 Client Error: Bad Request for url: https://api.bitget.com/api/v2/mix/order/place-order
+400 Client Error: Bad Request for url: https://api.bitget.com/api/v2/mix/order/place-order
+400 Client Error: Bad Request for url: https://api.bitget.com/api/v2/mix/order/place-order
+400 Client Error: Bad Request for url: https://api.bitget.com/api/v2/mix/order/place-order
+400 Client Error: Bad Request for url: https://api.bitget.com/api/v2/mix/order/place-order
+400 Client Error: Bad Request for url: https://api.bitget.com/api/v2/mix/order/place-order
+400 Client Error: Bad Request for url: https://api.bitget.com/api/v2/mix/order/place-order
+400 Client Error: Bad Request for url: https://api.bitget.com/api/v2/mix/order/place-order
+400 Client Error: Bad Request for url: https://api.bitget.com/api/v2/mix/order/place-order
+400 Client Error: Bad Request for url: https://api.bitget.com/api/v2/mix/order/place-order
+400 Client Error: Bad Request for url: https://api.bitget.com/api/v2/mix/order/place-order
+400 Client Error: Bad Request for url: https://api.bitget.com/api/v2/mix/order/place-order
+400 Client Error: Bad Request for url: https://api.bitget.com/api/v2/mix/order/place-order
+400 Client Error: Bad Request for url: https://api.bitget.com/api/v2/mix/order/place-order
+400 Client Error: Bad Request for url: https://api.bitget.com/api/v2/mix/order/place-order
+400 Client Error: Bad Request for url: https://api.bitget.com/api/v2/mix/order/place-order
+400 Client Error: Bad Request for url: https://api.bitget.com/api/v2/mix/order/place-order
+400 Client Error: Bad Request for url: https://api.bitget.com/api/v2/mix/order/place-order
+400 Client Error: Bad Request for url: https://api.bitget.com/api/v2/mix/order/place-order
+400 Client Error: Bad Request for url: https://api.bitget.com/api/v2/mix/order/place-order
+400 Client Error: Bad Request for url: https://api.bitget.com/api/v2/mix/order/place-order
+400 Client Error: Bad Request for url: https://api.bitget.com/api/v2/mix/order/place-order
+400 Client Error: Bad Request for url: https://api.bitget.com/api/v2/mix/order/place-order
+400 Client Error: Bad Request for url: https://api.bitget.com/api/v2/mix/order/place-order
+400 Client Error: Bad Request for url: https://api.bitget.com/api/v2/mix/order/place-order
+400 Client Error: Bad Request for url: https://api.bitget.com/api/v2/mix/order/place-order
+400 Client Error: Bad Request for url: https://api.bitget.com/api/v2/mix/order/place-order
+400 Client Error: Bad Request for url: https://api.bitget.com/api/v2/mix/order/place-order
+400 Client Error: Bad Request for url: https://api.bitget.com/api/v2/mix/order/place-order
+400 Client Error: Bad Request for url: https://api.bitget.com/api/v2/mix/order/place-order
+400 Client Error: Bad Request for url: https://api.bitget.com/api/v2/mix/order/place-order
+400 Client Error: Bad Request for url: https://api.bitget.com/api/v2/mix/order/place-order
+400 Client Error: Bad Request for url: https://api.bitget.com/api/v2/mix/order/place-order
+400 Client Error: Bad Request for url: https://api.bitget.com/api/v2/mix/order/place-order
+400 Client Error: Bad Request for url: https://api.bitget.com/api/v2/mix/order/place-order
+400 Client Error: Bad Request for url: https://api.bitget.com/api/v2/mix/order/place-order
+400 Client Error: Bad Request for url: https://api.bitget.com/api/v2/mix/order/place-order
+400 Client Error: Bad Request for url: https://api.bitget.com/api/v2/mix/order/place-order
+400 Client Error: Bad Request for url: https://api.bitget.com/api/v2/mix/order/place-order
+400 Client Error: Bad Request for url: https://api.bitget.com/api/v2/mix/order/place-order
+400 Client Error: Bad Request for url: https://api.bitget.com/api/v2/mix/order/place-order
+400 Client Error: Bad Request for url: https://api.bitget.com/api/v2/mix/order/place-order
+400 Client Error: Bad Request for url: https://api.bitget.com/api/v2/mix/order/place-order
+400 Client Error: Bad Request for url: https://api.bitget.com/api/v2/mix/order/place-order
+400 Client Error: Bad Request for url: https://api.bitget.com/api/v2/mix/order/place-order
+400 Client Error: Bad Request for url: https://api.bitget.com/api/v2/mix/order/place-order
+400 Client Error: Bad Request for url: https://api.bitget.com/api/v2/mix/order/place-order
+400 Client Error: Bad Request for url: https://api.bitget.com/api/v2/mix/order/place-order
+400 Client Error: Bad Request for url: https://api.bitget.com/api/v2/mix/order/place-order
+400 Client Error: Bad Request for url: https://api.bitget.com/api/v2/mix/order/place-order
+400 Client Error: Bad Request for url: https://api.bitget.com/api/v2/mix/order/place-order
+400 Client Error: Bad Request for url: https://api.bitget.com/api/v2/mix/order/place-order
+400 Client Error: Bad Request for url: https://api.bitget.com/api/v2/mix/order/place-order
+400 Client Error: Bad Request for url: https://api.bitget.com/api/v2/mix/order/place-order
+400 Client Error: Bad Request for url: https://api.bitget.com/api/v2/mix/order/place-order
+400 Client Error: Bad Request for url: https://api.bitget.com/api/v2/mix/order/place-order
+400 Client Error: Bad Request for url: https://api.bitget.com/api/v2/mix/order/place-order
+400 Client Error: Bad Request for url: https://api.bitget.com/api/v2/mix/order/place-order
+400 Client Error: Bad Request for url: https://api.bitget.com/api/v2/mix/order/place-order
+400 Client Error: Bad Request for url: https://api.bitget.com/api/v2/mix/order/place-order
+400 Client Error: Bad Request for url: https://api.bitget.com/api/v2/mix/order/place-order
+400 Client Error: Bad Request for url: https://api.bitget.com/api/v2/mix/order/place-order
+400 Client Error: Bad Request for url: https://api.bitget.com/api/v2/mix/order/place-order
+400 Client Error: Bad Request for url: https://api.bitget.com/api/v2/mix/order/place-order
+400 Client Error: Bad Request for url: https://api.bitget.com/api/v2/mix/order/place-order
+400 Client Error: Bad Request for url: https://api.bitget.com/api/v2/mix/order/place-order
+400 Client Error: Bad Request for url: https://api.bitget.com/api/v2/mix/order/place-order
+400 Client Error: Bad Request for url: https://api.bitget.com/api/v2/mix/order/place-order
+400 Client Error: Bad Request for url: https://api.bitget.com/api/v2/mix/order/place-order
+400 Client Error: Bad Request for url: https://api.bitget.com/api/v2/mix/order/place-order
+400 Client Error: Bad Request for url: https://api.bitget.com/api/v2/mix/order/place-order
+400 Client Error: Bad Request for url: https://api.bitget.com/api/v2/mix/order/place-order
+400 Client Error: Bad Request for url: https://api.bitget.com/api/v2/mix/order/place-order
+400 Client Error: Bad Request for url: https://api.bitget.com/api/v2/mix/order/place-order
+400 Client Error: Bad Request for url: https://api.bitget.com/api/v2/mix/order/place-order
+400 Client Error: Bad Request for url: https://api.bitget.com/api/v2/mix/order/place-order
+400 Client Error: Bad Request for url: https://api.bitget.com/api/v2/mix/order/place-order
+400 Client Error: Bad Request for url: https://api.bitget.com/api/v2/mix/order/place-order
+400 Client Error: Bad Request for url: https://api.bitget.com/api/v2/mix/order/place-order
+400 Client Error: Bad Request for url: https://api.bitget.com/api/v2/mix/order/place-order
+400 Client Error: Bad Request for url: https://api.bitget.com/api/v2/mix/order/place-order
+400 Client Error: Bad Request for url: https://api.bitget.com/api/v2/mix/order/place-order
+400 Client Error: Bad Request for url: https://api.bitget.com/api/v2/mix/order/place-order
+400 Client Error: Bad Request for url: https://api.bitget.com/api/v2/mix/order/place-order
+400 Client Error: Bad Request for url: https://api.bitget.com/api/v2/mix/order/place-order
+400 Client Error: Bad Request for url: https://api.bitget.com/api/v2/mix/order/place-order
+400 Client Error: Bad Request for url: https://api.bitget.com/api/v2/mix/order/place-order
+400 Client Error: Bad Request for url: https://api.bitget.com/api/v2/mix/order/place-order
+400 Client Error: Bad Request for url: https://api.bitget.com/api/v2/mix/order/place-order
+400 Client Error: Bad Request for url: https://api.bitget.com/api/v2/mix/order/place-order
+400 Client Error: Bad Request for url: https://api.bitget.com/api/v2/mix/order/place-order
+400 Client Error: Bad Request for url: https://api.bitget.com/api/v2/mix/order/place-order
+400 Client Error: Bad Request for url: https://api.bitget.com/api/v2/mix/order/place-order
+400 Client Error: Bad Request for url: https://api.bitget.com/api/v2/mix/order/place-order
+400 Client Error: Bad Request for url: https://api.bitget.com/api/v2/mix/order/place-order
+400 Client Error: Bad Request for url: https://api.bitget.com/api/v2/mix/order/place-order
+400 Client Error: Bad Request for url: https://api.bitget.com/api/v2/mix/order/place-order
+400 Client Error: Bad Request for url: https://api.bitget.com/api/v2/mix/order/place-order
+400 Client Error: Bad Request for url: https://api.bitget.com/api/v2/mix/order/place-order
+400 Client Error: Bad Request for url: https://api.bitget.com/api/v2/mix/order/place-order
+400 Client Error: Bad Request for url: https://api.bitget.com/api/v2/mix/order/place-order
+400 Client Error: Bad Request for url: https://api.bitget.com/api/v2/mix/order/place-order
+400 Client Error: Bad Request for url: https://api.bitget.com/api/v2/mix/order/place-order
+400 Client Error: Bad Request for url: https://api.bitget.com/api/v2/mix/order/place-order
+400 Client Error: Bad Request for url: https://api.bitget.com/api/v2/mix/order/place-order
+400 Client Error: Bad Request for url: https://api.bitget.com/api/v2/mix/order/place-order
+400 Client Error: Bad Request for url: https://api.bitget.com/api/v2/mix/order/place-order
+400 Client Error: Bad Request for url: https://api.bitget.com/api/v2/mix/order/place-order
+400 Client Error: Bad Request for url: https://api.bitget.com/api/v2/mix/order/place-order
+400 Client Error: Bad Request for url: https://api.bitget.com/api/v2/mix/order/place-order
+400 Client Error: Bad Request for url: https://api.bitget.com/api/v2/mix/order/place-order
+400 Client Error: Bad Request for url: https://api.bitget.com/api/v2/mix/order/place-order
+400 Client Error: Bad Request for url: https://api.bitget.com/api/v2/mix/order/place-order
+400 Client Error: Bad Request for url: https://api.bitget.com/api/v2/mix/order/place-order
+400 Client Error: Bad Request for url: https://api.bitget.com/api/v2/mix/order/place-order
+400 Client Error: Bad Request for url: https://api.bitget.com/api/v2/mix/order/place-order
+400 Client Error: Bad Request for url: https://api.bitget.com/api/v2/mix/order/place-order
+400 Client Error: Bad Request for url: https://api.bitget.com/api/v2/mix/order/place-order
+400 Client Error: Bad Request for url: https://api.bitget.com/api/v2/mix/order/place-order
+400 Client Error: Bad Request for url: https://api.bitget.com/api/v2/mix/order/place-order
+400 Client Error: Bad Request for url: https://api.bitget.com/api/v2/mix/order/place-order
+400 Client Error: Bad Request for url: https://api.bitget.com/api/v2/mix/order/place-order
+400 Client Error: Bad Request for url: https://api.bitget.com/api/v2/mix/order/place-order
+400 Client Error: Bad Request for url: https://api.bitget.com/api/v2/mix/order/place-order
+400 Client Error: Bad Request for url: https://api.bitget.com/api/v2/mix/order/place-order
+400 Client Error: Bad Request for url: https://api.bitget.com/api/v2/mix/order/place-order
+400 Client Error: Bad Request for url: https://api.bitget.com/api/v2/mix/order/place-order
+400 Client Error: Bad Request for url: https://api.bitget.com/api/v2/mix/order/place-order
+400 Client Error: Bad Request for url: https://api.bitget.com/api/v2/mix/order/place-order
+400 Client Error: Bad Request for url: https://api.bitget.com/api/v2/mix/order/place-order
+400 Client Error: Bad Request for url: https://api.bitget.com/api/v2/mix/order/place-order
+400 Client Error: Bad Request for url: https://api.bitget.com/api/v2/mix/order/place-order
+400 Client Error: Bad Request for url: https://api.bitget.com/api/v2/mix/order/place-order
+400 Client Error: Bad Request for url: https://api.bitget.com/api/v2/mix/order/place-order
+400 Client Error: Bad Request for url: https://api.bitget.com/api/v2/mix/order/place-order
+400 Client Error: Bad Request for url: https://api.bitget.com/api/v2/mix/order/place-order
+400 Client Error: Bad Request for url: https://api.bitget.com/api/v2/mix/order/place-order
+400 Client Error: Bad Request for url: https://api.bitget.com/api/v2/mix/order/place-order
+400 Client Error: Bad Request for url: https://api.bitget.com/api/v2/mix/order/place-order
+400 Client Error: Bad Request for url: https://api.bitget.com/api/v2/mix/order/place-order
+400 Client Error: Bad Request for url: https://api.bitget.com/api/v2/mix/order/place-order
+400 Client Error: Bad Request for url: https://api.bitget.com/api/v2/mix/order/place-order
+400 Client Error: Bad Request for url: https://api.bitget.com/api/v2/mix/order/place-order
+400 Client Error: Bad Request for url: https://api.bitget.com/api/v2/mix/order/place-order
+400 Client Error: Bad Request for url: https://api.bitget.com/api/v2/mix/order/place-order
+400 Client Error: Bad Request for url: https://api.bitget.com/api/v2/mix/order/place-order
+400 Client Error: Bad Request for url: https://api.bitget.com/api/v2/mix/order/place-order
+400 Client Error: Bad Request for url: https://api.bitget.com/api/v2/mix/order/place-order
+400 Client Error: Bad Request for url: https://api.bitget.com/api/v2/mix/order/place-order
+400 Client Error: Bad Request for url: https://api.bitget.com/api/v2/mix/order/place-order
+400 Client Error: Bad Request for url: https://api.bitget.com/api/v2/mix/order/place-order
+400 Client Error: Bad Request for url: https://api.bitget.com/api/v2/mix/order/place-order
+400 Client Error: Bad Request for url: https://api.bitget.com/api/v2/mix/order/place-order
+400 Client Error: Bad Request for url: https://api.bitget.com/api/v2/mix/order/place-order
+400 Client Error: Bad Request for url: https://api.bitget.com/api/v2/mix/order/place-order
+400 Client Error: Bad Request for url: https://api.bitget.com/api/v2/mix/order/place-order
+400 Client Error: Bad Request for url: https://api.bitget.com/api/v2/mix/order/place-order
+400 Client Error: Bad Request for url: https://api.bitget.com/api/v2/mix/order/place-order
+400 Client Error: Bad Request for url: https://api.bitget.com/api/v2/mix/order/place-order
+400 Client Error: Bad Request for url: https://api.bitget.com/api/v2/mix/order/place-order
+400 Client Error: Bad Request for url: https://api.bitget.com/api/v2/mix/order/place-order
+400 Client Error: Bad Request for url: https://api.bitget.com/api/v2/mix/order/place-order
+400 Client Error: Bad Request for url: https://api.bitget.com/api/v2/mix/order/place-order
+400 Client Error: Bad Request for url: https://api.bitget.com/api/v2/mix/order/place-order
+400 Client Error: Bad Request for url: https://api.bitget.com/api/v2/mix/order/place-order
+400 Client Error: Bad Request for url: https://api.bitget.com/api/v2/mix/order/place-order
+400 Client Error: Bad Request for url: https://api.bitget.com/api/v2/mix/order/place-order
+400 Client Error: Bad Request for url: https://api.bitget.com/api/v2/mix/order/place-order
+400 Client Error: Bad Request for url: https://api.bitget.com/api/v2/mix/order/place-order
+400 Client Error: Bad Request for url: https://api.bitget.com/api/v2/mix/order/place-order
+400 Client Error: Bad Request for url: https://api.bitget.com/api/v2/mix/order/place-order
+400 Client Error: Bad Request for url: https://api.bitget.com/api/v2/mix/order/place-order
+400 Client Error: Bad Request for url: https://api.bitget.com/api/v2/mix/order/place-order
+400 Client Error: Bad Request for url: https://api.bitget.com/api/v2/mix/order/place-order
+400 Client Error: Bad Request for url: https://api.bitget.com/api/v2/mix/order/place-order
+400 Client Error: Bad Request for url: https://api.bitget.com/api/v2/mix/order/place-order
+400 Client Error: Bad Request for url: https://api.bitget.com/api/v2/mix/order/place-order
+400 Client Error: Bad Request for url: https://api.bitget.com/api/v2/mix/order/place-order
+400 Client Error: Bad Request for url: https://api.bitget.com/api/v2/mix/order/place-order
+400 Client Error: Bad Request for url: https://api.bitget.com/api/v2/mix/order/place-order
+400 Client Error: Bad Request for url: https://api.bitget.com/api/v2/mix/order/place-order
+400 Client Error: Bad Request for url: https://api.bitget.com/api/v2/mix/order/place-order
+400 Client Error: Bad Request for url: https://api.bitget.com/api/v2/mix/order/place-order
+400 Client Error: Bad Request for url: https://api.bitget.com/api/v2/mix/order/place-order
+400 Client Error: Bad Request for url: https://api.bitget.com/api/v2/mix/order/place-order
+400 Client Error: Bad Request for url: https://api.bitget.com/api/v2/mix/order/place-order
+400 Client Error: Bad Request for url: https://api.bitget.com/api/v2/mix/order/place-order
+400 Client Error: Bad Request for url: https://api.bitget.com/api/v2/mix/order/place-order
+400 Client Error: Bad Request for url: https://api.bitget.com/api/v2/mix/order/place-order
+400 Client Error: Bad Request for url: https://api.bitget.com/api/v2/mix/order/place-order
+400 Client Error: Bad Request for url: https://api.bitget.com/api/v2/mix/order/place-order
+400 Client Error: Bad Request for url: https://api.bitget.com/api/v2/mix/order/place-order
+400 Client Error: Bad Request for url: https://api.bitget.com/api/v2/mix/order/place-order
+400 Client Error: Bad Request for url: https://api.bitget.com/api/v2/mix/order/place-order
+400 Client Error: Bad Request for url: https://api.bitget.com/api/v2/mix/order/place-order
+400 Client Error: Bad Request for url: https://api.bitget.com/api/v2/mix/order/place-order
+400 Client Error: Bad Request for url: https://api.bitget.com/api/v2/mix/order/place-order
+400 Client Error: Bad Request for url: https://api.bitget.com/api/v2/mix/order/place-order
+400 Client Error: Bad Request for url: https://api.bitget.com/api/v2/mix/order/place-order
+400 Client Error: Bad Request for url: https://api.bitget.com/api/v2/mix/order/place-order
+400 Client Error: Bad Request for url: https://api.bitget.com/api/v2/mix/order/place-order
+400 Client Error: Bad Request for url: https://api.bitget.com/api/v2/mix/order/place-order
+400 Client Error: Bad Request for url: https://api.bitget.com/api/v2/mix/order/place-order

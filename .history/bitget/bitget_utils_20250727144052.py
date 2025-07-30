@@ -18,34 +18,10 @@ def load_config(path=os.path.join(BASE_DIR, "config.yaml")):
         return yaml.safe_load(f)
 
 
-def get_futures_eccout_equity(
-    api_key, api_secret, api_passphrase, base_url="https://api.bitget.com"
-):
+def get_futures_eccout_equity(api_key, api_secret, api_passphrase,base_url = "https://api.bitget.com"):
     timestamp = str(int(time.time() * 1000))
     method = "GET"
-    request_path = "/api/v2/mix/account/account"  # 先物アカウント情報取得API
-    query = "?productType=USDT-FUTURES"  # 先物口座のパラメータ
-    full_path = request_path + query
-
-    # 署名対象文字列を作成
-    pre_hash = timestamp + method + full_path
-    signature = hmac.new(
-        api_secret.encode("utf-8"), pre_hash.encode("utf-8"), hashlib.sha256
-    ).hexdigest()
-
-    headers = {
-        "ACCESS-KEY": api_key,
-        "ACCESS-SIGN": signature,
-        "ACCESS-TIMESTAMP": timestamp,
-        "ACCESS-PASSPHRASE": api_passphrase,
-        "Content-Type": "application/json",
-    }
-    url = base_url + full_path
-    response = requests.get(url, headers=headers)
-    response.raise_for_status()
-    return response.json()
-
-
+    request_path = "/api/v1/futures/account/equity"
 def get_assets(api_key, api_secret, api_passphrase, request_path, product_type=None):
     base_url = "https://api.bitget.com"
     method = "GET"
