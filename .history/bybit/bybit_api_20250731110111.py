@@ -44,24 +44,25 @@ def rsa_sign(private_key_path: str, message: str) -> str:
 
 def get_bybit_spot_assets(api_key: str, api_secret: str, base_url="https://api.bybit.com"):
     endpoint = "/v5/account/wallet-balance"
+    method = "GET"
     recv_window = "5000"
     timestamp = str(int(time.time() * 1000))
-    method = "GET"
 
-    params = {"accountType": "UNIFIED"}
+    params = {"accountType": "SPOT"}
     query_string = "&".join(f"{k}={v}" for k, v in sorted(params.items()))
+
     url = base_url + endpoint + "?" + query_string
 
-    # ❗️ここが最重要
-    origin_string = f"{timestamp}{api_key}{recv_window}{query_string}"
-
-    signature = hmac.new(api_secret.encode(), origin_string.encode(), hashlib.sha256).hexdigest()
+    # HMAC署名用プレーン文字列を作成
+    message = f"{timestamp}{api_key}{recv_window}{method}{endpoint}{query_string}"
+    signature = hmac.new(api_secret.encode(), message.encode(), hashlib.sha256).hexdigest()
 
     headers = {
         "X-BAPI-API-KEY": api_key,
         "X-BAPI-SIGN": signature,
         "X-BAPI-TIMESTAMP": timestamp,
         "X-BAPI-RECV-WINDOW": recv_window,
+        "Content-Type": "application/json",
     }
 
     response = requests.get(url, headers=headers)
