@@ -55,6 +55,15 @@ def get_bybit_spot_assets(api_key: str, api_secret: str, base_url="https://api.b
     # ❗️ここが最重要
     origin_string = f"{timestamp}{api_key}{recv_window}{query_string}"
 
+    print("=== DEBUG START ===")
+    print(f"timestamp     : {timestamp}")
+    print(f"api_key       : {api_key}")
+    print(f"recv_window   : {recv_window}")
+    print(f"method        : {method}")
+    print(f"endpoint      : {endpoint}")
+    print(f"query_string  : {query_string}")
+    print(f"署名対象文字列: {origin_string}")
+
     signature = hmac.new(api_secret.encode(), origin_string.encode(), hashlib.sha256).hexdigest()
 
     headers = {

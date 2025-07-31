@@ -278,3 +278,23 @@
   }
 }
 
+{
+  "code": "00000",
+  "msg": "success",
+  "requestTime": 1753926431691,
+  "data": {
+    "clientOid": "1753926432146",
+    "orderId": "1334629676169150466"
+  }
+}
+
+{
+  "code": "00000",
+  "msg": "success",
+  "requestTime": 1753926431768,
+  "data": {
+    "clientOid": "1753926432263",
+    "orderId": "1334629676475334660"
+  }
+}
+
