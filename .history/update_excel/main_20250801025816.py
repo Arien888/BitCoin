@@ -15,7 +15,7 @@ def full_excel_refresh_and_recalculate(file_path):
 
     # ✅ 「すべてを更新」ボタンと同等（PowerQueryなど）
     wb.RefreshAll()
-    time.sleep(10)
+
     # ✅ 非同期クエリの完了を待機
     excel.CalculateUntilAsyncQueriesDone()
 

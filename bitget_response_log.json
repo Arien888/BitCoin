@@ -298,3 +298,123 @@
   }
 }
 
+{
+  "code": "00000",
+  "msg": "success",
+  "requestTime": 1753945315233,
+  "data": {
+    "clientOid": "1753945315532",
+    "orderId": "1334708879476506625"
+  }
+}
+
+{
+  "code": "00000",
+  "msg": "success",
+  "requestTime": 1753945315327,
+  "data": {
+    "clientOid": "1753945315687",
+    "orderId": "1334708879862382595"
+  }
+}
+
+{
+  "code": "00000",
+  "msg": "success",
+  "requestTime": 1753945315415,
+  "data": {
+    "clientOid": "1753945315771",
+    "orderId": "1334708880265035793"
+  }
+}
+
+{
+  "code": "00000",
+  "msg": "success",
+  "requestTime": 1753945316177,
+  "data": {
+    "clientOid": "1753945316503",
+    "orderId": "1334708883444318209"
+  }
+}
+
+{
+  "code": "00000",
+  "msg": "success",
+  "requestTime": 1753948259206,
+  "data": {
+    "clientOid": "1753948259497",
+    "orderId": "1334721227419402241"
+  }
+}
+
+{
+  "code": "00000",
+  "msg": "success",
+  "requestTime": 1753948259329,
+  "data": {
+    "clientOid": "1753948259645",
+    "orderId": "1334721227901747201"
+  }
+}
+
+{
+  "code": "00000",
+  "msg": "success",
+  "requestTime": 1753948259436,
+  "data": {
+    "clientOid": "1753948259756",
+    "orderId": "1334721228375703553"
+  }
+}
+
+{
+  "code": "00000",
+  "msg": "success",
+  "requestTime": 1753948259559,
+  "data": {
+    "clientOid": "1753948259868",
+    "orderId": "1334721228862242817"
+  }
+}
+
+{
+  "code": "00000",
+  "msg": "success",
+  "requestTime": 1753948260266,
+  "data": {
+    "clientOid": "1753948260609",
+    "orderId": "1334721231844393221"
+  }
+}
+
+{
+  "code": "00000",
+  "msg": "success",
+  "requestTime": 1753948260349,
+  "data": {
+    "clientOid": "1753948260694",
+    "orderId": "1334721232192520196"
+  }
+}
+
+{
+  "code": "00000",
+  "msg": "success",
+  "requestTime": 1753948260456,
+  "data": {
+    "clientOid": "1753948260787",
+    "orderId": "1334721232628727816"
+  }
+}
+
+{
+  "code": "00000",
+  "msg": "success",
+  "requestTime": 1753948260539,
+  "data": {
+    "clientOid": "1753948260883",
+    "orderId": "1334721232976855049"
+  }
+}
+

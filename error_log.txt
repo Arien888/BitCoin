@@ -21,3 +21,6 @@ FileNotFoundError: No such file: '../order_crypto.xlsx'
 400 Client Error: Bad Request for url: https://api.bitget.com/api/v2/mix/order/place-order
 400 Client Error: Bad Request for url: https://api.bitget.com/api/v2/mix/order/place-order
 400 Client Error: Bad Request for url: https://api.bitget.com/api/v2/mix/order/place-order
+400 Client Error: Bad Request for url: https://api.bitget.com/api/v2/mix/order/place-order
+400 Client Error: Bad Request for url: https://api.bitget.com/api/v2/mix/order/place-order
+400 Client Error: Bad Request for url: https://api.bitget.com/api/v2/mix/order/place-order
