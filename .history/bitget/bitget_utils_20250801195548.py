@@ -44,33 +44,27 @@ def get_futures_eccout_equity(
     response.raise_for_status()
     return response.json()
 
-
-def get_assets(
-    api_key,
-    api_secret,
-    api_passphrase,
-    request_path,
-    product_type=None,
-    margin_coin=None,
-):
+def get_assets(api_key, api_secret, api_passphrase, url, product_type=None, margin_coin=None):
     import time, hmac, hashlib, base64, requests
+
+    params = {}
+    if product_type:
+        params["productType"] = product_type
+    if margin_coin:
+        params["marginCoin"] = margin_coin
 
     base_url = "https://api.bitget.com"
     method = "GET"
     timestamp = str(int(time.time() * 1000))
 
-    query_string = ""
-    if product_type:
-        query_string = f"?productType={product_type}"
-    # 他のパラメータがあれば同様に付加する
+    request_path = url.replace(base_url, "")
+    # クエリはparamsで渡すためここでは付けない
+    full_path = request_path
 
-    full_path = request_path + query_string
     body = ""
 
     prehash_string = timestamp + method + full_path + body
-    signature = hmac.new(
-        api_secret.encode("utf-8"), prehash_string.encode("utf-8"), hashlib.sha256
-    ).digest()
+    signature = hmac.new(api_secret.encode("utf-8"), prehash_string.encode("utf-8"), hashlib.sha256).digest()
     signature_base64 = base64.b64encode(signature).decode()
 
     headers = {
@@ -82,9 +76,13 @@ def get_assets(
         "locale": "en-US",
     }
 
-    url = base_url + full_path
+    full_url = base_url + full_path
+    response = requests.get(full_url, headers=headers, params=params)
 
-    response = requests.get(url, headers=headers)
+    print("Request URL:", response.request.url)
+    print("Request headers:", response.request.headers)
+    print("Response status:", response.status_code)
+    print("Response body:", response.text)
 
     if response.status_code != 200:
         print("HTTP Error:", response.status_code)
@@ -151,54 +149,3 @@ def write_to_existing_excel(filename, data, keys, sheet_name="Sheet1"):
     # 保存
     wb.save(filename)
     print(f"{filename} に既存ファイル上書き保存しました")
-
-
-def get_futures_account(api_key, api_secret, api_passphrase, product_type="UMCBL"):
-    import time, hmac, hashlib, base64, requests
-
-    valid_product_types = {"UMCBL", "CMCBL", "UMCSP", "CMCSL"}
-    if product_type not in valid_product_types:
-        raise ValueError(
-            f"Invalid productType: {product_type}. Choose from {valid_product_types}"
-        )
-
-    base_url = "https://api.bitget.com"
-    method = "GET"
-    request_path = "/api/v2/mix/account/accounts"
-    timestamp = str(int(time.time() * 1000))
-
-    query_string = f"?productType={product_type}"
-    full_path = request_path + query_string
-    body = ""
-
-    prehash_string = timestamp + method + full_path + body
-    signature = hmac.new(
-        api_secret.encode("utf-8"), prehash_string.encode("utf-8"), hashlib.sha256
-    ).digest()
-    signature_base64 = base64.b64encode(signature).decode()
-
-    headers = {
-        "ACCESS-KEY": api_key,
-        "ACCESS-SIGN": signature_base64,
-        "ACCESS-TIMESTAMP": timestamp,
-        "ACCESS-PASSPHRASE": api_passphrase,
-        "Content-Type": "application/json",
-        "locale": "en-US",
-    }
-
-    url = base_url + full_path
-    response = requests.get(url, headers=headers)
-
-    print("full_path:", full_path)
-    print("url:", url)
-
-    if response.status_code != 200:
-        print(f"HTTP Error: {response.status_code} - {response.text}")
-        return None
-
-    data = response.json()
-    if data.get("code") != "00000":
-        print(f"API Error: {data.get('msg')}")
-        return None
-
-    return data

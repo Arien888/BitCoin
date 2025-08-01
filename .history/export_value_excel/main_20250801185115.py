@@ -16,16 +16,13 @@ dst_file = (config_path.parent / order_cfg["output_file"]).resolve()
 # ✅ シート名の取得（sheet_name も許容）
 sheet_names = order_cfg.get("sheet_names") or [order_cfg.get("sheet_name")]
 if not sheet_names or None in sheet_names:
-    raise KeyError(
-        "YAMLに 'sheet_name' または 'sheet_names' が正しく設定されていません。"
-    )
-
+    raise KeyError("YAMLに 'sheet_name' または 'sheet_names' が正しく設定されていません。")
 
 # ✅ 値をコピーしつつ、文字列で書かれた数値を float に変換して書き込む関数
 def export_values_only(src_file, sheet_names, dst_file):
     print(f"📄 読み込み元: {src_file}")
     print(f"📤 出力先: {dst_file}")
-
+    
     time.sleep(1.5)  # ← ファイル開く前に一呼吸
 
     src_wb = load_workbook(src_file, data_only=True)
@@ -57,12 +54,8 @@ def export_values_only(src_file, sheet_names, dst_file):
                         pass  # 数値でなければそのまま
                 new_ws[cell.coordinate].value = v
 
-    print("⏳ 保存準備中...")
-    time.sleep(1.0)  # ← 保存前に安定化のため少し待つ
-
     new_wb.save(dst_file)
     print(f"✅ エクスポート完了: {dst_file}")
-
 
 # ✅ 実行
 if __name__ == "__main__":

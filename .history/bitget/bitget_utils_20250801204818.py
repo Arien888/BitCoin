@@ -44,15 +44,7 @@ def get_futures_eccout_equity(
     response.raise_for_status()
     return response.json()
 
-
-def get_assets(
-    api_key,
-    api_secret,
-    api_passphrase,
-    request_path,
-    product_type=None,
-    margin_coin=None,
-):
+def get_assets(api_key, api_secret, api_passphrase, request_path, product_type=None, margin_coin=None):
     import time, hmac, hashlib, base64, requests
 
     base_url = "https://api.bitget.com"
@@ -68,9 +60,7 @@ def get_assets(
     body = ""
 
     prehash_string = timestamp + method + full_path + body
-    signature = hmac.new(
-        api_secret.encode("utf-8"), prehash_string.encode("utf-8"), hashlib.sha256
-    ).digest()
+    signature = hmac.new(api_secret.encode("utf-8"), prehash_string.encode("utf-8"), hashlib.sha256).digest()
     signature_base64 = base64.b64encode(signature).decode()
 
     headers = {
@@ -156,12 +146,6 @@ def write_to_existing_excel(filename, data, keys, sheet_name="Sheet1"):
 def get_futures_account(api_key, api_secret, api_passphrase, product_type="UMCBL"):
     import time, hmac, hashlib, base64, requests
 
-    valid_product_types = {"UMCBL", "CMCBL", "UMCSP", "CMCSL"}
-    if product_type not in valid_product_types:
-        raise ValueError(
-            f"Invalid productType: {product_type}. Choose from {valid_product_types}"
-        )
-
     base_url = "https://api.bitget.com"
     method = "GET"
     request_path = "/api/v2/mix/account/accounts"
@@ -172,9 +156,7 @@ def get_futures_account(api_key, api_secret, api_passphrase, product_type="UMCBL
     body = ""
 
     prehash_string = timestamp + method + full_path + body
-    signature = hmac.new(
-        api_secret.encode("utf-8"), prehash_string.encode("utf-8"), hashlib.sha256
-    ).digest()
+    signature = hmac.new(api_secret.encode("utf-8"), prehash_string.encode("utf-8"), hashlib.sha256).digest()
     signature_base64 = base64.b64encode(signature).decode()
 
     headers = {
@@ -188,9 +170,6 @@ def get_futures_account(api_key, api_secret, api_passphrase, product_type="UMCBL
 
     url = base_url + full_path
     response = requests.get(url, headers=headers)
-
-    print("full_path:", full_path)
-    print("url:", url)
 
     if response.status_code != 200:
         print(f"HTTP Error: {response.status_code} - {response.text}")

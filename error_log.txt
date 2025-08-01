@@ -24,3 +24,12 @@ FileNotFoundError: No such file: '../order_crypto.xlsx'
 400 Client Error: Bad Request for url: https://api.bitget.com/api/v2/mix/order/place-order
 400 Client Error: Bad Request for url: https://api.bitget.com/api/v2/mix/order/place-order
 400 Client Error: Bad Request for url: https://api.bitget.com/api/v2/mix/order/place-order
+[2025-08-01 20:19:13] エラー:
+All candidate API paths failed
+Traceback (most recent call last):
+  File "C:\Users\koichi\Documents\MyDocuments\My_work\My_Programing_work\BitCoin\bitget_auto_rial\futuer_all_cancel.py", line 34, in cancel_all_orders_for_symbols
+    res = client.cancel_all_orders(symbol=symbol, margin_coin="USDT")
+  File "C:\Users\koichi\Documents\MyDocuments\My_work\My_Programing_work\BitCoin\bitget_auto_rial\bitget_client.py", line 71, in cancel_all_orders
+    raise Exception("All candidate API paths failed")
+Exception: All candidate API paths failed
+
