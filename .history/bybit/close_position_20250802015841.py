@@ -1,0 +1,103 @@
+import time
+import hmac
+import hashlib
+import requests
+from load_config import load_config
+
+
+def generate_signature(
+    secret: str, timestamp: str, method: str, path: str, body: str = ""
+) -> str:
+    origin_string = timestamp + method.upper() + path + body
+
+    print("===== DEBUG: 署名関数呼び出し =====")
+    print(f"timestamp: {timestamp}")
+    print(f"method: {method}")
+    print(f"path: {path}")
+    print(f"body: {body}")
+    print(f"origin_string: {timestamp + method.upper() + path + body}")
+
+    return hmac.new(secret.encode(), origin_string.encode(), hashlib.sha256).hexdigest()
+
+
+def get_open_positions(api_key, api_secret):
+    url = "https://api.bybit.com/v5/position/list"
+    params = {
+        "category": "linear",
+        "timestamp": str(int(time.time() * 1000)),
+        "apiKey": api_key,
+    }
+    sign = generate_signature(params, api_secret)
+    params["sign"] = sign
+
+    response = requests.get(url, params=params)
+
+    # まずは生レスポンスを確認
+    print("=== API Response ===")
+    print("Status Code:", response.status_code)
+    print("Response Text:", response.text)
+    print("====================")
+
+    # ここでjsonパースを試みる（問題あれば例外が出る）
+    data = response.json()
+
+    return data["result"]["list"]
+
+
+def close_position(api_key, api_secret, symbol, side, qty):
+    timestamp = str(int(time.time() * 1000))
+    method = "POST"
+    path = "/v5/order/create"
+
+    body_dict = {
+        "category": "linear",
+        "symbol": symbol,
+        "side": side,
+        "orderType": "Market",
+        "qty": str(qty),
+        "reduceOnly": True,
+    }
+    import json
+
+    body = json.dumps(body_dict)
+
+    sign = generate_signature(api_secret, timestamp, method, path, body)
+
+    headers = {
+        "X-BAPI-API-KEY": api_key,
+        "X-BAPI-TIMESTAMP": timestamp,
+        "X-BAPI-SIGN": sign,
+        "Content-Type": "application/json",
+    }
+
+    response = requests.post("https://api.bybit.com" + path, headers=headers, data=body)
+    print(f"[{symbol}] クローズ結果:", response.json())
+
+
+def main():
+    config = load_config()
+    api_key = config["bybit"]["key"]
+    api_secret = config["bybit"]["secret"]
+
+    try:
+        positions = get_open_positions(api_key, api_secret)
+
+        for pos in positions:
+            size = float(pos["size"])
+            if size == 0:
+                continue  # ポジションなし
+
+            symbol = pos["symbol"]
+            side = pos["side"]  # "Buy" or "Sell"
+            close_side = "Sell" if side == "Buy" else "Buy"
+
+            print(f"[{symbol}] {side}ポジション({size}) → {close_side}成行で決済")
+            close_position(api_key, api_secret, symbol, close_side, size)
+            time.sleep(0.2)  # API制限対策
+
+    except Exception as e:
+        print(f"エラー発生（bybit_futures 全クローズ）: {e}")
+
+
+if __name__ == "__main__":
+    main()
