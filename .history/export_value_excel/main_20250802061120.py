@@ -49,8 +49,12 @@ def export_values_only(src_file, sheet_names, dst_file):
         for row in src_ws.iter_rows():
             for cell in row:
                 v = cell.value
-                if v is None:
-                    v = str(v)  # None を空文字列に変換
+
+                if isinstance(v, str):
+                    try:
+                        v = float(v)
+                    except ValueError:
+                        pass  # 数値でなければそのまま
                 new_ws[cell.coordinate].value = v
 
     print("⏳ 保存準備中...")
