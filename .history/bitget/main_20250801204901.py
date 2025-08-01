@@ -34,7 +34,6 @@ def main():
                 result = get_futures_account(
                     api_key, api_secret, api_passphrase, product_type="UMCBL"
                 )
-
                 if result:
                     print(result)
                     keys = futures_keys

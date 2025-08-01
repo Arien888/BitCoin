@@ -7,7 +7,6 @@ from bitget_utils import (
     save_assets_to_csv_jp,
     write_to_existing_excel,
     get_futures_eccout_equity,
-    get_futures_account,
 )
 from bitget_keys import (
     spot_keys,
@@ -31,13 +30,15 @@ def main():
         try:
             if asset_type == "bitget_futures":
                 # 先物だけ productType パラメータを指定
-                result = get_futures_account(
-                    api_key, api_secret, api_passphrase, product_type="UMCBL"
+                result = get_assets(
+                    api_key,
+                    api_secret,
+                    api_passphrase,
+                    path,
+                    product_type="USDT-FUTURES",
+                    margin_coin="USDT",  # ← これを追加
                 )
-
-                if result:
-                    print(result)
-                    keys = futures_keys
+                keys = futures_keys
 
                 # 先物の総評価額を取得
                 account_info = get_futures_eccout_equity(

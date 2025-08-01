@@ -10,7 +10,7 @@ def main():
     config = load_config()
     api_key = config['bybit']['key']
     api_secret = config['bybit']['secret']
-    execel_pash = config['demo_bitget_excel']['asset_excel']
+    excel_path = config['demo_bitget_excel']['asset_excel']
     try:
         result = get_bybit_spot_assets(api_key, api_secret)
         print(json.dumps(result, indent=2, ensure_ascii=False))

@@ -1,0 +1,48 @@
+import json
+import time
+import hmac
+import hashlib
+import requests
+from load_config import load_config  # APIキー読み込み用。環境に合わせて調整してください
+
+def cancel_all_orders(api_key, api_secret):
+    url = "https://api.bybit.com/v5/order/cancel-all"
+    timestamp = str(int(time.time() * 1000))
+    recv_window = "5000"
+
+    body = {
+        "category": "linear"  # USDT無期限先物の場合
+    }
+    body_json = json.dumps(body, separators=(",", ":"))
+    sign_payload = f"{timestamp}{api_key}{recv_window}{body_json}"
+
+    signature = hmac.new(
+        api_secret.encode("utf-8"),
+        sign_payload.encode("utf-8"),
+        hashlib.sha256
+    ).hexdigest()
+
+    headers = {
+        "Content-Type": "application/json",
+        "X-BAPI-API-KEY": api_key,
+        "X-BAPI-TIMESTAMP": timestamp,
+        "X-BAPI-RECV-WINDOW": recv_window,
+        "X-BAPI-SIGN": signature
+    }
+
+    response = requests.post(url, headers=headers, data=body_json)
+
+    print("=== レスポンス ===")
+    print(response.text)
+    return response.json()
+
+def main():
+    config = load_config()
+    api_key = config["bybit"]["key"]
+    api_secret = config["bybit"]["secret"]
+
+    result = cancel_all_orders(api_key, api_secret)
+    print(json.dumps(result, indent=2, ensure_ascii=False))
+
+if __name__ == "__main__":
+    main()
