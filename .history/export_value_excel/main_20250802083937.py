@@ -21,6 +21,7 @@ if not sheet_names or None in sheet_names:
     )
 
 
+# ✅ 値をコピーしつつ、文字列で書かれた数値を float に変換して書き込む関数
 def export_values_only(src_file, sheet_names, dst_file):
     print(f"📄 読み込み元: {src_file}")
     print(f"📤 出力先: {dst_file}")
@@ -47,19 +48,10 @@ def export_values_only(src_file, sheet_names, dst_file):
 
         for row in src_ws.iter_rows():
             for cell in row:
-                v = cell.value
-
-                # ✅ 文字列として書かれた数値を float に変換
-                if isinstance(v, str):
-                    try:
-                        v = float(v)
-                    except ValueError:
-                        pass  # 数値でなければそのまま
-
-                new_ws[cell.coordinate].value = v
+                new_ws[cell.coordinate].value = cell.value  # ← 変換なしでそのまま
 
     print("⏳ 保存準備中...")
-    time.sleep(1.0)
+    time.sleep(1.0)  # ← 保存前に安定化のため少し待つ
 
     new_wb.save(dst_file)
     print(f"✅ エクスポート完了: {dst_file}")

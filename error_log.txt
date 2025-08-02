@@ -33,3 +33,29 @@ Traceback (most recent call last):
     raise Exception("All candidate API paths failed")
 Exception: All candidate API paths failed
 
+[2025-08-02 08:33:01] エラー:
+invalid literal for int() with base 10: '0.186310.186310.186310.186310.186310.186310.186310.186310.186310.186310.186310.186310.186310.186310.186310.186310.186310.186310.186310.186310.186310.186310.186310.186310.186310.186310.186310.186310.1
+Traceback (most recent call last):
+  File "C:\Users\koichi\Documents\MyDocuments\My_work\My_Programing_work\BitCoin\bitget_auto_rial\main.py", line 48, in main
+    place_orders(
+  File "C:\Users\koichi\Documents\MyDocuments\My_work\My_Programing_work\BitCoin\bitget_auto_rial\order_processor.py", line 41, in place_orders
+    send_orders_for_sheet(client, wb, buy_sheet, price_places, volume_places)
+  File "C:\Users\koichi\Documents\MyDocuments\My_work\My_Programing_work\BitCoin\bitget_auto_rial\order_processor.py", line 16, in send_orders_for_sheet
+    price = adjust_price(price, price_places.get(symbol))
+  File "C:\Users\koichi\Documents\MyDocuments\My_work\My_Programing_work\BitCoin\bitget_auto_rial\order_utils.py", line 20, in adjust_price
+    adjusted = (int(price * factor)) / factor
+ValueError: invalid literal for int() with base 10: '0.186310.186310.186310.186310.186310.186310.186310.186310.186310.186310.186310.186310.186310.186310.186310.186310.186310.186310.186310.186310.186310.186310.186310.186310.186310.186310.186310.186310.1
+
+[2025-08-02 08:40:31] エラー:
+invalid literal for int() with base 10: '0.186310.186310.186310.186310.186310.186310.186310.186310.186310.186310.186310.186310.186310.186310.186310.186310.186310.186310.186310.186310.186310.186310.186310.186310.186310.186310.186310.186310.1
+Traceback (most recent call last):
+  File "C:\Users\koichi\Documents\MyDocuments\My_work\My_Programing_work\BitCoin\bitget_auto_rial\main.py", line 48, in main
+    place_orders(
+  File "C:\Users\koichi\Documents\MyDocuments\My_work\My_Programing_work\BitCoin\bitget_auto_rial\order_processor.py", line 41, in place_orders
+    send_orders_for_sheet(client, wb, buy_sheet, price_places, volume_places)
+  File "C:\Users\koichi\Documents\MyDocuments\My_work\My_Programing_work\BitCoin\bitget_auto_rial\order_processor.py", line 16, in send_orders_for_sheet
+    price = adjust_price(price, price_places.get(symbol))
+  File "C:\Users\koichi\Documents\MyDocuments\My_work\My_Programing_work\BitCoin\bitget_auto_rial\order_utils.py", line 20, in adjust_price
+    adjusted = (int(price * factor)) / factor
+ValueError: invalid literal for int() with base 10: '0.186310.186310.186310.186310.186310.186310.186310.186310.186310.186310.186310.186310.186310.186310.186310.186310.186310.186310.186310.186310.186310.186310.186310.186310.186310.186310.186310.186310.1
+
