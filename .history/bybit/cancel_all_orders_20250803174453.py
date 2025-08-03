@@ -7,8 +7,9 @@ from openpyxl import load_workbook
 from load_config import load_config  # yamlから読み込む想定
 
 
-def generate_signature(api_secret, timestamp, api_key, recv_window, body):
-    sign_str = f"{timestamp}{api_key}{recv_window}{body}"
+def generate_signature(api_secret, timestamp, method, path, body):
+    # recv_window は sign_str に含めてはいけない（ドキュメントにも明記）
+    sign_str = f"{timestamp}{method.upper()}{path}{body}"
     print(f"[DEBUG] sign_str: {sign_str}")
     signature = hmac.new(
         api_secret.encode(), sign_str.encode(), hashlib.sha256
@@ -18,7 +19,8 @@ def generate_signature(api_secret, timestamp, api_key, recv_window, body):
 
 
 def cancel_all_orders(api_key, api_secret, symbol, category):
-    base_url = "https://api.bybit.com"  # 本番用URL
+    # base_url = "https://api-testnet.bybit.com"  # demo
+    base_url = "https://api.bybit.com"  # 本番
     path = "/v5/order/cancel-all"
     url = base_url + path
 
@@ -28,20 +30,13 @@ def cancel_all_orders(api_key, api_secret, symbol, category):
     body_dict = {"symbol": symbol, "category": category}
     body_json = json.dumps(body_dict, separators=(",", ":"))
 
-    recv_window = "5000"
-    timestamp = str(int(time.time() * 1000))
-    body_dict = {"symbol": symbol, "category": category}
-    body_json = json.dumps(body_dict, separators=(",", ":"))
-
-    signature = generate_signature(
-        api_secret, timestamp, api_key, recv_window, body_json
-    )
+    signature = generate_signature(api_secret, timestamp, method, path, body_json)
 
     headers = {
         "Content-Type": "application/json",
         "X-BAPI-API-KEY": api_key,
         "X-BAPI-TIMESTAMP": timestamp,
-        "X-BAPI-RECV-WINDOW": "5000",  # 注意：これは署名に含めない
+        "X-BAPI-RECV-WINDOW": "5000",
         "X-BAPI-SIGN": signature,
     }
 
@@ -54,13 +49,7 @@ def cancel_all_orders(api_key, api_secret, symbol, category):
 
     print(f"\n=== {symbol}（{category}） キャンセルレスポンス ===")
     print(response.text)
-
-    try:
-        return response.json()
-    except requests.exceptions.JSONDecodeError:
-        print("[ERROR] JSONデコードに失敗しました。レスポンス内容:")
-        print(response.text)
-        return None
+    return response.json()
 
 
 def read_cancel_list_from_excel(
@@ -96,6 +85,9 @@ def main():
 
     for symbol, category in cancel_entries:
         cancel_all_orders(api_key, api_secret, symbol, category)
+
+    resp = requests.get("https://api-testnet.bybit.com/v2/public/time")
+    print(resp.json())
 
 
 if __name__ == "__main__":

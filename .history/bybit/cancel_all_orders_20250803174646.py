@@ -10,11 +10,10 @@ from load_config import load_config  # yamlから読み込む想定
 def generate_signature(api_secret, timestamp, api_key, recv_window, body):
     sign_str = f"{timestamp}{api_key}{recv_window}{body}"
     print(f"[DEBUG] sign_str: {sign_str}")
-    signature = hmac.new(
-        api_secret.encode(), sign_str.encode(), hashlib.sha256
-    ).hexdigest()
+    signature = hmac.new(api_secret.encode(), sign_str.encode(), hashlib.sha256).hexdigest()
     print(f"[DEBUG] signature: {signature}")
     return signature
+
 
 
 def cancel_all_orders(api_key, api_secret, symbol, category):
@@ -28,14 +27,7 @@ def cancel_all_orders(api_key, api_secret, symbol, category):
     body_dict = {"symbol": symbol, "category": category}
     body_json = json.dumps(body_dict, separators=(",", ":"))
 
-    recv_window = "5000"
-    timestamp = str(int(time.time() * 1000))
-    body_dict = {"symbol": symbol, "category": category}
-    body_json = json.dumps(body_dict, separators=(",", ":"))
-
-    signature = generate_signature(
-        api_secret, timestamp, api_key, recv_window, body_json
-    )
+    signature = generate_signature(api_secret, timestamp, method, path, body_json)
 
     headers = {
         "Content-Type": "application/json",
@@ -96,6 +88,9 @@ def main():
 
     for symbol, category in cancel_entries:
         cancel_all_orders(api_key, api_secret, symbol, category)
+
+    resp = requests.get("https://api-testnet.bybit.com/v2/public/time")
+    print(resp.json())
 
 
 if __name__ == "__main__":
