@@ -17,7 +17,7 @@ def log_error(error_msg):
 
 # === 設定ファイル読み込み ===
 CONFIG_PATH = os.path.join(os.path.dirname(__file__), "..", "config.yaml")
-with open(CONFIG_PATH, "r") as f:
+with open(CONFIG_PATH, "r",encoding="utf-8") as f:
     config = yaml.safe_load(f)
 
 API_KEY = config["mexc"]["api_key"]

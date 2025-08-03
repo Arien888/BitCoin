@@ -18,12 +18,12 @@ p7.wait()  # エクセルバックグラウンドプロセスを終了
 # p3 = subprocess.Popen(["python", "update_excel/main.py"])  # エクセルアップデート
 # p3.wait()
 
-p7 = subprocess.Popen(["python", "update_excel/kill_background.py"])
-p7.wait()  # エクセルバックグラウンドプロセスを終了
+# p7 = subprocess.Popen(["python", "update_excel/kill_background.py"])
+# p7.wait()  # エクセルバックグラウンドプロセスを終了
 
 
-p4 = subprocess.Popen(["python", "export_value_excel/main.py"])
-p4.wait()  # 発注用エクセルアップデート
+# p4 = subprocess.Popen(["python", "export_value_excel/main.py"])
+# p4.wait()  # 発注用エクセルアップデート
 
 # p6 = subprocess.Popen(["python", "bitget_auto_rial/futuer_all_cancel.py"])
 # p6.wait()  # bitget(minimargin)の予約全解除
