@@ -6,6 +6,11 @@ import requests
 from openpyxl import load_workbook
 from load_config import load_config  # yamlから読み込む想定
 
+import os
+
+script_dir = os.path.dirname(os.path.abspath(__file__))
+cancel_list_excel_path = os.path.join(script_dir, "cancel_list.xlsx")
+
 
 def generate_signature(api_secret, timestamp, api_key, recv_window, body):
     sign_str = f"{timestamp}{api_key}{recv_window}{body}"
@@ -85,13 +90,12 @@ def main():
     api_key = config["bybit"]["key"]
     api_secret = config["bybit"]["secret"]
 
-    excel_path = "./cancel_list.xlsx"
     sheet_name = "Orders"
     symbol_col = "A"
     category_col = "B"
 
     cancel_entries = read_cancel_list_from_excel(
-        excel_path, sheet_name, symbol_col, category_col
+        cancel_list_excel_path, sheet_name, symbol_col, category_col
     )
 
     for symbol, category in cancel_entries:
