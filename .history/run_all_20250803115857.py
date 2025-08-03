@@ -3,13 +3,13 @@ import subprocess
 p7 = subprocess.Popen(["python", "update_excel/kill_background.py"])
 p7.wait()  # エクセルバックグラウンドプロセスを終了
 
-# # mexc保有額取得
-# p1 = subprocess.Popen(["python", "mexc/main.py"])
-# p1.wait()
+# mexc保有額取得
+p1 = subprocess.Popen(["python", "mexc/main.py"])
+p1.wait()
 
 # # bitget保有額取得
-p2 = subprocess.Popen(["python", "bitget/main.py"])
-p2.wait()
+# p2 = subprocess.Popen(["python", "bitget/main.py"])
+# p2.wait()
 
 p7 = subprocess.Popen(["python", "update_excel/kill_background.py"])
 p7.wait()  # エクセルバックグラウンドプロセスを終了

@@ -252,10 +252,11 @@ def get_futures_account(api_key, api_secret, api_passphrase, product_type="UMCBL
 def convert_futures_positions_to_assets_format(positions_list):
     """
     先物ポジションのリストを
-    get_assets の形式（{"data": [...] }の形）に変換する関数
+    get_assets の形式（シンボルをキーにした辞書）に変換する関数
     """
     if not positions_list:
-        return {"data": []}
+        return {}
 
-    # そのまま "data" キー付きの辞書として返す
-    return {"data": positions_list}
+    # symbol をキーにした辞書に変換
+    assets_dict = {pos["symbol"]: pos for pos in positions_list}
+    return assets_dict

@@ -133,8 +133,7 @@ def get_futures_positions(api_key, api_secret, api_passphrase):
         response.raise_for_status()
         data = response.json()
         if data.get("code") == "00000":
-            positions_list = data["data"]  # ここはリストなのでそのまま返す
-            return positions_list
+            return data["data"]
         else:
             print("API Error:", data.get("msg"))
             return None
@@ -247,15 +246,3 @@ def get_futures_account(api_key, api_secret, api_passphrase, product_type="UMCBL
         return None
 
     return data
-
-
-def convert_futures_positions_to_assets_format(positions_list):
-    """
-    先物ポジションのリストを
-    get_assets の形式（{"data": [...] }の形）に変換する関数
-    """
-    if not positions_list:
-        return {"data": []}
-
-    # そのまま "data" キー付きの辞書として返す
-    return {"data": positions_list}

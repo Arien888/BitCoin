@@ -97,18 +97,15 @@ def get_assets(
 
     return data
 
-
 def get_futures_positions(api_key, api_secret, api_passphrase):
-    import time, hmac, hashlib, base64, requests
+    import time, hmac, hashlib, base64, requests, json
 
     base_url = "https://api.bitget.com"
     method = "GET"
+    request_path = "/api/mix/v1/position/open_positions"
     timestamp = str(int(time.time() * 1000))
-    product_type = "USDT-FUTURES"  # 必要に応じて変更
-    margin_coin = "USDT"  # 必要に応じて変更
 
-    query_string = f"?productType={product_type}&marginCoin={margin_coin}"
-    full_path = "/api/v2/mix/position/all-position" + query_string
+    full_path = request_path
     body = ""
 
     prehash_string = timestamp + method + full_path + body
@@ -128,19 +125,17 @@ def get_futures_positions(api_key, api_secret, api_passphrase):
 
     url = base_url + full_path
 
-    try:
-        response = requests.get(url, headers=headers)
-        response.raise_for_status()
-        data = response.json()
-        if data.get("code") == "00000":
-            positions_list = data["data"]  # ここはリストなのでそのまま返す
-            return positions_list
-        else:
-            print("API Error:", data.get("msg"))
-            return None
-    except requests.exceptions.RequestException as e:
-        print("Request Exception:", e)
+    response = requests.get(url, headers=headers)
+    if response.status_code != 200:
+        print(f"HTTP Error: {response.status_code} - {response.text}")
         return None
+
+    data = response.json()
+    if data.get("code") != "00000":
+        print("API Error:", data.get("msg"))
+        return None
+
+    return data
 
 
 def save_assets_to_csv_jp(filename, data, keys):
@@ -247,15 +242,3 @@ def get_futures_account(api_key, api_secret, api_passphrase, product_type="UMCBL
         return None
 
     return data
-
-
-def convert_futures_positions_to_assets_format(positions_list):
-    """
-    先物ポジションのリストを
-    get_assets の形式（{"data": [...] }の形）に変換する関数
-    """
-    if not positions_list:
-        return {"data": []}
-
-    # そのまま "data" キー付きの辞書として返す
-    return {"data": positions_list}

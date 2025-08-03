@@ -143,6 +143,7 @@ def get_futures_positions(api_key, api_secret, api_passphrase):
         return None
 
 
+
 def save_assets_to_csv_jp(filename, data, keys):
     if data is None or not isinstance(data, dict):
         print(f"{filename}: データが不正です")
@@ -247,15 +248,3 @@ def get_futures_account(api_key, api_secret, api_passphrase, product_type="UMCBL
         return None
 
     return data
-
-
-def convert_futures_positions_to_assets_format(positions_list):
-    """
-    先物ポジションのリストを
-    get_assets の形式（{"data": [...] }の形）に変換する関数
-    """
-    if not positions_list:
-        return {"data": []}
-
-    # そのまま "data" キー付きの辞書として返す
-    return {"data": positions_list}

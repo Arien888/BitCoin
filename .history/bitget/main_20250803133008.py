@@ -52,12 +52,8 @@ def main():
 
             elif asset_type == "bitget_futures_positions":
                 # 先物のポジション情報を取得
-                positions_list = get_futures_positions(
-                    api_key, api_secret, api_passphrase
-                )
+                positions_list = get_futures_positions(api_key, api_secret, api_passphrase)
                 keys = futures_position_keys
-
-                result = convert_futures_positions_to_assets_format(positions_list)
 
             else:
                 result = get_assets(api_key, api_secret, api_passphrase, path)

@@ -8,8 +8,7 @@ from bitget_utils import (
     write_to_existing_excel,
     get_futures_eccout_equity,
     get_futures_account,
-    get_futures_positions,
-    convert_futures_positions_to_assets_format,
+    get_futures_positions
 )
 from bitget_keys import (
     spot_keys,
@@ -51,24 +50,25 @@ def main():
                 # )
 
             elif asset_type == "bitget_futures_positions":
-                # 先物のポジション情報を取得
-                positions_list = get_futures_positions(
-                    api_key, api_secret, api_passphrase
+                result = get_futures_positions(
+                    api_key,
+                    api_secret,
+                    api_passphrase,
+                    "/api/v2/mix/account/accounts",
+                    product_type="UMCBL",
                 )
                 keys = futures_position_keys
 
-                result = convert_futures_positions_to_assets_format(positions_list)
-
-            else:
-                result = get_assets(api_key, api_secret, api_passphrase, path)
-                if asset_type == "bitget_spot":
-                    keys = spot_keys
-                elif asset_type == "bitget_margin":
-                    keys = margin_keys
-                elif asset_type == "bitget_earn":
-                    keys = earn_keys
-                else:
-                    keys = []
+            # else:
+            #     result = get_assets(api_key, api_secret, api_passphrase, path)
+            #     if asset_type == "bitget_spot":
+            #         keys = spot_keys
+            #     elif asset_type == "bitget_margin":
+            #         keys = margin_keys
+            #     elif asset_type == "bitget_earn":
+            #         keys = earn_keys
+            #     else:
+            #         keys = []
 
                 # ここでレスポンス中身を確認
             print(json.dumps(result, indent=2, ensure_ascii=False))  # 追加
