@@ -43,6 +43,16 @@ def main():
                 else:
                     keys = []
 
+            elif asset_type == "bitget_futures_eccout_equity":
+
+                result = get_futures_eccout_equity(api_key, api_secret, api_passphrase)
+
+                if result:
+                    print(result)
+                    keys = futures_keys
+                else:
+                    keys = []
+
             elif asset_type == "bitget_futures_positions":
                 # 先物のポジション情報を取得
                 positions_list = get_futures_positions(

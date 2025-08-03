@@ -32,16 +32,23 @@ def main():
         print(f"取得中: {asset_type} 資産情報")
         try:
             if asset_type == "bitget_futures":
-                # Bitgetの先物（USDT建てや他の種類）アカウントの「全ての資産情報」
+                # 先物だけ productType パラメータを指定
                 result = get_futures_account(
-                    api_key, api_secret, api_passphrase, product_type="USDT-FUTURES"
+                    api_key, api_secret, api_passphrase
                 )
 
                 if result:
-                    print(result)
-                    keys = futures_keys
-                else:
-                    keys = []
+                print(result)
+                keys = futures_keys
+
+                # # 先物の総評価額を取得
+                # account_info = get_futures_eccout_equity(
+                #     api_key, api_secret, api_passphrase
+                # )
+
+                # print(
+                #     f"先物総評価額: {account_info.get('data', {}).get('equity', '取得失敗')}"
+                # )
 
             elif asset_type == "bitget_futures_positions":
                 # 先物のポジション情報を取得

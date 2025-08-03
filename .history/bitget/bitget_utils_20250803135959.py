@@ -197,25 +197,16 @@ def write_to_existing_excel(filename, data, keys, sheet_name="Sheet1"):
     wb.save(filename)
     print(f"{filename} に既存ファイル上書き保存しました")
 
-import time
-import hmac
-import hashlib
-import base64
-import requests
 
-def get_futures_account(api_key, api_secret, api_passphrase, product_type="USDT-FUTURES"):
-    """
-    Bitgetの先物アカウント情報を取得する関数。
+def get_futures_account(api_key, api_secret, api_passphrase, product_type):
+    import time, hmac, hashlib, base64, requests
 
-    :param api_key: APIキー
-    :param api_secret: APIシークレット
-    :param api_passphrase: APIパスフレーズ
-    :param product_type: 先物の種類（デフォルトは 'USDT-FUTURES'）
-    :return: アカウント情報の辞書
-    """
-    valid_product_types = {"USDT-FUTURES", "COIN-FUTURES", "USDC-FUTURES", "SUSDT-FUTURES", "SCOIN-FUTURES", "SUSDC-FUTURES"}
+    valid_product_types = {"UMCBL", "CMCBL", "UMCSP", "CMCSL"}
+
     if product_type not in valid_product_types:
-        raise ValueError(f"Invalid productType: {product_type}. Choose from {valid_product_types}")
+        raise ValueError(
+            f"Invalid productType: {product_type}. Choose from {valid_product_types}"
+        )
 
     base_url = "https://api.bitget.com"
     method = "GET"
