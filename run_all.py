@@ -3,9 +3,12 @@ import subprocess
 p7 = subprocess.Popen(["python", "update_excel/kill_background.py"])
 p7.wait()  # エクセルバックグラウンドプロセスを終了
 
-# # mexc保有額取得
-# p1 = subprocess.Popen(["python", "mexc/main.py"])
-# p1.wait()
+p10 = subprocess.Popen(["python", "update_excel/open_and_wait_then_close.py", "writer_file"])
+p10.wait()#writer_fileをただ開いて閉じる
+
+# mexc保有額取得
+p1 = subprocess.Popen(["python", "mexc/main.py"])
+p1.wait()
 
 # # bitget保有額取得
 p2 = subprocess.Popen(["python", "bitget/main.py"])
@@ -14,13 +17,18 @@ p2.wait()
 p7 = subprocess.Popen(["python", "update_excel/kill_background.py"])
 p7.wait()  # エクセルバックグラウンドプロセスを終了
 
+p9 = subprocess.Popen(["python", "update_excel/open_and_wait_then_close.py", "source_file"])
+p9.wait()#crypto_ver2.2.xlsxをただ開いて閉じる
+
+
+p7 = subprocess.Popen(["python", "update_excel/kill_background.py"])
+p7.wait()  # エクセルバックグラウンドプロセスを終了
 
 # p3 = subprocess.Popen(["python", "update_excel/main.py"])  # エクセルアップデート
 # p3.wait()
 
 # p7 = subprocess.Popen(["python", "update_excel/kill_background.py"])
 # p7.wait()  # エクセルバックグラウンドプロセスを終了
-
 
 # p4 = subprocess.Popen(["python", "export_value_excel/main.py"])
 # p4.wait()  # 発注用エクセルアップデート
