@@ -2,8 +2,7 @@ import yaml
 from pathlib import Path
 from openpyxl import load_workbook, Workbook
 import time
-from openpyxl.utils import get_column_letter  # ファイル冒頭の import に追加
-
+from openpyxl.utils import get_column_letter  #
 # ✅ YAMLの読み込み
 config_path = Path(__file__).resolve().parent.parent / "config.yaml"
 with open(config_path, "r", encoding="utf-8") as f:
@@ -58,13 +57,6 @@ def export_values_only(src_file, sheet_names, dst_file):
                         pass  # 数値でなければそのまま
 
                 new_ws[cell.coordinate].value = v
-        for col in new_ws.columns:
-            length = max(
-                len(str(cell.value)) if cell.value is not None else 0 for cell in col
-            )
-            new_ws.column_dimensions[get_column_letter(col[0].column)].width = (
-                length + 2
-            )
 
     print("⏳ 保存準備中...")
     time.sleep(1.0)
