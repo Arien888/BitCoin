@@ -59,3 +59,12 @@ Traceback (most recent call last):
     adjusted = (int(price * factor)) / factor
 ValueError: invalid literal for int() with base 10: '0.186310.186310.186310.186310.186310.186310.186310.186310.186310.186310.186310.186310.186310.186310.186310.186310.186310.186310.186310.186310.186310.186310.186310.186310.186310.186310.186310.186310.1
 
+[2025-08-05 08:28:41] エラー:
+All candidate API paths failed
+Traceback (most recent call last):
+  File "C:\Users\koichi\Documents\MyDocuments\My_work\My_Programing_work\BitCoin\bitget_auto_rial\futuer_all_cancel.py", line 34, in cancel_all_orders_for_symbols
+    res = client.cancel_all_orders(symbol=symbol, margin_coin="USDT")
+  File "C:\Users\koichi\Documents\MyDocuments\My_work\My_Programing_work\BitCoin\bitget_auto_rial\bitget_client.py", line 71, in cancel_all_orders
+    raise Exception("All candidate API paths failed")
+Exception: All candidate API paths failed
+
