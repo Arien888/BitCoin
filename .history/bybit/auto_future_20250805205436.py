@@ -65,7 +65,7 @@ def place_order(symbol, side, order_type, qty, price=None, time_in_force="GTC"):
 def read_orders_from_excel(sheet_name):
 
     excel_rel_path = config["excel"]["path"]
-    sheet_name = sheet_name
+    sheet_name = config["excel"]["sheets"]["open_long_big_margin"]
     excel_path = os.path.join(BASE_DIR, "..", excel_rel_path)
 
     wb = openpyxl.load_workbook(excel_path)
