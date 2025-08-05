@@ -7,15 +7,9 @@ import os
 import openpyxl
 from load_config import load_config
 
-config = load_config()
 
-sheet_names = [
-    # config["excel"]["sheets"]["open_long_big_margin"],  # ロング用シート名
-    config["excel"]["sheets"]["open_short_big_margin"],  # ショート用シート名
-]
 
 BASE_DIR = os.path.dirname(os.path.abspath(__file__))
-
 
 def place_order(symbol, side, order_type, qty, price=None, time_in_force="GTC"):
     config = load_config()
@@ -43,9 +37,7 @@ def place_order(symbol, side, order_type, qty, price=None, time_in_force="GTC"):
 
     body_str = json.dumps(body)
     origin_string = f"{timestamp}{api_key}{recv_window}{body_str}"
-    signature = hmac.new(
-        api_secret.encode(), origin_string.encode(), hashlib.sha256
-    ).hexdigest()
+    signature = hmac.new(api_secret.encode(), origin_string.encode(), hashlib.sha256).hexdigest()
 
     headers = {
         "X-BAPI-API-KEY": api_key,
@@ -63,9 +55,9 @@ def place_order(symbol, side, order_type, qty, price=None, time_in_force="GTC"):
 
 
 def read_orders_from_excel(sheet_name):
-
+    config = load_config()
     excel_rel_path = config["excel"]["path"]
-    sheet_name = sheet_name
+    sheet_name = config["excel"]["sheets"]["open_long_big_margin"]
     excel_path = os.path.join(BASE_DIR, "..", excel_rel_path)
 
     wb = openpyxl.load_workbook(excel_path)
@@ -76,28 +68,25 @@ def read_orders_from_excel(sheet_name):
         symbol, side, order_type, qty, price = row
         if not symbol or not side or not order_type or not qty:
             continue
-        orders.append(
-            {
-                "symbol": symbol,
-                "side": side,
-                "order_type": order_type,
-                "qty": qty,
-                "price": price if price != "" else None,
-            }
-        )
+        orders.append({
+            "symbol": symbol,
+            "side": side,
+            "order_type": order_type,
+            "qty": qty,
+            "price": price if price != "" else None
+        })
     return orders
 
 
 if __name__ == "__main__":
-    for sheet_name in sheet_names:
-        print(f"=== {sheet_name} シートの注文を処理 ===")
-        orders = read_orders_from_excel(sheet_name)
-        for order in orders:
-            result = place_order(
-                order["symbol"],
-                order["side"],
-                order["order_type"],
-                order["qty"],
-                order["price"],
-            )
-            print(json.dumps(result, indent=2, ensure_ascii=False))
+    
+    orders = read_orders_from_excel()
+    for order in orders:
+        result = place_order(
+            order["symbol"],
+            order["side"],
+            order["order_type"],
+            order["qty"],
+            order["price"]
+        )
+        print(json.dumps(result, indent=2, ensure_ascii=False))

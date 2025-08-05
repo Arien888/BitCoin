@@ -10,7 +10,7 @@ from load_config import load_config
 config = load_config()
 
 sheet_names = [
-    # config["excel"]["sheets"]["open_long_big_margin"],  # ロング用シート名
+    config["excel"]["sheets"]["open_long_big_margin"],  # ロング用シート名
     config["excel"]["sheets"]["open_short_big_margin"],  # ショート用シート名
 ]
 
@@ -65,7 +65,7 @@ def place_order(symbol, side, order_type, qty, price=None, time_in_force="GTC"):
 def read_orders_from_excel(sheet_name):
 
     excel_rel_path = config["excel"]["path"]
-    sheet_name = sheet_name
+    sheet_name = config["excel"]["sheets"]["open_long_big_margin"]
     excel_path = os.path.join(BASE_DIR, "..", excel_rel_path)
 
     wb = openpyxl.load_workbook(excel_path)
@@ -89,15 +89,14 @@ def read_orders_from_excel(sheet_name):
 
 
 if __name__ == "__main__":
-    for sheet_name in sheet_names:
-        print(f"=== {sheet_name} シートの注文を処理 ===")
-        orders = read_orders_from_excel(sheet_name)
-        for order in orders:
-            result = place_order(
-                order["symbol"],
-                order["side"],
-                order["order_type"],
-                order["qty"],
-                order["price"],
-            )
-            print(json.dumps(result, indent=2, ensure_ascii=False))
+
+    orders = read_orders_from_excel()
+    for order in orders:
+        result = place_order(
+            order["symbol"],
+            order["side"],
+            order["order_type"],
+            order["qty"],
+            order["price"],
+        )
+        print(json.dumps(result, indent=2, ensure_ascii=False))
