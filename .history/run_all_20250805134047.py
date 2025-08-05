@@ -28,8 +28,8 @@ p9.wait()#crypto_ver2.2.xlsxをただ開いて閉じる
 p7 = subprocess.Popen(["python", "update_excel/kill_background.py"])
 p7.wait()  # エクセルバックグラウンドプロセスを終了
 
-p3 = subprocess.Popen(["python", "update_excel/main.py"])  # エクセルアップデート
-p3.wait()
+# p3 = subprocess.Popen(["python", "update_excel/main.py"])  # エクセルアップデート
+# p3.wait()
 
 p7 = subprocess.Popen(["python", "update_excel/kill_background.py"])
 p7.wait()  # エクセルバックグラウンドプロセスを終了
