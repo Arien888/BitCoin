@@ -10,8 +10,8 @@ from load_config import load_config
 config = load_config()
 
 sheet_names = [
-    # config["excel"]["sheets"]["open_long_big_margin"],  # ロング用シート名
-    config["excel"]["sheets"]["open_short_big_margin"],  # ショート用シート名
+    config["excel"]["sheets"]["open_long_big_margin"],  # ロング用シート名
+    # config["excel"]["sheets"]["open_short_big_margin"],  # ショート用シート名
 ]
 
 BASE_DIR = os.path.dirname(os.path.abspath(__file__))

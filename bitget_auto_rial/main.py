@@ -20,8 +20,9 @@ with open(os.path.join(BASE_DIR, "..", "config.yaml"), "r", encoding="utf-8") as
     config = yaml.safe_load(f)
 
 # Excel 関連設定
-excel_rel_path = config["excel"]["path"]
-excel_path = os.path.join(BASE_DIR, "..", excel_rel_path)
+excel_rel_path = config["order_export"]["source_file"]
+# excel_path = os.path.join(BASE_DIR, "..", excel_rel_path)
+excel_path = (excel_rel_path)
 buy_sheet = config["excel"]["sheets"]["buy"]
 sell_sheet = config["excel"]["sheets"]["sell"]
 close_long_sheet = config["excel"]["sheets"].get("close_long")
@@ -44,6 +45,8 @@ def main():
     try:
         wb = app.books.open(excel_path)
         print("[INFO] Excelファイルを開きました。")
+        
+        time.sleep(5)  # 1秒待ってから次の処理へ
 
         place_orders(
             client, wb, buy_sheet, sell_sheet, close_long_sheet, close_short_sheet
