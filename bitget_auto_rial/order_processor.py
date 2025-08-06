@@ -12,6 +12,13 @@ def send_orders_for_sheet(client, wb, sheet_name, price_places, volume_places):
 
     for order in orders:
         symbol, side, price, quantity, order_type = order
+        
+        try:
+            price =float(price)
+            quantity =float(quantity)
+        except (ValueError, TypeError):
+            print(f"[WARN] {symbol} の価格または数量が数値に変換できません。値: price={price}, quantity={quantity} → スキップします。")
+            continue
 
         price = adjust_price(price, price_places.get(symbol))
         quantity = adjust_quantity(quantity, volume_places.get(symbol))
