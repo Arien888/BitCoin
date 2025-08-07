@@ -49,5 +49,5 @@ p11.wait()  # bybit(bigmargin)オーダー全キャンセル
 p8 = subprocess.Popen(["python", "bybit/auto_future.py"])
 p8.wait()  # bybit(bigmargin)オーダー
 
-p13 = subprocess.Popen(["python", "bitget_auto_rial/auto_spot.py"])
-p13.wait()  # bitget(spot)オーダー
+p13 = subprocess.Popen(["python", "bitget_auto_rial/auto_future.py"])
+p13.wait()  # bybit(bigmargin)オーダー
