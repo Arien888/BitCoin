@@ -3,13 +3,9 @@ import hmac
 import hashlib
 import requests
 import json
-import xlwings as xw
 from load_config import load_config  # config読み込みは同様に
-config = load_config()
 
-sheet_names = [
-    config["excel"]["sheets"]["bybit_open_long_chash"],  # ロング用シート名
-]
+config = load_config()
 
 
 def place_spot_order(symbol, side, order_type, qty, price=None, time_in_force="GTC"):
@@ -118,7 +114,7 @@ if __name__ == "__main__":
         print(f"=== {sheet_name} シートの注文を処理 ===")
         orders = read_orders_from_excel(sheet_name)
         for order in orders:
-            result = place_spot_order(
+            result = place_order(
                 order["symbol"],
                 order["side"],
                 order["order_type"],
