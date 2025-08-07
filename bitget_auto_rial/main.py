@@ -21,12 +21,11 @@ with open(os.path.join(BASE_DIR, "..", "config.yaml"), "r", encoding="utf-8") as
 
 # Excel 関連設定
 excel_rel_path = config["order_export"]["source_file"]
-# excel_path = os.path.join(BASE_DIR, "..", excel_rel_path)
 excel_path = (excel_rel_path)
 buy_sheet = config["excel"]["sheets"]["buy"]
-sell_sheet = config["excel"]["sheets"]["sell"]
+# sell_sheet = config["excel"]["sheets"]["sell"]
 close_long_sheet = config["excel"]["sheets"].get("close_long")
-close_short_sheet = config["excel"]["sheets"].get("close_short")
+# close_short_sheet = config["excel"]["sheets"].get("close_short")
 
 # BitgetClient インスタンス化（テストネット切り替え対応）
 client = BitgetClient(
@@ -49,7 +48,7 @@ def main():
         time.sleep(5)  # 1秒待ってから次の処理へ
 
         place_orders(
-            client, wb, buy_sheet, sell_sheet, close_long_sheet, close_short_sheet
+           client, wb, buy_sheet,close_long_sheet,
         )
         print("[INFO] 注文処理が完了しました。")
 

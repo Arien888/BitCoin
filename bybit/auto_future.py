@@ -107,6 +107,7 @@ def read_orders_from_excel(sheet_name):
         return orders
 
     finally:
+        wb.save()
         wb.close()
         app.quit()
 

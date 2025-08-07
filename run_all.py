@@ -34,9 +34,6 @@ p3.wait()
 p7 = subprocess.Popen(["python", "update_excel/kill_background.py"])
 p7.wait()  # エクセルバックグラウンドプロセスを終了
 
-# p4 = subprocess.Popen(["python", "export_value_excel/main.py"])
-# p4.wait()  # 発注用エクセルアップデート
-
 p7 = subprocess.Popen(["python", "update_excel/kill_background.py"])
 p7.wait()  # エクセルバックグラウンドプロセスを終了
 
