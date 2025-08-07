@@ -3,6 +3,8 @@ import yaml
 from pathlib import Path
 from openpyxl import load_workbook
 import sys
+import xlwings as xw
+import win32com.client
 
 
 def load_excel_path_from_config(key_name, file_key="source_file"):
@@ -28,20 +30,26 @@ def load_excel_path_from_config(key_name, file_key="source_file"):
 
     return src_file
 
-
 def open_and_wait_then_close(path, wait_seconds=30):
-    print(f"📂 ファイルを読み込み専用で開きます: {path}")
+    excel = win32com.client.Dispatch("Excel.Application")
+    excel.Visible = False
+    print(f"📂 ファイルを開いて待機: {path}")
+    try:
+        wb = excel.Workbooks.Open(str(path))
 
-    wb = load_workbook(path, read_only=True)
+        print(f"📝 最初のシート名: {wb.Sheets [1].Name}")
 
-    print(f"📝 最初のシート名: {wb.sheetnames[0]}")
+        print(f"⏳ {wait_seconds}秒間待機中...（OneDriveの同期を待つ）")
+        time.sleep(wait_seconds)
 
-    print(f"⏳ {wait_seconds}秒間待機中...（OneDriveの同期を待つ）")
-    time.sleep(wait_seconds)
-
-    wb.close()
-    print("✅ ファイルを閉じました")
-
+        wb.Save()
+        wb.Close()
+        print("✅ ファイルを保存して閉じました")
+        
+    except Exception as e:
+        print(f"エラー発生: {e}")
+    finally:
+        excel.Quit()  # ← これでExcelプロセスごと終了
 
 if __name__ == "__main__":
     arg = sys.argv[1] if len(sys.argv) > 1 else "source_file"
