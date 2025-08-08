@@ -29,10 +29,11 @@ def sign(timestamp, method, request_path, body=""):
     )
     return mac.hexdigest()
 
+
 def get_open_orders(symbol):
     timestamp = str(int(time.time() * 1000))
     method = "GET"
-    request_path = f"/api/spot/v2/orders?symbol={symbol}&orderStatus=open"
+    request_path = f"/api/spot/v1/orders?symbol={symbol}&status=open"
     body = ""
     signature = sign(timestamp, method, request_path, body)
     headers = {
@@ -42,20 +43,8 @@ def get_open_orders(symbol):
         "ACCESS-PASSPHRASE": passphrase,
     }
     url = BASE_URL + request_path
-
-    print(f"[DEBUG] GET {url}")
-    print(f"[DEBUG] Headers: {headers}")
-    print(f"[DEBUG] Signature: {signature}")
-
-    try:
-        res = requests.get(url, headers=headers)
-        print(f"[DEBUG] Response status code: {res.status_code}")
-        print(f"[DEBUG] Response text: {res.text}")
-        res.raise_for_status()  # HTTPエラーは例外化
-        return res.json()
-    except requests.exceptions.RequestException as e:
-        print(f"[ERROR] HTTPリクエスト失敗: {e}")
-        return None
+    res = requests.get(url, headers=headers)
+    return res.json()
 
 
 if __name__ == "__main__":

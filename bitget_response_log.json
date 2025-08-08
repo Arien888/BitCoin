@@ -2308,3 +2308,103 @@
   }
 }
 
+{
+  "code": "00000",
+  "msg": "success",
+  "requestTime": 1754624148105,
+  "data": {
+    "clientOid": "1754624147870",
+    "orderId": "1337556110906867713"
+  }
+}
+
+{
+  "code": "00000",
+  "msg": "success",
+  "requestTime": 1754624148220,
+  "data": {
+    "clientOid": "1754624148067",
+    "orderId": "1337556111414378497"
+  }
+}
+
+{
+  "code": "00000",
+  "msg": "success",
+  "requestTime": 1754624148356,
+  "data": {
+    "clientOid": "1754624148186",
+    "orderId": "1337556111959638017"
+  }
+}
+
+{
+  "code": "00000",
+  "msg": "success",
+  "requestTime": 1754624148493,
+  "data": {
+    "clientOid": "1754624148318",
+    "orderId": "1337556112530063361"
+  }
+}
+
+{
+  "code": "00000",
+  "msg": "success",
+  "requestTime": 1754624148632,
+  "data": {
+    "clientOid": "1754624148457",
+    "orderId": "1337556113108877316"
+  }
+}
+
+{
+  "code": "00000",
+  "msg": "success",
+  "requestTime": 1754624148774,
+  "data": {
+    "clientOid": "1754624148595",
+    "orderId": "1337556113704468481"
+  }
+}
+
+{
+  "code": "00000",
+  "msg": "success",
+  "requestTime": 1754624148913,
+  "data": {
+    "clientOid": "1754624148731",
+    "orderId": "1337556114287476737"
+  }
+}
+
+{
+  "code": "00000",
+  "msg": "success",
+  "requestTime": 1754624149631,
+  "data": {
+    "clientOid": "1754624149428",
+    "orderId": "1337556117298987009"
+  }
+}
+
+{
+  "code": "00000",
+  "msg": "success",
+  "requestTime": 1754624149797,
+  "data": {
+    "clientOid": "1754624149618",
+    "orderId": "1337556117999435854"
+  }
+}
+
+{
+  "code": "00000",
+  "msg": "success",
+  "requestTime": 1754624149984,
+  "data": {
+    "clientOid": "1754624149755",
+    "orderId": "1337556118779576321"
+  }
+}
+

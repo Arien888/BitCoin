@@ -29,10 +29,11 @@ def sign(timestamp, method, request_path, body=""):
     )
     return mac.hexdigest()
 
+
 def get_open_orders(symbol):
     timestamp = str(int(time.time() * 1000))
     method = "GET"
-    request_path = f"/api/spot/v2/orders?symbol={symbol}&orderStatus=open"
+    request_path = f"/api/spot/v1/orders?symbol={symbol}&status=open"
     body = ""
     signature = sign(timestamp, method, request_path, body)
     headers = {
@@ -42,29 +43,44 @@ def get_open_orders(symbol):
         "ACCESS-PASSPHRASE": passphrase,
     }
     url = BASE_URL + request_path
+    res = requests.get(url, headers=headers)
+    return res.json()
 
-    print(f"[DEBUG] GET {url}")
-    print(f"[DEBUG] Headers: {headers}")
-    print(f"[DEBUG] Signature: {signature}")
 
-    try:
-        res = requests.get(url, headers=headers)
-        print(f"[DEBUG] Response status code: {res.status_code}")
-        print(f"[DEBUG] Response text: {res.text}")
-        res.raise_for_status()  # HTTPエラーは例外化
-        return res.json()
-    except requests.exceptions.RequestException as e:
-        print(f"[ERROR] HTTPリクエスト失敗: {e}")
-        return None
+def cancel_order(symbol, order_id):
+    timestamp = str(int(time.time() * 1000))
+    method = "POST"
+    request_path = "/api/spot/v1/cancelOrder"
+    body = {
+        "symbol": symbol,
+        "orderId": order_id,
+    }
+    signature = sign(timestamp, method, request_path, body)
+    headers = {
+        "ACCESS-KEY": api_key,
+        "ACCESS-SIGN": signature,
+        "ACCESS-TIMESTAMP": timestamp,
+        "ACCESS-PASSPHRASE": passphrase,
+        "Content-Type": "application/json",
+    }
+    url = BASE_URL + request_path
+    res = requests.post(url, headers=headers, data=json.dumps(body))
+    return res.json()
 
 
 if __name__ == "__main__":
-    symbols = ["BTCUSDT", "ETHUSDT", "ADAUSDT"]
+    # 全注文キャンセルしたいシンボルのリスト
+    symbols = ["BTCUSDT", "ETHUSDT", "ADAUSDT"]  # 必要に応じて増やしてください
+
     for sym in symbols:
         orders_data = get_open_orders(sym)
         if orders_data.get("code") != "00000":
             print(f"{sym}の注文取得でエラー: {orders_data}")
             continue
         orders = orders_data.get("data", [])
-        print(f"=== {sym} の未約定注文一覧 ===")
-        print(json.dumps(orders, indent=2, ensure_ascii=False))
+        for order in orders:
+            order_id = order.get("orderId") or order.get("order_id")  # 念のため両方チェック
+            if not order_id:
+                continue
+            cancel_result = cancel_order(sym, order_id)
+            print(f"キャンセル注文ID {order_id} シンボル {sym} 結果: {cancel_result}")
