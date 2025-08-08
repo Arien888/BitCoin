@@ -85,7 +85,7 @@ def read_cancel_list_from_excel(
     return cancel_list
 
 
-def main(cancel_categories):
+def main():
     config = load_config()  # 一つ上の階層のyaml読み込み想定
     api_key = config["bybit"]["key"]
     api_secret = config["bybit"]["secret"]
@@ -97,12 +97,12 @@ def main(cancel_categories):
     cancel_entries = read_cancel_list_from_excel(
         cancel_list_excel_path, sheet_name, symbol_col, category_col
     )
+        # ここでキャンセルしたいカテゴリーを選択（spot, linearなど）
+    cancel_target_categories = {"spot", "linear"}  # 両方キャンセルしたい場合
 
-    # cancel_categories は set または list で、例: {"spot"}, {"linear"}, {"spot", "linear"}
-    for symbol, _ in cancel_entries:
-        for category in cancel_categories:
-            cancel_all_orders(api_key, api_secret, symbol, category)
+    for symbol, category in cancel_entries:
+        cancel_all_orders(api_key, api_secret, symbol, category)
 
 
 if __name__ == "__main__":
-    main(cancel_categories={"spot", "linear"})
+    main()

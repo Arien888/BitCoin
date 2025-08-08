@@ -105,4 +105,4 @@ def main(cancel_categories):
 
 
 if __name__ == "__main__":
-    main(cancel_categories={"spot", "linear"})
+    main(cancel_categories={"spot"})
