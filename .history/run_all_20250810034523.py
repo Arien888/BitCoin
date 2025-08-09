@@ -16,15 +16,18 @@ subprocess.Popen(["python", "update_excel/kill_background.py"]).wait()  # エク
 subprocess.Popen(["python", "update_excel/open_and_wait_then_close.py", "source_file"]).wait()  # crypto_ver2.2.xlsxをただ開いて閉じる
 
 subprocess.Popen(["python", "update_excel/kill_background.py"]).wait()  # エクセルバックグラウンドプロセスを終了
-
-subprocess.Popen(["python", "update_excel/main.py"]).wait()  # エクセルアップデート
+# subprocess.Popen(["python", "update_excel/main.py"]).wait()  # エクセルアップデート
 
 subprocess.Popen(["python", "update_excel/kill_background.py"]).wait()  # エクセルバックグラウンドプロセスを終了
 subprocess.Popen(["python", "bitget_auto_rial/futuer_all_cancel.py"]).wait()  # bitget(minimargin)の予約全解除
 
 subprocess.Popen(["python", "bitget_auto_rial/main.py"]).wait()  # bitget(minmargin)発注
 
+subprocess.Popen(["python", "bybit/close_position.py"]).wait()  # bybit(bigmargin)ポジション全クローズ
+
 subprocess.Popen(["python", "bybit/cancel_all_orders.py"]).wait()  # bybit(spot,future)オーダー全キャンセル
+
+subprocess.Popen(["python", "bybit/auto_future.py"]).wait()  # bybit(bigmargin)オーダー
 
 subprocess.Popen(["python", "bybit/auto_spot.py"]).wait()  # bybit(spot)オーダー
 

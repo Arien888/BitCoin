@@ -16,7 +16,6 @@ subprocess.Popen(["python", "update_excel/kill_background.py"]).wait()  # エク
 subprocess.Popen(["python", "update_excel/open_and_wait_then_close.py", "source_file"]).wait()  # crypto_ver2.2.xlsxをただ開いて閉じる
 
 subprocess.Popen(["python", "update_excel/kill_background.py"]).wait()  # エクセルバックグラウンドプロセスを終了
-
 subprocess.Popen(["python", "update_excel/main.py"]).wait()  # エクセルアップデート
 
 subprocess.Popen(["python", "update_excel/kill_background.py"]).wait()  # エクセルバックグラウンドプロセスを終了
@@ -24,12 +23,16 @@ subprocess.Popen(["python", "bitget_auto_rial/futuer_all_cancel.py"]).wait()  # 
 
 subprocess.Popen(["python", "bitget_auto_rial/main.py"]).wait()  # bitget(minmargin)発注
 
+subprocess.Popen(["python", "bybit/close_position.py"]).wait()  # bybit(bigmargin)ポジション全クローズ
+
 subprocess.Popen(["python", "bybit/cancel_all_orders.py"]).wait()  # bybit(spot,future)オーダー全キャンセル
+
+# subprocess.Popen(["python", "bybit/auto_future.py"]).wait()  # bybit(bigmargin)オーダー
 
 subprocess.Popen(["python", "bybit/auto_spot.py"]).wait()  # bybit(spot)オーダー
 
-subprocess.Popen(["python", "bitget_auto_rial/close_subaccount_futures.py"]).wait()  # bitget subaccount(big margin)全クローズ
+subprocess.Popen(["python", "bitget/close_subaccount_futures.py"]).wait()  # bitget subaccount(big margin)全クローズ
 
-subprocess.Popen(["python", "bitget_auto_rial/all_cancel_sub_account.py"]).wait()  # bitget subaccount(big margin)オーダー全キャンセル
+subprocess.Popen(["python", "bitget/subaccount_futures.py"]).wait()  # bitget subaccount(big margin)オーダー
 
-subprocess.Popen(["python", "bitget_auto_rial/subaccount_futures.py"]).wait()  # bitget subaccount(big margin)オーダー
+subprocess.Popen(["python", "bitget/subaccount_futures.py"]).wait()  # bitget subaccount(big margin)オーダー
