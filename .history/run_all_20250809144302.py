@@ -27,10 +27,10 @@ subprocess.Popen(["python", "bybit/close_position.py"]).wait()  # bybit(bigmargi
 
 subprocess.Popen(["python", "bybit/cancel_all_orders.py"]).wait()  # bybit(spot,future)オーダー全キャンセル
 
-# subprocess.Popen(["python", "bybit/auto_future.py"]).wait()  # bybit(bigmargin)オーダー
+subprocess.Popen(["python", "bybit/auto_future.py"]).wait()  # bybit(bigmargin)オーダー
 
 subprocess.Popen(["python", "bybit/auto_spot.py"]).wait()  # bybit(spot)オーダー
 
-subprocess.Popen(["python", "bitget/close_subaccount_futures.py"]).wait()  # bitget subaccount(big margin)全クローズ
-
 subprocess.Popen(["python", "bitget/subaccount_futures.py"]).wait()  # bitget subaccount(big margin)オーダー
+
+subprocess.Popen(["python", "bitget/subaccount_futures.py"]).wait()  # bitget subaccount(big margin)全クローズ
