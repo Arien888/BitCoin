@@ -21,7 +21,6 @@ excel_path = os.path.abspath(os.path.join(BASE_DIR, "..", excel_rel_path))
 # 注文を読み込むシート名（例では一つ目）
 sheet_names = [
     config["excel"]["sheets"]["mexc_open_long_spot"],
-    config["excel"]["sheets"]["mexc_close_long_spot"],
     # 他のシートがあれば追加
 ]
 

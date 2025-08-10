@@ -23,6 +23,7 @@ sheet_names = [
     config["excel"]["sheets"]["mexc_open_long_spot"],
     config["excel"]["sheets"]["mexc_close_long_spot"],
     # 他のシートがあれば追加
+    
 ]
 
 # MEXC クライアント作成

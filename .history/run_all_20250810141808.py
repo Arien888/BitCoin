@@ -55,8 +55,12 @@ subprocess.Popen(
     ["python", "mexc/auto_spot.py"]
 ).wait()  # mexc open & close オーダー(btc以外)
 # btc spot order
-subprocess.Popen(["python", "bybit/cancel_all_orders.py"]).wait()  # bybit spot cancel オーダー
-subprocess.Popen(["python", "bybit/auto_spot.py"]).wait()  # bybit spot オーダー(現在btcのみ)
+subprocess.Popen(
+    ["python", "bybit/auto_spot.py"]
+).wait()  # bybit spot オーダー
+subprocess.Popen(
+    ["python", "bybit/auto_spot.py"]
+).wait()  # bybit spot オーダー
 
 
 # 手動発動
@@ -66,4 +70,3 @@ subprocess.Popen(["python", "bybit/auto_spot.py"]).wait()  # bybit spot オー�
 # subprocess.Popen(
 #     ["python", "bitget_auto_rial/auto_spot.py"]
 # ).wait()  # bitget spotオーダー(取引所移行のためcloseのみ)
-# bitbank
