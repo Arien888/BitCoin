@@ -38,7 +38,7 @@ subprocess.Popen(["python", "bitget_auto_rial/main.py"]).wait()  # bitget(minmar
 # big margin
 subprocess.Popen(
     ["python", "bitget_auto_rial/close_subaccount_futures.py"]
-).wait()  # bitget subaccount(big margin)全 position クローズ
+).wait()  # bitget subaccount(big margin)全クローズ
 subprocess.Popen(
     ["python", "bitget_auto_rial/all_cancel_sub_account.py"]
 ).wait()  # bitget subaccount(big margin)オーダー全キャンセル
@@ -47,16 +47,12 @@ subprocess.Popen(
 ).wait()  # bitget subaccount(big margin)オーダー
 
 # spot
-# mexc (btc以外の) spot order
 subprocess.Popen(
     ["python", "mexc/auto_spot_cancel.py"]
-).wait()  # mexc spot オーダ- all cancel
+).wait()  # mexc spot オーダ all cancel
 subprocess.Popen(
     ["python", "mexc/auto_spot.py"]
 ).wait()  # mexc open & close オーダー(btc以外)
-# btc spot order
-subprocess.Popen(["python", "bybit/cancel_all_orders.py"]).wait()  # bybit spot cancel オーダー
-subprocess.Popen(["python", "bybit/auto_spot.py"]).wait()  # bybit spot オーダー(現在btcのみ)
 
 
 # 手動発動
@@ -66,4 +62,4 @@ subprocess.Popen(["python", "bybit/auto_spot.py"]).wait()  # bybit spot オー�
 # subprocess.Popen(
 #     ["python", "bitget_auto_rial/auto_spot.py"]
 # ).wait()  # bitget spotオーダー(取引所移行のためcloseのみ)
-# bitbank
+
