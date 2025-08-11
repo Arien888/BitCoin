@@ -57,7 +57,7 @@ subprocess.Popen(
 # btc eth spot order
 # # bitget spot
 subprocess.Popen(
-    ["python", "bitget_auto_rial/ccxt_spot_cancel_all.py"]
+    ["python", "bitget_auto_rial/ccxt_spot.py"]
 ).wait()  # bitget spotオーダー(取引所移行のためcloseのみ)
 subprocess.Popen(
     ["python", "bitget_auto_rial/ccxt_spot.py"]
