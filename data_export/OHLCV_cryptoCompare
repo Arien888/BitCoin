@@ -1,0 +1,59 @@
+import requests
+import pandas as pd
+import time
+import datetime as dt
+
+symbol = "BTC"
+comparison_symbol = "USDT"
+limit = 96 * 365  # 1年分15分足は約35040本 (96本/日×365日)
+# ただし無料APIは1回のリクエスト最大2000本なので分割取得が必要です
+
+all_data = []
+to_ts = int(time.time())  # 現在のUNIXタイム（秒）
+
+print("データ取得開始...")
+
+while len(all_data) < limit:
+    url = (
+        f"https://min-api.cryptocompare.com/data/v2/histominute"
+        f"?fsym={symbol}&tsym={comparison_symbol}&limit=2000&toTs={to_ts}&aggregate=15"
+    )
+    response = requests.get(url)
+    if response.status_code != 200:
+        print(f"HTTPエラー: {response.status_code}")
+        break
+
+    data = response.json()
+    if data["Response"] != "Success":
+        print("APIエラー:", data)
+        break
+
+    batch = data["Data"]["Data"]
+    if not batch:
+        break
+
+    all_data = batch + all_data  # 古いデータから順に連結
+
+    to_ts = batch[0]["time"] - 1  # さらに遡る
+
+    print(f"取得済みデータ数: {len(all_data)}本")
+
+    time.sleep(0.25)  # API制限対策
+
+    if len(batch) < 2000:
+        break  # 取得完了
+
+print(f"総取得データ数: {len(all_data)}本")
+
+# DataFrame作成
+df = pd.DataFrame(all_data)
+df["time"] = pd.to_datetime(df["time"], unit="s")  # UNIX秒 → datetime
+df.rename(columns={"time": "OpenTime", "volumefrom": "Volume"}, inplace=True)
+
+# 必要な列だけ抽出
+df = df[["OpenTime", "open", "high", "low", "close", "Volume"]]
+
+# Excel出力
+df.to_excel(f"{symbol}_15m_1year_cryptocompare.xlsx", index=False)
+
+print("✅ CryptoCompareデータ保存完了")
