@@ -23,7 +23,7 @@ subprocess.Popen(
     ["python", "update_excel/kill_background.py"]
 ).wait()  # エクセルバックグラウンドプロセスを終了
 subprocess.Popen(
-    ["python", "bitbank/now_value.py"]
+    ["python", "bitbank/subaccount_futures.py"]
 ).wait()  # bitbank data update
 
 
