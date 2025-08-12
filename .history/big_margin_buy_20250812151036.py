@@ -35,6 +35,11 @@ subprocess.Popen(
 ).wait()  # bitget(minimargin)の予約全解除
 subprocess.Popen(["python", "bitget_auto_rial/main.py"]).wait()  # bitget(minmargin)発注
 
+# big margin
+subprocess.Popen(
+    ["python", "bitget_auto_rial/subaccount_futures.py"]
+).wait()  # bitget subaccount(big margin)オーダー
+
 # spot
 # mexc (btc以外の) spot order
 subprocess.Popen(
@@ -46,12 +51,5 @@ subprocess.Popen(
 # btc eth spot order
 # # bitget spot
 subprocess.Popen(
-    ["python", "bitget_auto_rial/ccxt_spot_cancel_all.py"]
-).wait()  # bitget spotオーダー(取引所移行のためcloseのみ)
-subprocess.Popen(
     ["python", "bitget_auto_rial/ccxt_spot.py"]
 ).wait()  # bitget spotオーダー(取引所移行のためcloseのみ)
-
-
-# 手動発動
-# bitbank
