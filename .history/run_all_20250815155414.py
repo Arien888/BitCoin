@@ -12,7 +12,7 @@ subprocess.Popen(["python", "mexc/main.py"]).wait()
 # bitget保有額取得
 subprocess.Popen(["python", "bitget/main.py"]).wait()
 # bitbank保有額取得
-subprocess.Popen(["python", "bitbank/get_balance.py"]).wait()
+subprocess.Popen(["python", "bitbank/main.py"]).wait()
 # bybit保有額取得
 subprocess.Popen(["python", "bybit/main.py"]).wait()
 subprocess.Popen(
