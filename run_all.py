@@ -1,6 +1,6 @@
 import subprocess
 
-# position update
+# # position update
 subprocess.Popen(
     ["python", "update_excel/kill_background.py"]
 ).wait()  # エクセルバックグラウンドプロセスを終了
@@ -59,7 +59,7 @@ subprocess.Popen(
 ).wait()  # bitget spotオーダー(取引所移行のためcloseのみ)
 
 
-# big margin buy only
+# # big margin buy only
 
 subprocess.Popen(
     ["python", "bitget_auto_rial/subaccount_futures.py"]

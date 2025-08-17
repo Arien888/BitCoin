@@ -22,7 +22,7 @@ excel_path = os.path.abspath(os.path.join(BASE_DIR, "..", excel_rel_path))
 # 注文シート名
 sheet_names = [
     config["excel"]["sheets"]["bitbank_open_long_spot"],
-    config["excel"]["sheets"]["bitbank_close_long_spot"],
+    # config["excel"]["sheets"]["bitbank_close_long_spot"],
 ]
 
 # Bitbank クライアント作成
@@ -49,8 +49,7 @@ for sheet_name in sheet_names:
             print(f"不足データのためスキップ: {row}")
             continue
 
-        # Bitbankはccxtでペア表記を小文字に統一（例: BTC/JPY → btc/jpy）
-        symbol_ccxt = symbol.lower()
+        symbol_ccxt = symbol.strip()   # 空白削除のみ
 
         # 注文タイプ変換
         order_type_ccxt = order_type.lower()
