@@ -17,15 +17,11 @@ def load_config(path=os.path.join(BASE_DIR, "config.yaml")):
     with open(path, "r", encoding="utf-8") as f:
         return yaml.safe_load(f)
 
-
-# 設定ファイルのパスを組み立て
-BASE_DIR = os.path.dirname(os.path.abspath(__file__))
-CONFIG_PATH = os.path.abspath(os.path.join(BASE_DIR, "..", "config.yaml"))
-
-
-def load_config_2(path=CONFIG_PATH):
+def load_config_2(path=os.path.join(BASE_DIR, "config.yaml")):
     with open(path, "r", encoding="utf-8") as f:
         return yaml.safe_load(f)
+
+
 
 
 def get_futures_eccout_equity(
@@ -207,17 +203,13 @@ def write_to_existing_excel(filename, data, keys, sheet_name="Sheet1"):
     wb.save(filename)
     print(f"{filename} に既存ファイル上書き保存しました")
 
-
 import time
 import hmac
 import hashlib
 import base64
 import requests
 
-
-def get_futures_account(
-    api_key, api_secret, api_passphrase, product_type="USDT-FUTURES"
-):
+def get_futures_account(api_key, api_secret, api_passphrase, product_type="USDT-FUTURES"):
     """
     Bitgetの先物アカウント情報を取得する関数。
 
@@ -227,18 +219,9 @@ def get_futures_account(
     :param product_type: 先物の種類（デフォルトは 'USDT-FUTURES'）
     :return: アカウント情報の辞書
     """
-    valid_product_types = {
-        "USDT-FUTURES",
-        "COIN-FUTURES",
-        "USDC-FUTURES",
-        "SUSDT-FUTURES",
-        "SCOIN-FUTURES",
-        "SUSDC-FUTURES",
-    }
+    valid_product_types = {"USDT-FUTURES", "COIN-FUTURES", "USDC-FUTURES", "SUSDT-FUTURES", "SCOIN-FUTURES", "SUSDC-FUTURES"}
     if product_type not in valid_product_types:
-        raise ValueError(
-            f"Invalid productType: {product_type}. Choose from {valid_product_types}"
-        )
+        raise ValueError(f"Invalid productType: {product_type}. Choose from {valid_product_types}")
 
     base_url = "https://api.bitget.com"
     method = "GET"

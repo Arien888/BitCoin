@@ -18,11 +18,10 @@ subprocess.Popen(
 subprocess.Popen(["python", "mexc/main.py"]).wait()
 # bitget保有額取得
 subprocess.Popen(["python", "bitget/main.py"]).wait()
-subprocess.Popen(["python", "bitget/main_sub_account.py"]).wait()
-
 # bitbank保有額取得
 subprocess.Popen(["python", "bitbank/get_balance.py"]).wait()
 # bybit保有額取得
+subprocess.Popen(["python", "bybit/main.py"]).wait()
 subprocess.Popen(["python", "bybit/main.py"]).wait()
 subprocess.Popen(
     ["python", "update_excel/kill_background.py"]
