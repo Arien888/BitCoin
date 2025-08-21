@@ -1,6 +1,5 @@
 import subprocess
 import time
-
 # # position update
 subprocess.Popen(
     ["python", "update_excel/kill_background.py"]
@@ -33,9 +32,7 @@ subprocess.Popen(
 subprocess.Popen(["python", "bitbank/now_value.py"]).wait()  # bitbank data update
 
 # エクセルアップデート
-subprocess.Popen(
-    ["python", "update_excel/main.py"]
-).wait()  # セルの再計算、クエリの更新
+subprocess.Popen(["python", "update_excel/main.py"]).wait()  # セルの再計算、クエリの更新
 subprocess.Popen(
     ["python", "update_excel/kill_background.py"]
 ).wait()  # エクセルバックグラウンドプロセスを終了
@@ -55,9 +52,7 @@ subprocess.Popen(
 
 
 # エクセルアップデート
-subprocess.Popen(
-    ["python", "update_excel/full_excel_recalculate.py"]
-).wait()  # セルの再計算
+subprocess.Popen(["python", "update_excel/full_excel_recalculate.py"]).wait()  # セルの再計算
 subprocess.Popen(
     ["python", "update_excel/kill_background.py"]
 ).wait()  # エクセルバックグラウンドプロセスを終了
@@ -69,13 +64,13 @@ subprocess.Popen(
 subprocess.Popen(["python", "bitget_auto_rial/main.py"]).wait()  # bitget(minmargin)発注
 
 # spot
-# mexc (btc eth以外の) spot order
+# mexc (btc以外の) spot order
 subprocess.Popen(
     ["python", "mexc/auto_spot_cancel.py"]
 ).wait()  # mexc spot オーダ- all cancel
 subprocess.Popen(
     ["python", "mexc/auto_spot.py"]
-).wait()  # mexc open & close オーダー(btc eth以外)
+).wait()  # mexc open & close オーダー(btc以外)
 # btc eth spot order
 # # bitget spot
 subprocess.Popen(
@@ -83,7 +78,7 @@ subprocess.Popen(
 ).wait()  # bitget spotオーダー(取引所移行のためcloseのみ)
 subprocess.Popen(
     ["python", "bitget_auto_rial/ccxt_spot.py"]
-).wait()  # bitget spotオーダー(取引所移行のためcloseとbtc,ethのみ)
+).wait()  # bitget spotオーダー(取引所移行のためcloseのみ)
 
 
 # # big margin buy only
@@ -93,5 +88,10 @@ subprocess.Popen(
 ).wait()  # bitget subaccount(big margin)オーダー
 
 # # bitbank
-subprocess.Popen(["python", "bitbank/cancel_all_orders.py"]).wait()  # bitbank spot cancel
-subprocess.Popen(["python", "bitbank/spot_ccxt.py"]).wait()  # bitbank spot oder
+subprocess.Popen(
+    ["python", "bitbank/"]
+).wait()  # bitget subaccount(big margin)オーダー
+
+
+# # 手動発動
+# # bitbank
