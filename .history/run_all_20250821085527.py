@@ -1,5 +1,5 @@
 import subprocess
-import time
+
 # # position update
 subprocess.Popen(
     ["python", "update_excel/kill_background.py"]
@@ -13,7 +13,6 @@ subprocess.Popen(
 subprocess.Popen(["python", "mexc/main.py"]).wait()
 # bitget保有額取得
 subprocess.Popen(["python", "bitget/main.py"]).wait()
-# bitgetsubアカウント保有額取得
 subprocess.Popen(["python", "bitget/main_sub_account.py"]).wait()
 
 # bitbank保有額取得
@@ -31,19 +30,12 @@ subprocess.Popen(
 ).wait()  # エクセルバックグラウンドプロセスを終了
 subprocess.Popen(["python", "bitbank/now_value.py"]).wait()  # bitbank data update
 
-# エクセルアップデート
-subprocess.Popen(["python", "update_excel/main.py"]).wait()  # セルの再計算、クエリの更新
-subprocess.Popen(
-    ["python", "update_excel/kill_background.py"]
-).wait()  # エクセルバックグラウンドプロセスを終了
-
 
 subprocess.Popen(
     ["python", "spreadsheet/excel_to_sps.py"]
 ).wait()  # エクセルのデータをスプレッドシートに書き込む
 
-# スプレッドシートが計算されるのを待つ
-time.sleep(20)  # 秒数は必要に応じて調整
+
 
 # スプレッドシート
 subprocess.Popen(
@@ -52,40 +44,40 @@ subprocess.Popen(
 
 
 # エクセルアップデート
-subprocess.Popen(["python", "update_excel/full_excel_recalculate.py"]).wait()  # セルの再計算
+subprocess.Popen(["python", "update_excel/main.py"]).wait()  # エクセルアップデート
 subprocess.Popen(
     ["python", "update_excel/kill_background.py"]
 ).wait()  # エクセルバックグラウンドプロセスを終了
 
-# minimargin
-subprocess.Popen(
-    ["python", "bitget_auto_rial/futuer_all_cancel.py"]
-).wait()  # bitget(minimargin)の予約全解除
-subprocess.Popen(["python", "bitget_auto_rial/main.py"]).wait()  # bitget(minmargin)発注
+# # minimargin
+# subprocess.Popen(
+#     ["python", "bitget_auto_rial/futuer_all_cancel.py"]
+# ).wait()  # bitget(minimargin)の予約全解除
+# subprocess.Popen(["python", "bitget_auto_rial/main.py"]).wait()  # bitget(minmargin)発注
 
-# spot
-# mexc (btc以外の) spot order
-subprocess.Popen(
-    ["python", "mexc/auto_spot_cancel.py"]
-).wait()  # mexc spot オーダ- all cancel
-subprocess.Popen(
-    ["python", "mexc/auto_spot.py"]
-).wait()  # mexc open & close オーダー(btc以外)
-# btc eth spot order
-# # bitget spot
-subprocess.Popen(
-    ["python", "bitget_auto_rial/ccxt_spot_cancel_all.py"]
-).wait()  # bitget spotオーダー(取引所移行のためcloseのみ)
-subprocess.Popen(
-    ["python", "bitget_auto_rial/ccxt_spot.py"]
-).wait()  # bitget spotオーダー(取引所移行のためcloseのみ)
+# # spot
+# # mexc (btc以外の) spot order
+# subprocess.Popen(
+#     ["python", "mexc/auto_spot_cancel.py"]
+# ).wait()  # mexc spot オーダ- all cancel
+# subprocess.Popen(
+#     ["python", "mexc/auto_spot.py"]
+# ).wait()  # mexc open & close オーダー(btc以外)
+# # btc eth spot order
+# # # bitget spot
+# subprocess.Popen(
+#     ["python", "bitget_auto_rial/ccxt_spot_cancel_all.py"]
+# ).wait()  # bitget spotオーダー(取引所移行のためcloseのみ)
+# subprocess.Popen(
+#     ["python", "bitget_auto_rial/ccxt_spot.py"]
+# ).wait()  # bitget spotオーダー(取引所移行のためcloseのみ)
 
 
-# # big margin buy only
+# # # big margin buy only
 
-subprocess.Popen(
-    ["python", "bitget_auto_rial/subaccount_futures.py"]
-).wait()  # bitget subaccount(big margin)オーダー
+# subprocess.Popen(
+#     ["python", "bitget_auto_rial/subaccount_futures.py"]
+# ).wait()  # bitget subaccount(big margin)オーダー
 
 # # bitbank
 
