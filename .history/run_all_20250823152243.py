@@ -80,15 +80,14 @@ subprocess.Popen(
 # # bitget spot
 subprocess.Popen(
     ["python", "bitget_auto_rial/ccxt_spot_cancel_all.py"]
-).wait()  # bitget spotオーダー
-subprocess.Popen(
-    ["python", "bitget_auto_rial/move_earn.py"]
-).wait()  # bitget earn to spot
+).wait()  # bitget spotオーダー(取引所移行のためcloseのみ)
 subprocess.Popen(
     ["python", "bitget_auto_rial/ccxt_spot.py"]
-).wait()  # bitget spotオーダー
+).wait()  # bitget spotオーダー(取引所移行のためcloseとbtc,ethのみ)
 
-
+subprocess.Popen(
+    ["python", "bitget_auto_rial/ccxt_spot.py"]
+).wait()  # bitget earn to spot
 
 
 # # big margin buy only
