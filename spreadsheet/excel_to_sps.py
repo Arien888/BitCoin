@@ -2,6 +2,8 @@ import os
 import yaml
 import gspread
 import pandas as pd
+import time
+import random
 from oauth2client.service_account import ServiceAccountCredentials
 
 # --- 設定ファイルパス ---
@@ -13,16 +15,21 @@ with open(CONFIG_PATH, "r", encoding="utf-8") as f:
     config = yaml.safe_load(f)
 
 # --- Google Sheets 情報 ---
-spreadsheet_id = config["google_sheet"]["spreadsheet_id"]
-sheet_name = config["google_sheet"]["excel_to_sps_sheet"]
+google_cfg = config.get("google_sheet", {})
+spreadsheet_id = google_cfg.get("spreadsheet_id")
+sheet_name = google_cfg.get("excel_to_sps_sheet")
 creds_path = os.path.abspath(
-    os.path.join(BASE_DIR, "..", config["google_sheet"]["creds_json"])
+    os.path.join(BASE_DIR, "..", google_cfg.get("creds_json", ""))
 )
 
 # --- Excel ファイルパス ---
+excel_cfg = config.get("order_export", {})
 excel_path = os.path.abspath(
-    os.path.join(BASE_DIR, "..", config["order_export"]["source_file"])
+    os.path.join(BASE_DIR, "..", excel_cfg.get("source_file", ""))
 )
+
+if not spreadsheet_id or not sheet_name or not os.path.exists(excel_path):
+    raise ValueError("config.yaml または Excel ファイルの設定に不備があります")
 
 # --- Google Sheets API 認証 ---
 scope = [
@@ -36,7 +43,10 @@ client = gspread.authorize(creds)
 spreadsheet = client.open_by_key(spreadsheet_id)
 
 # --- Excel のデータ取得 ---
-df = pd.read_excel(excel_path, sheet_name=sheet_name)
+try:
+    df = pd.read_excel(excel_path, sheet_name=sheet_name)
+except ValueError:
+    raise ValueError(f"Excel ファイルにシート '{sheet_name}' が見つかりません")
 
 # --- 安全なシート名に変換 ---
 safe_sheet_name = (
@@ -48,18 +58,37 @@ safe_sheet_name = (
     .replace("[", "_")
     .replace("]", "_")
 )
+
 try:
     worksheet = spreadsheet.worksheet(safe_sheet_name)
-    # 既存データを削除
-    worksheet.clear()
+    worksheet.clear()  # 既存データ削除
 except gspread.exceptions.WorksheetNotFound:
-    # シートがなければ新規作成
     worksheet = spreadsheet.add_worksheet(
         title=safe_sheet_name, rows=df.shape[0] + 10, cols=df.shape[1] + 10
     )
 
-# 文字列化して送信（共通処理）
+# --- リトライ付き更新関数 ---
+def safe_update(worksheet, data, max_retries=5, base_delay=2):
+    for attempt in range(1, max_retries + 1):
+        try:
+            worksheet.update(data)
+            print(f"[OK] update 成功 (試行 {attempt} 回目)")
+            return True
+        except gspread.exceptions.APIError as e:
+            print(f"[WARN] APIError (試行 {attempt} 回目): {e}")
+        except Exception as e:
+            print(f"[ERROR] 予期せぬエラー (試行 {attempt} 回目): {e}")
+
+        sleep_time = base_delay * (2 ** (attempt - 1)) + random.uniform(0, 1)
+        print(f"{sleep_time:.1f} 秒待機してリトライします...")
+        time.sleep(sleep_time)
+
+    print("[FAIL] 最大リトライ回数に達しました")
+    return False
+
+# --- データ送信 ---
 str_df = df.fillna("").astype(str)
-worksheet.update([str_df.columns.tolist()] + str_df.values.tolist())
+data = [str_df.columns.tolist()] + str_df.values.tolist()
+safe_update(worksheet, data)
 
 print(f"シート '{safe_sheet_name}' にデータを書き込みました（上書き）")

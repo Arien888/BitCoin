@@ -246,3 +246,4 @@ Traceback (most recent call last):
     raise Exception("All candidate API paths failed")
 Exception: All candidate API paths failed
 
+400 Client Error: Bad Request for url: https://api.bitget.com/api/v2/mix/order/place-order
