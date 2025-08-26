@@ -9,11 +9,18 @@ subprocess.Popen(
     ["python", "update_excel/open_and_wait_then_close.py", "writer_file"]
 ).wait()  # writer_fileをただ開いて閉じる
 
-subprocess.Popen(["python", "mexc/main.py"]).wait()# mexc保有額取得
-subprocess.Popen(["python", "bitget/main.py"]).wait()# bitget保有額取得
-subprocess.Popen(["python", "bitget/main_sub_account.py"]).wait()# bitgetsubアカウント保有額取得
-subprocess.Popen(["python", "bitbank/get_balance.py"]).wait()# bitbank保有額取得
-subprocess.Popen(["python", "bybit/main.py"]).wait()# bybit保有額取得
+
+# mexc保有額取得
+subprocess.Popen(["python", "mexc/main.py"]).wait()
+# bitget保有額取得
+subprocess.Popen(["python", "bitget/main.py"]).wait()
+# bitgetsubアカウント保有額取得
+subprocess.Popen(["python", "bitget/main_sub_account.py"]).wait()
+
+# bitbank保有額取得
+subprocess.Popen(["python", "bitbank/get_balance.py"]).wait()
+# bybit保有額取得
+subprocess.Popen(["python", "bybit/main.py"]).wait()
 subprocess.Popen(
     ["python", "update_excel/kill_background.py"]
 ).wait()  # エクセルバックグラウンドプロセスを終了
@@ -39,7 +46,7 @@ subprocess.Popen(
 ).wait()  # エクセルのデータをスプレッドシートに書き込む
 
 # スプレッドシートが計算されるのを待つ
-time.sleep(10)  # 秒数は必要に応じて調整
+time.sleep(20)  # 秒数は必要に応じて調整
 
 # スプレッドシート
 subprocess.Popen(
