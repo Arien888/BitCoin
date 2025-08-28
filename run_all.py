@@ -92,7 +92,9 @@ subprocess.Popen(
 
 
 # # big margin buy only
-
+subprocess.Popen(
+    ["python", "bitget_auto_rial/all_cancel_sub_account.py"]
+).wait()  # bitget subaccount(big margin)オーダー全キャンセル
 subprocess.Popen(
     ["python", "bitget_auto_rial/subaccount_futures.py"]
 ).wait()  # bitget subaccount(big margin)オーダー
