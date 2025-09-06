@@ -69,6 +69,10 @@ subprocess.Popen(
 subprocess.Popen(
     ["python", "bitget_auto_rial/futuer_all_cancel.py"]
 ).wait()  # bitget(minimargin)の予約全解除
+time.sleep(5)      # 終了後さらに5秒待つ
+subprocess.Popen(
+    ["python", "update_excel/kill_background.py"]
+).wait()  # エクセルバックグラウンドプロセスを終了
 subprocess.Popen(["python", "bitget_auto_rial/main.py"]).wait()  # bitget(minmargin)発注
 time.sleep(5)      # 終了後さらに5秒待つ
 # spot
