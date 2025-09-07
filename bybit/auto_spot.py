@@ -9,7 +9,7 @@ config = load_config()
 
 sheet_names = [
     config["excel"]["sheets"]["bybit_open_long_chash"],  # ロング用シート名
-    config["excel"]["sheets"]["bybit_open_long_chash"],  # ロング用シート名
+    config["excel"]["sheets"]["bybit_close_long_chash"],  # ロング用シート名
 ]
 
 

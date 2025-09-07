@@ -64,7 +64,7 @@ subprocess.Popen(
 subprocess.Popen(
     ["python", "bitget_auto_rial/transfer.py"]
 ).wait()  # bitget transfer
-
+time.sleep(10)
 # minimargin
 subprocess.Popen(
     ["python", "bitget_auto_rial/futuer_all_cancel.py"]
@@ -94,7 +94,6 @@ subprocess.Popen(
     ["python", "bitget_auto_rial/ccxt_spot.py"]
 ).wait()  # bitget spotオーダー
 
-
 # # big margin buy only
 subprocess.Popen(
     ["python", "bitget_auto_rial/all_cancel_sub_account.py"]
@@ -106,3 +105,7 @@ subprocess.Popen(
 # # bitbank
 subprocess.Popen(["python", "bitbank/cancel_all_orders.py"]).wait()  # bitbank spot cancel
 subprocess.Popen(["python", "bitbank/spot_ccxt.py"]).wait()  # bitbank spot oder
+
+# bybit close only
+subprocess.Popen(["python", "bybit/cancel_all_orders.py"]).wait()  # bybit cancel
+subprocess.Popen(["python", "bybit/auto_spot.py"]).wait()  # bybit spot order

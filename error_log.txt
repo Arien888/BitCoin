@@ -508,3 +508,48 @@ pywintypes.com_error: (-2147418111, '呼び出し先が呼び出しを拒否し�
 400 Client Error: Bad Request for url: https://api.bitget.com/api/v2/mix/order/place-order
 400 Client Error: Bad Request for url: https://api.bitget.com/api/v2/mix/order/place-order
 400 Client Error: Bad Request for url: https://api.bitget.com/api/v2/mix/order/place-order
+[2025-09-07 09:11:18] エラー:
+(-2147418111, '呼び出し先が呼び出しを拒否しました。', None, None)
+Traceback (most recent call last):
+  File "C:\Users\k\Documents\My_work\My_Programing_work\crypto\BitCoin\bitget_auto_rial\main.py", line 45, in main
+    place_orders(
+    ~~~~~~~~~~~~^
+        client,
+        ^^^^^^^
+    ...<2 lines>...
+        close_long_sheet,
+        ^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "C:\Users\k\Documents\My_work\My_Programing_work\crypto\BitCoin\bitget_auto_rial\order_processor.py", line 45, in place_orders
+    price_places, volume_places = load_tick_sizes()
+                                  ~~~~~~~~~~~~~~~^^
+  File "C:\Users\k\Documents\My_work\My_Programing_work\crypto\BitCoin\bitget_auto_rial\order_reader.py", line 17, in load_tick_sizes
+    sheet_names = [s.name for s in wb.sheets]
+                                   ^^^^^^^^^
+  File "C:\Users\koichi\AppData\Local\Programs\Python\Python313\Lib\site-packages\xlwings\main.py", line 69, in __iter__
+    for impl in self.impl:
+                ^^^^^^^^^
+  File "C:\Users\koichi\AppData\Local\Programs\Python\Python313\Lib\site-packages\xlwings\_xlwindows.py", line 949, in __iter__
+    for xl in self.xl:
+              ^^^^^^^
+  File "C:\Users\koichi\AppData\Local\Programs\Python\Python313\Lib\site-packages\xlwings\_xlwindows.py", line 259, in __iter__
+    for v in self._inner:
+             ^^^^^^^^^^^
+  File "C:\Users\koichi\AppData\Local\Programs\Python\Python313\Lib\site-packages\win32com\client\util.py", line 103, in __next__
+    return _get_good_object_(next(self._iter_), resultCLSID=self.resultCLSID)
+                             ~~~~^^^^^^^^^^^^^
+pywintypes.com_error: (-2147418111, '呼び出し先が呼び出しを拒否しました。', None, None)
+
+400 Client Error: Bad Request for url: https://api.bitget.com/api/v2/mix/order/place-order
+[2025-09-07 10:03:29] エラー:
+All candidate API paths failed
+Traceback (most recent call last):
+  File "C:\Users\k\Documents\My_work\My_Programing_work\crypto\BitCoin\bitget_auto_rial\futuer_all_cancel.py", line 33, in cancel_all_orders_for_symbols
+    res = client.cancel_all_orders(symbol=symbol, margin_coin="USDT")
+  File "C:\Users\k\Documents\My_work\My_Programing_work\crypto\BitCoin\bitget_auto_rial\bitget_client.py", line 73, in cancel_all_orders
+    raise Exception("All candidate API paths failed")
+Exception: All candidate API paths failed
+
+400 Client Error: Bad Request for url: https://api.bitget.com/api/v2/mix/order/place-order
+400 Client Error: Bad Request for url: https://api.bitget.com/api/v2/mix/order/place-order
