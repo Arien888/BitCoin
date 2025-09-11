@@ -553,3 +553,175 @@ Exception: All candidate API paths failed
 
 400 Client Error: Bad Request for url: https://api.bitget.com/api/v2/mix/order/place-order
 400 Client Error: Bad Request for url: https://api.bitget.com/api/v2/mix/order/place-order
+400 Client Error: Bad Request for url: https://api.bitget.com/api/v2/mix/order/place-order
+[2025-09-09 09:11:16] エラー:
+This object does not support enumeration
+Traceback (most recent call last):
+  File "C:\Users\koichi\AppData\Local\Temp\gen_py\3.13\00020813-0000-0000-C000-000000000046x0x1x9.py", line 36736, in __iter__
+    ob = self._oleobj_.InvokeTypes(-4,LCID,2,(13, 10),())
+pywintypes.com_error: (-2147418111, '呼び出し先が呼び出しを拒否しました。', None, None)
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\k\Documents\My_work\My_Programing_work\crypto\BitCoin\bitget_auto_rial\main.py", line 45, in main
+    place_orders(
+    ~~~~~~~~~~~~^
+        client,
+        ^^^^^^^
+    ...<2 lines>...
+        close_long_sheet,
+        ^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "C:\Users\k\Documents\My_work\My_Programing_work\crypto\BitCoin\bitget_auto_rial\order_processor.py", line 45, in place_orders
+    price_places, volume_places = load_tick_sizes()
+                                  ~~~~~~~~~~~~~~~^^
+  File "C:\Users\k\Documents\My_work\My_Programing_work\crypto\BitCoin\bitget_auto_rial\order_reader.py", line 17, in load_tick_sizes
+    sheet_names = [s.name for s in wb.sheets]
+                                   ^^^^^^^^^
+  File "C:\Users\koichi\AppData\Local\Programs\Python\Python313\Lib\site-packages\xlwings\main.py", line 69, in __iter__
+    for impl in self.impl:
+                ^^^^^^^^^
+  File "C:\Users\koichi\AppData\Local\Programs\Python\Python313\Lib\site-packages\xlwings\_xlwindows.py", line 949, in __iter__
+    for xl in self.xl:
+              ^^^^^^^
+  File "C:\Users\koichi\AppData\Local\Programs\Python\Python313\Lib\site-packages\xlwings\_xlwindows.py", line 259, in __iter__
+    for v in self._inner:
+             ^^^^^^^^^^^
+  File "C:\Users\koichi\AppData\Local\Temp\gen_py\3.13\00020813-0000-0000-C000-000000000046x0x1x9.py", line 36738, in __iter__
+    raise TypeError("This object does not support enumeration")
+TypeError: This object does not support enumeration
+
+[2025-09-09 09:18:28] エラー:
+(-2147418111, '呼び出し先が呼び出しを拒否しました。', None, None)
+Traceback (most recent call last):
+  File "C:\Users\k\Documents\My_work\My_Programing_work\crypto\BitCoin\bitget_auto_rial\subaccount_futures.py", line 45, in main
+    place_orders(
+    ~~~~~~~~~~~~^
+        client,
+        ^^^^^^^
+    ...<2 lines>...
+        close_long_sheet,
+        ^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "C:\Users\k\Documents\My_work\My_Programing_work\crypto\BitCoin\bitget_auto_rial\order_processor.py", line 45, in place_orders
+    price_places, volume_places = load_tick_sizes()
+                                  ~~~~~~~~~~~~~~~^^
+  File "C:\Users\k\Documents\My_work\My_Programing_work\crypto\BitCoin\bitget_auto_rial\order_reader.py", line 17, in load_tick_sizes
+    sheet_names = [s.name for s in wb.sheets]
+                                   ^^^^^^^^^
+  File "C:\Users\koichi\AppData\Local\Programs\Python\Python313\Lib\site-packages\xlwings\main.py", line 69, in __iter__
+    for impl in self.impl:
+                ^^^^^^^^^
+  File "C:\Users\koichi\AppData\Local\Programs\Python\Python313\Lib\site-packages\xlwings\_xlwindows.py", line 949, in __iter__
+    for xl in self.xl:
+              ^^^^^^^
+  File "C:\Users\koichi\AppData\Local\Programs\Python\Python313\Lib\site-packages\xlwings\_xlwindows.py", line 259, in __iter__
+    for v in self._inner:
+             ^^^^^^^^^^^
+  File "C:\Users\koichi\AppData\Local\Programs\Python\Python313\Lib\site-packages\win32com\client\util.py", line 103, in __next__
+    return _get_good_object_(next(self._iter_), resultCLSID=self.resultCLSID)
+                             ~~~~^^^^^^^^^^^^^
+pywintypes.com_error: (-2147418111, '呼び出し先が呼び出しを拒否しました。', None, None)
+
+[2025-09-09 10:51:20] エラー:
+All candidate API paths failed
+Traceback (most recent call last):
+  File "C:\Users\k\Documents\My_work\My_Programing_work\crypto\BitCoin\bitget_auto_rial\futuer_all_cancel.py", line 33, in cancel_all_orders_for_symbols
+    res = client.cancel_all_orders(symbol=symbol, margin_coin="USDT")
+  File "C:\Users\k\Documents\My_work\My_Programing_work\crypto\BitCoin\bitget_auto_rial\bitget_client.py", line 73, in cancel_all_orders
+    raise Exception("All candidate API paths failed")
+Exception: All candidate API paths failed
+
+[2025-09-09 10:53:01] エラー:
+All candidate API paths failed
+Traceback (most recent call last):
+  File "C:\Users\k\Documents\My_work\My_Programing_work\crypto\BitCoin\bitget_auto_rial\all_cancel_sub_account.py", line 35, in cancel_all_orders_for_symbols
+    res = client.cancel_all_orders(symbol=symbol, margin_coin="USDT")
+  File "C:\Users\k\Documents\My_work\My_Programing_work\crypto\BitCoin\bitget_auto_rial\bitget_client.py", line 73, in cancel_all_orders
+    raise Exception("All candidate API paths failed")
+Exception: All candidate API paths failed
+
+[2025-09-11 09:11:26] エラー:
+This object does not support enumeration
+Traceback (most recent call last):
+  File "C:\Users\koichi\AppData\Local\Temp\gen_py\3.13\00020813-0000-0000-C000-000000000046x0x1x9.py", line 36736, in __iter__
+    ob = self._oleobj_.InvokeTypes(-4,LCID,2,(13, 10),())
+pywintypes.com_error: (-2147418111, '呼び出し先が呼び出しを拒否しました。', None, None)
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\k\Documents\My_work\My_Programing_work\crypto\BitCoin\bitget_auto_rial\main.py", line 45, in main
+    place_orders(
+    ~~~~~~~~~~~~^
+        client,
+        ^^^^^^^
+    ...<2 lines>...
+        close_long_sheet,
+        ^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "C:\Users\k\Documents\My_work\My_Programing_work\crypto\BitCoin\bitget_auto_rial\order_processor.py", line 45, in place_orders
+    price_places, volume_places = load_tick_sizes()
+                                  ~~~~~~~~~~~~~~~^^
+  File "C:\Users\k\Documents\My_work\My_Programing_work\crypto\BitCoin\bitget_auto_rial\order_reader.py", line 17, in load_tick_sizes
+    sheet_names = [s.name for s in wb.sheets]
+                                   ^^^^^^^^^
+  File "C:\Users\koichi\AppData\Local\Programs\Python\Python313\Lib\site-packages\xlwings\main.py", line 69, in __iter__
+    for impl in self.impl:
+                ^^^^^^^^^
+  File "C:\Users\koichi\AppData\Local\Programs\Python\Python313\Lib\site-packages\xlwings\_xlwindows.py", line 949, in __iter__
+    for xl in self.xl:
+              ^^^^^^^
+  File "C:\Users\koichi\AppData\Local\Programs\Python\Python313\Lib\site-packages\xlwings\_xlwindows.py", line 259, in __iter__
+    for v in self._inner:
+             ^^^^^^^^^^^
+  File "C:\Users\koichi\AppData\Local\Temp\gen_py\3.13\00020813-0000-0000-C000-000000000046x0x1x9.py", line 36738, in __iter__
+    raise TypeError("This object does not support enumeration")
+TypeError: This object does not support enumeration
+
+[2025-09-11 11:06:48] エラー:
+All candidate API paths failed
+Traceback (most recent call last):
+  File "C:\Users\k\Documents\My_work\My_Programing_work\crypto\BitCoin\bitget_auto_rial\futuer_all_cancel.py", line 33, in cancel_all_orders_for_symbols
+    res = client.cancel_all_orders(symbol=symbol, margin_coin="USDT")
+  File "C:\Users\k\Documents\My_work\My_Programing_work\crypto\BitCoin\bitget_auto_rial\bitget_client.py", line 73, in cancel_all_orders
+    raise Exception("All candidate API paths failed")
+Exception: All candidate API paths failed
+
+[2025-09-11 11:08:13] エラー:
+(-2147418111, '呼び出し先が呼び出しを拒否しました。', None, None)
+Traceback (most recent call last):
+  File "C:\Users\k\Documents\My_work\My_Programing_work\crypto\BitCoin\bitget_auto_rial\main.py", line 45, in main
+    place_orders(
+    ~~~~~~~~~~~~^
+        client,
+        ^^^^^^^
+    ...<2 lines>...
+        close_long_sheet,
+        ^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "C:\Users\k\Documents\My_work\My_Programing_work\crypto\BitCoin\bitget_auto_rial\order_processor.py", line 45, in place_orders
+    price_places, volume_places = load_tick_sizes()
+                                  ~~~~~~~~~~~~~~~^^
+  File "C:\Users\k\Documents\My_work\My_Programing_work\crypto\BitCoin\bitget_auto_rial\order_reader.py", line 17, in load_tick_sizes
+    sheet_names = [s.name for s in wb.sheets]
+                                   ^^^^^^^^^
+  File "C:\Users\koichi\AppData\Local\Programs\Python\Python313\Lib\site-packages\xlwings\main.py", line 69, in __iter__
+    for impl in self.impl:
+                ^^^^^^^^^
+  File "C:\Users\koichi\AppData\Local\Programs\Python\Python313\Lib\site-packages\xlwings\_xlwindows.py", line 949, in __iter__
+    for xl in self.xl:
+              ^^^^^^^
+  File "C:\Users\koichi\AppData\Local\Programs\Python\Python313\Lib\site-packages\xlwings\_xlwindows.py", line 259, in __iter__
+    for v in self._inner:
+             ^^^^^^^^^^^
+  File "C:\Users\koichi\AppData\Local\Programs\Python\Python313\Lib\site-packages\win32com\client\util.py", line 103, in __next__
+    return _get_good_object_(next(self._iter_), resultCLSID=self.resultCLSID)
+                             ~~~~^^^^^^^^^^^^^
+pywintypes.com_error: (-2147418111, '呼び出し先が呼び出しを拒否しました。', None, None)
+

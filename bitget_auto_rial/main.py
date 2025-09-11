@@ -20,7 +20,7 @@ with open(os.path.join(BASE_DIR, "..", "config.yaml"), "r", encoding="utf-8") as
 excel_rel_path = config["order_export"]["source_file"]
 excel_path = excel_rel_path
 buy_sheet = config["excel"]["sheets"]["buy"]
-close_long_sheet = config["excel"]["sheets"].get("close_long")
+close_long_sheet = config["excel"]["sheets"]["close_long"]
 
 # BitgetClient インスタンス化（テストネット切り替え対応）
 client = BitgetClient(
