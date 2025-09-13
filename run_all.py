@@ -55,16 +55,7 @@ subprocess.Popen(
     ["python", "update_excel/kill_background.py"]
 ).wait()  # エクセルバックグラウンドプロセスを終了
 
-# ern to spot
-subprocess.Popen(
-    ["python", "bitget_auto_rial/move_earn.py"]
-).wait()  # bitget earn to spot
 
-# # transfer
-subprocess.Popen(
-    ["python", "bitget_auto_rial/transfer.py"]
-).wait()  # bitget transfer
-time.sleep(10)
 
 subprocess.Popen(
     ["python", "update_excel/kill_background.py"]
@@ -77,6 +68,7 @@ subprocess.Popen(["python", "bitget_auto_rial/all_cancel_sub_account.py"]).wait(
 subprocess.Popen(["python", "bitbank/cancel_all_orders.py"]).wait()  # bitbank spot cancel
 subprocess.Popen(["python", "bitget_auto_rial/ccxt_spot_cancel_all.py"]).wait()  # bitget spot cancel オーダー
 subprocess.Popen(["python", "bitget_auto_rial/futuer_all_cancel.py"]).wait()  # bitget(minimargin)の予約全解除
+subprocess.Popen(["python", "bybit/cancell_all_orders.py"]).wait()  #bybit cancel
 
 time.sleep(10)
 
@@ -84,6 +76,20 @@ subprocess.Popen(
     ["python", "update_excel/kill_background.py"]
 ).wait()  # エクセルバックグラウンドプロセスを終了
 
+# ern to spot
+subprocess.Popen(
+    ["python", "bitget_auto_rial/move_earn.py"]
+).wait()  # bitget earn to spot
+
+# # transfer
+subprocess.Popen(
+    ["python", "bitget_auto_rial/transfer.py"]
+).wait()  # bitget transfer
+
+
+subprocess.Popen(
+    ["python", "update_excel/kill_background.py"]
+).wait()  # エクセルバックグラウンドプロセスを終了
 
 # 発注
 subprocess.Popen(
@@ -97,11 +103,7 @@ subprocess.Popen(["python", "bitbank/spot_ccxt.py"]).wait()  # bitbank spot oder
 subprocess.Popen(
     ["python", "bitget_auto_rial/ccxt_spot.py"]
 ).wait()  # bitget spotオーダー
-
-subprocess.Popen(
-    ["python", "update_excel/kill_background.py"]
-).wait()  # エクセルバックグラウンドプロセスを終了
-
+subprocess.Popen(["python", "bybit/auto_spot.py"]).wait()  # bybit発注
 time.sleep(60)
 subprocess.Popen(["python", "bitget_auto_rial/main.py"]).wait()  # bitget(minmargin)発注
 
