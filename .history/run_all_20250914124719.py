@@ -81,17 +81,15 @@ subprocess.Popen(
     ["python", "bitget_auto_rial/move_earn.py"]
 ).wait()  # bitget earn to spot
 
-# # sub transfer
-subprocess.Popen(
-    ["python", "bitget_auto_rial/sub_transfer.py"]
-).wait()  # bitget sub transfer
-
-# # main transfer
+# # transfer
 subprocess.Popen(
     ["python", "bitget_auto_rial/transfer.py"]
 ).wait()  # bitget transfer
 
-
+# # sub transfer
+subprocess.Popen(
+    ["python", "bitget_auto_rial/transfer.py"]
+).wait()  # bitget transfer
 
 
 subprocess.Popen(
