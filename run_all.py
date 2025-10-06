@@ -68,7 +68,7 @@ subprocess.Popen(["python", "bitget_auto_rial/all_cancel_sub_account.py"]).wait(
 subprocess.Popen(["python", "bitbank/cancel_all_orders.py"]).wait()  # bitbank spot cancel
 subprocess.Popen(["python", "bitget_auto_rial/ccxt_spot_cancel_all.py"]).wait()  # bitget spot cancel オーダー
 subprocess.Popen(["python", "bitget_auto_rial/futuer_all_cancel.py"]).wait()  # bitget(minimargin)の予約全解除
-subprocess.Popen(["python", "bybit/cancell_all_orders.py"]).wait()  #bybit cancel
+subprocess.Popen(["python", "bybit/cancel_all_orders.py"]).wait()  #bybit cancel
 
 time.sleep(10)
 
