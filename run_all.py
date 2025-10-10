@@ -115,6 +115,12 @@ time.sleep(60)
 subprocess.Popen(
     ["python", "update_excel/kill_background.py"]
 ).wait()  # エクセルバックグラウンドプロセスを終了
+
+time.sleep(60)
+subprocess.Popen(
+    ["python", "update_excel/kill_background.py"]
+).wait()  # エクセルバックグラウンドプロセスを終了
+
 subprocess.Popen(["python", "bitget_auto_rial/main.py"]).wait()  # bitget(minmargin)発注
 
 
