@@ -10,8 +10,6 @@ def compute_threshold(values, base="median", direction="above", agg="mean"):
     arr = np.asarray(values)
     if arr.size == 0:
         return 0.0
-    if base == "max":
-        return np.max(arr)  # ← 最大値を追加
     ref = np.median(arr) if base == "median" else arr.mean()
     if direction == "above":
         filtered = arr[arr >= ref]
@@ -21,10 +19,9 @@ def compute_threshold(values, base="median", direction="above", agg="mean"):
         return ref
     return filtered.mean() if agg == "mean" else np.median(filtered)
 
-
 def get_thresholds(buy_returns, sell_returns, buy_method_ma, buy_method_prev, sell_method_ma, sell_method_prev):
     def parse_method(m):
-        if m in ["median", "mean", "max"]:
+        if m in ["median", "mean"]:
             return m, m
         if "_above_" in m:
             base, agg = m.split("_above_")
@@ -36,21 +33,10 @@ def get_thresholds(buy_returns, sell_returns, buy_method_ma, buy_method_prev, se
     sell_base_ma, sell_agg_ma = parse_method(sell_method_ma)
     sell_base_prev, sell_agg_prev = parse_method(sell_method_prev)
 
-    # --- MA 基準（max対応） ---
-    if buy_base_ma == "max":
-        buy_thresh_ma = np.max(buy_returns)
-    else:
-        buy_thresh_ma = compute_threshold(buy_returns, base=buy_base_ma, direction="below", agg=buy_agg_ma)
-
-    if sell_base_ma == "max":
-        sell_thresh_ma = np.max(sell_returns)
-    else:
-        sell_thresh_ma = compute_threshold(sell_returns, base=sell_base_ma, direction="above", agg=sell_agg_ma)
-
-    # --- 終値基準 ---
+    buy_thresh_ma = compute_threshold(buy_returns, base=buy_base_ma, direction="below", agg=buy_agg_ma)
     buy_thresh_prev = compute_threshold(buy_returns, base=buy_base_prev, direction="below", agg=buy_agg_prev)
+    sell_thresh_ma = compute_threshold(sell_returns, base=sell_base_ma, direction="above", agg=sell_agg_ma)
     sell_thresh_prev = compute_threshold(sell_returns, base=sell_base_prev, direction="above", agg=sell_agg_prev)
-
     return buy_thresh_ma, buy_thresh_prev, sell_thresh_ma, sell_thresh_prev
 
 
@@ -75,13 +61,12 @@ def backtest_single_custom(df, ma_period, lookback,
             )
             target_buy_ma   = df["MA"].iloc[i] * (1 + buy_thresh_ma)
             target_buy_prev = df["終値"].iloc[i-1] * (1 + buy_thresh_prev)
-            target_sell_ma  = df["MA"].iloc[i] * (1 + sell_thresh_ma)
+            target_sell_ma   = df["MA"].iloc[i] * (1 + sell_thresh_ma)
             target_sell_prev = df["終値"].iloc[i-1] * (1 + sell_thresh_prev)
         else:
             target_buy_ma = target_buy_prev = df["終値"].iloc[i-1]
             target_sell_ma = target_sell_prev = df["終値"].iloc[i-1]
 
-        # --- 買い条件 ---
         if cash > 0 and df["安値"].iloc[i] <= target_buy_ma:
             asset = cash / target_buy_ma
             cash = 0
@@ -89,7 +74,6 @@ def backtest_single_custom(df, ma_period, lookback,
             asset = cash / target_buy_prev
             cash = 0
 
-        # --- 売り条件 ---
         if asset > 0 and df["高値"].iloc[i] >= target_sell_ma:
             cash = asset * target_sell_ma
             asset = 0
@@ -127,11 +111,9 @@ if __name__ == "__main__":
     for col in ["終値", "高値", "安値"]:
         df[col] = pd.to_numeric(df[col].astype(str).str.replace(",", ""), errors="coerce")
 
-    ma_periods = list(range(11, 25))
-    lookbacks = list(range(11, 25))
-
-    # mean_above_median は削除、max を追加
-    methods = ["median", "mean", "median_above_median", "median_above_mean", "mean_above_mean", "max"]
+    ma_periods = list(range(10, 31))
+    lookbacks = list(range(10, 31))
+    methods = ["median","mean","median_above_median","median_above_mean","mean_above_mean","mean_above_median"]
 
     all_params = list(itertools.product(ma_periods, lookbacks, methods, methods, methods, methods))
     print(f"開始: {len(all_params)} パターンを検証します (CPU並列処理中...)")
