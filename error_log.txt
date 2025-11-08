@@ -901,3 +901,12 @@ Traceback (most recent call last):
     return _get_good_object_(next(self._iter_), resultCLSID=self.resultCLSID)
 pywintypes.com_error: (-2147418111, '呼び出し先が呼び出しを拒否しました。', None, None)
 
+[2025-11-08 09:14:57] エラー:
+All candidate API paths failed
+Traceback (most recent call last):
+  File "C:\Users\koichi\Documents\MyDocuments\My_work\My_Programing_work\BitCoin\bitget_auto_rial\futuer_all_cancel.py", line 33, in cancel_all_orders_for_symbols
+    res = client.cancel_all_orders(symbol=symbol, margin_coin="USDT")
+  File "C:\Users\koichi\Documents\MyDocuments\My_work\My_Programing_work\BitCoin\bitget_auto_rial\bitget_client.py", line 73, in cancel_all_orders
+    raise Exception("All candidate API paths failed")
+Exception: All candidate API paths failed
+
