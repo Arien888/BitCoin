@@ -118,9 +118,12 @@ def backtest_full_strategy_repeat(df, ma_period, lookback,
 # ==========================================================
 # 並列化ラッパー
 # ==========================================================
+df_global = None
+
 def backtest_wrapper(params):
-    ma, lb, bm, bp, sm, sp, df = params  # dfを引数で受け取る
-    res = backtest_full_strategy_repeat(df, ma, lb, bm, bp, sm, sp)
+    ma, lb, bm, bp, sm, sp = params
+    global df_global
+    res = backtest_full_strategy_repeat(df_global, ma, lb, bm, bp, sm, sp)
     res.update({
         "MA": ma,
         "Lookback": lb,
@@ -142,8 +145,10 @@ if __name__ == "__main__":
     for col in ["終値", "高値", "安値"]:
         df[col] = pd.to_numeric(df[col].astype(str).str.replace(",", ""), errors="coerce")
 
-    ma_list = range(11, 12)
-    lookback_list = range(11, 12)
+    df_global = df.copy()
+
+    ma_list = range(11, 17)
+    lookback_list = range(11, 17)
     methods = [
         "mean_above_mean", "median_above_mean",
         "mean_below_mean", "median_below_mean",
@@ -151,8 +156,7 @@ if __name__ == "__main__":
         "mean_below_median", "median_below_median"
     ]
 
-    # DataFrame を各パラメータと一緒に渡す
-    param_list = [(ma, lb, bm, bp, sm, sp, df) 
+    param_list = [(ma, lb, bm, bp, sm, sp) 
                   for ma, lb, bm, bp, sm, sp in product(ma_list, lookback_list, methods, methods, methods, methods)]
 
     results = []

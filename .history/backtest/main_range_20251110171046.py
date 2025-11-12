@@ -142,8 +142,8 @@ if __name__ == "__main__":
     for col in ["終値", "高値", "安値"]:
         df[col] = pd.to_numeric(df[col].astype(str).str.replace(",", ""), errors="coerce")
 
-    ma_list = range(11, 12)
-    lookback_list = range(11, 12)
+    ma_list = range(11, 17)
+    lookback_list = range(11, 17)
     methods = [
         "mean_above_mean", "median_above_mean",
         "mean_below_mean", "median_below_mean",

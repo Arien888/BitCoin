@@ -1,0 +1,136 @@
+import numpy as np
+import pandas as pd
+
+# ==========================================================
+# 閾値計算
+# ==========================================================
+def compute_threshold(values, base="median", direction="above", agg="mean"):
+    arr = np.asarray(values)
+    if arr.size == 0:
+        return 0.01
+    ref = np.median(arr) if base == "median" else (np.max(arr) if base == "max" else arr.mean())
+    filtered = arr[arr >= ref] if direction == "above" else arr[arr <= ref]
+    if filtered.size == 0:
+        return ref
+    val = filtered.mean() if agg == "mean" else np.median(filtered)
+    return max(abs(val), 0.005)
+
+# ==========================================================
+# メソッド解析
+# ==========================================================
+def parse_method(m):
+    if "_above_" in m:
+        base, agg = m.split("_above_")
+        return base, "above", agg
+    elif "_below_" in m:
+        base, agg = m.split("_below_")
+        return base, "below", agg
+    elif m in ["mean", "median", "max"]:
+        return m, "above", m
+    else:
+        raise ValueError(f"Unknown method: {m}")
+
+# ==========================================================
+# 閾値セット取得
+# ==========================================================
+def get_thresholds(buy_returns, sell_returns, buy_method_ma, buy_method_prev, sell_method_ma, sell_method_prev):
+    buy_base_ma, buy_dir_ma, buy_agg_ma = parse_method(buy_method_ma)
+    buy_base_prev, buy_dir_prev, buy_agg_prev = parse_method(buy_method_prev)
+    sell_base_ma, sell_dir_ma, sell_agg_ma = parse_method(sell_method_ma)
+    sell_base_prev, sell_dir_prev, sell_agg_prev = parse_method(sell_method_prev)
+
+    return (
+        compute_threshold(buy_returns, buy_base_ma, buy_dir_ma, buy_agg_ma),
+        compute_threshold(buy_returns, buy_base_prev, buy_dir_prev, buy_agg_prev),
+        compute_threshold(sell_returns, sell_base_ma, sell_dir_ma, sell_agg_ma),
+        compute_threshold(sell_returns, sell_base_prev, sell_dir_prev, sell_agg_prev),
+    )
+
+# ==========================================================
+# 全売買・指値成立限定・単利逆張りバックテスト
+# ==========================================================
+def backtest_full_strategy_repeat(df, ma_period, lookback,
+                                  buy_method_ma, buy_method_prev, sell_method_ma, sell_method_prev,
+                                  initial_cash=100000, trade_amount=10000):
+
+    df = df.copy()
+    df["MA"] = df["終値"].rolling(ma_period).mean()
+    df = df.dropna(subset=["MA", "終値", "高値", "安値"])
+
+    total_profit = 0
+    trade_count = 0
+    trade_profits = []
+    history = []
+
+    for i in range(lookback, len(df)):
+        # === 過去データから閾値抽出 ===
+        buy_returns = df["安値"].iloc[i - lookback:i].pct_change().dropna().values
+        sell_returns = df["高値"].iloc[i - lookback:i].pct_change().dropna().values
+        buy_thresh_ma, buy_thresh_prev, sell_thresh_ma, sell_thresh_prev = get_thresholds(
+            buy_returns, sell_returns, buy_method_ma, buy_method_prev, sell_method_ma, sell_method_prev
+        )
+
+        # === 現在値取得 ===
+        ma_val = df["MA"].iloc[i]
+        prev_close = df["終値"].iloc[i - 1]
+        cur_low = df["安値"].iloc[i]
+        cur_high = df["高値"].iloc[i]
+
+        # =====================================================
+        # 買いロジック：逆張り（MA以下のとき指値を出す）
+        # =====================================================
+        if prev_close <= ma_val * (1 - abs(buy_thresh_ma)):
+            # 買い指値（現在価格 × (1 - buy_thresh_prev)）
+            buy_price = prev_close * (1 - abs(buy_thresh_prev))
+            sell_target = prev_close * (1 + abs(sell_thresh_prev))
+
+            # 条件：安値が指値以下 → 買い約定
+            if cur_low <= buy_price:
+                # さらにその日の高値が利確指値を上抜けたら決済成立
+                if cur_high >= sell_target:
+                    profit_pct = (sell_target - buy_price) / buy_price * 100
+                    profit = trade_amount * (profit_pct / 100)
+                    total_profit += profit
+                    trade_profits.append(profit_pct)
+                    trade_count += 1
+
+        # =====================================================
+        # 売りロジック：逆張り（MA以上のとき指値を出す）
+        # =====================================================
+        elif prev_close >= ma_val * (1 + abs(sell_thresh_ma)):
+            # 売り指値（現在価格 × (1 + sell_thresh_prev)）
+            sell_price = prev_close * (1 + abs(sell_thresh_prev))
+            buy_back = prev_close * (1 - abs(buy_thresh_prev))
+
+            # 条件：高値が売り指値以上 → 売り約定
+            if cur_high >= sell_price:
+                # さらにその日の安値が買い戻しライン以下 → 決済成立
+                if cur_low <= buy_back:
+                    profit_pct = (sell_price - buy_back) / sell_price * -100
+                    profit = trade_amount * (profit_pct / 100)
+                    total_profit += profit
+                    trade_profits.append(profit_pct)
+                    trade_count += 1
+
+        # === 損益推移を記録 ===
+        history.append(initial_cash + total_profit)
+
+    # === 結果集計 ===
+    total_values = np.array(history)
+    if len(total_values) == 0:
+        return {"final_value": initial_cash, "profit_percent": 0, "max_drawdown": 0, "trade_count": 0, "avg_trade_profit": 0}
+
+    cum_max = np.maximum.accumulate(total_values)
+    drawdown = (cum_max - total_values) / cum_max
+    max_drawdown = drawdown.max() if len(drawdown) > 0 else 0
+
+    profit_percent = (total_profit / initial_cash) * 100
+    avg_trade_profit = np.mean(trade_profits) if trade_profits else 0
+
+    return {
+        "final_value": initial_cash + total_profit,
+        "profit_percent": profit_percent,
+        "max_drawdown": max_drawdown * 100,
+        "trade_count": trade_count,
+        "avg_trade_profit": avg_trade_profit
+    }
