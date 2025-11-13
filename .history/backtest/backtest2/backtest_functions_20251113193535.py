@@ -54,7 +54,7 @@ def backtest_full_strategy_repeat(
         buy_method_ma, buy_method_prev,
         sell_method_ma, sell_method_prev,
         initial_cash=100000,
-        risk_per_trade=1,   # 資産の1%を使用
+        risk_per_trade=0.01,   # 資産の1%を使用
         leverage=1
     ):
 

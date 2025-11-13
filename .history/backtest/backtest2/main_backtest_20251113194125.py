@@ -22,8 +22,8 @@ if __name__ == "__main__":
 
     df.dropna(subset=["終値", "高値", "安値"], inplace=True)
 
-    ma_list = range(7, 18)
-    lookback_list = range(4, 13)
+    ma_list = range(12, 13)
+    lookback_list = range(8, 9)
     methods = [
         "median",
         "mean",

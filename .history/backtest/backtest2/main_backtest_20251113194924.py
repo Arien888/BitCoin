@@ -10,7 +10,7 @@ from backtest_wrapper import backtest_wrapper
 analysis_mode = "full"
 
 if __name__ == "__main__":
-    symbol = "btc"
+    symbol = "shib"
     file_path = f"{symbol}.csv"
 
     df = pd.read_csv(file_path)
@@ -22,8 +22,8 @@ if __name__ == "__main__":
 
     df.dropna(subset=["終値", "高値", "安値"], inplace=True)
 
-    ma_list = range(7, 18)
-    lookback_list = range(4, 13)
+    ma_list = range(12, 13)
+    lookback_list = range(8, 9)
     methods = [
         "median",
         "mean",

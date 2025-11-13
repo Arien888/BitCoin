@@ -946,3 +946,14 @@ Traceback (most recent call last):
     raise Exception("All candidate API paths failed")
 Exception: All candidate API paths failed
 
+[2025-11-13 09:16:08] エラー:
+All candidate API paths failed
+Traceback (most recent call last):
+  File "C:\Users\koichi\Documents\MyDocuments\My_work\My_Programing_work\BitCoin\bitget_auto_rial\futuer_all_cancel.py", line 33, in cancel_all_orders_for_symbols
+    res = client.cancel_all_orders(symbol=symbol, margin_coin="USDT")
+  File "C:\Users\koichi\Documents\MyDocuments\My_work\My_Programing_work\BitCoin\bitget_auto_rial\bitget_client.py", line 73, in cancel_all_orders
+    raise Exception("All candidate API paths failed")
+Exception: All candidate API paths failed
+
+400 Client Error: Bad Request for url: https://api.bitget.com/api/v2/mix/order/place-order
+400 Client Error: Bad Request for url: https://api.bitget.com/api/v2/mix/order/place-order

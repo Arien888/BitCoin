@@ -47,15 +47,15 @@ def get_thresholds(buy_returns, sell_returns, buy_method_ma, buy_method_prev, se
     )
 
 # ==========================================================
-# 複利 × 指値逆張りバックテスト
+# 複利 × 逆張りバックテスト（完全版）
 # ==========================================================
 def backtest_full_strategy_repeat(
         df, ma_period, lookback,
         buy_method_ma, buy_method_prev,
         sell_method_ma, sell_method_prev,
         initial_cash=100000,
-        risk_per_trade=1,   # 資産の1%を使用
-        leverage=1
+        risk_per_trade=0.01,   # 資産の1%を使う
+        leverage=1             # レバレッジ倍率
     ):
 
     df = df.copy()
@@ -68,6 +68,7 @@ def backtest_full_strategy_repeat(
     history = []
 
     for i in range(lookback, len(df)):
+        # --- 過去データから閾値計算 ---
         buy_returns  = df["安値"].iloc[i - lookback:i].pct_change().dropna().values
         sell_returns = df["高値"].iloc[i - lookback:i].pct_change().dropna().values
 
@@ -82,48 +83,46 @@ def backtest_full_strategy_repeat(
         cur_low    = df["安値"].iloc[i]
         cur_high   = df["高値"].iloc[i]
 
-        # --- 複利ポジションサイズ ---
+        # --- 複利のポジションサイズ ---
         position_size = cash * risk_per_trade * leverage
         if position_size <= 0:
             history.append(cash)
             continue
 
+        # --- トリガー ---
         buy_trigger  = prev_close <= ma_val * (1 - abs(buy_thresh_ma))
         sell_trigger = prev_close >= ma_val * (1 + abs(sell_thresh_ma))
 
-        # ----------------------------------------------------------
+        # ==========================================================
         # 買い
-        # ----------------------------------------------------------
+        # ==========================================================
         if buy_trigger:
             buy_price  = prev_close * (1 - abs(buy_thresh_prev))
             sell_price = prev_close * (1 + abs(sell_thresh_prev))
 
             if cur_low <= buy_price and cur_high >= sell_price:
-                pct = (sell_price - buy_price) / buy_price
-                cash += position_size * pct
-                trade_profits.append(pct * 100)
+                profit_pct = (sell_price - buy_price) / buy_price
+                cash += position_size * profit_pct
+                trade_profits.append(profit_pct * 100)
                 trade_count += 1
 
-        # ----------------------------------------------------------
+        # ==========================================================
         # 売り
-        # ----------------------------------------------------------
+        # ==========================================================
         elif sell_trigger:
             sell_price = prev_close * (1 + abs(sell_thresh_prev))
             buy_back   = prev_close * (1 - abs(buy_thresh_prev))
 
             if cur_high >= sell_price and cur_low <= buy_back:
-                pct = (sell_price - buy_back) / sell_price * (-1)
-                cash += position_size * pct
-                trade_profits.append(pct * 100)
+                profit_pct = (sell_price - buy_back) / sell_price * (-1)
+                cash += position_size * profit_pct
+                trade_profits.append(profit_pct * 100)
                 trade_count += 1
 
         history.append(cash)
 
-    # ==========================================================
-    # ドローダウン計算（cummax 修正版）
-    # ==========================================================
+    # --- ドローダウン ---
     total_values = np.array(history)
-
     if len(total_values) == 0:
         return {
             "final_value": initial_cash,
@@ -133,7 +132,7 @@ def backtest_full_strategy_repeat(
             "avg_trade_profit": 0,
         }
 
-    cummax = np.maximum.accumulate(total_values)
+    cummax = total_values.cummax()
     dd = (cummax - total_values) / cummax
     max_dd = dd.max() * 100
 
