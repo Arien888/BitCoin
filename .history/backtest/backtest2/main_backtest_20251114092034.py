@@ -11,7 +11,7 @@ from tqdm import tqdm
 analysis_mode = "full"
 
 if __name__ == "__main__":
-    symbol = "btc_1y"
+    symbol = "btc"
     file_path = f"{symbol}.csv"
 
     df = pd.read_csv(file_path)
@@ -27,8 +27,8 @@ if __name__ == "__main__":
     # =======================
     # パラメータ範囲
     # =======================
-    ma_list = range(7, 8)
-    lookback_list = range(12, 13)
+    ma_list = range(7, 18)
+    lookback_list = range(4, 13)
 
     # ⭐ あなた仕様の新しい5メソッド
     methods = [

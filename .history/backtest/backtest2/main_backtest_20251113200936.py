@@ -3,7 +3,7 @@ from concurrent.futures import ProcessPoolExecutor, as_completed
 import matplotlib.pyplot as plt
 from itertools import product
 from backtest_wrapper import backtest_wrapper
-from tqdm import tqdm
+from tqdm import tqdm   # ← 追加
 
 # ==========================================================
 # 分析モード選択："full", "buy_ma", "buy_prev", "sell_ma", "sell_prev"
@@ -11,86 +11,69 @@ from tqdm import tqdm
 analysis_mode = "full"
 
 if __name__ == "__main__":
-    symbol = "btc_1y"
+    symbol = "btc"
     file_path = f"{symbol}.csv"
 
     df = pd.read_csv(file_path)
     df["日付け"] = pd.to_datetime(df["日付け"], errors="coerce")
     df.set_index("日付け", inplace=True)
 
-    # 数値変換
     for col in ["終値", "高値", "安値"]:
         df[col] = pd.to_numeric(df[col].astype(str).str.replace(",", ""), errors="coerce")
 
     df.dropna(subset=["終値", "高値", "安値"], inplace=True)
 
-    # =======================
-    # パラメータ範囲
-    # =======================
-    ma_list = range(7, 8)
-    lookback_list = range(12, 13)
-
-    # ⭐ あなた仕様の新しい5メソッド
+    ma_list = range(7, 18)
+    lookback_list = range(4, 13)
     methods = [
         "median",
         "mean",
-        "median_in_mean",
-        "median_in_median",
-        "mean_in_mean",
+        "median_above_mean",
+        "mean_above_mean",
     ]
 
-    # =======================
-    # モード毎の param_list生成
-    # =======================
+    # ==========================================================
+    # モード別パラメータ生成
+    # ==========================================================
     if analysis_mode == "buy_ma":
         fixed = ("median", "median", "median", "median")
-        param_list = [
-            (ma, lb, bm, fixed[1], fixed[2], fixed[3], df)
-            for ma, lb, bm in product(ma_list, lookback_list, methods)
-        ]
+        param_list = [(ma, lb, bm, fixed[1], fixed[2], fixed[3], df)
+                      for ma, lb, bm in product(ma_list, lookback_list, methods)]
     elif analysis_mode == "buy_prev":
         fixed = ("median", "median", "median", "median")
-        param_list = [
-            (ma, lb, fixed[0], bp, fixed[2], fixed[3], df)
-            for ma, lb, bp in product(ma_list, lookback_list, methods)
-        ]
+        param_list = [(ma, lb, fixed[0], bp, fixed[2], fixed[3], df)
+                      for ma, lb, bp in product(ma_list, lookback_list, methods)]
     elif analysis_mode == "sell_ma":
         fixed = ("median", "median", "median", "median")
-        param_list = [
-            (ma, lb, fixed[0], fixed[1], sm, fixed[3], df)
-            for ma, lb, sm in product(ma_list, lookback_list, methods)
-        ]
+        param_list = [(ma, lb, fixed[0], fixed[1], sm, fixed[3], df)
+                      for ma, lb, sm in product(ma_list, lookback_list, methods)]
     elif analysis_mode == "sell_prev":
         fixed = ("median", "median", "median", "median")
-        param_list = [
-            (ma, lb, fixed[0], fixed[1], fixed[2], sp, df)
-            for ma, lb, sp in product(ma_list, lookback_list, methods)
-        ]
+        param_list = [(ma, lb, fixed[0], fixed[1], fixed[2], sp, df)
+                      for ma, lb, sp in product(ma_list, lookback_list, methods)]
     else:
-        param_list = [
-            (ma, lb, bm, bp, sm, sp, df)
-            for ma, lb, bm, bp, sm, sp in product(
-                ma_list, lookback_list, methods, methods, methods, methods
-            )
-        ]
+        param_list = [(ma, lb, bm, bp, sm, sp, df)
+                      for ma, lb, bm, bp, sm, sp in product(
+                          ma_list, lookback_list, methods, methods, methods, methods
+                      )]
 
     print(f"Total combinations: {len(param_list)}")
 
-    # =======================
-    # 並列処理（進捗バー付き）
-    # =======================
+    # ==========================================================
+    # 並列実行（進捗バーあり）
+    # ==========================================================
     results = []
     with ProcessPoolExecutor() as executor:
         futures = [executor.submit(backtest_wrapper, p) for p in param_list]
 
         for f in tqdm(as_completed(futures), total=len(futures), desc="Running backtests"):
             res = f.result()
-            if isinstance(res, dict) and "profit_percent" in res:
+            if "profit_percent" in res:
                 results.append(res)
 
-    # =======================
-    # 結果処理
-    # =======================
+    # ==========================================================
+    # 結果整理
+    # ==========================================================
     result_df = pd.DataFrame(results)
     result_df.sort_values("profit_percent", ascending=False, inplace=True)
 
@@ -99,16 +82,11 @@ if __name__ == "__main__":
     pd.set_option("display.max_colwidth", None)
 
     print(f"\n=== 上位パラメータ ({analysis_mode}) ===")
-    cols = [
-        "MA", "Lookback", "Buy_MA", "Buy_Prev",
-        "Sell_MA", "Sell_Prev", "profit_percent",
-        "max_drawdown", "trade_count", "avg_trade_profit"
-    ]
+    cols = ["MA", "Lookback", "Buy_MA", "Buy_Prev",
+            "Sell_MA", "Sell_Prev", "profit_percent",
+            "max_drawdown", "trade_count", "avg_trade_profit"]
     print(result_df.head(10)[cols])
 
-    # =======================
-    # 可視化
-    # =======================
     plt.figure(figsize=(10, 5))
     plt.scatter(result_df["MA"], result_df["profit_percent"], label="Profit%")
     plt.title(f"MA期間と利益率 ({analysis_mode})", fontname="MS Gothic")
