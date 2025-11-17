@@ -1,0 +1,51 @@
+import pandas as pd
+from backtest import run_backtest_one, compute_indicators
+from buy_logic import buy_condition
+
+def optimize(df, top_n=20):
+
+    ma_list    = [12, 16, 20]
+    range_list = [24, 48, 72]
+    tp_list    = [0.002, 0.004, 0.006]
+    sl_list    = [0.005, 0.01]
+
+    results = []
+
+    for ma in ma_list:
+        for rng in range_list:
+            for tp in tp_list:
+                for sl in sl_list:
+
+                    trades, total, win, avg, dd = run_backtest_one(
+                        df.copy(), ma, rng, tp, sl
+                    )
+
+                    results.append({
+                        "ma": ma,
+                        "range": rng,
+                        "tp": tp,
+                        "sl": sl,
+                        "trades": trades,
+                        "total": total,
+                        "winrate": win,
+                        "avg": avg,
+                        "maxdd": dd
+                    })
+
+    # P/L 優先でソート
+    results.sort(key=lambda x: x["total"], reverse=True)
+
+    print("\n===== TOP パラメータ候補 =====")
+    for r in results[:top_n]:
+        print(
+            f"MA={r['ma']}, Range={r['range']}, TP={r['tp']}, SL={r['sl']} | "
+            f"Trades={r['trades']}, P/L={r['total']:.3f}, Win={r['winrate']*100:.1f}%, "
+            f"Avg={r['avg']:.3f}, MaxDD={r['maxdd']:.3f}"
+        )
+
+if __name__ == "__main__":
+    df = pd.read_csv("btc_1h_full.csv")
+    for col in ["open","high","low","close"]:
+        df[col] = df[col].astype(float)
+
+    optimize(df, top_n=20)
