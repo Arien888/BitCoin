@@ -26,7 +26,6 @@ def optimize(df, top_n=30):
     print(f"Range候補: {range_list}")
     print(f"TP候補: {tp_list}")
     print(f"SL候補: {sl_list}")
-
     print(f"range_pos_thr: {range_pos_thr}, min_trades: {min_trades}")
     print("================================\n")
 

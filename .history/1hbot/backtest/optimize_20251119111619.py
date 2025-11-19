@@ -9,9 +9,9 @@ def optimize(df, top_n=30):
     ma_list = list(range(5, 201, 10))    # 5, 15, 25, ..., 195
     range_list = list(range(10, 201, 10))  # 10, 20, ..., 200
 
-    tp_list = [float(round(x, 3)) for x in np.arange(0.002, 0.0201, 0.002)]
-    sl_list = [float(round(x, 3)) for x in np.arange(0.004, 0.0301, 0.002)]
-
+    # TP / SL は現実的なリスクリワードに限定
+    tp_list = [round(x, 3) for x in np.arange(0.002, 0.0201, 0.002)]  # 0.2%〜2.0%
+    sl_list = [round(x, 3) for x in np.arange(0.004, 0.0301, 0.002)]  # 0.4%〜3.0%
 
     # BUY条件は最適化済みなので固定
     range_pos_thr = 0.40
@@ -26,7 +26,6 @@ def optimize(df, top_n=30):
     print(f"Range候補: {range_list}")
     print(f"TP候補: {tp_list}")
     print(f"SL候補: {sl_list}")
-
     print(f"range_pos_thr: {range_pos_thr}, min_trades: {min_trades}")
     print("================================\n")
 

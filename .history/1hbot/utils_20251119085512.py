@@ -73,36 +73,3 @@ def calc_order_size(cfg, last_price):
 
 LOG_DIR = "log"
 os.makedirs(LOG_DIR, exist_ok=True)
-
-# ------------------------------------------
-# ランタイムログ：毎時1回の実行内容
-# ------------------------------------------
-def write_runtime_log(message):
-    ts = datetime.now().strftime("%Y-%m-%d %H:%M:%S")
-    with open(f"{LOG_DIR}/runtime.log", "a", encoding="utf-8") as f:
-        f.write(f"{ts} | {message}\n")
-
-
-# ------------------------------------------
-# トレードログ：注文履歴（CSV）
-# ------------------------------------------
-def write_trade_log(side, size, price, mode="DRY_RUN"):
-    ts = datetime.now().strftime("%Y-%m-%d %H:%M:%S")
-    path = f"{LOG_DIR}/trades.csv"
-
-    header = "timestamp,mode,side,size,price\n"
-    if not os.path.exists(path):
-        with open(path, "w", encoding="utf-8") as f:
-            f.write(header)
-
-    with open(path, "a", encoding="utf-8") as f:
-        f.write(f"{ts},{mode},{side},{size},{price}\n")
-
-
-# ------------------------------------------
-# エラーログ：クラッシュ時の記録
-# ------------------------------------------
-def write_error_log(error_message):
-    ts = datetime.now().strftime("%Y-%m-%d %H:%M:%S")
-    with open(f"{LOG_DIR}/error.log", "a", encoding="utf-8") as f:
-        f.write(f"{ts}\n{error_message}\n\n")
