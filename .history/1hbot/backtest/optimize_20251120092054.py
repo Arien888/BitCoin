@@ -25,17 +25,15 @@ def split_into_periods(df, months=3):
 # ---------------------------------------------------------
 def optimize_fine(df, top_n=50):
 
-    ma_list        = list(range(5, 205, 20))
-    range_lb_list  = list(range(10, 210, 20))
+    ma_list        = list(range(5, 36, 1))
+    range_lb_list  = list(range(8, 16, 1))
 
-    tp_list = [round(x, 4) for x in np.arange(0.001, 0.021, 0.002)]
-    sl_list = [round(x, 4) for x in np.arange(0.002, 0.031, 0.002)]
+    tp_list = [round(x, 4) for x in np.arange(0.0020, 0.0061, 0.0005)]
+    sl_list = [round(x, 4) for x in np.arange(0.0020, 0.0061, 0.0005)]
 
-    ma_dc_list   = [round(x, 3) for x in np.arange(0.003, 0.051, 0.005)]
-
-    low_thr_list  = [round(x, 2) for x in np.linspace(0.10, 0.50, 9)]
-    high_thr_list = [round(x, 2) for x in np.linspace(0.50, 0.90, 9)]
-
+    ma_dc_list   = [round(x, 3) for x in np.arange(0.002, 0.016, 0.001)]
+    low_thr_list  = [round(x, 2) for x in np.arange(0.20, 0.46, 0.05)]
+    high_thr_list = [round(x, 2) for x in np.arange(0.55, 0.86, 0.05)]
 
     results = []
 
