@@ -5,12 +5,11 @@ from datetime import datetime, timedelta, timezone
 
 BASE_URL = "https://api.bitget.com/api/mix/v1/market/history-candles"
 
-
-def fetch_batch(symbol="BTCUSDT_UMCBL", granularity=3600, limit=200, end_time=None):
+def fetch_batch(symbol="BTCUSDT_UMCBL", granularity=3600, limit=1000, end_time=None):
     params = {
         "symbol": symbol,
         "granularity": granularity,
-        "limit": limit
+        "limit": limit,
     }
     if end_time:
         params["endTime"] = end_time
@@ -23,37 +22,32 @@ def fetch_batch(symbol="BTCUSDT_UMCBL", granularity=3600, limit=200, end_time=No
 
     j = r.json()
 
-    data = None
-
-    # dict形式 { "data": [...] }
+    # 形式 {"data": [...]} が基本
     if isinstance(j, dict) and "data" in j:
-        data = j["data"]
+        return j["data"]
 
-    # list形式 [...]
-    elif isinstance(j, list):
-        data = j
+    # 稀にリストで来る場合
+    if isinstance(j, list):
+        return j
 
-    if data is None:
-        print("Unexpected JSON:", j)
-        return []
-
-    # ★ 必ず昇順ソート（古い→新しい）
-    data = sorted(data, key=lambda x: int(x[0]))
-
-    return data
+    print("Unexpected JSON:", j)
+    return []
 
 
 def fetch_history_months(months=12):
-    print(f"Fetching {months} months of BTCUSDT_UMCBL 1H candles...")
+    print(f"Fetching {months} months of BTC 1H candles...")
 
     all_rows = []
 
+    # ====== 正確に months 以前の日時を計算 ======
     now = datetime.now(timezone.utc)
     target_start = now - timedelta(days=months * 30)
     target_ms = int(target_start.timestamp() * 1000)
 
+    # 初回 end_time は現在時刻（最新から遡る）
     end_time = int(now.timestamp() * 1000)
 
+    # ====== 過去方向に取得 ======
     while True:
 
         batch = fetch_batch(end_time=end_time)
@@ -62,34 +56,36 @@ def fetch_history_months(months=12):
             print("\nNo more data returned. Stopping.")
             break
 
+        # 重複排除しながら追加
         all_rows.extend(batch)
 
-        # 最後のローソク足
-        last_ts = int(batch[0][0])  # ★ batchは昇順なので最も古いのは index=0
+        # 最後の timestamp
+        last_ts = batch[-1][0]
+        end_time = int(last_ts)
 
         print(f"Fetched rows: {len(all_rows)}", end="\r")
 
-        # ★ 次のリクエストはさらにさかのぼる（ダブル取得防止）
-        end_time = last_ts - 1
-
+        # 目的の始点（target_start）まで遡ったら停止
         if last_ts < target_ms:
             break
 
+        # API 負荷対策
         time.sleep(0.15)
 
     print(f"\nTotal fetched rows: {len(all_rows)}")
 
-    # DF化
+    # ====== DF化 ======
     df = pd.DataFrame(all_rows, columns=[
         "ts", "open", "high", "low", "close", "volume", "quoteVolume"
     ])
 
+    # 数値変換
     df["ts"] = pd.to_datetime(df["ts"], unit="ms")
-    for col in ["open", "high", "low", "close", "volume"]:
-        df[col] = df[col].astype(float)
+    for c in ["open", "high", "low", "close", "volume"]:
+        df[c] = df[c].astype(float)
 
-    # ソート & 重複削除
-    df = df.sort_values("ts").drop_duplicates(subset="ts").reset_index(drop=True)
+    # 古い順にソート
+    df = df.sort_values("ts").reset_index(drop=True)
 
     return df
 
