@@ -58,3 +58,72 @@
 2025-11-20 09:10:05 | === BOT START ===
 2025-11-20 09:10:06 | close=91504.9 | signal=HOLD | pos=False
 2025-11-20 09:10:06 | HOLD
+2025-11-20 11:01:02 | === BOT START ===
+2025-11-20 11:01:03 | close=92552.0 | signal=HOLD | pos=False
+2025-11-20 11:01:03 | HOLD
+2025-11-20 12:01:02 | === BOT START ===
+2025-11-20 12:01:03 | close=92547.0 | signal=HOLD | pos=False
+2025-11-20 12:01:03 | HOLD
+2025-11-20 13:01:02 | === BOT START ===
+2025-11-20 13:01:03 | close=92392.1 | signal=HOLD | pos=False
+2025-11-20 13:01:03 | HOLD
+2025-11-20 14:01:02 | === BOT START ===
+2025-11-20 14:01:03 | close=92921.1 | signal=HOLD | pos=False
+2025-11-20 14:01:03 | HOLD
+2025-11-20 15:01:02 | === BOT START ===
+2025-11-20 15:01:03 | close=92573.8 | signal=HOLD | pos=False
+2025-11-20 15:01:03 | HOLD
+2025-11-20 16:01:02 | === BOT START ===
+2025-11-20 16:01:02 | close=91934.0 | signal=HOLD | pos=False
+2025-11-20 16:01:02 | HOLD
+2025-11-20 17:01:02 | === BOT START ===
+2025-11-20 17:01:03 | close=92287.9 | signal=HOLD | pos=False
+2025-11-20 17:01:03 | HOLD
+2025-11-20 18:01:02 | === BOT START ===
+2025-11-20 18:01:02 | close=92089.9 | signal=HOLD | pos=False
+2025-11-20 18:01:02 | HOLD
+2025-11-20 19:01:02 | === BOT START ===
+2025-11-20 19:01:03 | close=91871.5 | signal=HOLD | pos=False
+2025-11-20 19:01:03 | HOLD
+2025-11-20 20:01:02 | === BOT START ===
+2025-11-20 20:01:02 | close=91765.7 | signal=BUY | pos=False
+2025-11-20 20:01:02 | BUY | size=0.001 | price=91765.7
+2025-11-20 21:01:02 | === BOT START ===
+2025-11-20 21:01:03 | close=91891.4 | signal=HOLD | pos=True
+2025-11-20 21:01:03 | HOLD
+2025-11-20 22:01:02 | === BOT START ===
+2025-11-20 22:01:03 | close=91799.0 | signal=HOLD | pos=True
+2025-11-20 22:01:03 | HOLD
+2025-11-20 23:01:04 | === BOT START ===
+2025-11-20 23:01:04 | close=91489.7 | signal=SELL | pos=True
+2025-11-20 23:01:04 | SELL | size=0.001 | price=91489.7
+2025-11-21 00:01:04 | === BOT START ===
+2025-11-21 00:01:04 | close=91082.0 | signal=BUY | pos=False
+2025-11-21 00:01:04 | BUY | size=0.001 | price=91082.0
+2025-11-21 01:01:02 | === BOT START ===
+2025-11-21 01:01:03 | close=89850.1 | signal=SELL | pos=True
+2025-11-21 01:01:03 | SELL | size=0.001 | price=89850.1
+2025-11-21 02:01:02 | === BOT START ===
+2025-11-21 02:01:03 | close=87870.9 | signal=BUY | pos=False
+2025-11-21 02:01:03 | BUY | size=0.001 | price=87870.9
+2025-11-21 03:01:02 | === BOT START ===
+2025-11-21 03:01:03 | close=87223.9 | signal=SELL | pos=True
+2025-11-21 03:01:03 | SELL | size=0.001 | price=87223.9
+2025-11-21 04:01:02 | === BOT START ===
+2025-11-21 04:01:02 | close=86473.2 | signal=BUY | pos=False
+2025-11-21 04:01:02 | BUY | size=0.001 | price=86473.2
+2025-11-21 05:01:02 | === BOT START ===
+2025-11-21 05:01:03 | close=86900.8 | signal=SELL | pos=True
+2025-11-21 05:01:03 | SELL | size=0.001 | price=86900.8
+2025-11-21 06:01:02 | === BOT START ===
+2025-11-21 06:01:03 | close=86455.9 | signal=BUY | pos=False
+2025-11-21 06:01:03 | BUY | size=0.001 | price=86455.9
+2025-11-21 07:01:02 | === BOT START ===
+2025-11-21 07:01:03 | close=87267.4 | signal=SELL | pos=True
+2025-11-21 07:01:03 | SELL | size=0.001 | price=87267.4
+2025-11-21 08:01:02 | === BOT START ===
+2025-11-21 08:01:02 | close=88041.6 | signal=HOLD | pos=False
+2025-11-21 08:01:02 | HOLD
+2025-11-21 09:01:02 | === BOT START ===
+2025-11-21 09:01:02 | close=86602.8 | signal=BUY | pos=False
+2025-11-21 09:01:02 | BUY | size=0.001 | price=86602.8
