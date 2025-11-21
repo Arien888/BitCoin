@@ -127,3 +127,42 @@
 2025-11-21 09:01:02 | === BOT START ===
 2025-11-21 09:01:02 | close=86602.8 | signal=BUY | pos=False
 2025-11-21 09:01:02 | BUY | size=0.001 | price=86602.8
+update hige get2025-11-21 10:01:02 | === BOT START ===
+2025-11-21 10:01:03 | close=87253.1 | signal=SELL | pos=True
+2025-11-21 10:01:03 | SELL | size=0.001 | price=87253.1
+2025-11-21 11:01:02 | === BOT START ===
+2025-11-21 11:01:03 | close=87021.0 | signal=BUY | pos=False
+2025-11-21 11:01:03 | BUY | size=0.001 | price=87021.0
+2025-11-21 12:01:02 | === BOT START ===
+2025-11-21 12:01:03 | close=85407.2 | signal=SELL | pos=True
+2025-11-21 12:01:03 | SELL | size=0.001 | price=85407.2
+2025-11-21 13:01:02 | === BOT START ===
+2025-11-21 13:01:03 | close=85800.1 | signal=HOLD | pos=False
+2025-11-21 13:01:03 | HOLD
+2025-11-21 14:01:02 | === BOT START ===
+2025-11-21 14:01:03 | close=86028.1 | signal=HOLD | pos=False
+2025-11-21 14:01:03 | HOLD
+2025-11-21 15:01:02 | === BOT START ===
+2025-11-21 15:01:03 | close=86160.5 | signal=HOLD | pos=False
+2025-11-21 15:01:03 | HOLD
+2025-11-21 16:01:02 | === BOT START ===
+2025-11-21 16:01:02 | close=85554.1 | signal=BUY | pos=False
+2025-11-21 16:01:02 | BUY | size=0.001 | price=85554.1
+2025-11-21 17:01:02 | === BOT START ===
+2025-11-21 17:01:03 | close=83997.6 | signal=SELL | pos=True
+2025-11-21 17:01:03 | SELL | size=0.001 | price=83997.6
+2025-11-21 18:01:02 | === BOT START ===
+2025-11-21 18:01:03 | close=83596.0 | signal=HOLD | pos=False
+2025-11-21 18:01:03 | HOLD
+2025-11-21 19:01:02 | === BOT START ===
+2025-11-21 19:01:02 | close=82187.9 | signal=BUY | pos=False
+2025-11-21 19:01:02 | BUY | size=0.001 | price=82187.9
+2025-11-21 20:01:02 | === BOT START ===
+2025-11-21 20:01:03 | close=82682.5 | signal=SELL | pos=True
+2025-11-21 20:01:03 | SELL | size=0.001 | price=82682.5
+2025-11-21 21:01:02 | === BOT START ===
+2025-11-21 21:01:03 | close=82296.2 | signal=BUY | pos=False
+2025-11-21 21:01:03 | BUY | size=0.001 | price=82296.2
+2025-11-21 22:01:02 | === BOT START ===
+2025-11-21 22:01:03 | close=83236.8 | signal=SELL | pos=True
+2025-11-21 22:01:03 | SELL | size=0.001 | price=83236.8
