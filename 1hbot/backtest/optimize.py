@@ -3,55 +3,56 @@ import numpy as np
 from technicals import run_backtest_one
 
 
-# ---------------------------------------------------------
-# 期間分割
-# ---------------------------------------------------------
+# -----------------------------------------
+# 期間分割（変えなくてOK）
+# -----------------------------------------
 def split_into_periods(df, months=3):
     df = df.sort_values("ts")
-    rows = months * 30 * 24  # 720本 / 月
+    rows = months * 30 * 24
 
     periods = []
     for start in range(0, len(df), rows):
         chunk = df.iloc[start:start+rows].copy()
-        if len(chunk) > 100:
+        if len(chunk) > 200:
             periods.append(chunk)
 
     return periods
 
 
-# ---------------------------------------------------------
-# 単期間最適化（高速バージョン）
-# ---------------------------------------------------------
-def optimize_fine(df, top_n=50):
+# -----------------------------------------
+# 高速・少数精鋭パラメータセット
+# -----------------------------------------
+MA_LIST       = [21, 33, 48, 60, 72, 84]
+RANGE_LIST    = [24, 36, 48, 60, 72, 84, 96]
 
-    # ★ brute-force → 最適化済み範囲
-    ma_list        = list(range(10, 120, 15))
-    range_lb_list  = list(range(10, 120, 15))
+TP_LIST       = [0.004, 0.006, 0.008]
+SL_LIST       = [0.008, 0.012, 0.016]
 
-    tp_list = [round(x, 4) for x in np.arange(0.002, 0.014, 0.002)]
-    sl_list = [round(x, 4) for x in np.arange(0.004, 0.020, 0.002)]
+MA_DC_LIST    = [0.01, 0.02]
+LOW_THR_LIST  = [0.20, 0.30, 0.40]
+HIGH_THR_LIST = [0.60, 0.75, 0.90]
 
-    ma_dc_list   = [round(x, 3) for x in np.arange(0.005, 0.030, 0.005)]
 
-    low_thr_list  = [round(x, 2) for x in np.linspace(0.10, 0.40, 7)]
-    high_thr_list = [round(x, 2) for x in np.linspace(0.60, 0.90, 7)]
+# -----------------------------------------
+# 1期間最適化（爆速版）
+# -----------------------------------------
+def optimize_fine(df, top_n=20):
 
     results = []
 
-    for ma in ma_list:
-        for rng in range_lb_list:
-            for tp in tp_list:
-                for sl in sl_list:
-                    for ma_dc in ma_dc_list:
-                        for low_thr in low_thr_list:
-                            for high_thr in high_thr_list:
+    for ma in MA_LIST:
+        for rng in RANGE_LIST:
+            for tp in TP_LIST:
+                for sl in SL_LIST:
+                    for ma_dc in MA_DC_LIST:
+                        for low_thr in LOW_THR_LIST:
+                            for high_thr in HIGH_THR_LIST:
 
-                                # ★ df.copy() はしない（激速化）
                                 trades, total, win, avg, dd = run_backtest_one(
                                     df, ma, rng, tp, sl, ma_dc, low_thr, high_thr
                                 )
 
-                                if trades < 25:
+                                if trades < 20:
                                     continue
 
                                 results.append({
@@ -69,47 +70,33 @@ def optimize_fine(df, top_n=50):
                                     "maxdd": dd
                                 })
 
-    # 利益順
     results.sort(key=lambda x: x["total"], reverse=True)
 
-    # 表示
     print(f"\n=== {len(results)} 通りが有効 ===")
-    print(f"=== TOP{top_n} ===")
     for r in results[:top_n]:
-        print(
-            f"MA={r['ma']:>3}, RNG={r['range']:>3}, TP={r['tp']}, SL={r['sl']}, "
-            f"ma_dc={r['ma_dc']}, low={r['low_thr']}, high={r['high_thr']} | "
-            f"Trades={r['trades']}, P/L={r['total']:.3f}, Win={r['winrate']*100:.1f}%, "
-            f"DD={r['maxdd']:.3f}"
-        )
+        print(r)
 
     return results[:top_n]
 
 
-# ---------------------------------------------------------
-# 全期間の共通パラメータ抽出（修正版）
-# ---------------------------------------------------------
+# -----------------------------------------
+# 共通パラメータ抽出
+# -----------------------------------------
 def intersect_best(all_results):
-    # 各期間のTOP50 → set にしやすい形に変換
-    set_list = []
-    for lst in all_results:
-        s = set()
-        for r in lst:
-            key = (
-                r["ma"], r["range"], r["tp"], r["sl"],
-                r["ma_dc"], r["low_thr"], r["high_thr"]
-            )
-            s.add(key)
-        set_list.append(s)
 
-    # 共通
-    common_keys = set.intersection(*set_list)
+    sets = []
+    for period in all_results:
+        s = {
+            (r["ma"], r["range"], r["tp"], r["sl"], r["ma_dc"], r["low_thr"], r["high_thr"])
+            for r in period
+        }
+        sets.append(s)
 
-    # dictに戻す
-    common = []
-    for key in common_keys:
-        ma, rng, tp, sl, ma_dc, low_thr, high_thr = key
-        common.append({
+    common = set.intersection(*sets)
+
+    final = []
+    for ma, rng, tp, sl, ma_dc, low_thr, high_thr in common:
+        final.append({
             "ma": ma,
             "range": rng,
             "tp": tp,
@@ -119,42 +106,38 @@ def intersect_best(all_results):
             "high_thr": high_thr
         })
 
-    return common
+    return final
 
 
-# ---------------------------------------------------------
+# -----------------------------------------
 # マルチ期間最適化
-# ---------------------------------------------------------
+# -----------------------------------------
 def optimize_multi_period(df, months=3):
 
     periods = split_into_periods(df, months)
     all_results = []
 
-    print(f"=== {len(periods)} 個の期間で最適化 ===")
-
     for i, p in enumerate(periods):
-        print(f"\n--- 期間 {i+1} ---")
-        best = optimize_fine(p, top_n=50)
+        print(f"\n--- 期間 {i+1}/{len(periods)} ---")
+        best = optimize_fine(p)
         all_results.append(best)
 
-    # ★ 共通パラメータ
-    print("\n=== 全期間で共通して強いパラメータ ===")
+    print("\n=== 全期間共通パラメータ ===")
     robust = intersect_best(all_results)
-
-    for r in robust[:20]:
+    for r in robust:
         print(r)
 
     return robust
 
 
-# ---------------------------------------------------------
-# 実行部
-# ---------------------------------------------------------
+# -----------------------------------------
+# 実行
+# -----------------------------------------
 if __name__ == "__main__":
     df = pd.read_csv("btc_1h_full.csv")
     df["ts"] = pd.to_datetime(df["ts"])
 
-    for col in ["open", "high", "low", "close"]:
-        df[col] = df[col].astype(float)
+    for c in ["open", "high", "low", "close"]:
+        df[c] = df[c].astype(float)
 
     optimize_multi_period(df, months=3)
